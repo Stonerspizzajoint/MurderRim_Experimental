@@ -1,0 +1,92 @@
+<Defs>
+<!--M.A.P.C Railgun-->
+  <ThingDef ParentName="BaseGun">
+    <defName>MD_MAPCRailgun</defName>
+    <label>M.A.P.C Railgun V1</label>
+    <description>A powerful railgun that fires a concentrated neon green beam of photon energy, extremely powerful but with a long cooldown (30 seconds). 
+Also called a M.A.P.C standing for "magnetically amplified photon converger".</description>
+    <thingClass>ThingWithComps</thingClass>
+    <selectable>true</selectable>
+    <hasTooltip>true</hasTooltip>
+    <graphicData>
+      <texPath>Things/RangedWeapon/Railgun/RailgunV1</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>1.2</drawSize>
+    </graphicData>
+    <soundInteract>Interact_ChargeRifle</soundInteract>
+    <weaponClasses>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+    <statBases>
+      <Mass>0</Mass>
+      <AccuracyTouch>0.60</AccuracyTouch>
+      <AccuracyShort>0.70</AccuracyShort>
+      <AccuracyMedium>0.65</AccuracyMedium>
+      <AccuracyLong>0.55</AccuracyLong>
+      <RangedWeapon_Cooldown>5</RangedWeapon_Cooldown>
+    </statBases>
+    <techLevel>Spacer</techLevel>
+    <tradeability>None</tradeability>
+    <relicChance>0.01</relicChance> 
+    <smeltable>false</smeltable>
+    <verbs>
+      <li>
+        <verbClass>WorkerDronesMod.Verb_RailgunBeam</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <warmupTime>4.5</warmupTime>
+        <aimingChargeMote>Mote_Railgun_Charge</aimingChargeMote>
+        <aimingChargeMoteOffset>0.5</aimingChargeMoteOffset>
+        <range>15.9</range>
+        <soundAiming>MD_Railgun_Chargeup</soundAiming>
+        <burstShotCount>100</burstShotCount>
+        <onlyManualCast>true</onlyManualCast>
+        <showBurstShotStats>false</showBurstShotStats>
+        <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+        <beamDamageDef>MD_Beam</beamDamageDef>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+        <soundCastBeam>MD_BeamWeapon_Shooting</soundCastBeam>
+        <beamFleckChancePerTick>0.02</beamFleckChancePerTick>
+        <beamMaxDeviation>0</beamMaxDeviation>
+        <beamCurvature>0</beamCurvature>
+        <beamFullWidthRange>0</beamFullWidthRange>
+        <beamWidth>1</beamWidth>
+        <beamMoteDef>MD_Mote_RailgunLaserBase</beamMoteDef>
+        <beamEndEffecterDef>RailgunBeam_End</beamEndEffecterDef>
+        <beamChanceToStartFire>0.05</beamChanceToStartFire>
+        <beamChanceToAttachFire>0.005</beamChanceToAttachFire>
+        <beamFireSizeRange>0.05</beamFireSizeRange>
+        <beamLineFleckDef>Fleck_RailgunLaserSpark</beamLineFleckDef>
+        <beamStartOffset>0.8</beamStartOffset>
+        <beamTotalDamage>100</beamTotalDamage>
+        <beamLineFleckChanceCurve>
+          <points>
+            <li>(0, 0)</li>
+            <li>(0.65, 0.4)</li>
+            <li>(1, 0.75)</li>
+          </points>
+        </beamLineFleckChanceCurve>
+      </li>
+    </verbs>
+    <weaponTags>
+      <li>BeamGraserGun</li>
+    </weaponTags>
+    <tools>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <comps>
+      <li Class="WorkerDronesMod.CompProperties_Railgun">
+        <customCooldownTicks>0</customCooldownTicks>
+        <finishedSound>MD_Railgun_PowerDown</finishedSound>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>

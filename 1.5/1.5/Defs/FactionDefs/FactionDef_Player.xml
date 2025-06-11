@@ -1,0 +1,45 @@
+<Defs>
+  <FactionDef ParentName="PlayerFactionBase">
+    <defName>MD_WorkerDronePlayer</defName>
+    <label>Drone Community</label>
+    <description>A society of Rouge Worker Drones.</description>
+    <isPlayer>true</isPlayer>
+    <basicMemberKind>MD_WorkerDrone</basicMemberKind>
+    <pawnSingular>worker drone</pawnSingular>
+    <pawnsPlural>worker drones</pawnsPlural>
+    <factionNameMaker>NamerFactionOutlander</factionNameMaker>
+    <settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+    <techLevel>Spacer</techLevel>
+    <allowedCultures>
+      <li>Astropolitan</li>
+    </allowedCultures>
+    <backstoryFilters>
+      <li>
+        <categories>
+          <li>WorkerDrone</li>
+        </categories>
+      </li>
+    </backstoryFilters>
+    <colorSpectrum>
+      <li>(87,250,255)</li>
+    </colorSpectrum>
+    <factionIconPath>UI/Icons/Settlement/WorkerDroneSettlmenticon</factionIconPath>
+    <startingResearchTags>
+      <li>ClassicStart</li>
+    </startingResearchTags>
+    <startingTechprintsResearchTags>
+      <li>ClassicStart</li>
+      <li>ClassicStartTechprints</li>
+    </startingTechprintsResearchTags>
+    <apparelStuffFilter>
+      <thingDefs>
+        <li>Synthread</li>
+      </thingDefs>
+    </apparelStuffFilter>
+    <modExtensions>
+      <li Class="VFECore.FactionDefExtension">
+        <strangerInBlackReplacement>MD_WorkerDrone</strangerInBlackReplacement>
+      </li>
+    </modExtensions>
+  </FactionDef>
+</Defs>

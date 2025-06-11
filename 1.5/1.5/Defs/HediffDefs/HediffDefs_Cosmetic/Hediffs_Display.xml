@@ -1,0 +1,187 @@
+<Defs>
+<!--Normal State-->
+	<HediffDef ParentName="MD_CosmeticDisplayBase">
+		<defName>MD_Normal_DisplayEyes</defName>
+		<extraTooltip>Normal</extraTooltip>
+		<renderNodeProperties>
+			<li Class="VFECore.PawnRenderNodeProperties_Omni">
+				<nodeClass>VFECore.PawnRenderNode_Omni</nodeClass>
+				<workerClass>PawnRenderNodeWorker_Eye</workerClass>
+				<visibleFacing>
+					<li>South</li>
+					<li>East</li>
+					<li>West</li>
+				</visibleFacing>
+      			<conditionalGraphics>
+					<alts>
+						<li>
+							<!--Blank Display when dead or downed-->
+        					<requirements>
+          						<li>Dead</li>
+        					</requirements>
+							<texPath>Pawn/Display/DisplayEyesBlank/DisplayEyesBlank</texPath>
+						</li>
+					</alts>
+					<!--Normal Display-->
+					<shader>TransparentPostLight</shader>
+					<colorA>
+						<skinColor>true</skinColor>
+					</colorA>
+        			<texPaths>
+          				<li>Pawn/Display/DisplayEyesBase/DisplayEyes1</li>
+          				<li>Pawn/Display/DisplayEyesBase/DisplayEyes2</li>
+          				<li>Pawn/Display/DisplayEyesBase/DisplayEyes3</li>
+          				<li>Pawn/Display/DisplayEyesBase/DisplayEyes4</li>
+						<li>Pawn/Display/DisplayEyesBase/DisplayEyes5</li>
+        			</texPaths>
+      			</conditionalGraphics>
+				<anchorTag>RightEye</anchorTag>
+				<rotDrawMode>Fresh, Rotting</rotDrawMode>
+				<parentTagDef>Head</parentTagDef>
+				<drawSize>0.075</drawSize>
+				<side>Right</side>
+				<drawData>
+					<defaultData>
+						<layer>54</layer>
+						<offset>(0, 0, -0.23)</offset>
+					</defaultData>
+				</drawData>
+			</li>
+			<li Class="VFECore.PawnRenderNodeProperties_Omni">
+				<nodeClass>VFECore.PawnRenderNode_Omni</nodeClass>
+				<workerClass>PawnRenderNodeWorker_Eye</workerClass>
+				<visibleFacing>
+					<li>South</li>
+					<li>East</li>
+					<li>West</li>
+				</visibleFacing>
+      			<conditionalGraphics>
+					<alts>
+						<li>
+							<!--Blank Display when dead or downed-->
+        					<requirements>
+          						<li>Dead</li>
+        					</requirements>
+							<texPath>Pawn/Display/DisplayEyesBlank/DisplayEyesBlank</texPath>
+						</li>
+					</alts>
+					<!--Normal Display-->
+					<shader>TransparentPostLight</shader>
+					<colorA>
+						<skinColor>true</skinColor>
+					</colorA>
+        			<texPaths>
+          				<li>Pawn/Display/DisplayEyesBase/DisplayEyes1</li>
+          				<li>Pawn/Display/DisplayEyesBase/DisplayEyes2</li>
+          				<li>Pawn/Display/DisplayEyesBase/DisplayEyes3</li>
+          				<li>Pawn/Display/DisplayEyesBase/DisplayEyes4</li>
+						<li>Pawn/Display/DisplayEyesBase/DisplayEyes5</li>
+        			</texPaths>
+      			</conditionalGraphics>
+				<anchorTag>LeftEye</anchorTag>
+				<rotDrawMode>Fresh, Rotting</rotDrawMode>
+				<parentTagDef>Head</parentTagDef>
+				<drawSize>0.075</drawSize>
+				<side>Left</side>
+				<drawData>
+					<defaultData>
+						<layer>54</layer>
+						<offset>(0, 0, -0.23)</offset>
+						<flip>true</flip>
+					</defaultData>
+					<dataWest>
+						<flip>false</flip>
+					</dataWest>
+				</drawData>
+			</li>
+		</renderNodeProperties>
+	</HediffDef>
+
+<!--Sleep State-->
+	<HediffDef ParentName="MD_CosmeticDisplayBase">
+		<defName>MD_SleepMode_DisplayEyes</defName>
+        <extraTooltip>Sleeping</extraTooltip>
+		<renderNodeProperties>
+			<li Class="VFECore.PawnRenderNodeProperties_Omni">
+				<nodeClass>VFECore.PawnRenderNode_Omni</nodeClass>
+				<workerClass>PawnRenderNodeWorker_Eye</workerClass>
+				<visibleFacing>
+					<li>South</li>
+				</visibleFacing>
+      			<conditionalGraphics>
+					<alts>
+						<li>
+							<!--Blank Display when dead or downed-->
+        					<requirements>
+          						<li>Dead</li>
+        					</requirements>
+							<texPath>Pawn/Display/DisplayEyesBlank/DisplayEyesBlank</texPath>
+						</li>
+					</alts>
+					<!--Normal Display-->
+					<shader>TransparentPostLight</shader>
+					<colorA>
+						<skinColor>true</skinColor>
+					</colorA>
+        			<texPaths>
+          				<li>Pawn/Display/DisplayEyesSleep/DisplaySleepMode</li>
+        			</texPaths>
+      			</conditionalGraphics>
+				<rotDrawMode>Fresh, Rotting</rotDrawMode>
+				<parentTagDef>Head</parentTagDef>
+				<drawSize>0.3</drawSize>
+				<side>Center</side>
+				<drawData>
+					<defaultData>
+						<layer>54</layer>
+						<offset>(0, 0, -0.04)</offset>
+					</defaultData>
+				</drawData>
+			</li>
+		</renderNodeProperties>
+	</HediffDef>
+
+<!--Downed State-->
+	<HediffDef ParentName="MD_CosmeticDisplayBase">
+		<defName>MD_Warning_DisplayEyes</defName>
+        <extraTooltip>Downed</extraTooltip>
+		<renderNodeProperties>
+			<li Class="VFECore.PawnRenderNodeProperties_Omni">
+				<nodeClass>VFECore.PawnRenderNode_Omni</nodeClass>
+				<workerClass>PawnRenderNodeWorker_Eye</workerClass>
+				<visibleFacing>
+					<li>South</li>
+				</visibleFacing>
+      			<conditionalGraphics>
+					<alts>
+						<li>
+							<!--Blank Display when dead or downed-->
+        					<requirements>
+          						<li>Dead</li>
+        					</requirements>
+							<texPath>Pawn/Display/DisplayEyesBlank/DisplayEyesBlank</texPath>
+						</li>
+					</alts>
+					<!--Normal Display-->
+					<shader>TransparentPostLight</shader>
+					<colorA>
+						<color>(255,103,0)</color>
+					</colorA>
+        			<texPaths>
+          				<li>Pawn/Display/DisplayEyesWarning/DisplayWarning</li>
+        			</texPaths>
+      			</conditionalGraphics>
+				<rotDrawMode>Fresh, Rotting</rotDrawMode>
+				<parentTagDef>Head</parentTagDef>
+				<drawSize>0.2</drawSize>
+				<side>Center</side>
+				<drawData>
+					<defaultData>
+						<layer>54</layer>
+						<offset>(0, 0, 0)</offset>
+					</defaultData>
+				</drawData>
+			</li>
+		</renderNodeProperties>
+	</HediffDef>
+</Defs>

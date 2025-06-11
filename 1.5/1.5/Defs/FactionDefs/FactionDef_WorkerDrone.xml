@@ -1,0 +1,58 @@
+<Defs>
+
+  <FactionDef ParentName="OutlanderFactionBase">
+    <defName>WorkerDroneFaction</defName>
+    <label>Worker drone outpost</label>
+    <description>A Group of friendly Worker drones.</description>
+    <pawnSingular>Worker Drone</pawnSingular>
+    <pawnsPlural>Worker Drones</pawnsPlural>
+    <factionNameMaker>NamerFactionWorkerDrone</factionNameMaker>
+    <settlementNameMaker>NamerSettlementWorkerDrone</settlementNameMaker>
+    <leaderTitle>leader</leaderTitle>
+    <colorSpectrum>
+      <li>(128, 128, 128)</li>
+    </colorSpectrum>
+    <classicIdeo>true</classicIdeo>
+    <settlementGenerationWeight>.7</settlementGenerationWeight>
+    <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
+    <configurationListOrderPriority>30</configurationListOrderPriority>
+    <factionIconPath>UI/Icons/Settlement/WorkerDroneSettlmenticon</factionIconPath>
+    <allowedCultures>
+      <li>Astropolitan</li>
+    </allowedCultures>
+    <caravanTraderKinds Inherit="False">
+      <li>Caravan_WorkerDrone_BulkGoods</li>
+      <li>Caravan_WorkerDrone_Exotic</li>
+    </caravanTraderKinds>
+    <visitorTraderKinds Inherit="False">
+      <li>Visitor_WorkerDrone_Standard</li>
+    </visitorTraderKinds>
+    <baseTraderKinds Inherit="False">
+      <li>Base_WorkerDrone_Standard</li>
+    </baseTraderKinds>
+    <xenotypeSet Inherit="False">
+      <xenotypeChances>
+        <MD_WorkerDroneBase>999</MD_WorkerDroneBase>
+      </xenotypeChances>
+    </xenotypeSet>
+    <backstoryFilters>
+      <li>
+        <categories>
+          <li>WorkerDrone</li>
+          <li>Offworld</li>
+          <li>Outlander</li>
+        </categories>
+      </li>
+    </backstoryFilters>
+    <modExtensions>
+      <li Class="VFECore.FactionDefExtension">
+        <requiredHillLevels>
+          <li>Mountainous</li>
+          <li>LargeHills</li>
+        </requiredHillLevels>
+        <settlementGenerationSymbol>UI/Icons/Settlement/WorkerDroneSettlmenticon</settlementGenerationSymbol>
+      </li>
+    </modExtensions>
+  </FactionDef>
+
+</Defs>

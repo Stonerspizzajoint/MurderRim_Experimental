@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WorkerDronesMod</RootNamespace>
+    <AssemblyName>WorkerDronesMod</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Assemblies\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>5</WarningLevel>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony, Version=2.3.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Lib.Harmony.2.3.5\lib\net48\0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="CombatExtended">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\workshop\content\294100\2890901044\Assemblies\CombatExtended.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ShowMeYourHands">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\workshop\content\294100\2475965842\1.5\Assemblies\ShowMeYourHands.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VAGUE">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\workshop\content\294100\3282779636\1.5\Assemblies\VAGUE.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VFECore">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\workshop\content\294100\2023507013\1.5\Assemblies\VFECore.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VREAndroids">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\workshop\content\294100\2975771801\1.5\Assemblies\VREAndroids.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abilities\Solver\CompProperties\CompProperties_AbilityHeatEffect.cs" />
+    <Compile Include="Abilities\Solver\CompProperties\CompPropertiesAbilityEffect_NeutroamineOilCost.cs" />
+    <Compile Include="Abilities\Solver\CompProperties\CompProperties_ToggleHediffEffect.cs" />
+    <Compile Include="Abilities\Solver\Comps\Comp_AbilityHeatEffect.cs" />
+    <Compile Include="Abilities\Solver\Comps\CompAbilityEffect_NeutroamineOilCost.cs" />
+    <Compile Include="Abilities\Solver\Comps\Comp_ToggleHediffEffect.cs" />
+    <Compile Include="Components\GameComponents\XenotypeTracker.cs" />
+    <Compile Include="Components\MapComponents\PendingRaidMapComponent.cs" />
+    <Compile Include="Factions\Extentions\RaidRestrictions.cs" />
+    <Compile Include="Gene\Classes\Gene_CoreHeartRace.cs" />
+    <Compile Include="Gene\Classes\Gene_Reprogrammable.cs" />
+    <Compile Include="Gene\Classes\Gene_HediffSwitcherActivator.cs" />
+    <Compile Include="Gene\Classes\Gene_HediffApplier.cs" />
+    <Compile Include="Gene\ModExtentions\AndroidBodypartHediffExtension.cs" />
+    <Compile Include="Gene\ModExtentions\BlockFromAndroidWindowExtension.cs" />
+    <Compile Include="Gene\ModExtentions\GeneBackstoryFilterExtension.cs" />
+    <Compile Include="Gene\ModExtentions\HandTextureExtension.cs" />
+    <Compile Include="Gene\ModExtentions\GenePrerequisitesExtension.cs" />
+    <Compile Include="Gene\ModExtentions\GeneHediffSwitcherExtension.cs" />
+    <Compile Include="Gene\Solver\Gene_Resource\Gizmo\GeneGizmo_HeatResource.cs" />
+    <Compile Include="Gene\Solver\Gene_Resource\Gizmo\GeneGizmo_NeutroamineOil.cs" />
+    <Compile Include="Gene\Solver\Gene_Resource\Resource\Gene_HeatBuildup.cs" />
+    <Compile Include="Gene\Solver\Gene_Resource\Resource\Gene_NeutroamineOil.cs" />
+    <Compile Include="Gene\Solver\Modextentions\SolverRegenerationModExtension.cs" />
+    <Compile Include="Graphics\RenderWorkers\PawnRenderNodeWorker_HediffHands.cs" />
+    <Compile Include="Hediff\CompProperties\HediffCompProperties_ForceDropWeapon.cs" />
+    <Compile Include="Hediff\CompProperties\HediffCompProperties_DigitalAmnesiaTending.cs" />
+    <Compile Include="Hediff\CompProperties\HediffCompProperties_SustainedSound.cs" />
+    <Compile Include="Hediff\CompProperties\HediffCompProperties_RemoveIfPartGone.cs" />
+    <Compile Include="Hediff\Comps\HediffComp_ForceDropWeapon.cs" />
+    <Compile Include="Hediff\Comps\HediffComp_DigitalAmnesiaTending.cs" />
+    <Compile Include="Hediff\Comps\HediffComp_SustainedSound.cs" />
+    <Compile Include="Hediff\Comps\HediffComp_RemoveIfPartGone.cs" />
+    <Compile Include="Hediff\Comps\HediffComp_PlaySound.cs" />
+    <Compile Include="Hediff\CompProperties\HediffCompProperties_PlaySound.cs" />
+    <Compile Include="DefOfs\MD_DefOf.cs" />
+    <Compile Include="Hediff\Solver\CompProperties\HediffCompProperties_SeverityFromNeutroOil.cs" />
+    <Compile Include="Hediff\Solver\CompProperties\HediffCompProperties_ReplaceWithVRECounterpart.cs" />
+    <Compile Include="Hediff\Solver\CompProperties\HediffCompProperties_HeatDamageMonitor.cs" />
+    <Compile Include="Hediff\Solver\CompProperties\HediffCompProperties_GunHand.cs" />
+    <Compile Include="Hediff\Solver\Comps\HediffComp_SeverityFromNeutroOil.cs" />
+    <Compile Include="Hediff\Solver\Comps\HediffComp_ReplaceWithVRECounterpart.cs" />
+    <Compile Include="Hediff\Solver\Comps\HediffComp_HeatDamageMonitor.cs" />
+    <Compile Include="Hediff\Solver\Comps\HediffComp_GunHand.cs" />
+    <Compile Include="Hediff\Solver\WithComps\Hediff_HeatDamageMonitor.cs" />
+    <Compile Include="Hediff\WithComps\Hediff_NeutroOilCraving.cs" />
+    <Compile Include="Hediff\WithComps\Hediff_NaniteAcidBuildup.cs" />
+    <Compile Include="Hediff\WithComps\Hediff_ResurrectionStasis.cs" />
+    <Compile Include="Hediff\WithComps\Hediff_MemoryVirus.cs" />
+    <Compile Include="Job\Drivers\JobDriver_ConsumeAndroidCorpse.cs" />
+    <Compile Include="Job\Drivers\JobDriver_RefuelWithNeutroamineOil.cs" />
+    <Compile Include="Job\Givers\JobGiver_RefuelMadness.cs" />
+    <Compile Include="Job\Givers\JobGiver_RefuelNeutroamineOil.cs" />
+    <Compile Include="Job\Givers\JobGiver_AICastWingPoweredTacticalMove.cs" />
+    <Compile Include="Job\Givers\JobGiver_AICastMeleeAbilityOnSelf.cs" />
+    <Compile Include="Job\Givers\JobGiver_AICastWingPoweredPounce.cs" />
+    <Compile Include="Job\ThinkNode\Conditional\ThinkNode_IsDisassemblyDrone.cs" />
+    <Compile Include="Job\ThinkNode\Conditional\ThinkNode_ConditionalHeatAboveThreshold.cs" />
+    <Compile Include="Job\ThinkNode\Conditional\ThinkNode_ConditionalHasAnyHediff.cs" />
+    <Compile Include="MentalState\MentalState_RefuelMadness.cs" />
+    <Compile Include="MentalState\MentalState_ConfusedWander.cs" />
+    <Compile Include="ModSettings\WorkerDronesModSettings.cs" />
+    <Compile Include="Patches\Buildings\BedPatches\Patch_PawnRenderer_GetBodyPos_AnimalBed.cs" />
+    <Compile Include="Patches\Buildings\BedPatches\Patch_CompAssignableToPawn_CanAssignToPawn_AnimalBeds.cs" />
+    <Compile Include="Patches\Buildings\BedPatches\Patch_Building_Bed_GetBedRestFloatMenuOption_AnimalBeds.cs" />
+    <Compile Include="Patches\Buildings\BedPatches\Patch_RestUtility_CanUseBedEver_AnimalBeds.cs" />
+    <Compile Include="Patches\Buildings\Patch_AndroidBehavioristStation_CanAcceptPawn.cs" />
+    <Compile Include="Patches\CEPatch\Overheating protection patch\Verb_LaunchProjectileCE_WarmupComplete_Patch.cs" />
+    <Compile Include="Patches\CEPatch\Patch_VerbShootCE_OnCastSuccessful.cs" />
+    <Compile Include="Patches\Equipment\Pawn_EquipmentTracker_TryDropEquipment_Patch.cs" />
+    <Compile Include="Patches\Floatmenu\FloatMenuConsumePatch.cs" />
+    <Compile Include="Patches\GenePatches\CharacterCardUtility_DoLeftSection_Adulthood_Patch.cs" />
+    <Compile Include="Patches\GenePatches\Patch_GenerateSkills_ReapplyBackstories.cs" />
+    <Compile Include="Patches\GenePatches\Patch_PawnGenerator_GeneratePawn_UpdateHairColor.cs" />
+    <Compile Include="Patches\GenePatches\UIpatches\Patch_WindowCreateAndroidBase_GeneValidator.cs" />
+    <Compile Include="Patches\Hediff\ForceDropWeapon\Patch_JobGiver_PickUpOpportunisticWeapon.cs" />
+    <Compile Include="Patches\Hediff\Patch_Pawn_EquipmentAdded_RemoveInterchangeable.cs" />
+    <Compile Include="Abilities\Solver\Comps\CompAbility_CycleHediff.cs" />
+    <Compile Include="Abilities\Solver\CompProperties\CompProperties_CycleHediff.cs" />
+    <Compile Include="Patches\GenePatches\ResearchManager_FinishProject_Patch.cs" />
+    <Compile Include="Gene\ModExtentions\GeneResearchExtension.cs" />
+    <Compile Include="Patches\Ideologypatch\Patch_ThoughtUtility_ThoughtNullified.cs" />
+    <Compile Include="Patches\Jobs\JobDriver_AttackStatic_MakeNewToils_Patch.cs" />
+    <Compile Include="Patches\Jobs\Jobtracker\PawnJobTracker_CanPawnTakeOpportunisticJob_Patch.cs" />
+    <Compile Include="Patches\KillPatch\Pawn_ReactorSpawn_OnDeath_Patch.cs" />
+    <Compile Include="Patches\KillPatch\Pawn_RessurectionKill_Patch.cs" />
+    <Compile Include="Patches\PawnRenderPatches\PawnRenderUtility_DrawEquipmentAiming_NullCheckPatch.cs" />
+    <Compile Include="Patches\RaidPatches\RaidRestrictions\Patch_Storyteller_TryFire.cs" />
+    <Compile Include="Patches\RaidPatches\RaidRestrictions\Map_FinalizeInit_Patch.cs" />
+    <Compile Include="Patches\RaidPatches\RaidRestrictions\MapComponent_RaidWatcher.cs" />
+    <Compile Include="Patches\RaidPatches\RaidRestrictions\Patch_IncidentWorker_RaidEnemy_TryExecuteWorker.cs" />
+    <Compile Include="Patches\ShowMeYourHands\Patch_HandDrawer_HandColor.cs" />
+    <Compile Include="Patches\ThinkNode\ThinkNode_ConditionalCanPickupOpportunisticWeapon_Patch.cs" />
+    <Compile Include="Patches\Thoughts\Patch_PsychologicallyNude_NeverConsider.cs" />
+    <Compile Include="Patches\Traitrelated\PawnGenerator_Trait_Patch.cs" />
+    <Compile Include="Patches\Traitrelated\Pawn_Kill_Patch.cs" />
+    <Compile Include="Patches\VAGUE\EnsureBadBreakPatch.cs" />
+    <Compile Include="Patches\VREAndroids\Bleedingpatches\Messages_Message_Patch.cs" />
+    <Compile Include="Patches\VREAndroids\Bleedingpatches\Hediff_Injury_BleedRate_Patch.cs" />
+    <Compile Include="Patches\VREAndroids\Bleedingpatches\HediffGiver_Bleeding_OnIntervalPassed_Patch.cs" />
+    <Compile Include="Patches\VREAndroids\Bleedingpatches\HealthCardUtility_DrawHediffListing_Patch.cs" />
+    <Compile Include="Patches\VREAndroids\Patch_Building_NeutroCasket_Tick.cs" />
+    <Compile Include="Patches\VREAndroids\Patch_Recipe_AdministerNeutroamineForAndroid.cs" />
+    <Compile Include="Patches\VREAndroids\Patch_HideMoteForCoreHeart.cs" />
+    <Compile Include="PawnRenderNode\Properties\PawnRenderNodeProperties_EyeVariant.cs" />
+    <Compile Include="PawnRenderNode\Worker\PawnRenderNodeWorker_EyeVariant.cs" />
+    <Compile Include="Pawn\Comp\CompProperties_DisassemblyDrone.cs" />
+    <Compile Include="Things\CompProperties\CompProperties_Railgun.cs" />
+    <Compile Include="Things\CompProperties\CompProperties_AnimalBedUser.cs" />
+    <Compile Include="Things\CompProperties\CompProperties_ApparelRestriction.cs" />
+    <Compile Include="Things\CompProperties\CompProperties_HeatRestriction.cs" />
+    <Compile Include="Things\CompProperties\CompProperties_HeatPerShot.cs" />
+    <Compile Include="Things\Comp\CompRailgun.cs" />
+    <Compile Include="Things\Comp\CompAnimalBedUser.cs" />
+    <Compile Include="Things\Comp\Comp_ApparelRestriction.cs" />
+    <Compile Include="Things\Comp\ThingComp_HeatRestriction.cs" />
+    <Compile Include="Things\Comp\CompHeatPerShot.cs" />
+    <Compile Include="Things\Comp\Comp_WeaponColorChanger.cs" />
+    <Compile Include="Things\Patches\UpdateSkinColor_Weapon\Patch_PawnGeneTracker_RemoveGene_UpdateWeaponColor.cs" />
+    <Compile Include="Things\Patches\UpdateSkinColor_Weapon\Patch_PawnGeneTracker_AddGene_UpdateWeaponColor.cs" />
+    <Compile Include="Things\Patches\UpdateSkinColor_Weapon\Patch_NotifyEquipmentAdded_UpdateWeaponColor.cs" />
+    <Compile Include="Things\Patches\Verb_Shoot\Patch_Verb_Shoot_TryCastShot.cs" />
+    <Compile Include="Trader\StockGenerator_AndroidSlavesOnly.cs" />
+    <Compile Include="Utils\GeneUtiliy\InteractionUtiliy.cs" />
+    <Compile Include="Utils\HediffExtentions\GeneHediffSwitcherUtility.cs" />
+    <Compile Include="Utils\helper\AbilityHediffUtility.cs" />
+    <Compile Include="Utils\helper\GeneHediffSwitcherState.cs" />
+    <Compile Include="Utils\Solver\RefuelMadnessUtility.cs" />
+    <Compile Include="Utils\Solver\Gene\SolverGeneUtility.cs" />
+    <Compile Include="Utils\Solver\RefuelUtils.cs" />
+    <Compile Include="Utils\Solver\SimpleFlyerUtility.cs" />
+    <Compile Include="Utils\Solver\RoboticLimbRegenerator.cs" />
+    <Compile Include="Hediff\Solver\WithComps\Hediff_OverHeatingDamage.cs" />
+    <Compile Include="DefOfs\Regen_DefOf.cs" />
+    <Compile Include="Abilities\Solver\Verbs\Verb_CastAbilityOnNaniteAcid.cs" />
+    <Compile Include="Patches\GenePatches\UIpatches\WindowAndroidModificationPatches.cs" />
+    <Compile Include="Gene\Classes\Gene_DisableRestUnlessMemorySleepProcessing.cs" />
+    <Compile Include="Patches\DoorTraitPatches\JobDriver_ConstructFinishFrame_BuilderPatch.cs" />
+    <Compile Include="Trackers\DoorTraitTrackers\DoorBuilderTracker.cs" />
+    <Compile Include="Patches\DoorTraitPatches\Frame_CompleteConstruction_Patch.cs" />
+    <Compile Include="Trackers\DoorTraitTrackers\DoorBuiltTracker.cs" />
+    <Compile Include="Patches\DoorTraitPatches\Thing_Destroy_Patch.cs" />
+    <Compile Include="Patches\GenePatches\UIpatches\Pawn_GeneTracker_RemoveGene_Patch.cs" />
+    <Compile Include="Patches\GenePatches\UIpatches\Pawn_GeneTracker_AddGene_Patch.cs" />
+    <Compile Include="Patches\HarmonyPatches.cs" />
+    <Compile Include="Patches\GenePatches\PawnGenerator_GeneratePawn_Patch.cs" />
+    <Compile Include="Thought\Workers\ThoughtWorker_ColonyDoors.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Thought\Workers\ThoughtWorker_ColonySpecialDoor.cs" />
+    <Compile Include="Utils\Solver\RegenerationUtilities.cs" />
+    <Compile Include="Verb\Shoot\Verb_RailgunBeam.cs" />
+    <Compile Include="Verb\Shoot\Verb_ShootBeam_Heat.cs" />
+    <Compile Include="Zone\AreaAllowed\Area_Shade.cs" />
+    <Compile Include="Zone\AutoRoofedZoneMaker.cs" />
+    <Compile Include="Zone\Designator\Designator_Cells_ShadeAreaClear.cs" />
+    <Compile Include="Zone\Designator\Designator_AreaShadeAreaExpand.cs" />
+    <Compile Include="Zone\patch\Patch_RoofGrid_SetRoof_ShadedShelter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Abilities\CompProperties\" />
+    <Folder Include="Abilities\Comps\" />
+    <Folder Include="Alerts\" />
+    <Folder Include="Gene\ConditionalStatAffecter\" />
+    <Folder Include="Gene\GeneCategory\ModExtentions\" />
+    <Folder Include="Gene\Gene_Resource\Gizmo\" />
+    <Folder Include="Gene\Gene_Resource\Resource\" />
+    <Folder Include="Gene\Solver\Classes\" />
+    <Folder Include="Graphics\Classes\" />
+    <Folder Include="Graphics\RenderNodeProp\" />
+    <Folder Include="Job\Class\" />
+    <Folder Include="Map\" />
+    <Folder Include="Patches\CEPatch\Comps\" />
+    <Folder Include="Patches\CEPatch\JobGivers\" />
+    <Folder Include="Patches\CEPatch\Utilitypatches\" />
+    <Folder Include="Patches\GenePatches\UIpatches\CustomCatagory\" />
+    <Folder Include="Patches\HealthTracker\" />
+    <Folder Include="Patches\Interactions\" />
+    <Folder Include="Patches\Jobs\Jobgiverpatches\" />
+    <Folder Include="Patches\Targeting\" />
+    <Folder Include="Patches\VRECore\" />
+    <Folder Include="Pawn\Tags\" />
+    <Folder Include="Projectile\" />
+    <Folder Include="RaidStrats\Arrival\" />
+    <Folder Include="Things\ModExtention\" />
+    <Folder Include="Things\Verb\Class\" />
+    <Folder Include="Trackers\Combat\" />
+    <Folder Include="Trackers\Event\" />
+    <Folder Include="Trackers\Managers\" />
+    <Folder Include="Utils\Solver\Delay\" />
+    <Folder Include="Utils\Solver\Tickers\" />
+    <Folder Include="Utils\Tracker\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,343 @@
+<Defs>
+
+	<VREAndroids.AndroidGeneDef Name="MD_DisassemblyDroneBase" Abstract="True">
+		<displayCategory>VREA_Hardware</displayCategory>
+		<canGenerateInGeneSet>false</canGenerateInGeneSet>
+		<displayOrderInCategory>10002</displayOrderInCategory>
+		<isCoreComponent>false</isCoreComponent>
+		<modExtensions>
+			<li Class="VanillaGenesExpanded.GeneExtension">
+				<backgroundPathXenogenes>UI/Icons/Genes/GeneBackGround/GeneBackground_DisassemblyHardware</backgroundPathXenogenes>
+				<backgroundPathEndogenes>UI/Icons/Genes/GeneBackGround/GeneBackground_DisassemblyHardware</backgroundPathEndogenes>
+			</li>
+		</modExtensions>
+	</VREAndroids.AndroidGeneDef>
+
+<!--### DISASSEMBLY DRONE ###-->
+	<VREAndroids.AndroidGeneDef ParentName="MD_DisassemblyDroneBase">
+		<defName>MD_MurderDroneBody</defName>
+		<label>Murder Drone Frame</label>
+		<labelShortAdj>Murder Drone</labelShortAdj>
+		<description>Androids with this Hardware, have a Drone type body with a screen display for their face.
+The Body houses an improved reactor, leading to better power efficiency.
+		</description>
+		<iconPath>Pawn/DisassemblyDrone/Body/MurderDrone_Female_south</iconPath>
+		<displayOrderInCategory>10001</displayOrderInCategory>
+		<biostatCpx>3</biostatCpx>
+		<biostatMet>3</biostatMet>
+		<statFactors>
+			<Mass>0.75</Mass>
+			<IncomingDamageFactor>0.8</IncomingDamageFactor>
+		</statFactors>
+		<disablesNeeds>
+			<li>Outdoors</li>
+		</disablesNeeds>
+		<exclusionTags>
+			<li>MD_DroneBody</li>
+			<li>AG_Bodies</li>
+			<li>Bodies</li>
+			<li>Body</li>
+			<li>Fur</li>
+		</exclusionTags>
+		<fur>MD_MurderDroneBodyfur</fur>
+		<skinColorOverride>(255,255,255)</skinColorOverride>
+		<skinIsHairColor>false</skinIsHairColor>
+		<tattoosVisible>false</tattoosVisible>
+		<renderNodeProperties>
+			<li>
+				<debugLabel>Fur</debugLabel>
+				<nodeClass>PawnRenderNode_Fur</nodeClass>
+				<workerClass>PawnRenderNodeWorker_Fur</workerClass>
+				<baseLayer>5</baseLayer>
+				<rotDrawMode>Fresh, Rotting</rotDrawMode>
+				<colorType>Skin</colorType>
+				<parentTagDef>Body</parentTagDef>
+				<drawSize>1</drawSize>
+			</li>
+			<li Class="VFECore.PawnRenderNodeProperties_Omni">
+				<nodeClass>VFECore.PawnRenderNode_Omni</nodeClass>
+				<workerClass>PawnRenderNodeWorker_Body</workerClass>
+				<visibleFacing>
+					<li>South</li>
+				</visibleFacing>
+      			<conditionalGraphics>
+					<alts>
+						<li>
+							<!--Blank Display when dead or downed-->
+        					<requirements>
+          						<li>Dead</li>
+        					</requirements>
+							<texPath>Pawn/Display/DisplayEyesBlank/DisplayEyesBlank</texPath>
+						</li>
+					</alts>
+					<!--Normal Display-->
+					<shader>TransparentPostLight</shader>
+					<colorA>
+						<skinColor>true</skinColor>
+					</colorA>
+        			<texPaths>
+          				<li>Pawn/DisassemblyDrone/Body/Lights/MD_MurderDroneCoreLight</li>
+        			</texPaths>
+      			</conditionalGraphics>
+				<rotDrawMode>Fresh, Rotting</rotDrawMode>
+				<parentTagDef>Body</parentTagDef>
+				<drawSize>1</drawSize>
+				<side>Center</side>
+				<drawData>
+					<defaultData>
+						<layer>5</layer>
+						<offset>(0, 0, 0)</offset>
+					</defaultData>
+				</drawData>
+			</li>
+		</renderNodeProperties>
+		<!--Head types-->
+		<forcedHeadTypes>
+			<li>MD_MurderDrone_Head</li>
+		</forcedHeadTypes>
+		<!--Hair and Beard-->
+		<hairTagFilter>
+			<whitelist>false</whitelist>
+			<tags>
+				<li>Shaved</li>
+			</tags>
+		</hairTagFilter>
+		<beardTagFilter>
+			<whitelist>true</whitelist>
+			<tags>
+				<li>NoBeard</li>
+			</tags>
+		</beardTagFilter>
+		<bodyType>Standard</bodyType>
+		<modExtensions Inherit="false">
+			<li Class="VanillaGenesExpanded.GeneExtension">
+				<backgroundPathXenogenes>UI/Icons/Genes/GeneBackGround/GeneBackground_DisassemblyHardware</backgroundPathXenogenes>
+				<backgroundPathEndogenes>UI/Icons/Genes/GeneBackGround/GeneBackground_DisassemblyHardware</backgroundPathEndogenes>
+				<headDessicatedGraphicPath>Pawn/WorkerDrone/Drone_Dead/Head/Drone_Skull</headDessicatedGraphicPath>
+				<skullGraphicPath>Pawn/WorkerDrone/Drone_Dead/Head/Drone_Skull</skullGraphicPath>
+				<useSkinColorForFur>true</useSkinColorForFur>
+				<useMaskForFur>true</useMaskForFur>
+			</li>
+  			<li MayRequire="mlie.showmeyourhands" Class="WorkerDronesMod.HandTextureExtension">
+    			<mainTexturePath>OtherMods/Showmeyourhands/Hand</mainTexturePath>
+    			<mainCleanTexturePath>OtherMods/Showmeyourhands/HandClean</mainCleanTexturePath>
+    			<offTexturePath>OtherMods/Showmeyourhands/OffHand</offTexturePath>
+    			<offCleanTexturePath>OtherMods/Showmeyourhands/OffHandClean</offCleanTexturePath>
+    			<shaderType>CutoutComplex</shaderType>  <!-- reference to a ShaderTypeDef -->
+				<mainMaskPath>OtherMods/Showmeyourhands/Handm</mainMaskPath>
+				<offMaskPath>OtherMods/Showmeyourhands/OffHandm</offMaskPath>
+  			</li>
+			<li Class="WorkerDronesMod.GeneResearchExtension">
+      			<requiredResearch>MD_DisassemblyDroneTech</requiredResearch>
+    		</li>
+			<li Class="WorkerDronesMod.GenePrerequisitesExtension">
+				<prerequisiteGeneDefNames>
+					<li>MD_DisplayEyes</li>
+					<li>MD_DisplayEyes_DD</li>
+					<li>MD_DisplayEyes_XX</li>
+				</prerequisiteGeneDefNames>
+			</li>
+			<li Class="WorkerDronesMod.GeneBackstoryFilterExtension">
+				<allowedSpawnCategories>
+					<li>WorkerDrone</li>
+				</allowedSpawnCategories>
+			</li>
+		</modExtensions>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="MD_DisassemblyDroneBase">
+		<defName>MD_NaniteNeutralizingSaliva</defName>
+		<label>neutrializing saliva</label>
+		<description>Androids with this hardware harness advanced nanite-targeting enzymes within their saliva, the user can neutralize the corrosive effects of nanite acid buildup in a target. This ability halts further corrosion, stabilizing the target's condition and preventing additional harm.</description>
+		<iconPath>UI/Abilities/DisassemblyDrone/MD_NeutralizingSaliva</iconPath>
+		<biostatCpx>3</biostatCpx>
+		<biostatMet>-1</biostatMet>
+		<abilities>
+			<li>MD_NeutralizingSaliva</li>
+		</abilities>
+		<modExtensions>
+			<li Class="WorkerDronesMod.GeneResearchExtension">
+      			<requiredResearch>MD_DisassemblyDroneTech</requiredResearch>
+    		</li>
+		</modExtensions>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="MD_DisassemblyDroneBase">
+		<defName>MD_InterchangeableHands</defName>
+		<label>interchangeable hands (Melee)</label>
+		<prerequisite>MD_WeakenedSolver</prerequisite>
+		<description>Androids with this hardware can switch between different melee weapons replaceing their hands.</description>
+		<iconPath>UI/Abilities/DisassemblyDrone/MD_InterchangeableHands</iconPath>
+		<biostatCpx>3</biostatCpx>
+		<biostatMet>-3</biostatMet>
+		<abilities>
+			<li>MD_InterchangeableHandsAbility</li>
+		</abilities>
+		<exclusionTags>
+			<li>MD_InterchangeableHands</li>
+		</exclusionTags>
+		<modExtensions>
+			<li Class="WorkerDronesMod.GeneResearchExtension">
+      			<requiredResearch>MD_DisassemblyDroneTech</requiredResearch>
+    		</li>
+		</modExtensions>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="MD_DisassemblyDroneBase">
+		<defName>MD_BladedWings</defName>
+		<label>bladed wings</label>
+		<prerequisite>MD_WeakenedSolver</prerequisite>
+		<description>Carriers of this gene have two pairs of bladed wings sprouting from their back.</description>
+		<geneClass>WorkerDronesMod.Gene_HediffSwitcherActivator</geneClass>
+		<iconPath>Pawn/DisassemblyDrone/Natural_Weapons/Bladed_Wings/BladeWings_south</iconPath>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>-1</biostatMet>
+		<selectionWeight>0</selectionWeight>
+		<abilities>
+			<li>MD_Dismisswings</li>
+		</abilities>
+		<exclusionTags>
+			<li>Wing</li> 
+			<li>Wings</li>
+			<li>MD_BladedWings</li>
+		</exclusionTags>
+		<symbolPack>
+			<prefixSymbols>
+				<li>
+					<symbol>demon</symbol>
+				</li>
+				<li>
+					<symbol>devil</symbol>
+				</li>
+				<li>
+					<symbol>fiend</symbol>
+				</li>
+			</prefixSymbols>
+		</symbolPack>
+		<customEffectDescriptions>
+			<li>Colonist will ignore terrain movement costs</li>
+		</customEffectDescriptions>
+		<modExtensions>
+    		<li Class="WorkerDronesMod.GeneHediffSwitcherExtension">
+      			<stateHediffs>
+        			<li>
+          				<state>ToggledOff</state>
+        			</li>
+        			<li>
+          				<state>Normal</state>
+          				<hediffDef>MD_BladedWingsFolded</hediffDef>
+        			</li>
+        			<li>
+          				<state>Drafted</state>
+          				<hediffDef>MD_BladedWings</hediffDef>
+        			</li>
+					<li>
+          				<state>Hostile</state>
+          				<hediffDef>MD_BladedWings</hediffDef>
+        			</li>
+      			</stateHediffs>
+    		</li>
+			<li Class="WorkerDronesMod.GeneResearchExtension">
+      			<requiredResearch>MD_DisassemblyDroneTech</requiredResearch>
+    		</li>
+		</modExtensions>
+	</VREAndroids.AndroidGeneDef>
+
+    <VREAndroids.AndroidGeneDef ParentName="MD_DisassemblyDroneBase">
+		<defName>MD_NaniteAcidTail</defName>
+		<label>nanite tail</label>
+		<prerequisite>MD_WeakenedSolver</prerequisite>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>-2</biostatMet>
+		<geneClass>WorkerDronesMod.Gene_HediffApplier</geneClass>
+		<description>Carriers of this hardware, possess a powerful long, whip-thin tail running a sealed reservoir of sticky, semi-self-replicating nanite acid. At its tip sits a syringe-like needle that, on puncture, delivers an artificial nanite super-acid, the nanites eat away at steel or flesh, untill fully disassembling their target.</description>
+		<customEffectDescriptions>
+			<li>Due to its slightly flawed design, there is a small chance at stabbing themselves.</li>
+			<li>Not considred and acid, so acid immune or resistant creatures will still take normal damage.</li>
+		</customEffectDescriptions>
+		<iconPath>Pawn/DisassemblyDrone/Natural_Weapons/Nanite_Tail/NaniteTail_east</iconPath>
+		<selectionWeight>0</selectionWeight>
+		<exclusionTags>
+			<li>MD_NaniteAcidTail</li>
+		</exclusionTags>
+		<modExtensions>
+			<li Class="WorkerDronesMod.GeneResearchExtension">
+      			<requiredResearch>MD_DisassemblyDroneTech</requiredResearch>
+    		</li>
+        	<li Class="WorkerDronesMod.AndroidBodypartHediffExtension">
+            	<hediffDef>MD_Nanite_Tail</hediffDef>
+            	<bodyParts>
+                	<li>Torso</li>
+            	</bodyParts>
+        	</li>
+		</modExtensions>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="MD_DisassemblyDroneBase">
+ 		<defName>MD_HeadBand</defName>
+ 		<label>eye band</label>
+		<prerequisite>MD_WeakenedSolver</prerequisite>
+		<geneClass>WorkerDronesMod.Gene_HediffSwitcherActivator</geneClass>
+ 		<labelShortAdj>eye band</labelShortAdj>
+ 		<description>Carriers of this hardware have a extra band of specilaized eyes</description>
+ 		<iconPath>Pawn/DisassemblyDrone/Head/Eye_Headband/Eyeband_south</iconPath>
+ 		<selectionWeight>1000</selectionWeight>
+ 		<biostatCpx>1</biostatCpx>
+		<biostatMet>-2</biostatMet>
+		<ignoreDarkness>true</ignoreDarkness>
+		<exclusionTags>
+			<li>MD_HeadBand</li>
+		</exclusionTags>
+		<statOffsets>
+			<NightVisionEfficiency MayRequire="CETeam.CombatExtended">0.8</NightVisionEfficiency>
+
+			<ShootingAccuracyOutdoorsLitOffset>-0.1</ShootingAccuracyOutdoorsLitOffset>
+			<ShootingAccuracyIndoorsLitOffset>-0.1</ShootingAccuracyIndoorsLitOffset>
+			<MeleeHitChanceOutdoorsLitOffset>-0.1</MeleeHitChanceOutdoorsLitOffset>
+			<MeleeHitChanceIndoorsLitOffset>-0.1</MeleeHitChanceIndoorsLitOffset>
+			<MeleeDodgeChanceOutdoorsLitOffset>-0.1</MeleeDodgeChanceOutdoorsLitOffset>
+			<MeleeDodgeChanceIndoorsLitOffset>-0.1</MeleeDodgeChanceIndoorsLitOffset>
+		</statOffsets>
+		<capMods>
+			<li>
+				<capacity>Sight</capacity>
+				<offset>0.2</offset>
+			</li>
+		</capMods>
+		<modExtensions>
+			<li Class="WorkerDronesMod.GeneResearchExtension">
+      			<requiredResearch>MD_DisassemblyDroneTech</requiredResearch>
+    		</li>
+    		<li Class="WorkerDronesMod.GeneHediffSwitcherExtension">
+      			<stateHediffs>
+        			<li>
+          			  <state>Normal</state>
+          			  <hediffDef>MD_Normal_HeadBand_DD</hediffDef>
+        			</li>
+        			<li>
+        			  <state>IsConfused</state>
+        			  <hediffDef>MD_IsConfused_HeadBandRed_DD</hediffDef>
+        			</li>
+      			</stateHediffs>
+    		</li>
+		</modExtensions>
+    </VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="MD_DisassemblyDroneBase">
+		<defName>MD_AllowReprogramming</defName>
+		<label>allow reprogramming</label>
+		<geneClass>WorkerDronesMod.Gene_Reprogrammable</geneClass>
+		<description>Androids with this are hardwired to accept reprogramming without distress, and dont mind it when told to reprogram even if Awakened.</description>
+		<iconPath>UI/Icons/Genes/Subroutines/Gene_ClearInstructions</iconPath>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>-1</biostatMet>
+		<exclusionTags>
+		  <li>AndroidAwakeningProtocols</li>
+		</exclusionTags>
+		<modExtensions>
+			<li Class="WorkerDronesMod.GeneResearchExtension">
+      			<requiredResearch>MD_SolverPrograming</requiredResearch>
+    		</li>
+		</modExtensions>
+	</VREAndroids.AndroidGeneDef>
+</Defs>

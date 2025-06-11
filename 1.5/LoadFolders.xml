@@ -1,0 +1,10 @@
+<loadFolders>
+  <v1.5>
+    <li>/</li>
+    <li>1.5</li>
+    <li IfModActive="CETeam.CombatExtended">CombatExtended/1.5</li>
+    <li IfModActive="CETeam.CombatExtended_steam">CombatExtended/1.5</li>
+    <li IfModActive="nals.facialanimation">FacialAnimation/1.5</li>
+    <li IfModActive="Ludeon.RimWorld.Royalty">Royalty/1.5</li>
+  </v1.5>
+</loadFolders>

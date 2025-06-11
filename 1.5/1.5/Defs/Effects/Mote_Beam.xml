@@ -1,0 +1,59 @@
+<Defs>
+<ThingDef ParentName="MoteBase">
+    <defName>MD_Mote_LaserBase</defName>
+    <thingClass>MoteDualAttached</thingClass>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.2</fadeInTime>
+      <fadeOutTime>0.3</fadeOutTime>
+      <solidTime>999999</solidTime>
+      <needsMaintenance>True</needsMaintenance>
+      <rotateTowardsTarget>True</rotateTowardsTarget>
+      <scaleToConnectTargets>True</scaleToConnectTargets>
+      <fadeOutUnmaintained>True</fadeOutUnmaintained>
+    </mote>
+    <drawOffscreen>true</drawOffscreen>
+    <graphicData>
+      <color>(255,255,0)</color>
+      <texPath>Things/Mote/GraserBeam</texPath>
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+      <shaderType>MoteBeam</shaderType>
+      <shaderParameters>
+        <_ExtraTexA>/Things/Mote/BeamSecondaryNoise_A</_ExtraTexA>
+        <_ExtraTexB>/Things/Mote/BeamSecondaryNoise_B</_ExtraTexB>
+        <_ScrollSpeedA>-4 </_ScrollSpeedA>
+        <_ScrollSpeedB>3</_ScrollSpeedB>
+        <_Intensity>2</_Intensity>
+      </shaderParameters>
+    </graphicData>
+  </ThingDef>
+
+<ThingDef ParentName="MoteBase">
+    <defName>MD_Mote_RailgunLaserBase</defName>
+    <thingClass>MoteDualAttached</thingClass>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.2</fadeInTime>
+      <fadeOutTime>0.3</fadeOutTime>
+      <solidTime>999999</solidTime>
+      <needsMaintenance>True</needsMaintenance>
+      <rotateTowardsTarget>True</rotateTowardsTarget>
+      <scaleToConnectTargets>True</scaleToConnectTargets>
+      <fadeOutUnmaintained>True</fadeOutUnmaintained>
+    </mote>
+    <drawOffscreen>true</drawOffscreen>
+    <graphicData>
+      <color>(68,214,44)</color>
+      <texPath>Things/Mote/LaserBeam</texPath>
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+      <shaderType>MoteBeam</shaderType>
+      <shaderParameters>
+        <_ExtraTexA>/Things/Mote/BeamSecondaryNoise_A</_ExtraTexA>
+        <_ExtraTexB>/Things/Mote/BeamSecondaryNoise_B</_ExtraTexB>
+        <_ScrollSpeedA>-4 </_ScrollSpeedA>
+        <_ScrollSpeedB>3</_ScrollSpeedB>
+        <_Intensity>2</_Intensity>
+      </shaderParameters>
+    </graphicData>
+  </ThingDef>
+</Defs>

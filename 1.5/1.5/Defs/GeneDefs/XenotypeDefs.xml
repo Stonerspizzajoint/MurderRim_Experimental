@@ -1,0 +1,154 @@
+<Defs>
+<!--### WORKER DRONE ###-->
+	<XenotypeDef>
+		<defName>MD_WorkerDroneBase</defName>
+		<label>awakened worker drone</label>
+    	<descriptionShort>Autonomous robots created to help their parent company, JCJenson, mine exoplanets for resources. A varent of Worker drone that has gone rouge.</descriptionShort>
+		<description>Disclaimer:
+By utilizing JCJenson™ Worker Drones, you acknowledge and agree that JCJenson™ is not responsible for any loss of life, property damage, or unintended termination of employees. Worker Drones are designed to maximize efficiency, and while safety protocols are in place, accidents may occur. Please ensure proper training and supervision.
+JCJenson™ is not liable for any unforeseen consequences resulting from drone malfunction or unanticipated worker behavior. All workers are subject to termination at the discretion of JCJenson™.
+Your satisfaction is our priority, but your survival is not guaranteed.
+
+© 3027 JCJenson™. All rights reserved.</description>
+		<iconPath>UI/Icons/Xenotypes/Androidtype_WorkerDrone</iconPath>
+		<genes>
+			<li>VREA_Power</li>
+			<li>VREA_SyntheticBody</li>
+			<li>VREA_SyntheticImmunity</li>
+			<li>VREA_ComponentFreezing</li>
+			<li>VREA_ComponentOverheating</li>
+			<li>VREA_ColdTolerant</li>
+			<li>VREA_HeatTolerant</li>
+			<li>VREA_PsychicallyDeaf</li>
+			<li>MD_DroneBody</li>
+      		<li>MD_NeutroamineOil</li>
+      		<li>MD_DisplayEyes</li>
+	  		<li>MD_DisplayColor_Teal</li>
+	  		<li>MD_DisplayColor_Blue</li>
+	  		<li>MD_DisplayColor_Orange</li>
+	  		<li>MD_DisplayColor_Green</li>
+	  		<li>MD_DisplayColor_Pink</li>
+	  		<li>MD_DisplayColor_Red</li>
+	  		<li>MD_DisplayColor_Purple</li>
+	  		<li>MD_DisplayColor_White</li>
+      		<li>VREA_EMPVulnerability</li>
+      		<li>VREA_SelfRecharge</li>
+      		<li MayRequire="vanillaandroidsunofficialexpansion.genes">VAGUE_SmallExpandedCarryCap</li>
+      		<li>VREA_AptitudeBasic_Mining</li>
+			<li>MD_MemorySleepProcessing</li>
+		</genes>
+	</XenotypeDef>
+
+	<XenotypeDef>
+		<defName>MD_DomesticWorkerDroneBase</defName>
+		<label>worker drone</label>
+    	<descriptionShort>Autonomous robots created to help their parent company, JCJenson, mine exoplanets for resources. This model was created more recently, easier to control.</descriptionShort>
+		<description>Disclaimer:
+By utilizing JCJenson™ Worker Drones, you acknowledge and agree that JCJenson™ is not responsible for any loss of life, property damage, or unintended termination of employees. Worker Drones are designed to maximize efficiency, and while safety protocols are in place, accidents may occur. Please ensure proper training and supervision.
+JCJenson™ is not liable for any unforeseen consequences resulting from drone malfunction or unanticipated worker behavior. All workers are subject to termination at the discretion of JCJenson™.
+Your satisfaction is our priority, but your survival is not guaranteed.
+
+© 3027 JCJenson™. All rights reserved.</description>
+		<iconPath>UI/Icons/Xenotypes/Androidtype_WorkerDrone</iconPath>
+		<genes>
+			<li>MD_AllowReprogramming</li>
+			<li>VREA_Power</li>
+			<li>VREA_SyntheticBody</li>
+			<li>VREA_SyntheticImmunity</li>
+			<li>VREA_ComponentFreezing</li>
+			<li>VREA_ComponentOverheating</li>
+			<li>VREA_ColdTolerant</li>
+			<li>VREA_HeatTolerant</li>
+			<li>VREA_PsychicallyDeaf</li>
+			<li>VREA_NoSkillGain</li>
+			<li>VREA_MentalBreaksDisabled</li>
+			<li>MD_DroneBody</li>
+      		<li>MD_NeutroamineOil</li>
+			<li>Hair_BaldOnly</li>
+			<li>Beard_NoBeardOnly</li>
+      		<li>MD_DisplayEyes</li>
+	  		<li>MD_DisplayColor_Teal</li>
+      		<li>VREA_EMPVulnerability</li>
+      		<li>VREA_SelfRecharge</li>
+      		<li MayRequire="vanillaandroidsunofficialexpansion.genes">VAGUE_SmallExpandedCarryCap</li>
+      		<li>VREA_AptitudeBasic_Mining</li>
+			<li>MD_MemorySleepProcessing</li>
+		</genes>
+	</XenotypeDef>
+<!--### ###-->
+
+<!--### DISASSEMBLY DRONE ###-->
+	<XenotypeDef>
+		<defName>MD_MurderDroneBase</defName>
+		<label>Disassembly drone</label>
+		<nameMaker>NamerPersonDisassemblyDrone</nameMaker>
+    	<chanceToUseNameMaker>1</chanceToUseNameMaker>
+    	<combatPowerFactor>5</combatPowerFactor>
+    	<descriptionShort>Autonomous drones created by J̸̧̪̾͂̉ć̴̼̉͠J̶̱͋̈́̿̽́ȇ̵̙̹̖̪̩̀̄̑ñ̷̥̫̮̯̀̉.̶̼̩̑̋̐̈͠c̷̘͖͎͊̑y̴̧̖͍̠̽̃ṅ̷͍̗̎̐ to swiftly and efficiently disassemble rogue AI and other non-essential targets.</descriptionShort>
+		<description>Disclaimer:
+By utilizing JCJenson™ Disassembly Drones, you acknowledge and agree that JCJenson™ is not responsible for any loss of life, limb, or bodily integrity that may occur during use. Disassembly Drones are designed to efficiently remove "Rouge AI", but safety protocols can only do so much. Accidents and... "misunderstandings" may happen.
+JCJenson™ is not liable for any unforeseen consequences arising from drone malfunction, user error, or unexpected personality quirks of the drones themselves. All disassemblies are final and may involve the permanent removal of non-essential entities, at the discretion of the Disassembly Drone™.
+Your satisfaction is important to us, but your continued existence is a secondary consideration.
+
+© 3027 JCJenson™. All rights reserved.</description>
+		<iconPath>UI/Icons/Ideoligions/Icon_DisassemblyDrone</iconPath>
+		<genes>
+			<li>MD_AllowReprogramming</li>
+			<li>VREA_Power</li>
+			<li>VREA_SyntheticBody</li>
+			<li>VREA_SyntheticImmunity</li>
+			<li>VREA_ComponentFreezing</li>
+			<li>VREA_ComponentOverheating</li>
+			<li>VREA_ColdTolerant</li>
+			<li>VREA_HeatTolerant</li>
+			<li>VREA_PsychicallyDeaf</li>
+			<li>MD_MurderDroneBody</li>
+      		<li>MD_NeutroamineOil</li>
+      		<li>MD_DisplayEyes_DD</li>
+	  		<li>MD_DisplayColor_Yellow</li>
+			<li>VREA_Hair_SnowWhite</li>
+      		<li>VREA_SelfRecharge</li>
+			<li>MD_MemorySleepProcessing</li>
+			<li>MD_BladedWings</li>
+			<li>MD_HeadBand</li>
+			<li>MD_Fangs</li>
+			<li>MD_InterchangeableHands</li>
+			<li>MD_InterchangeableHands_BasicRanged</li>
+			<li>MD_interchangeable_AdeptUpgrade</li>
+			<li>MD_interchangeable_HighTechUpgrade</li>
+			<li>MD_NaniteNeutralizingSaliva</li>
+			<li>MD_WeakenedSolver</li>
+			<li>MD_HeatScale</li>
+			<li>MD_NaniteAcidTail</li>
+		</genes>
+	</XenotypeDef>
+<!--### Core Heart ###-->
+	<XenotypeDef>
+		<defName>MD_CoreHeartBase</defName>
+		<label>Core Heart (Disassembly Drone)</label>
+		<nameMaker>NamerPersonDisassemblyDrone</nameMaker>
+    	<chanceToUseNameMaker>1</chanceToUseNameMaker>
+    	<combatPowerFactor>5</combatPowerFactor>
+    	<descriptionShort>The Core Heart from a Disasssembly drone</descriptionShort>
+		<iconPath>UI/Icons/Ideoligions/Icon_DisassemblyDrone</iconPath>
+		<genes>
+			<li>VREA_Power</li>
+			<li>VREA_SyntheticBody</li>
+			<li>VREA_SyntheticImmunity</li>
+			<li>VREA_ComponentFreezing</li>
+			<li>VREA_ComponentOverheating</li>
+			<li>VREA_ColdTolerant</li>
+			<li>VREA_HeatTolerant</li>
+			<li>VREA_PsychicallyDeaf</li>
+			<li>MD_DisplayEye</li>
+	  		<li>MD_DisplayColor_Yellow</li>
+      		<li>VREA_SelfRecharge</li>
+			<li>MD_MemorySleepProcessing</li>
+			<li>MD_WeakenedSolver</li>
+			<li>MD_HeatScale</li>
+			<li>MD_CoreHeartBody</li>
+      		<li>MD_NeutroamineOil</li>
+		</genes>
+	</XenotypeDef>
+<!--### ###-->
+</Defs>

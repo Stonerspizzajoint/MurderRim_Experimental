@@ -1,0 +1,25 @@
+<Defs>
+
+	<ResearchProjectDef Name="MD_ResearchBase" Abstract="True">
+		<techLevel>Spacer</techLevel>
+		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+		<requiredResearchFacilities>
+			<li>MultiAnalyzer</li>
+		</requiredResearchFacilities>
+		<tab>MD_MurderRimTab</tab>
+	</ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="MD_ResearchBase">
+		<defName>MD_SolverPrograming</defName>
+		<label>Solver Core Architecture</label>
+        <description>Unlock the foundational code behind JCJenson's quarantined AI systems. Required for advanced drone modification.</description>
+		<baseCost>2000</baseCost>
+		<prerequisites>
+			<li>VREA_AndroidTech</li>
+		</prerequisites>
+        <researchViewX>1.00</researchViewX>
+        <researchViewY>1.80</researchViewY>
+	</ResearchProjectDef>
+</Defs>
+
+

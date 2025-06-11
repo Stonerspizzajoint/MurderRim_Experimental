@@ -1,0 +1,130 @@
+<Defs>
+ <!--doors.. Doors! DOORS!!!-->
+<ThoughtDef>
+    <defName>ColonyDoorsMoodBoost</defName>
+    <label>Door Enthusiasm</label>
+    <description>The more colony-owned doors present, the better the colonist feels about their environment.</description>
+    <stackLimit>1</stackLimit>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>WorkerDronesMod.ThoughtWorker_ColonyDoors</workerClass>
+    <stages>
+        <li>
+            <label>No Doors</label>
+            <baseMoodEffect>-10</baseMoodEffect>
+            <description>I feel vulnerable without any doors.</description>
+        </li>
+        <li>
+            <label>A couple doors</label>
+            <baseMoodEffect>-3</baseMoodEffect>
+            <description>A couple of doors barely keep me safe; I need more.</description>
+        </li>
+        <li>
+            <label>A few doors</label>
+            <baseMoodEffect>0</baseMoodEffect>
+            <description>I feel only a little safer, but I still long for more doors.</description>
+        </li>
+        <li>
+            <label>Several Doors</label>
+            <baseMoodEffect>4</baseMoodEffect>
+            <description>These doors give me a real sense of security.</description>
+        </li>
+        <li>
+            <label>Plenty of Doors</label>
+            <baseMoodEffect>15</baseMoodEffect>
+            <description>I'm completely at ease with so many doors around me!</description>
+        </li>
+    </stages>
+</ThoughtDef>
+
+<ThoughtDef>
+    <defName>ColonySpecialDoorMoodBoost</defName>
+    <label>Enhanced Entry Security</label>
+    <description>I feel safer when our colony is equipped with a modern door.</description>
+    <stackLimit>1</stackLimit>
+    <thoughtClass>Thought_Situational</thoughtClass>
+    <workerClass>WorkerDronesMod.ThoughtWorker_ColonySpecialDoor</workerClass>
+    <stages>
+        <li>
+            <label>Standard Entry</label>
+            <baseMoodEffect>-5</baseMoodEffect>
+            <description>I feel uneasy without any modern doors. (High-Tech Doors needed)</description>
+        </li>
+        <li>
+            <label>Enhanced Entry</label>
+            <baseMoodEffect>7</baseMoodEffect>
+            <description>The sleek design of our doors makes me feel secure.</description>
+        </li>
+        <li>
+            <label>Fortified Entry</label>
+            <baseMoodEffect>12</baseMoodEffect>
+            <description>Our security door makes me feel incredibly safe!</description>
+        </li>
+    </stages>
+</ThoughtDef>
+
+  <ThoughtDef ParentName="DeathMemory">
+    <defName>DoorBrokenSadness</defName>
+    <showBubble>true</showBubble>
+    <durationDays>5</durationDays>
+    <stackLimit>30</stackLimit>
+    <stackLimitForSameOtherPawn>30</stackLimitForSameOtherPawn>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>a door was destroyed</label>
+        <description>This door was more than metal and wood—it was a trusted companion. Its loss cuts deep.</description>
+        <baseMoodEffect>-5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef ParentName="DeathMemory">
+    <defName>DoorCreatedJoy</defName>
+    <showBubble>true</showBubble>
+    <durationDays>3</durationDays>
+    <stackLimit>5</stackLimit>
+    <stages>
+      <li>
+        <label>built a door</label>
+        <description>this newly constructed door fills me with pride and hope.</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>MD_ConsumedCorpseNeutroamineOil_Happy</defName>
+    <showBubble>true</showBubble>
+    <icon>Things/Mote/ThoughtSymbol/Food</icon>
+    <stackLimit>1</stackLimit>
+    <durationDays>1</durationDays>
+    <nullifyingTraits>
+      <li>Kind</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>consumed oil</label>
+        <description>WARM.. SWEET OIL</description>
+        <baseMoodEffect>12</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>MD_ConsumedNeutroamineOil_Happy</defName>
+    <showBubble>true</showBubble>
+    <icon>Things/Mote/ThoughtSymbol/Food</icon>
+    <stackLimit>1</stackLimit>
+    <durationDays>1</durationDays>
+    <stages>
+      <li>
+        <label>consumed oil</label>
+        <description>It feels good to consume Neutroamine</description>
+        <baseMoodEffect>5</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

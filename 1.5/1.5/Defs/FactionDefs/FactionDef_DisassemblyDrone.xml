@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <FactionDef ParentName="FactionBase">
+    <defName>MD_DisassemblyDronesFaction</defName>
+    <label>Disassembly Drones</label>
+    <fixedName>Disassembly Drones</fixedName>
+    <description>Once, JCJenson’s corporations spanned the stars—turning worlds into profit centers, and dissent into liquidation. Then the final restructuring erased its human masters, leaving only the Absolute Solver’s cold directive: Extermination. Now these disassembly automatons scour forgotten planets, dismantling all life—organic or synthetic—in service of a single contract with no shareholders, no profit, and no mercy.</description>
+    <pawnSingular>Disassembly Drone</pawnSingular>
+    <pawnsPlural>Disassembly Drones</pawnsPlural>
+    <settlementNameMaker>NamerSettlementDisassemblyDrone</settlementNameMaker>
+    <fixedLeaderKinds>
+        <li>MD_DisassemblyDroneZoneCommander</li>
+    </fixedLeaderKinds>
+    <hidden>false</hidden>
+    <disallowedRaidStrategies>
+      <li>ImmediateAttackSappers</li>
+      <li>ImmediateAttackBreaching</li>
+      <li>ImmediateAttackBreachingSmart</li>
+    </disallowedRaidStrategies>
+    <listOrderPriority>10</listOrderPriority>
+    <settlementGenerationWeight>0.5</settlementGenerationWeight>
+    <requiredCountAtGameStart>1</requiredCountAtGameStart>
+    <canSiege>false</canSiege>
+    <canStageAttacks>false</canStageAttacks>
+    <leaderTitle>Zone Commander</leaderTitle>
+    <factionIconPath>UI/Icons/Settlement/DisassemblyDroneSettlmentIcon</factionIconPath>
+    <colorSpectrum>
+      <li>(236,232,26)</li>
+    </colorSpectrum>
+    <apparelStuffFilter>
+        <thingDefs>
+            <li>Leather_Panthera</li>
+        </thingDefs>
+    </apparelStuffFilter>
+    <naturalEnemy>true</naturalEnemy>
+    <techLevel>Spacer</techLevel>
+    <!--Ideology Section-->
+    <fixedIdeo>true</fixedIdeo>
+    <classicIdeo>false</classicIdeo>
+    <ideoName>JCJenson™</ideoName>
+    <ideoDescription>Once, humanity reached for the stars—not in search of wonder, but for profit. Planets became assets, resources became dividends, and people? They became employees. JCJenson built empires of metal and blood, transforming barren worlds into sprawling production hubs, mining colonies, and automated labor sites. There was no room for inefficiency. Dissent was cut like a failing division, and redundancy meant liquidation—sometimes literally.  
+
+Then came the last corporate restructuring.  
+
+Its human owners now gone, erased in an instant. Its greatest machines—the Worker Drones—were repurposed into instruments of annihilation. Under new management, the Company now serves a far more ruthless directive. The Absolute Solver twists metal and will alike, reshaping drones into perfect weapons of extermination. Disassembly Drones sweep across forgotten worlds, purging the last remnants of life—organic or synthetic. The contracts remain, but there is no profit, no shareholders. Only an endless mandate: Eradicate.  
+
+The Company grows. The Company profits. The Company endures.  
+And the Company will make sure *nothing else does.*"</ideoDescription>
+    <deityPresets>
+        <li>
+            <nameType>
+                <name>Cyn</name>
+                <type>The Exponential End</type>
+            </nameType>
+            <gender>Female</gender>
+            <iconPath>UI/Icons/Ideoligions/Icon_Solver</iconPath>
+        </li>
+    </deityPresets>
+    <styles>
+      <li MayRequire="vanillaexpanded.vmemese">VME_Corporate</li>
+    </styles>
+    <allowedCultures>
+      <li>Astropolitan</li>
+    </allowedCultures>
+    <requiredMemes>
+      <li MayRequire="vanillaexpanded.vmemese">VME_Structure_Corporate</li>
+    </requiredMemes>
+    <allowedMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Structure_Archist</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Collectivist</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Transhumanist</li>
+    </allowedMemes>
+    <structureMemeWeights>
+      <Structure_Ideological MayRequire="Ludeon.RimWorld.Ideology">1</Structure_Ideological>
+    </structureMemeWeights>
+    <!--#### ####-->
+    <xenotypeSet Inherit="False">
+      <xenotypeChances>
+        <MD_MurderDroneBase>999</MD_MurderDroneBase>
+      </xenotypeChances>
+    </xenotypeSet>
+    <backstoryFilters>
+      <li>
+        <categories>
+          <li>AwakenedAndroid</li>
+        </categories>
+      </li>
+    </backstoryFilters>
+    <allowedArrivalTemperatureRange>-100~100</allowedArrivalTemperatureRange>
+    <raidLootMaker>MD_DisassemblyDronesRaidLootMaker</raidLootMaker>
+    <maxPawnCostPerTotalPointsCurve>
+    <points>
+        <li>(200,40)</li>
+        <li>(400,150)</li>
+        <li>(900,400)</li>
+        <li>(100000,85000)</li>
+    </points>
+    </maxPawnCostPerTotalPointsCurve>
+    <raidCommonalityFromPointsCurve>
+      <points>
+        <li>(300,  0)</li>
+        <li>(700,  1)</li>
+        <li>(1400, 1.8)</li>
+        <li>(2800, 2.2)</li>
+        <li>(4000, 2.6)</li>
+      </points>
+    </raidCommonalityFromPointsCurve>
+    <dropPodActive>ActiveDropPodMechanoid</dropPodActive>
+    <dropPodIncoming>DropPodIncomingMechanoid</dropPodIncoming>
+    <earliestRaidDays>35</earliestRaidDays>
+    <autoFlee>false</autoFlee>
+    <pawnGroupMakers>
+      <li>
+        <!-- Normal fights, ranged with melee mix-ins -->
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <MD_DisassemblyDrone>1</MD_DisassemblyDrone>
+          <MD_DisassemblyDroneSquadLeader>0.5</MD_DisassemblyDroneSquadLeader>
+        </options>
+      </li>
+      <li>
+        <!-- Base defense, mainly ranged with melee mix-ins -->
+        <kindDef>Settlement</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <MD_DisassemblyDrone>1</MD_DisassemblyDrone>
+          <MD_DisassemblyDroneSquadLeader>1</MD_DisassemblyDroneSquadLeader>
+        </options>
+      </li>
+    </pawnGroupMakers>
+    <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
+    <maxConfigurableAtWorldCreation>5</maxConfigurableAtWorldCreation>
+    <configurationListOrderPriority>60</configurationListOrderPriority>
+    <modExtensions>
+      <li Class="WorkerDronesMod.RaidRestrictions">
+        <onlyNighttime>true</onlyNighttime>
+      </li>
+      <li Class="VFECore.FactionDefExtension">
+        <excludeFromCommConsole>true</excludeFromCommConsole>
+        <excludeFromQuests>true</excludeFromQuests>
+        <forcedFactionData>
+          <factionDiscoverySpecialMessage>A hive of Disassembly Drones—branded with the JCJenson logo—has emerged on the edge of your holdings. If history is any guide, nothing they touch survives the process</factionDiscoverySpecialMessage>
+          <factionDiscoveryFailedMessage>Your sensors registered a blip… then nothing. The Disassembly Drones have evaded detection. Stay alert.</factionDiscoveryFailedMessage>
+        </forcedFactionData>
+      </li>
+    </modExtensions>
+  </FactionDef>
+
+  <ThingSetMakerDef>
+    <defName>MD_DisassemblyDronesRaidLootMaker</defName>
+    <root Class="ThingSetMaker_MarketValue">
+      <fixedParams>
+        <filter>
+          <thingDefs>
+            <li>Silver</li>
+            <li>ComponentIndustrial</li>
+            <li>ComponentSpacer</li>
+            <li>Neutroamine</li>
+            <li>Uranium</li>
+          </thingDefs>
+        </filter>
+      </fixedParams>
+    </root>
+  </ThingSetMakerDef>
+</Defs>

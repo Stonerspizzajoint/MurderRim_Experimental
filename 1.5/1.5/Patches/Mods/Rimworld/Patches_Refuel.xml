@@ -1,0 +1,22 @@
+<Patch>
+  <Operation Class="PatchOperationAdd">
+	<xpath>/Defs/ThinkTreeDef[defName="MainColonistBehaviorCore"]/thinkRoot/subNodes/li/subNodes</xpath>
+	<value>
+		<li Class="WorkerDronesMod.JobGiver_RefuelNeutroamineOil"/>
+	</value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+	<xpath>/Defs/ThinkTreeDef[defName="SatisfyBasicNeeds"]/thinkRoot/subNodes/li/subNodes</xpath>
+	<value>
+		<li Class="WorkerDronesMod.JobGiver_RefuelNeutroamineOil"/>
+	</value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+	<xpath>/Defs/ThinkTreeDef[defName="SatisfyBasicNeedsAndWork"]/thinkRoot/subNodes/li/subNodes</xpath>
+	<value>
+		<li Class="WorkerDronesMod.JobGiver_RefuelNeutroamineOil"/>
+	</value>
+  </Operation>
+</Patch>

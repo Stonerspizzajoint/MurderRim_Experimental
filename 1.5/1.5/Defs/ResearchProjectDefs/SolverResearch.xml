@@ -1,0 +1,27 @@
+<Defs>
+    <ResearchProjectDef ParentName="MD_ResearchBase">
+		<defName>MD_SolverAbilities</defName>
+		<label>WIP</label>
+        <description>WIP</description>
+		<baseCost>1</baseCost>
+		<prerequisites>
+			<li>MD_SolverPrograming</li>
+		</prerequisites>
+        <researchViewX>2.00</researchViewX>
+        <researchViewY>1.60</researchViewY>
+	</ResearchProjectDef>
+
+    <!--
+	<ResearchProjectDef ParentName="MD_ResearchBase">
+		<defName>MD_SolverAbilities</defName>
+		<label>Solver Metastatic Protocols</label>
+        <description>Implement corrupted blueprints for reality-altering systems found in derelict Worker Drone cores. Warning: Successful implementation requires overriding all ethical constraints.</description>
+		<baseCost>2000</baseCost>
+		<prerequisites>
+			<li>MD_SolverPrograming</li>
+		</prerequisites>
+        <researchViewX>2.00</researchViewX>
+        <researchViewY>1.60</researchViewY>
+	</ResearchProjectDef>
+	-->
+</Defs>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="AnimalThingBase">
+    <defName>MD_ScrapBug</defName>
+    <label>Scrap Bug</label>
+    <description>A small, insect-like robotic creature. Scrap Bugs clean up waste—feeding on wastepacks, human corpses, industrial byproducts, and more. They are designed to be non-aggressive.</description>
+    <statBases>
+      <MoveSpeed>3.9</MoveSpeed>
+      <MarketValue>100</MarketValue>
+      <ComfyTemperatureMin>-40</ComfyTemperatureMin>
+      <ComfyTemperatureMax>150</ComfyTemperatureMax>
+      <ToxicResistance>100</ToxicResistance>
+      <ToxicEnvironmentResistance>100</ToxicEnvironmentResistance>
+      <FilthRate>0</FilthRate>
+      <ArmorRating_Sharp>0.1</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.2</ArmorRating_Heat>
+    </statBases>
+    <uiIconScale>1.15</uiIconScale>
+    <race>
+      <body>MD_ScrapBugBody</body>
+      <wildBiomes>
+        <TemperateForest>0.06</TemperateForest>
+        <BorealForest>0.1</BorealForest>
+        <ColdBog>0.05</ColdBog>
+        <Tundra>0.1</Tundra>
+        <IceSheet>0.05</IceSheet>
+        <SeaIce>0.02</SeaIce>
+      </wildBiomes>
+      <fleshType>Mechanoid</fleshType>
+      <mechWeightClass>Light</mechWeightClass>
+      <thinkTreeMain>MD_ScrapBugThink</thinkTreeMain>
+      <thinkTreeConstant>MD_ScrapBugConstant</thinkTreeConstant>
+      <herdAnimal>false</herdAnimal>
+      <predator>false</predator>
+      <foodType>OmnivoreAnimal</foodType>
+      <hasMeat>false</hasMeat>
+      <needsRest>false</needsRest>
+      <baseBodySize>0.005</baseBodySize>
+      <baseHungerRate>0.1</baseHungerRate>
+      <baseHealthScale>0.05</baseHealthScale>
+      <manhunterOnTameFailChance>0</manhunterOnTameFailChance>
+      <manhunterOnDamageChance>0</manhunterOnDamageChance>
+      <gestationPeriodDays>0</gestationPeriodDays>
+      <lifeExpectancy>20</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>AnimalBaby</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>AnimalJuvenile</def>
+          <minAge>0.001</minAge>
+        </li>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>0.001</minAge>
+          <soundWounded>Pawn_BigInsect_Pain</soundWounded>
+          <soundDeath>Pawn_BigInsect_Death</soundDeath>
+          <soundCall>Pawn_BigInsect_Call</soundCall>
+          <soundAngry>Pawn_BigInsect_Angry</soundAngry>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+    </race>
+    <tradeTags>
+      <li>AnimalUncommon</li>
+    </tradeTags>
+    <comps>
+      <!-- Weird Food Eating Behavior -->
+      <li Class="AnimalBehaviours.CompProperties_EatWeirdFood">
+        <customThingToEat>
+          <li>Wastepack</li>
+          <li>Corpse_Human</li>
+          <li>VREA_Filth_Neutroamine</li>
+          <li>VREA_Filth_NeutroamineSmear</li>
+          <li>Filth_Blood</li>
+          <li>Filth_BloodSmear</li>
+          <li>Filth_BloodInsect</li>
+          <li>Filth_MachineBits</li>
+          <li>Filth_AmnioticFluid</li>
+          <li>Filth_Slime</li>
+          <li>Filth_Vomit</li>
+          <li>Filth_Fuel</li>
+          <li>Filth_CorpseBile</li>
+          <li>Filth_Ash</li>
+          <li>Filth_SpentAcid</li>
+          <li>Filth_Hair</li>
+          <li>Filth_Trash</li>
+        </customThingToEat>
+        <nutrition>1</nutrition>
+        <fullyDestroyThing>false</fullyDestroyThing>
+        <percentageOfDestruction>0.5</percentageOfDestruction>
+        <needsWater>false</needsWater>
+        <digThingIfMapEmpty>true</digThingIfMapEmpty>
+        <thingToDigIfMapEmpty>Filth_MachineBits</thingToDigIfMapEmpty>
+      </li>
+      <!-- Disease Immunity -->
+      <li Class="AnimalBehaviours.CompProperties_DiseaseImmunity">
+        <hediffsToRemove>
+          <li>Alzheimers</li>
+          <li>Asthma</li>
+          <li>BadBack</li>
+          <li>Carcinoma</li>
+          <li>Cataract</li>
+          <li>Cirrhosis</li>
+          <li>Dementia</li>
+          <li>HearingLoss</li>
+          <li>HeartArteryBlockage</li>
+          <li>HeartAttack</li>
+        </hediffsToRemove>
+        <tickInterval>10</tickInterval>
+      </li>
+      <!-- Asexual Reproduction (Cloning/Green Goo Mechanic) -->
+      <li Class="AnimalBehaviours.CompProperties_AsexualReproduction">
+        <reproductionIntervalDays>10</reproductionIntervalDays>
+        <customString>Cloning in: </customString>
+        <isGreenGoo>true</isGreenGoo>
+        <GreenGooLimit>15</GreenGooLimit>
+        <GreenGooTarget>MD_ScrapBug</GreenGooTarget>
+      </li>
+    </comps>
+    <butcherProducts>
+      <Neutroamine>2</Neutroamine>
+      <Steel>5</Steel>
+    </butcherProducts>
+  </ThingDef>
+
+  <!-- PawnKindDef for in-game spawning and categorization -->
+  <PawnKindDef ParentName="AnimalKindBase">
+    <defName>MD_ScrapBug</defName>
+    <label>Scrap Bug</label>
+    <labelPlural>Scrap Bugs</labelPlural>
+    <race>MD_ScrapBug</race>
+    <combatPower>0</combatPower>
+    <isFighter>false</isFighter>
+    <ecoSystemWeight>0.2</ecoSystemWeight>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Pawn/Animal/Scrap_Bug/MD_ScrapBug</texPath>
+          <drawSize>0.7</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Pawn/Animal/Scrap_Bug/MD_ScrapBug</texPath>
+          <drawSize>0.7</drawSize>
+        </bodyGraphicData>
+      </li>
+      <li>
+        <bodyGraphicData>
+          <texPath>Pawn/Animal/Scrap_Bug/MD_ScrapBug</texPath>
+         <drawSize>0.7</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+  </PawnKindDef>
+
+</Defs>

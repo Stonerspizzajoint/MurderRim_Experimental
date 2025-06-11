@@ -1,0 +1,86 @@
+<Defs>
+  <PawnRenderTreeDef>
+    <defName>MD_CoreHeartRender</defName>
+    <root Class="PawnRenderNodeProperties_Parent">
+      <debugLabel>Root</debugLabel>
+      <tagDef>Root</tagDef>
+      <children>
+        <li>
+          <debugLabel>Body</debugLabel>
+          <nodeClass>PawnRenderNode_Body</nodeClass>
+          <workerClass>PawnRenderNodeWorker_Body</workerClass>
+          <texPath>Pawn/CoreHeart/CoreHeart</texPath>
+          <tagDef>Body</tagDef>
+          <skipFlag>Body</skipFlag>
+          <anchorTag>Head</anchorTag>
+          <colorType>Skin</colorType>
+          <useRottenColor>true</useRottenColor>
+          <useSkinShader>true</useSkinShader>
+          <side>Center</side>
+          <drawSize>0.01</drawSize>
+          <visibleFacing>
+          </visibleFacing>
+        </li>
+        <li>
+          <debugLabel>Head</debugLabel>
+          <workerClass>PawnRenderNodeWorker_Head</workerClass>
+          <texPath>Pawn/CoreHeart/CoreHeart</texPath>
+          <shaderTypeDef>CutoutComplex</shaderTypeDef>
+          <tagDef>Head</tagDef>
+          <baseLayer>50</baseLayer>
+          <colorType>Skin</colorType>
+          <useRottenColor>true</useRottenColor>
+          <useSkinShader>true</useSkinShader>
+          <drawSize>0.7</drawSize>
+          <drawData>
+            <defaultData>
+                <offset>(0, 0, -0.4)</offset>
+            </defaultData>
+          </drawData>
+          <children>
+            <li Class="PawnRenderNodeProperties_Overlay">
+              <debugLabel>Head wounds</debugLabel>
+              <workerClass>PawnRenderNodeWorker_OverlayWounds</workerClass>
+              <overlayLayer>Head</overlayLayer>
+              <baseLayer>65</baseLayer>
+              <drawData>
+                <defaultData>
+                    <offset>(0, 0, 0.27)</offset>
+                </defaultData>
+              </drawData>
+            </li>
+            <li Class="PawnRenderNodeProperties_Parent">
+              <debugLabel>Apparel root</debugLabel>
+              <tagDef>ApparelHead</tagDef>
+              <baseLayer>70</baseLayer>
+              <drawSize>0.9</drawSize>
+              <drawData>
+                <defaultData>
+                    <offset>(0, 0, 0.2)</offset>
+                </defaultData>
+                <dataSouth>
+                  <offset>(0, 0, 0.22)</offset>
+                </dataSouth>
+              </drawData>
+            </li>
+            <li Class="PawnRenderNodeProperties_Overlay">
+              <debugLabel>Firefoam</debugLabel>
+              <workerClass>PawnRenderNodeWorker_OverlayFirefoam</workerClass>
+              <overlayLayer>Head</overlayLayer>
+              <baseLayer>85</baseLayer>
+            </li>
+            <li Class="PawnRenderNodeProperties_Overlay">
+              <debugLabel>Status overlay</debugLabel>
+              <workerClass>PawnRenderNodeWorker_OverlayStatus</workerClass>
+              <baseLayer>100</baseLayer>
+            </li>
+          </children>
+        </li>
+        <li Class="PawnRenderNodeProperties_Carried">
+          <debugLabel>Weapon/carried thing</debugLabel>
+          <workerClass>PawnRenderNodeWorker_Carried</workerClass>
+        </li>
+      </children>
+    </root>
+  </PawnRenderTreeDef>
+</Defs>

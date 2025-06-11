@@ -1,0 +1,43 @@
+<Patch>
+<!--Faction Patches-->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Royalty</li>
+    </mods>
+
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs/FactionDef[defName="Empire"]/permanentEnemyToEveryoneExcept</xpath>
+
+      <value>
+        <li>MD_WorkerDronePlayer</li>
+        <li>WorkerDroneFaction</li>
+      </value>
+    </match>
+  </Operation>
+
+  	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/FactionDef[@Name="OutlanderFactionBase"]/xenotypeSet/xenotypeChances</xpath>
+		<value>
+			<MD_WorkerDroneBase>0.02</MD_WorkerDroneBase>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>/Defs/FactionDef[@Name="PirateBandBase"]/xenotypeSet/xenotypeChances</xpath>
+		<value>
+			<MD_WorkerDroneBase>0.02</MD_WorkerDroneBase>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Royalty</li>
+		</mods>
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/FactionDef[defName="Empire"]/xenotypeSet/xenotypeChances</xpath>
+			<value>
+				<MD_WorkerDroneBase>0.02</MD_WorkerDroneBase>
+			</value>
+		</match>
+	</Operation>
+</Patch>

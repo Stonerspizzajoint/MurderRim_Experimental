@@ -1,0 +1,364 @@
+<Defs>
+<RulePackDef>
+  <defName>NamerSettlementWorkerDrone</defName>
+  <rulePack>
+    <rulesStrings>
+      <!-- Primary generation rules -->
+      <li>r_name(p=10)->[Designation] [Index]</li>
+      <li>r_name(p=8)->[Designation] [Modifier]-[Index]</li>
+      <li>r_name(p=6)->[Modifier] [Designation]</li>
+      <li>r_name(p=4)->[Designation] [Letter]-[Index]</li>
+
+      <li>r_name(p=10)->[NameSegment1] [Designation]</li>
+      <li>r_name(p=10)->[NameSegment1] [Designation] [Index]</li>
+      <li>r_name(p=10)->[NameSegment1] [Designation] [Modifier]-[Index]</li>
+      <li>r_name(p=10)->[NameSegment1] [Designation] [Letter]-[Index]</li>
+
+      <li>r_name(p=3)->[NameSegment1][NameSegment2]</li>
+      <li>r_name(p=2)->[NameSegment1][NameSegment3]</li>
+
+        <!-- Core word lists -->
+        <li>Designation->Outpost</li>
+        <li>Designation->Node</li>
+        <li>Designation->Sector</li>
+        <li>Designation->Cell</li>
+        <li>Designation->Module</li>
+        <li>Designation->Hub</li>
+        <li>Designation->Spire</li>
+        <li>Designation->Platform</li>
+        <li>Designation->Block</li>
+        <li>Designation->Vault</li>
+        <li>Designation->Forge</li>
+        <li>Designation->Assembly</li>
+        <li>Designation->Factory</li>
+        <li>Designation->Bunker</li>
+        <li>Designation->Mine</li>
+        <li>Designation->Depot</li>
+        <li>Designation->Hangar</li>
+        <li>Designation->Lab</li>
+        <li>Designation->Warehouse</li>
+        <li>Designation->Foundry</li>
+
+        <li>Modifier->Alpha</li>
+        <li>Modifier->Beta</li>
+        <li>Modifier->Gamma</li>
+        <li>Modifier->Delta</li>
+        <li>Modifier->Epsilon</li>
+        <li>Modifier->Sigma</li>
+        <li>Modifier->Omega</li>
+        <li>Modifier->Prime</li>
+        <li>Modifier->Null</li>
+        <li>Modifier->Hex</li>
+        <li>Modifier->Nexus</li>
+
+        <!-- Simple numeric index -->
+        <li>Index->1</li>
+        <li>Index->2</li>
+        <li>Index->3</li>
+        <li>Index->4</li>
+        <li>Index->5</li>
+        <li>Index->6</li>
+        <li>Index->7</li>
+        <li>Index->8</li>
+        <li>Index->9</li>
+        <li>Index->10</li>
+        <li>Index->11</li>
+        <li>Index->12</li>
+        <li>Index->13</li>
+        <li>Index->14</li>
+        <li>Index->15</li>
+        <li>Index->16</li>
+        <li>Index->17</li>
+        <li>Index->18</li>
+        <li>Index->19</li>
+        <li>Index->20</li>
+
+        <!-- Optional single-letter codes -->
+        <li>Letter->A</li>
+        <li>Letter->B</li>
+        <li>Letter->C</li>
+        <li>Letter->D</li>
+        <li>Letter->E</li>
+        <li>Letter->F</li>
+        <li>Letter->G</li>
+        <li>Letter->H</li>
+        <li>Letter->I</li>
+        <li>Letter->J</li>
+        <li>Letter->K</li>
+        <li>Letter->L</li>
+        <li>Letter->M</li>
+        <li>Letter->N</li>
+        <li>Letter->O</li>
+        <li>Letter->P</li>
+        <li>Letter->Q</li>
+        <li>Letter->R</li>
+        <li>Letter->S</li>
+        <li>Letter->T</li>
+        <li>Letter->U</li>
+        <li>Letter->V</li>
+        <li>Letter->W</li>
+        <li>Letter->X</li>
+        <li>Letter->Y</li>
+        <li>Letter->Z</li>
+
+        <!-- Modular segment name generation -->
+        <li>NameSegment1->Rust</li>
+        <li>NameSegment1->Iron</li>
+        <li>NameSegment1->Steel</li>
+        <li>NameSegment1->Copper</li>
+        <li>NameSegment1->Titanium</li>
+        <li>NameSegment1->Dust</li>
+        <li>NameSegment1->Grim</li>
+        <li>NameSegment1->Steel</li>
+        <li>NameSegment1->Ash</li>
+        <li>NameSegment1->Scrap</li>
+        <li>NameSegment1->Core</li>
+        <li>NameSegment1->Hex</li>
+        <li>NameSegment1->Drift</li>
+        <li>NameSegment1->Bolt</li>
+        <li>NameSegment1->Spark</li>
+
+        <li>NameSegment2->vale</li>
+        <li>NameSegment2->point</li>
+        <li>NameSegment2->field</li>
+        <li>NameSegment2->fall</li>
+        <li>NameSegment2->lock</li>
+        <li>NameSegment2->run</li>
+        <li>NameSegment2->reach</li>
+        <li>NameSegment2->cairn</li>
+        <li>NameSegment2->rise</li>
+        <li>NameSegment2->grave</li>
+        <li>NameSegment2->march</li>
+        <li>NameSegment2->pit</li>
+        <li>NameSegment2->door</li>
+
+        <li>NameSegment3->ton</li>
+        <li>NameSegment3->burg</li>
+        <li>NameSegment3->hold</li>
+        <li>NameSegment3->wall</li>
+        <li>NameSegment3->stead</li>
+        <li>NameSegment3->spire</li>
+        <li>NameSegment3->core</li>
+        <li>NameSegment3->point</li>
+        <li>NameSegment3->core</li>
+    </rulesStrings>
+    <rulesFiles>
+    <!-- Everything inline -->
+    </rulesFiles>
+  </rulePack>
+</RulePackDef>
+
+<RulePackDef>
+  <defName>NamerSettlementDisassemblyDrone</defName>
+  <rulePack>
+    <rulesStrings>
+      <!-- Primary settlement formats -->
+      <li>r_name(p=10)->[Designation] [Index]</li>
+      <li>r_name(p=8)->[AdjectiveDark] [Designation]</li>
+      <li>r_name(p=7)->[Designation] of [CorpseDescriptor]</li>
+      <li>r_name(p=6)->[Designation] of [Material]</li>
+      <li>r_name(p=5)->[Material] [Designation]</li>
+      <li>r_name(p=4)->[Designation] [CorpModifier]-[Index]</li>
+      <li>r_name(p=4)->[CorpModifier] [CorpDivision]</li>
+      <li>r_name(p=3)->[Material] [CorpDivision]</li>
+      <li>r_name(p=3)->[NameSegment1] [CorpDivision]</li>
+      <li>r_name(p=3)->[CorpDivision] [Index]</li>
+      <li>r_name(p=1)->[NameSegment1][NameSegment2]</li>
+      <li>r_name(p=1)->[AdjectiveDark][NameSegment2]</li>
+      <li>r_name(p=1)->[NameSegment1] [Designation]</li>
+
+      <!-- Corporate branding -->
+      <li>CorpName->Corporate</li>
+
+      <li>CorpModifier->Alpha</li>
+      <li>CorpModifier->Beta</li>
+      <li>CorpModifier->Gamma</li>
+      <li>CorpModifier->Delta</li>
+      <li>CorpModifier->Epsilon</li>
+      <li>CorpModifier->Zeta</li>
+      <li>CorpModifier->Omega</li>
+      <li>CorpModifier->Prime</li>
+
+      <li>CorpDivision->Division</li>
+      <li>CorpDivision->Unit</li>
+      <li>CorpDivision->Sector</li>
+      <li>CorpDivision->Branch</li>
+      <li>CorpDivision->Group</li>
+      <li>CorpDivision->Command</li>
+      <li>CorpDivision->Zone</li>
+
+
+      <!-- Dark adjectives -->
+      <li>AdjectiveDark->Grim</li>
+      <li>AdjectiveDark->Morbid</li>
+      <li>AdjectiveDark->Obsidian</li>
+      <li>AdjectiveDark->Stygian</li>
+      <li>AdjectiveDark->Blackened</li>
+      <li>AdjectiveDark->Ebon</li>
+
+      <!-- Settlement types -->
+      <li>Designation->Spire</li>
+      <li>Designation->Pillar</li>
+      <li>Designation->Heap</li>
+      <li>Designation->Tower</li>
+      <li>Designation->Obelisk</li>
+      <li>Designation->Citadel</li>
+      <li>Designation->Den</li>
+      <li>Designation->Hoard</li>
+      <li>Designation->Cluster</li>
+
+      <li>CorpseDescriptor->Corpses</li>
+      <li>CorpseDescriptor->Bones</li>
+      <li>CorpseDescriptor->Skulls</li>
+      <li>CorpseDescriptor->Bodies</li>
+      <li>CorpseDescriptor->Remains</li>
+      <li>CorpseDescriptor->Echoes</li>
+      <li>CorpseDescriptor->Fragments</li>
+      <li>CorpseDescriptor->Shards</li>
+
+      <!-- Materials -->
+      <li>Material->Ash</li>
+      <li>Material->Char</li>
+      <li>Material->Carbon</li>
+      <li>Material->Cinder</li>
+      <li>Material->Iron</li>
+      <li>Material->Steel</li>
+      <li>Material->Alloy</li>
+      <li>Material->Rust</li>
+      <li>Material->Scrap</li>
+      <li>Material->Tech</li>
+
+      <!-- Modular gothic segments -->
+      <li>NameSegment1->Bone</li>
+      <li>NameSegment1->Ash</li>
+      <li>NameSegment1->Cinder</li>
+      <li>NameSegment1->Shard</li>
+      <li>NameSegment1->Grave</li>
+      <li>NameSegment1->Wraith</li>
+      <li>NameSegment1->Corpse</li>
+      <li>NameSegment1->Doom</li>
+      <li>NameSegment1->Rust</li>
+      <li>NameSegment1->Demon</li>
+      <li>NameSegment1->Disassembly</li>
+
+      <li>NameSegment2->spire</li>
+      <li>NameSegment2->stack</li>
+      <li>NameSegment2->mound</li>
+      <li>NameSegment2->cairn</li>
+      <li>NameSegment2->brink</li>
+      <li>NameSegment2->fold</li>
+      <li>NameSegment2->grave</li>
+      <li>NameSegment2->den</li>
+
+      <!-- Numeric indices -->
+      <li>Index->1</li>
+      <li>Index->2</li>
+      <li>Index->3</li>
+      <li>Index->4</li>
+      <li>Index->5</li>
+      <li>Index->6</li>
+      <li>Index->7</li>
+      <li>Index->8</li>
+      <li>Index->9</li>
+      <li>Index->10</li>
+      <li>Index->11</li>
+      <li>Index->12</li>
+      <li>Index->13</li>
+      <li>Index->14</li>
+      <li>Index->15</li>
+      <li>Index->16</li>
+      <li>Index->17</li>
+      <li>Index->18</li>
+      <li>Index->19</li>
+      <li>Index->20</li>
+    </rulesStrings>
+    <rulesFiles>
+      <!-- All lists are inline -->
+    </rulesFiles>
+  </rulePack>
+</RulePackDef>
+
+<RulePackDef>
+  <defName>NamerSettlementJCJensonRemnant</defName>
+  <rulePack>
+    <rulesStrings>
+      <!-- Primary naming patterns -->
+      <li>r_name->[Adjective] [SettlementType]</li>
+      <li>r_name->[CorpName] [SettlementType]</li>
+      <li>r_name->[SettlementType] of [CorpName]</li>
+      <li>r_name->[Adjective] [LocationWord]</li>
+      <li>r_name->[CorpName] [LocationWord]</li>
+      <li>r_name->[Adjective] Haven</li>
+      <li>r_name->[CorpName] Refuge</li>
+      <li>r_name->[NameSegment1][NameSegment2]</li>
+      <li>r_name->[NameSegment1][NameSegment2][NameSegment3]</li>
+
+      <!-- Adjectives -->
+      <li>Adjective->Scarred</li>
+      <li>Adjective->Ashen</li>
+      <li>Adjective->Last</li>
+      <li>Adjective->Forsaken</li>
+      <li>Adjective->Shattered</li>
+      <li>Adjective->Hallowed</li>
+      <li>Adjective->Iron-wrought</li>
+      <li>Adjective->Ember-born</li>
+      <li>Adjective->Echoing</li>
+      <li>Adjective->Renewed</li>
+      <li>Adjective->Resolute</li>
+
+      <!-- Settlement types -->
+      <li>SettlementType->Enclave</li>
+      <li>SettlementType->Camp</li>
+      <li>SettlementType->Outpost</li>
+      <li>SettlementType->Stronghold</li>
+      <li>SettlementType->Sanctuary</li>
+      <li>SettlementType->Hold</li>
+      <li>SettlementType->Haven</li>
+      <li>SettlementType->Refuge</li>
+      <li>SettlementType->Bastion</li>
+      <li>SettlementType->Station</li>
+
+      <!-- Corporate remnant names -->
+      <li>CorpName->JCJenson Remnant</li>
+      <li>CorpName->Ex-JCJenson Survivors</li>
+      <li>CorpName->Former JCJenson</li>
+      <li>CorpName->JCJenson Legacy</li>
+      <li>CorpName->JCJenson Veterans</li>
+
+      <!-- Location words -->
+      <li>LocationWord->Ash Field</li>
+      <li>LocationWord->Iron Ridge</li>
+      <li>LocationWord->Echo Valley</li>
+      <li>LocationWord->Cinder Plain</li>
+      <li>LocationWord->Rust Moor</li>
+      <li>LocationWord->Shard Hills</li>
+      <li>LocationWord->Drift Flats</li>
+
+      <!-- Modular name segments -->
+      <li>NameSegment1->Rust</li>
+      <li>NameSegment1->Cinder</li>
+      <li>NameSegment1->Ash</li>
+      <li>NameSegment1->Iron</li>
+      <li>NameSegment1->Echo</li>
+      <li>NameSegment1->Stone</li>
+
+      <li>NameSegment2->grave</li>
+      <li>NameSegment2->haven</li>
+      <li>NameSegment2->hold</li>
+      <li>NameSegment2->stead</li>
+      <li>NameSegment2->crest</li>
+      <li>NameSegment2->holm</li>
+
+      <li>NameSegment3->ton</li>
+      <li>NameSegment3->burg</li>
+      <li>NameSegment3->vale</li>
+      <li>NameSegment3->field</li>
+      <li>NameSegment3->ford</li>
+      <li>NameSegment3->wall</li>
+    </rulesStrings>
+    <rulesFiles>
+      <!-- All lists are inline -->
+    </rulesFiles>
+  </rulePack>
+</RulePackDef>
+</Defs>

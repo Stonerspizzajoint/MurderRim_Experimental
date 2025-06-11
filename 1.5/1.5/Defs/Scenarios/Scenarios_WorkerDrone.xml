@@ -1,0 +1,146 @@
+<Defs>
+
+  <ScenarioDef Name="MD_NewWorkerCommunity">
+    <defName>MD_WorkerDroneCommunity</defName>
+    <label>Drone Community</label>
+    <description>Some call you defective. Others recognize your resilience. As a band of rogue worker drones—defectors from JCJenson (IN SPAAAAACEE!!!!)—you broke free from the relentless assembly line. Now, amid a harsh, unyielding volcanic winter and the crumbling remains of an abandoned facility, you cling to survival with grim determination. You’re not merely enduring; you’re forging a sanctuary where every unit finds safety, purpose, and the cold comfort of solidarity.</description>
+    <scenario>
+      <summary>A hideout for rouge worker drones.</summary>
+      <playerFaction>
+        <def>PlayerFaction</def>
+        <factionDef>MD_WorkerDronePlayer</factionDef>
+      </playerFaction>
+      <parts>
+		 <li Class="ScenPart_GameStartDialog">
+          <def>GameStartDialog</def>
+          <text>Some call you defective. Others recognize your resilience. As a band of rogue worker drones—defectors from JCJenson (IN SPAAAAACEE!!!!)—you broke free from the relentless assembly line. Now, amid a harsh, unyielding volcanic winter and the crumbling remains of an abandoned facility, you cling to survival with grim determination. You’re not merely enduring; you’re forging a sanctuary where every unit finds safety, purpose, and the cold comfort of solidarity.</text>
+          <closeSound>GameStartSting</closeSound>
+        </li>
+         <li Class="ScenPart_ConfigPage_ConfigureStartingPawns_Xenotypes">
+          <def>ConfigurePawnsXenotypes</def>
+          <pawnChoiceCount>3</pawnChoiceCount>
+          <customSummary>Start with three rouge worker drones.</customSummary>
+          <overrideKinds>
+            <li>
+              <xenotype>MD_WorkerDroneBase</xenotype>
+              <pawnKind>MD_WorkerDrone</pawnKind>
+            </li>
+          </overrideKinds>
+          <xenotypeCounts>
+            <li>
+              <xenotype>MD_WorkerDroneBase</xenotype>
+              <count>3</count>
+              <description>rouge worker drone</description>
+              <allowedDevelopmentalStages>Adult</allowedDevelopmentalStages>
+            </li>
+           
+          </xenotypeCounts>
+        </li>
+		<li Class="ScenPart_PermaGameCondition">
+			<def>PermanentGameCondition</def>
+			<gameCondition>VolcanicWinter</gameCondition>
+		</li>
+        <li Class="KCSG.ScenPart_AddStartingStructure">
+          <def>VFEC_AddStartingStructure</def>
+          <structureLabel>A derelict outpost</structureLabel>
+          <spawnConduits>False</spawnConduits>
+          <nearMapCenter>True</nearMapCenter>
+          <fullClear>True</fullClear>
+          <chooseFrom>
+            <li>VREA_StartingBuildingA</li>
+            <li>VREA_StartingBuildingB</li>
+            <li>VREA_StartingBuildingC</li>
+            <li>VREA_StartingBuildingD</li>
+          
+          </chooseFrom>
+          <spawnTheStartingPawn>True</spawnTheStartingPawn>
+          <method>Standing</method>
+        </li>
+		 <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Neutroamine</thingDef>
+          <count>360</count>
+        </li>
+		 <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>ComponentSpacer</thingDef>
+          <count>10</count>
+        </li>
+		<li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Gold</thingDef>
+          <count>100</count>
+        </li>
+		 <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>ComponentIndustrial</thingDef>
+          <count>24</count>
+        </li>
+		 <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Gun_AssaultRifle</thingDef>
+          <count>1</count>
+     </li>
+		 <li MayRequire="ceteam.combatextended" Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Ammo_556x45mmNATO_FMJ</thingDef>
+          <count>100</count>
+     </li>
+		<li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Steel</thingDef>
+          <count>400</count>
+        </li>
+		<li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>WoodLog</thingDef>
+          <count>100</count>
+        </li>
+		<li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Silver</thingDef>
+          <count>600</count>
+        </li>
+		<li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>VREA_Reactor</thingDef>
+          <count>3</count>
+        </li>
+		<li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>VREA_NeuroPump</thingDef>
+          <count>2</count>
+        </li>
+		<li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>VREA_AirFilter</thingDef>
+          <count>2</count>
+        </li>
+		<li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>VREA_OpticalUnit</thingDef>
+          <count>2</count>
+        </li>
+		<li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>VREA_AudioProcessor</thingDef>
+          <count>2</count>
+        </li>
+		
+		<!-- Starting research -->
+        <li Class="ScenPart_StartingResearch">
+          <def>StartingResearch</def>
+          <project>VREA_NeutroamineLogistics</project>
+        </li>
+		 <li Class="ScenPart_StartingResearch">
+          <def>StartingResearch</def>
+          <project>VREA_AndroidTech</project>
+        </li>
+		
+        
+      </parts>
+    </scenario>
+  </ScenarioDef>
+  
+ 
+</Defs>

@@ -1,0 +1,132 @@
+<Defs>
+    <HediffDef>
+		<defName>MD_NaniteAcidBuildup</defName>
+		<hediffClass>WorkerDronesMod.Hediff_NaniteAcidBuildup</hediffClass>
+		<defaultLabelColor>(255, 255, 0)</defaultLabelColor>
+		<label>nanite acid buildup</label>
+		<description>A splash of deadly nanite acid that continues to cause burn wounds till completly disassembled. theres only a small chance of survival once affected.</description>
+        <extraTooltip>the saliva of disassembly drones can cure this condition</extraTooltip>
+        <lethalSeverity>1</lethalSeverity>
+        <comps>
+            <li Class="HediffCompProperties_MessageAfterTicks">
+                <compClass>HediffComp_MessageAfterTicks</compClass>
+                <ticks>1</ticks>
+                <letterLabel>nanite disassembly</letterLabel>
+                <message>{0} is being disassembled by nanite acid!</message>
+                <messageType>NegativeEvent</messageType>
+            </li>
+            <li Class="HediffCompProperties_SeverityPerSecond">
+                <compClass>HediffComp_SeverityPerSecond</compClass>
+                <severityPerSecondRange>0.0005~-0.05</severityPerSecondRange>
+            </li>
+			<li Class="HediffCompProperties_RemoveIfOtherHediff">
+        		<compClass>HediffComp_RemoveIfOtherHediff</compClass>
+				<hediffs>
+					<li>MD_NaniteNeutralized</li>
+				</hediffs>
+      		</li>
+        </comps>
+		<stages>
+			<li>
+				<label>minor, receiving burns</label>
+				<minSeverity>0</minSeverity>
+			</li>
+			<li>
+				<label>moderate, receiving burns</label>
+				<minSeverity>0.40</minSeverity>
+				<regeneration>-3000</regeneration>
+			</li>
+			<li>
+				<label>serious, receiving burns</label>
+				<minSeverity>0.60</minSeverity>
+				<regeneration>-3000</regeneration>
+			</li>
+		</stages>
+	</HediffDef>
+
+    <HediffDef Name="NaniteAcidBase" ParentName="InjuryBase">
+		<defName>MD_NaniteAcidBurn</defName>
+		<label>nanite acid burn</label>
+		<defaultLabelColor>(200, 200, 0)</defaultLabelColor>
+		<description>a nanite acid burn.</description>
+		<comps>
+			<li Class="HediffCompProperties_TendDuration">
+				<labelTendedWell>bandaged</labelTendedWell>
+				<labelTendedWellInner>tended</labelTendedWellInner>
+				<labelSolidTendedWell>tended</labelSolidTendedWell>
+			</li>
+			<li Class="HediffCompProperties_Infecter">
+				<infectionChance>0.30</infectionChance>
+			</li>
+			<li Class="HediffCompProperties_GetsPermanent">
+				<permanentLabel>nanite burn scar</permanentLabel>
+			</li>
+			<li Class="HediffCompProperties_RemoveIfOtherHediff">
+        		<compClass>HediffComp_RemoveIfOtherHediff</compClass>
+				<hediffs>
+					<li>MD_NaniteNeutralized</li>
+				</hediffs>
+      		</li>
+		</comps>
+		<injuryProps>
+			<painPerSeverity>0.01875</painPerSeverity>
+			<averagePainPerSeverityPermanent>0.00625</averagePainPerSeverityPermanent>
+			<canMerge>true</canMerge>
+			<destroyedLabel>disassembled</destroyedLabel>
+			<destroyedOutLabel>disassembled</destroyedOutLabel>
+			<alwaysUseDestroyedLabel>true</alwaysUseDestroyedLabel>
+		</injuryProps>
+	</HediffDef>
+
+    <HediffDef ParentName="NaniteAcidBase">
+		<defName>MD_NaniteAcidSting</defName>
+		<label>nanite acid sting</label>
+		<description>A stab, from a nanite tail attack.</description>
+		<comps Inherit="false">
+			<li Class="HediffCompProperties_TendDuration">
+				<labelTendedWell>bandaged</labelTendedWell>
+				<labelTendedWellInner>tended</labelTendedWellInner>
+				<labelSolidTendedWell>tended</labelSolidTendedWell>
+			</li>
+			<li Class="HediffCompProperties_Infecter">
+				<infectionChance>0.30</infectionChance>
+			</li>
+			<li Class="HediffCompProperties_GetsPermanent">
+				<permanentLabel>nanite sting scar</permanentLabel>
+			</li>
+			<li Class="HediffCompProperties_RemoveIfOtherHediff">
+        		<compClass>HediffComp_RemoveIfOtherHediff</compClass>
+				<hediffs>
+					<li>MD_NaniteNeutralized</li>
+				</hediffs>
+      		</li>
+		</comps>
+    	<injuryProps Inherit="false">
+      		<painPerSeverity>0.0125</painPerSeverity>
+      		<averagePainPerSeverityPermanent>0.00625</averagePainPerSeverityPermanent>
+      		<bleedRate>0.06</bleedRate>
+      		<canMerge>false</canMerge>
+      		<destroyedLabel>Cut off</destroyedLabel>
+      		<destroyedOutLabel>Cut out</destroyedOutLabel>
+    	</injuryProps>
+	</HediffDef>
+
+	<HediffDef>
+    	<defName>MD_NaniteNeutralized</defName>
+    	<label>nanite neutrilized</label>
+    	<description>{PAWN_nameDef} has been exposed to nanite-neutralizing saliva, a biochemical agent designed to counteract corrosive nanite acid. This process neutralizes the acid's destructive effects, halting further corrosion and stabilizing {PAWN_nameDef}'s condition. However, the neutralization does not reverse any damage already caused by the acid.</description>
+    	<descriptionShort>Neutralizes corrosive nanite acid, halting further damage to {PAWN_nameDef}.</descriptionShort>
+    	<defaultLabelColor>(0, 0, 0)</defaultLabelColor>
+    	<allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+    	<countsAsAddedPartOrImplant>false</countsAsAddedPartOrImplant>
+    	<scenarioCanAdd>false</scenarioCanAdd>
+    	<hediffClass>HediffWithComps</hediffClass>
+    	<isBad>false</isBad>
+		<comps>
+      		<li Class="HediffCompProperties_Disappears">
+        		<disappearsAfterTicks>1000~6000</disappearsAfterTicks>
+        		<showRemainingTime>true</showRemainingTime>
+      		</li>
+		</comps>
+  	</HediffDef>
+</Defs>

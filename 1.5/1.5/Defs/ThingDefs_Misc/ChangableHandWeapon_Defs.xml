@@ -1,0 +1,344 @@
+<Defs>
+
+<!--Ninja Stars-->
+  <ThingDef ParentName="BaseGun">
+    <defName>GunHand_NinjaStar</defName>
+    <label>Ninja Star</label>
+    <description>Ninja stars, NINJA STARS!!!.</description>
+    <thingClass>ThingWithComps</thingClass>
+    <graphicData>
+      <texPath>Things/RangedWeapon/Interchangeable/NinjaStar/NinjaStar</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>0.5</drawSize>
+    </graphicData>
+    <soundInteract>Interact_Shotgun</soundInteract>
+    <weaponClasses>
+      <li>Ranged</li>
+      <li>RangedLight</li>
+    </weaponClasses>
+    <statBases>
+      <Mass>0</Mass>
+      <AccuracyTouch>0.50</AccuracyTouch>
+      <AccuracyShort>0.71</AccuracyShort>
+      <AccuracyMedium>0.50</AccuracyMedium>
+      <AccuracyLong>0.32</AccuracyLong>
+      <RangedWeapon_Cooldown>2.5</RangedWeapon_Cooldown>
+    </statBases>
+    <techLevel>Spacer</techLevel>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <relicChance>0</relicChance>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>MD_NinjaStar</defaultProjectile>
+        <warmupTime>0.6</warmupTime>
+        <range>8</range>
+        <burstShotCount>3</burstShotCount>
+        <soundCast>Interact_BeatFire</soundCast>
+        <rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+      </li>
+    </verbs>
+    <weaponTags>
+      <li>ShortShots</li>
+    </weaponTags>
+    <tools>
+      <li>
+        <label>star blade</label>
+        <capacities>
+          <li>Scratch</li>
+        </capacities>
+        <power>5</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <comps>
+      <li Class="WorkerDronesMod.CompProperties_HeatPerShot">
+        <heatPerShot>1</heatPerShot>
+      </li>
+      <li Class="WorkerDronesMod.CompProperties_HeatRestriction">
+        <maxAllowedHeat>0.6</maxAllowedHeat>
+      </li>
+      <li>
+        <compClass>WorkerDronesMod.Comp_WeaponColorUpdaterMarker</compClass>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BaseProjectileNeolithic">
+    <defName>MD_NinjaStar</defName>
+    <label>ninja star</label>
+    <graphicData>
+      <texPath>Things/RangedWeapon/Interchangeable/NinjaStar/NinjaStar</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.5</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>Cut</damageDef>
+      <damageAmountBase>11</damageAmountBase>
+      <speed>44</speed>
+    </projectile>
+  </ThingDef>
+
+<!--SMG Hand-->
+  <ThingDef ParentName="BaseGun">
+    <defName>GunHand_SMG</defName>
+    <label>SMG Hand</label>
+    <description>A compact, wide-caliber slug-thrower. It's got a very short range, but it packs a punch and handles quite well.</description>
+    <thingClass>ThingWithComps</thingClass>
+    <graphicData>
+      <texPath>Things/RangedWeapon/Interchangeable/SMG/SMGHand</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>1.2</drawSize>
+    </graphicData>
+    <soundInteract>Interact_SMG</soundInteract>
+    <weaponClasses>
+      <li>ShortShots</li>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+    <statBases>
+      <Mass>0</Mass>
+      <AccuracyTouch>0.85</AccuracyTouch>
+      <AccuracyShort>0.65</AccuracyShort>
+      <AccuracyMedium>0.35</AccuracyMedium>
+      <AccuracyLong>0.20</AccuracyLong>
+      <RangedWeapon_Cooldown>1.65</RangedWeapon_Cooldown>
+    </statBases>
+    <techLevel>Spacer</techLevel>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <relicChance>0</relicChance>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_HeavySMG</defaultProjectile>
+        <warmupTime>0.9</warmupTime>
+        <range>22.9</range>
+        <burstShotCount>5</burstShotCount>
+        <ticksBetweenBurstShots>5</ticksBetweenBurstShots>
+        <soundCast>Shot_HeavySMG</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <weaponTags>
+      <li>IndustrialGunAdvanced</li>
+      <li>ShortShots</li>
+    </weaponTags>
+    <tools>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <comps>
+      <li Class="WorkerDronesMod.CompProperties_HeatPerShot">
+        <heatPerShot>1.5</heatPerShot>
+      </li>
+      <li Class="WorkerDronesMod.CompProperties_HeatRestriction">
+        <maxAllowedHeat>0.6</maxAllowedHeat>
+      </li>
+      <li>
+        <compClass>WorkerDronesMod.Comp_WeaponColorUpdaterMarker</compClass>
+      </li>
+    </comps>
+  </ThingDef>
+  
+<!--Rocket Launcher Hand-->
+  <ThingDef ParentName="BaseGun">
+    <defName>GunHand_RocketLauncher</defName>
+    <label>Rocket Launcher Hand</label>
+    <description>A rocket launcher, that launches 2 Missiles.</description>
+    <thingClass>ThingWithComps</thingClass>
+    <graphicData>
+      <texPath>Things/RangedWeapon/Interchangeable/RocketLauncher/RocketLauncherHand</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>1.2</drawSize>
+    </graphicData>
+    <soundInteract>Interact_Shotgun</soundInteract>
+    <weaponClasses>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+    <statBases>
+      <Mass>0</Mass>
+      <AccuracyTouch>0.28</AccuracyTouch>
+      <AccuracyShort>0.72</AccuracyShort>
+      <AccuracyMedium>0.66</AccuracyMedium>
+      <AccuracyLong>0.5</AccuracyLong>
+      <RangedWeapon_Cooldown>3.5</RangedWeapon_Cooldown>
+    </statBases>
+    <techLevel>Spacer</techLevel>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <relicChance>0</relicChance>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <onlyManualCast>true</onlyManualCast>
+        <ai_AvoidFriendlyFireRadius>6</ai_AvoidFriendlyFireRadius>
+        <forcedMissRadius>2.9</forcedMissRadius>
+        <defaultProjectile>MD_Proj_Rocket</defaultProjectile>
+        <soundAiming>MD_MissileLockon</soundAiming>
+        <warmupTime>1.4</warmupTime>
+        <range>22.9</range>
+        <burstShotCount>2</burstShotCount>
+        <soundCast>RocketswarmLauncher_Fire</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <weaponTags>
+      <li>IndustrialGunAdvanced</li>
+      <li>ShortShots</li>
+    </weaponTags>
+    <tools>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <comps>
+      <li Class="WorkerDronesMod.CompProperties_HeatPerShot">
+        <heatPerShot>20.5</heatPerShot>
+      </li>
+      <li Class="WorkerDronesMod.CompProperties_HeatRestriction">
+        <maxAllowedHeat>0.6</maxAllowedHeat>
+      </li>
+      <li>
+        <compClass>WorkerDronesMod.Comp_WeaponColorUpdaterMarker</compClass>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef>
+    <defName>MD_Proj_Rocket</defName>
+    <label>rocket</label>
+    <thingClass>Projectile_Explosive</thingClass>
+    <category>Projectile</category>
+    <tickerType>Normal</tickerType>
+    <altitudeLayer>Projectile</altitudeLayer>
+    <useHitPoints>False</useHitPoints>
+    <neverMultiSelect>True</neverMultiSelect>
+    <graphicData>
+      <texPath>Things/Projectile/Rocket_Swarm</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>1.2</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>Bomb</damageDef>
+      <explosionRadius>2.9</explosionRadius>
+      <speed>38</speed>
+      <damageAmountBase>24</damageAmountBase>
+      <arcHeightFactor>0.4</arcHeightFactor>
+      <soundExplode>Explosion_Rocket</soundExplode>
+    </projectile>
+    <comps>
+    </comps>
+  </ThingDef>
+
+<!--Beam Weapon Hand-->
+  <ThingDef ParentName="BaseGun">
+    <defName>GunHand_BeamWeapon</defName>
+    <label>Beam Weapon Hand</label>
+    <description>A weapon, that fires a yellow concentrated beam.</description>
+    <thingClass>ThingWithComps</thingClass>
+    <graphicData>
+      <texPath>Things/RangedWeapon/Interchangeable/BeamWeapon/BeamWeaponHand</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>1.2</drawSize>
+    </graphicData>
+    <soundInteract>Interact_ChargeRifle</soundInteract>
+    <weaponClasses>
+      <li>RangedHeavy</li>
+    </weaponClasses>
+    <statBases>
+      <Mass>0</Mass>
+      <AccuracyTouch>0.60</AccuracyTouch>
+      <AccuracyShort>0.70</AccuracyShort>
+      <AccuracyMedium>0.65</AccuracyMedium>
+      <AccuracyLong>0.55</AccuracyLong>
+      <RangedWeapon_Cooldown>1.70</RangedWeapon_Cooldown>
+    </statBases>
+    <techLevel>Spacer</techLevel>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <relicChance>0</relicChance>
+    <verbs>
+      <li>
+        <verbClass>WorkerDronesMod.Verb_ShootBeam_Heat</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <warmupTime>1.0</warmupTime>
+        <range>15.9</range>
+        <minRange>3.9</minRange>
+        <soundAiming>MD_MissileLockon</soundAiming>
+        <beamFullWidthRange>6.9</beamFullWidthRange>
+        <burstShotCount>5</burstShotCount>
+        <showBurstShotStats>false</showBurstShotStats>
+        <beamWidth>6</beamWidth>
+        <ticksBetweenBurstShots>22</ticksBetweenBurstShots>
+        <beamDamageDef>MD_Beam</beamDamageDef>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+        <soundCastBeam>MD_BeamWeapon_Shooting</soundCastBeam>
+        <beamGroundFleckDef>Fleck_BeamBurn</beamGroundFleckDef>
+        <beamFleckChancePerTick>0.32</beamFleckChancePerTick>
+        <beamMaxDeviation>1.5</beamMaxDeviation>
+        <beamCurvature>0.6</beamCurvature>
+        <beamMoteDef>MD_Mote_LaserBase</beamMoteDef>
+        <beamEndEffecterDef>GraserBeam_End</beamEndEffecterDef>
+        <beamChanceToStartFire>0.35</beamChanceToStartFire>
+        <beamChanceToAttachFire>0.35</beamChanceToAttachFire>
+        <beamFireSizeRange>0.25~0.35</beamFireSizeRange>
+        <beamLineFleckDef>Fleck_BeamSpark</beamLineFleckDef>
+        <beamStartOffset>0.2</beamStartOffset>
+        <beamLineFleckChanceCurve>
+          <points>
+            <li>(0, 0)</li>
+            <li>(0.65, 0.4)</li>
+            <li>(1, 0.75)</li>
+          </points>
+        </beamLineFleckChanceCurve>
+      </li>
+    </verbs>
+    <weaponTags>
+      <li>BeamGraserGun</li>
+    </weaponTags>
+    <tools>
+      <li>
+        <label>barrel</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>9</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <comps>
+      <li Class="WorkerDronesMod.CompProperties_HeatPerShot">
+        <heatPerShot>2.5</heatPerShot>
+      </li>
+      <li Class="WorkerDronesMod.CompProperties_HeatRestriction">
+        <maxAllowedHeat>0.6</maxAllowedHeat>
+      </li>
+      <li>
+        <compClass>WorkerDronesMod.Comp_WeaponColorUpdaterMarker</compClass>
+      </li>
+    </comps>
+  </ThingDef>
+</Defs>
