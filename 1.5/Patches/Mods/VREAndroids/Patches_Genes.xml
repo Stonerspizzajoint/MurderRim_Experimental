@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/VREAndroids.AndroidGeneDef[defName="VREA_NeutroCirculation"]</xpath>
+    <value>
+	    <VREAndroids.AndroidGeneDef Name="VREA_NeutroCirculation">
+		    <defName>VREA_NeutroCirculation</defName>
+		    <label>neutro circulation</label>
+		    <description>Androids operate thanks to thick neutroamine in their synthetic veins. Due to open, bleeding wounds, neutro loss might occur, greatly affecting the capabilities of an android. They are generally unable to regenerate their neutroamine levels, which means that severe neutroloss needs to be treated in a special casket designed to refill an android with neutroamine.</description>
+		    <iconPath>UI/Icons/Genes/Hardware/Gene_NeutroCirculation</iconPath>
+		    <displayOrderInCategory>11</displayOrderInCategory>
+		    <biostatCpx>1</biostatCpx>
+		    <displayCategory>VREA_Hardware</displayCategory>
+		    <canGenerateInGeneSet>false</canGenerateInGeneSet>
+		    <isCoreComponent>false</isCoreComponent>
+		    <exclusionTags>
+		        <li>AndroidBloodCirculation</li>
+		    </exclusionTags>
+		    <modExtensions Inherit="false">
+		    	<li Class="VanillaGenesExpanded.GeneExtension">
+		    		<backgroundPathXenogenes>UI/Icons/Genes/GeneBackground_Hardware</backgroundPathXenogenes>
+		    		<backgroundPathEndogenes>UI/Icons/Genes/GeneBackground_Hardware</backgroundPathEndogenes>
+		    		<customBloodThingDef>VREA_Filth_Neutroamine</customBloodThingDef>
+		    		<customBloodSmearThingDef>VREA_Filth_NeutroamineSmear</customBloodSmearThingDef>
+		    		<customBloodIcon>UI/Icons/NeutrolossIcon</customBloodIcon>
+		    		<customBloodEffect>VREA_Damage_HitAndroid</customBloodEffect>
+		    		<customWoundsFromFleshtype>VREA_AndroidFlesh</customWoundsFromFleshtype>
+		    	</li>
+    		    <li Class="WorkerDronesMod.BlockFromAndroidWindowExtension">
+				    <mustHaveAtLeastOne>true</mustHaveAtLeastOne>
+                    <geneTypeTag>NeutroCirculation</geneTypeTag>
+			    </li>
+		    </modExtensions>
+	    </VREAndroids.AndroidGeneDef>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationReplace">
+    <xpath>/Defs/VREAndroids.AndroidGeneDef[defName="VREA_MemoryProcessing"]</xpath>
+    <value>
+	<VREAndroids.AndroidGeneDef ParentName="VREA_HardwareBase">
+		<defName>VREA_MemoryProcessing</defName>
+		<label>memory processing</label>
+		<description>Androids have a limited amount of hard drive space, and once the empty space is depleted, an android will need to enter a reformatting state until enough memory space clears up to continue.</description>
+		<iconPath>UI/Icons/Genes/Hardware/Gene_MemoryProcessing</iconPath>
+		<displayOrderInCategory>1</displayOrderInCategory>
+		<biostatCpx>3</biostatCpx>
+		<causesNeed>VREA_MemorySpace</causesNeed>
+        <isCoreComponent>false</isCoreComponent>
+		<exclusionTags>
+		    <li>VREA_MemoryProcessing</li>
+		</exclusionTags>
+        <modExtensions>
+			<li Class="VanillaGenesExpanded.GeneExtension">
+				<backgroundPathXenogenes>UI/Icons/Genes/GeneBackground_Hardware</backgroundPathXenogenes>
+				<backgroundPathEndogenes>UI/Icons/Genes/GeneBackground_Hardware</backgroundPathEndogenes>
+			</li>
+    		<li Class="WorkerDronesMod.BlockFromAndroidWindowExtension">
+			    <mustHaveAtLeastOne>true</mustHaveAtLeastOne>
+				<geneTypeTag>AndroidRAM</geneTypeTag>
+			</li>
+        </modExtensions>
+	</VREAndroids.AndroidGeneDef>
+    </value>
+  </Operation>
+</Patch>

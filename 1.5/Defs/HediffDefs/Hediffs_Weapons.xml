@@ -1,0 +1,813 @@
+<Defs>
+<!--### DISASSEMBLY DRONE ###-->
+	<!--Fangs Out-->
+    <HediffDef Name="MD_Fangs">
+		<defName>MD_FangsOut</defName>
+		<label>fanged mouth</label>
+		<extraTooltip>fangs out</extraTooltip>
+		<description>A mouth with a set of razer sharp fangs.</description>
+		<defaultLabelColor>(200, 255, 0)</defaultLabelColor>
+		<hediffClass>HediffWithComps</hediffClass>
+		<countsAsAddedPartOrImplant>false</countsAsAddedPartOrImplant>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+		<maxSeverity>1.0</maxSeverity>
+		<defaultInstallPart>Jaw</defaultInstallPart>
+		<isBad>false</isBad>		
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>fangs</label>
+						<capacities>
+							<li>Bite</li>
+						</capacities>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						<soundMeleeHit>Pawn_Melee_HumanBite_Hit</soundMeleeHit>
+			            <soundMeleeMiss>Pawn_Melee_HumanBite_Miss</soundMeleeMiss>
+						<armorPenetration>0.5</armorPenetration>
+						<power>13</power>
+						<cooldownTime>3</cooldownTime>
+					</li>
+				</tools>
+			</li>
+		</comps>
+		<renderNodeProperties>
+			<li>
+				<nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+				<workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+				<parentTagDef>Head</parentTagDef>
+				<drawSize>0.32</drawSize>
+				<texPaths>
+					<li>Pawn/DisassemblyDrone/HeadAttachments/MD_Fangs/MurderDrone_Fangs1</li>
+					<li>Pawn/DisassemblyDrone/HeadAttachments/MD_Fangs/MurderDrone_Fangs2</li>
+					<li>Pawn/DisassemblyDrone/HeadAttachments/MD_Fangs/MurderDrone_Fangs3</li>
+					<li>Pawn/DisassemblyDrone/HeadAttachments/MD_Fangs/MurderDrone_Fangs4</li>
+					<li>Pawn/DisassemblyDrone/HeadAttachments/MD_Fangs/MurderDrone_Fangs5</li>
+				</texPaths>
+				<visibleFacing>
+					<li>East</li>
+					<li>South</li>
+					<li>West</li>
+				</visibleFacing>
+				<drawData>
+					<defaultData>
+						<offset>(0, 0, -0.14)</offset>
+						<layer>54</layer>
+					</defaultData>
+					<scaleOffsetByBodySize>false</scaleOffsetByBodySize>
+					<dataNorth>
+						<layer>54</layer>
+					</dataNorth>
+					<dataEast>
+						<offset>(0.226,0,-0.13)</offset>
+						<layer>54</layer>
+					</dataEast>
+					<dataWest>
+						<offset>(-0.226,0,-0.13)</offset>
+						<layer>54</layer>
+					</dataWest>
+				</drawData>
+			</li>
+		</renderNodeProperties>
+		<addedPartProps>
+     		<betterThanNatural>true</betterThanNatural>
+    	</addedPartProps>
+	</HediffDef>
+
+	<!--Fangs Retracted-->
+    <HediffDef ParentName="MD_Fangs">
+		<defName>MD_FangsRetracted</defName>
+		<label>fanged mouth</label>
+		<extraTooltip>retracted</extraTooltip>
+		<renderNodeProperties Inherit="false" />
+		<addedPartProps>
+     		<betterThanNatural>true</betterThanNatural>
+    	</addedPartProps>
+	</HediffDef>
+
+
+ <!--Nanite Tail-->
+    <HediffDef>
+		<defName>MD_Nanite_Tail</defName>
+		<label>nanite tail</label>
+		<hediffClass>HediffWithComps</hediffClass>
+		<description>A long, whip-thin tail running a sealed reservoir of sticky, semi-self-replicating nanite acid at the end. At its tip sits a syringe-like needle that, on puncture, delivers an artificial nanite super-acid, the nanites eat away at steel or flesh, untill fully disassembling their target.</description>
+		<descriptionShort>A long tail with a extremely dangerous nanite acid that can be used in melee combat.</descriptionShort>
+		<defaultLabelColor>(200, 255, 0)</defaultLabelColor>
+		<isBad>false</isBad>
+		<allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+		<countsAsAddedPartOrImplant>false</countsAsAddedPartOrImplant>
+		<defaultInstallPart>Torso</defaultInstallPart>
+		<addedPartProps>
+			<solid>true</solid>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+		<hediffGivers>
+      		<li Class="HediffGiver_Random">
+        		<hediff>MD_NaniteAcidBuildup</hediff>
+        		<mtbDays>50</mtbDays>
+      		</li>
+    	</hediffGivers>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<chanceFactor>0.3</chanceFactor>
+						<label>Syringe</label>
+						<capacities>
+							<li>MD_NaniteAcidSyringe</li>
+						</capacities>
+						<power>16</power>
+						<cooldownTime>3</cooldownTime>
+                        <armorPenetration>0.7</armorPenetration>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+                        <soundMeleeHit>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHit>
+			            <soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+			            <surpriseAttack>
+			                <extraMeleeDamages>
+				                <li>
+				                    <def>Stun</def>
+				                    <amount>14</amount>
+				                </li>
+			                </extraMeleeDamages>
+			            </surpriseAttack>
+					</li>
+				</tools>
+			</li>
+		</comps>
+		<renderNodeProperties>
+	        <li>
+		        <workerClass>PawnRenderNodeWorker_AttachmentBody</workerClass>
+		        <texPaths>
+		            <li>Pawn/DisassemblyDrone/Natural_Weapons/Nanite_Tail/NaniteTail</li>
+		        </texPaths>
+		        <colorType>Skin</colorType>
+		        <overrideMeshSize>(1, 1)</overrideMeshSize>
+		        <drawSize>2</drawSize>
+		        <parentTagDef>Body</parentTagDef>
+                <shaderTypeDef>CutoutComplex</shaderTypeDef>
+		        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+		        <drawData>
+		          <scaleOffsetByBodySize>true</scaleOffsetByBodySize>
+		          <defaultData>
+		        	<layer>-2</layer>
+		          </defaultData>
+		          <dataNorth>
+		        	<offset>(-0.01, 0, -0.2)</offset>
+		        	<layer>90</layer>
+		          </dataNorth>
+		          <dataSouth>
+		        	<offset>(0.01, -0.1, -0.2)</offset>
+		          </dataSouth>
+		          <dataEast>
+		        	<offset>(-0.1, -0.1, -0.2)</offset>
+		          </dataEast>
+		          <dataWest>
+		        	<offset>(0.1, -0.1, -0.2)</offset>
+		          </dataWest>
+		        </drawData>
+	        </li>
+			<!--Light Glow-->
+			<li Class="VFECore.PawnRenderNodeProperties_Omni">
+				<nodeClass>VFECore.PawnRenderNode_Omni</nodeClass>
+				<workerClass>PawnRenderNodeWorker_AttachmentBody</workerClass>
+      			<conditionalGraphics>
+					<alts>
+						<li>
+        					<requirements>
+          						<li>Dead</li>
+        					</requirements>
+							<texPath>Pawn/Display/DisplayEyesBlank/DisplayEyesBlank</texPath>
+						</li>
+					</alts>
+					<shader>TransparentPostLight</shader>
+					<colorA>
+						<skinColor>true</skinColor>
+					</colorA>
+        			<texPaths>
+          				<li>Pawn/DisassemblyDrone/Natural_Weapons/Nanite_Tail/Lights/NaniteTailLight</li>
+        			</texPaths>
+      			</conditionalGraphics>
+		        <overrideMeshSize>(1, 1)</overrideMeshSize>
+		        <drawSize>2</drawSize>
+		        <parentTagDef>Body</parentTagDef>
+		        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+		        <drawData>
+		          <scaleOffsetByBodySize>true</scaleOffsetByBodySize>
+		          <defaultData>
+		        	<layer>-2</layer>
+		          </defaultData>
+		          <dataNorth>
+		        	<offset>(-0.01, 0, -0.2)</offset>
+		        	<layer>90</layer>
+		          </dataNorth>
+		          <dataSouth>
+		        	<offset>(0.01, -0.1, -0.2)</offset>
+		          </dataSouth>
+		          <dataEast>
+		        	<offset>(-0.1, -0.1, -0.2)</offset>
+		          </dataEast>
+		          <dataWest>
+		        	<offset>(0.1, -0.1, -0.2)</offset>
+		          </dataWest>
+		        </drawData>
+			</li>
+	    </renderNodeProperties>
+	</HediffDef>
+
+<!--Bladed Wings-->
+	<HediffDef Name="MD_BladedWings">
+		<defName>MD_BladedWings</defName>
+		<label>bladed Wings</label>
+		<description>Limited flight that allows this colonist to hop and glide small distances over terrain. They will ignore terrain movement costs when moving. In addition to this, their sharp wings can be useds as a weapon.</description>
+		<defaultLabelColor>(200, 255, 0)</defaultLabelColor>
+		<hediffClass>HediffWithComps</hediffClass>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+		<maxSeverity>1.0</maxSeverity>
+		<defaultInstallPart>Torso</defaultInstallPart>
+		<isBad>false</isBad>
+		<comps>
+            <li Class="WorkerDronesMod.HediffCompProperties_PlaySound">
+                <soundDefName>MeleeMiss_BionicPunch</soundDefName>
+            </li>
+
+			<li Class="HediffCompProperties_GiveAbility">
+                <abilityDef>MD_WingPoweredFlight</abilityDef>
+			</li>
+			<li Class="AnimalBehaviours.HediffCompProperties_Floating">
+
+			</li>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<chanceFactor>0.6</chanceFactor>
+						<label>Wing</label>
+						<capacities>
+							<li>Cut</li>
+							<li>Stab</li>
+						</capacities>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						<soundMeleeHit>Pawn_Melee_MechanoidSlash_HitPawn</soundMeleeHit>
+			            <soundMeleeMiss>Pawn_Melee_MechanoidSlash_Miss</soundMeleeMiss>
+						<power>16</power>
+						<cooldownTime>2.3</cooldownTime>
+					</li>
+				</tools>
+			</li>
+		</comps>
+		<renderNodeProperties>
+			<li Class="VFECore.PawnRenderNodeProperties_Omni">
+				<nodeClass>VFECore.PawnRenderNode_Omni</nodeClass>
+				<workerClass>PawnRenderNodeWorker_Body</workerClass>
+				<drawSize>2.5</drawSize>
+				<parentTagDef>Body</parentTagDef>
+      			<conditionalGraphics>
+					<alts>
+						<li>
+        					<requirements>
+          						<li>Dead</li>
+        					</requirements>
+							<texPath>Pawn/Display/DisplayEyesBlank/DisplayEyesBlank</texPath>
+						</li>
+					</alts>
+					<colorA>
+						<skinColor>true</skinColor>
+					</colorA>
+					<shader>CutoutComplex</shader>
+					<texPath>Pawn/DisassemblyDrone/Natural_Weapons/Bladed_Wings/BladeWings</texPath>
+				</conditionalGraphics>
+				<drawData>
+					<defaultData>
+						<offset>(0, 0, 0.5)</offset>
+						<layer>-2</layer>
+					</defaultData>
+					<scaleOffsetByBodySize>false</scaleOffsetByBodySize>
+					<dataNorth>
+						<layer>90</layer>
+					</dataNorth>
+					<dataEast>
+						<offset>(0,0,0.5)</offset>
+						<layer>90</layer>
+					</dataEast>
+					<dataWest>
+						<offset>(0,0,0.5)</offset>
+						<layer>90</layer>
+					</dataWest>
+				</drawData>
+				<children>
+			  		<!--Light Glow-->
+					<li Class="VFECore.PawnRenderNodeProperties_Omni">
+						<nodeClass>VFECore.PawnRenderNode_Omni</nodeClass>
+						<workerClass>PawnRenderNodeWorker_Body</workerClass>
+      					<conditionalGraphics>
+							<alts>
+								<li>
+        							<requirements>
+          								<li>Dead</li>
+        							</requirements>
+									<texPath>Pawn/Display/DisplayEyesBlank/DisplayEyesBlank</texPath>
+								</li>
+							</alts>
+							<shader>TransparentPostLight</shader>
+							<colorA>
+								<skinColor>true</skinColor>
+							</colorA>
+        					<texPaths>
+          						<li>Pawn/DisassemblyDrone/Natural_Weapons/Bladed_Wings/Lights/BladeWingsLights</li>
+        					</texPaths>
+      					</conditionalGraphics>
+						<parentTagDef>Body</parentTagDef>
+						<drawData>
+							<defaultData>
+								<layer>-2</layer>
+							</defaultData>
+							<scaleOffsetByBodySize>false</scaleOffsetByBodySize>
+							<dataNorth>
+								<layer>90</layer>
+							</dataNorth>
+							<dataEast>
+								<layer>90</layer>
+							</dataEast>
+							<dataWest>
+								<layer>90</layer>
+							</dataWest>
+						</drawData>
+					</li>
+				</children>
+			</li>
+		</renderNodeProperties>
+	</HediffDef>
+
+	<HediffDef ParentName="MD_BladedWings">
+		<defName>MD_BladedWingsFolded</defName>
+		<renderNodeProperties Inherit="false">
+			<li Class="VFECore.PawnRenderNodeProperties_Omni">
+				<nodeClass>VFECore.PawnRenderNode_Omni</nodeClass>
+				<workerClass>PawnRenderNodeWorker_Body</workerClass>
+				<drawSize>2.5</drawSize>
+				<parentTagDef>Body</parentTagDef>
+      			<conditionalGraphics>
+					<alts>
+						<li>
+        					<requirements>
+          						<li>Dead</li>
+        					</requirements>
+							<texPath>Pawn/Display/DisplayEyesBlank/DisplayEyesBlank</texPath>
+						</li>
+					</alts>
+					<colorA>
+						<skinColor>true</skinColor>
+					</colorA>
+					<shader>CutoutComplex</shader>
+					<texPath>Pawn/DisassemblyDrone/Natural_Weapons/Bladed_Wings/Folded/BladeWingsFolded</texPath>
+				</conditionalGraphics>
+				<drawData>
+					<defaultData>
+						<offset>(0, 0, 0.5)</offset>
+						<layer>-2</layer>
+					</defaultData>
+					<scaleOffsetByBodySize>false</scaleOffsetByBodySize>
+					<dataNorth>
+						<layer>90</layer>
+					</dataNorth>
+					<dataEast>
+						<offset>(0,0,0.5)</offset>
+						<layer>90</layer>
+					</dataEast>
+					<dataWest>
+						<offset>(0,0,0.5)</offset>
+						<layer>90</layer>
+					</dataWest>
+				</drawData>
+				<children>
+					<!--Light Glow-->
+					<li Class="VFECore.PawnRenderNodeProperties_Omni">
+						<nodeClass>VFECore.PawnRenderNode_Omni</nodeClass>
+						<workerClass>PawnRenderNodeWorker_Body</workerClass>
+      					<conditionalGraphics>
+							<alts>
+								<li>
+        							<requirements>
+          								<li>Dead</li>
+        							</requirements>
+									<texPath>Pawn/Display/DisplayEyesBlank/DisplayEyesBlank</texPath>
+								</li>
+							</alts>
+							<shader>TransparentPostLight</shader>
+							<colorA>
+								<skinColor>true</skinColor>
+							</colorA>
+        					<texPaths>
+          						<li>Pawn/DisassemblyDrone/Natural_Weapons/Bladed_Wings/Folded/Lights/BladeWingsFoldedLights</li>
+        					</texPaths>
+      					</conditionalGraphics>
+						<parentTagDef>Body</parentTagDef>
+						<drawData>
+							<defaultData>
+								<layer>-2</layer>
+							</defaultData>
+							<scaleOffsetByBodySize>false</scaleOffsetByBodySize>
+							<dataNorth>
+								<layer>90</layer>
+							</dataNorth>
+							<dataEast>
+								<layer>90</layer>
+							</dataEast>
+							<dataWest>
+								<layer>90</layer>
+							</dataWest>
+						</drawData>
+					</li>
+				</children>
+			</li>
+		</renderNodeProperties>
+	</HediffDef>
+
+	<!--Switchable-->
+
+  <HediffDef Name="InterchangeableBase" Abstract="True">
+    <hediffClass>Hediff_AddedPart</hediffClass>
+    <defaultLabelColor>(0.6, 0.6, 1.0)</defaultLabelColor>
+    <isBad>false</isBad>
+    <countsAsAddedPartOrImplant>true</countsAsAddedPartOrImplant>
+    <allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+  </HediffDef>
+
+<!--Chainsaw Hands-->
+	<HediffDef ParentName="InterchangeableBase">
+		<defName>MD_interchangeable_ChainsawHands</defName>
+		<label>chainsaw hand</label>
+		<description>It's chainsaws. For hands. It's not a difficult concept to grasp, to be honest.</description>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<keepOnBodyPartRestoration>true</keepOnBodyPartRestoration>
+		<defaultInstallPart>Hand</defaultInstallPart>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>chainsaw</label>
+						<capacities>
+							<li>Cut</li>
+						</capacities>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						<soundMeleeHit>MDChainsaw_Hit</soundMeleeHit>
+			            <soundMeleeMiss>MDChainsaw_Miss</soundMeleeMiss>
+						<power>26</power>
+						<armorPenetration>0.28</armorPenetration>
+						<cooldownTime>2</cooldownTime>
+                        <linkedBodyPartsGroup>Hands</linkedBodyPartsGroup>
+                        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+					</li>
+				</tools>
+			</li>
+            <li Class="WorkerDronesMod.HediffCompProperties_PlaySound">
+                <soundDefName>MDChainsaw_Equip</soundDefName>
+            </li>
+            <li Class="WorkerDronesMod.HediffCompProperties_RemoveIfPartGone" />
+            <li Class="WorkerDronesMod.HediffCompProperties_SustainedSound">
+                <sustainSound>MD_ChainsawIdle</sustainSound>
+            </li>
+            <li Class="HediffCompProperties_RemoveIfOtherHediff">
+                <hediffs>
+					<li>MD_interchangeableRanged_NinjaStar</li>
+					<li>MD_interchangeableRanged_SMGhand</li>
+					<li>MD_interchangeableRanged_RocketLauncherhand</li>
+					<li>MD_interchangeableRanged_BeamWeaponhand</li>
+				</hediffs>
+            </li>
+			<li Class="WorkerDronesMod.HediffCompProperties_ForceDropWeapon">
+				<checkIntervalTicks>60</checkIntervalTicks>
+			</li>
+		</comps>
+		<addedPartProps>
+      		<solid>true</solid>
+      		<partEfficiency>0.60</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+		<renderNodeProperties>
+			<li>
+				<workerClass>WorkerDronesMod.PawnRenderNodeWorker_HediffHands</workerClass>
+				<texPath>Pawn/DisassemblyDrone/Natural_Weapons/MeleeWeapon/Chainsaw_Hands/ChainsawHand</texPath>
+				<drawSize>0.7</drawSize>
+				<parentTagDef>Body</parentTagDef>
+				<debugLabel>Hand</debugLabel>
+				<linkedBodyPartsGroup>Hands</linkedBodyPartsGroup>
+                <shaderTypeDef>CutoutComplex</shaderTypeDef>
+ 				<colorType>Skin</colorType>
+				<overlayOverApparel>true</overlayOverApparel>
+				<pawnType>HumanlikeOnly</pawnType>
+				<drawData>
+					<useHediffAnchor>true</useHediffAnchor>
+					<scaleOffsetByBodySize>true</scaleOffsetByBodySize>
+					<defaultData>
+						<offset>(0, 0, -0.15)</offset>
+						<layer>65</layer>
+					</defaultData>
+					<dataNorth>
+						<offset>(0, 0, -0.15)</offset>
+						<layer>-1</layer>
+						<flip>true</flip>
+					</dataNorth>
+					<dataEast>
+						<offset>(0, 0, -0.3)</offset>
+						<layer>40</layer>
+					</dataEast>
+					<dataWest>
+						<offset>(0, 0, -0.3)</offset>
+						<layer>40</layer>
+					</dataWest>
+				</drawData>
+			</li>
+		</renderNodeProperties>
+	</HediffDef>
+
+<!--Clawed Hands-->
+	<HediffDef ParentName="InterchangeableBase">
+		<defName>MD_interchangeable_ClawHands</defName>
+		<label>clawed hand</label>
+		<description>Clawed hands that can be used as a fast melee attack.</description>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<keepOnBodyPartRestoration>true</keepOnBodyPartRestoration>
+		<maxSeverity>1.0</maxSeverity>
+		<defaultInstallPart>Hand</defaultInstallPart>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>clawed hand</label>
+						<capacities>
+							<li>Cut</li>
+						</capacities>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						<soundMeleeHit>Pawn_Melee_PowerClaw_Hit</soundMeleeHit>
+			            <soundMeleeMiss>Pawn_Melee_PowerClaw_Miss</soundMeleeMiss>
+						<power>13</power>
+						<cooldownTime>1</cooldownTime>
+                        <linkedBodyPartsGroup>Hands</linkedBodyPartsGroup>
+                        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+					</li>
+				</tools>
+			</li>
+            <li Class="WorkerDronesMod.HediffCompProperties_RemoveIfPartGone" />
+            <li Class="HediffCompProperties_RemoveIfOtherHediff">
+                <hediffs>
+					<li>MD_interchangeableRanged_NinjaStar</li>
+					<li>MD_interchangeableRanged_SMGhand</li>
+					<li>MD_interchangeableRanged_RocketLauncherhand</li>
+					<li>MD_interchangeableRanged_BeamWeaponhand</li>
+				</hediffs>
+            </li>
+			<li Class="WorkerDronesMod.HediffCompProperties_ForceDropWeapon">
+				<checkIntervalTicks>60</checkIntervalTicks>
+			</li>
+		</comps>
+		<addedPartProps>
+      		<solid>true</solid>
+      		<partEfficiency>0.60</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+		<renderNodeProperties>
+			<li>
+				<workerClass>WorkerDronesMod.PawnRenderNodeWorker_HediffHands</workerClass>
+				<texPath>Pawn/DisassemblyDrone/Natural_Weapons/MeleeWeapon/Clawed_Hands/ClawedHand</texPath>
+				<drawSize>0.7</drawSize>
+				<parentTagDef>Body</parentTagDef>
+				<debugLabel>Hand</debugLabel>
+				<linkedBodyPartsGroup>Hands</linkedBodyPartsGroup>
+                <shaderTypeDef>CutoutComplex</shaderTypeDef>
+ 				<colorType>Skin</colorType>
+				<overlayOverApparel>true</overlayOverApparel>
+				<pawnType>HumanlikeOnly</pawnType>
+				<drawData>
+					<useHediffAnchor>true</useHediffAnchor>
+					<scaleOffsetByBodySize>true</scaleOffsetByBodySize>
+					<defaultData>
+						<offset>(0, 0, -0.2)</offset>
+						<layer>65</layer>
+					</defaultData>
+					<dataNorth>
+						<offset>(0, 0, -0.2)</offset>
+						<layer>-1</layer>
+						<flip>true</flip>
+					</dataNorth>
+					<dataEast>
+						<offset>(0, 0, -0.3)</offset>
+						<layer>40</layer>
+					</dataEast>
+					<dataWest>
+						<offset>(0, 0, -0.3)</offset>
+						<layer>40</layer>
+					</dataWest>
+				</drawData>
+			</li>
+		</renderNodeProperties>
+	</HediffDef>
+
+<!--Blade Hands-->
+	<HediffDef ParentName="InterchangeableBase">
+		<defName>MD_interchangeable_BladeHands</defName>
+		<label>blade</label>
+		<description>A set of sharp sword like blades instead of hands.</description>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<keepOnBodyPartRestoration>true</keepOnBodyPartRestoration>
+		<defaultInstallPart>Hand</defaultInstallPart>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>blade</label>
+						<capacities>
+							<li>Cut</li>
+							<li>Stab</li>
+						</capacities>
+						<alwaysTreatAsWeapon>true</alwaysTreatAsWeapon>
+						<soundMeleeHit>Pawn_Melee_MechanoidSlash_HitPawn</soundMeleeHit>
+			            <soundMeleeMiss>Pawn_Melee_MechanoidSlash_Miss</soundMeleeMiss>
+						<power>18</power>
+						<cooldownTime>1.3</cooldownTime>
+                        <linkedBodyPartsGroup>Hands</linkedBodyPartsGroup>
+                        <ensureLinkedBodyPartsGroupAlwaysUsable>true</ensureLinkedBodyPartsGroupAlwaysUsable>
+					</li>
+				</tools>
+			</li>
+            <li Class="WorkerDronesMod.HediffCompProperties_RemoveIfPartGone" />
+            <li Class="HediffCompProperties_RemoveIfOtherHediff">
+                <hediffs>
+					<li>MD_interchangeableRanged_NinjaStar</li>
+					<li>MD_interchangeableRanged_SMGhand</li>
+					<li>MD_interchangeableRanged_RocketLauncherhand</li>
+					<li>MD_interchangeableRanged_BeamWeaponhand</li>
+				</hediffs>
+            </li>
+			<li Class="WorkerDronesMod.HediffCompProperties_ForceDropWeapon">
+				<checkIntervalTicks>60</checkIntervalTicks>
+			</li>
+		</comps>
+		<addedPartProps>
+      		<solid>true</solid>
+      		<partEfficiency>0.60</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+		<renderNodeProperties>
+			<li>
+				<workerClass>WorkerDronesMod.PawnRenderNodeWorker_HediffHands</workerClass>
+				<texPath>Pawn/DisassemblyDrone/Natural_Weapons/MeleeWeapon/Blade_Hands/BladeHand</texPath>
+				<drawSize>0.7</drawSize>
+				<parentTagDef>Body</parentTagDef>
+				<debugLabel>Hand</debugLabel>
+				<linkedBodyPartsGroup>Hands</linkedBodyPartsGroup>
+                <shaderTypeDef>CutoutComplex</shaderTypeDef>
+ 				<colorType>Skin</colorType>
+				<overlayOverApparel>true</overlayOverApparel>
+				<pawnType>HumanlikeOnly</pawnType>
+				<drawData>
+					<useHediffAnchor>true</useHediffAnchor>
+					<scaleOffsetByBodySize>true</scaleOffsetByBodySize>
+					<defaultData>
+						<offset>(0, 0, -0.2)</offset>
+						<layer>65</layer>
+					</defaultData>
+					<dataNorth>
+						<offset>(0, 0, -0.2)</offset>
+						<layer>-1</layer>
+						<flip>true</flip>
+					</dataNorth>
+					<dataEast>
+						<offset>(0, 0, -0.3)</offset>
+						<layer>40</layer>
+					</dataEast>
+					<dataWest>
+						<offset>(0, 0, -0.3)</offset>
+						<layer>40</layer>
+					</dataWest>
+				</drawData>
+			</li>
+		</renderNodeProperties>
+	</HediffDef>
+
+	<HediffDef ParentName="InterchangeableBase">
+		<defName>MD_interchangeable_NormalHands</defName>
+		<label>Normal Hands</label>
+		<description>A set of hands.</description>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<keepOnBodyPartRestoration>true</keepOnBodyPartRestoration>
+		<defaultInstallPart>Hand</defaultInstallPart>
+		<stages>
+      		<li>
+        		<becomeVisible>false</becomeVisible>
+      		</li>
+    	</stages>
+		<addedPartProps>
+      		<solid>true</solid>
+      		<partEfficiency>1</partEfficiency>
+		</addedPartProps>
+	</HediffDef>
+	<!--Switchable Ranged-->
+<!--Ninja Star-->
+	<HediffDef ParentName="InterchangeableBase">
+		<defName>MD_interchangeableRanged_NinjaStar</defName>
+		<label>Ninja star</label>
+		<description>It's freaking NINJA STARS!</description>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<keepOnBodyPartRestoration>true</keepOnBodyPartRestoration>
+		<defaultInstallPart>Hand</defaultInstallPart>
+		<duplicationAllowed>false</duplicationAllowed>
+		<comps>
+            <li Class="WorkerDronesMod.HediffCompProperties_PlaySound">
+                <soundDefName>Interact_MonoSword</soundDefName>
+            </li>
+            <li Class="WorkerDronesMod.HediffCompProperties_RemoveIfPartGone" />
+			<li Class="WorkerDronesMod.HediffCompProperties_GunHand">
+				<weaponDef>GunHand_NinjaStar</weaponDef>
+			</li>
+		</comps>
+		<addedPartProps>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+
+<!--SMG hand-->
+	<HediffDef ParentName="InterchangeableBase">
+		<defName>MD_interchangeableRanged_SMGhand</defName>
+		<label>SMG hand</label>
+		<description>It's guns. For hands. It's not a difficult concept to grasp, to be honest.</description>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<keepOnBodyPartRestoration>true</keepOnBodyPartRestoration>
+		<defaultInstallPart>Hand</defaultInstallPart>
+		<duplicationAllowed>false</duplicationAllowed>
+		<comps>
+            <li Class="WorkerDronesMod.HediffCompProperties_PlaySound">
+                <soundDefName>Interact_SMG</soundDefName>
+            </li>
+            <li Class="WorkerDronesMod.HediffCompProperties_RemoveIfPartGone" />
+			<li Class="WorkerDronesMod.HediffCompProperties_GunHand">
+				<weaponDef>GunHand_SMG</weaponDef>
+			</li>
+		</comps>
+		<addedPartProps>
+      		<solid>true</solid>
+      		<partEfficiency>0.60</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>	
+	</HediffDef>
+
+<!--Rocket Launcher hand-->
+	<HediffDef ParentName="InterchangeableBase">
+		<defName>MD_interchangeableRanged_RocketLauncherhand</defName>
+		<label>Rocket launcher hand</label>
+		<description>A rocket launcher, that launches 2 Missiles.</description>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<keepOnBodyPartRestoration>true</keepOnBodyPartRestoration>
+		<defaultInstallPart>Hand</defaultInstallPart>
+		<duplicationAllowed>false</duplicationAllowed>
+		<comps>
+            <li Class="WorkerDronesMod.HediffCompProperties_PlaySound">
+                <soundDefName>Interact_Shotgun</soundDefName>
+            </li>
+            <li Class="WorkerDronesMod.HediffCompProperties_RemoveIfPartGone" />
+			<li Class="WorkerDronesMod.HediffCompProperties_GunHand">
+				<weaponDef>GunHand_RocketLauncher</weaponDef>
+			</li>
+		</comps>
+		<addedPartProps>
+      		<solid>true</solid>
+      		<partEfficiency>0.60</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+
+<!--Beam Weapon hand-->
+	<HediffDef ParentName="InterchangeableBase">
+		<defName>MD_interchangeableRanged_BeamWeaponhand</defName>
+		<label>Beam Weapon Hand</label>
+		<description>A weapon, that fires a yellow concentrated beam.</description>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<keepOnBodyPartRestoration>true</keepOnBodyPartRestoration>
+		<defaultInstallPart>Hand</defaultInstallPart>
+		<duplicationAllowed>false</duplicationAllowed>
+		<comps>
+            <li Class="WorkerDronesMod.HediffCompProperties_PlaySound">
+                <soundDefName>Interact_ChargeRifle</soundDefName>
+            </li>
+            <li Class="WorkerDronesMod.HediffCompProperties_RemoveIfPartGone" />
+			<li Class="WorkerDronesMod.HediffCompProperties_GunHand">
+				<weaponDef>GunHand_BeamWeapon</weaponDef>
+			</li>
+		</comps>
+		<addedPartProps>
+      		<solid>true</solid>
+      		<partEfficiency>0.60</partEfficiency>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+	</HediffDef>
+<!--### ###-->
+</Defs>

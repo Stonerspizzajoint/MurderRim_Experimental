@@ -1,0 +1,313 @@
+<Defs>
+
+  <SoundDef>
+    <defName>MD_BladedWings_Leap</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>5</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>DisassemblyDronesMod/MD_BladedWings_Leap</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>60</volumeRange>
+        <pitchRange>0.99~1.01</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>MD_EMPWarmup</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>DisassemblyDronesMod/MD_EMPWarmup</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>30</volumeRange>
+        <pitchRange>1</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>MD_Railgun_PowerDown</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>DisassemblyDronesMod/MD_Railgun_PowerDown</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>30</volumeRange>
+        <pitchRange>1</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>MD_AlertBeeps</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>DisassemblyDronesMod/MD_AlertBeeps</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>20</volumeRange>
+        <pitchRange>1</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>NeutralizingSaliva_Lick</defName>  
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>DisassemblyDronesMod/MD_NeutralizingSaliva_Lick</clipFolderPath>
+          </li>
+        </grains>      
+        <pitchRange>0.95~1.05</pitchRange>
+        <volumeRange>5~10</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>MDChainsaw_Hit</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>DisassemblyDronesMod/MD_ChainsawHit</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>15</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>MDChainsaw_Miss</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>DisassemblyDronesMod/MD_ChainsawMiss</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>15</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>MDChainsaw_Equip</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>DisassemblyDronesMod/MD_ChainsawEquip</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>15</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>MD_BootLoopFlash</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>DisassemblyDronesMod/MD_BootLoopFlash</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>17</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+    <SoundDef>
+    <defName>MD_Sentinel_Call</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>DisassemblyDronesMod/MD_Sentinel_Call</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>25~25</volumeRange>
+        <pitchRange>0.9082353~1.114706</pitchRange>
+        <distRange>0~50</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>MD_Sentinal_Angry</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>DisassemblyDronesMod/MD_Sentinel_Angry</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>25~25</volumeRange>
+        <pitchRange>0.9311765~1.091765</pitchRange>
+        <distRange>0~70</distRange>
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>MD_Sentinal_Death</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>DisassemblyDronesMod/MD_Sentinel_Angry</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>25~25</volumeRange>
+        <pitchRange>0.4~0.6</pitchRange>
+        <distRange>0~70</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>MD_Sentinal_Wounded</defName>
+    <context>MapOnly</context>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>DisassemblyDronesMod/MD_Sentinel_Wounded</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>21~21</volumeRange>
+        <pitchRange>1.206471~1</pitchRange>
+        <distRange>0~70</distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>MD_BreakingRibcage</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <subSounds>
+      <li>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>DisassemblyDronesMod/MD_BreakingRibcage</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>10</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>MD_NaniteAcidSizzle</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <subSounds>
+      <li>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>DisassemblyDronesMod/MD_NaniteAcidSizzle</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>5</volumeRange>
+        <pitchRange>0.5~1.1</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>MD_AbsoluteExit</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>DisassemblyDronesMod/MD_AbsoluteMode_Exit</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>15</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>MD_LaughterEffect</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>DisassemblyDronesMod/MD_LaughterEffect</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>15</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+    <SoundDef>
+    <defName>MD_LaughterEffect_Male</defName>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>DisassemblyDronesMod/MD_LaughterEffect_Male</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>15</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+      </li>
+    </subSounds>
+  </SoundDef>
+</Defs>

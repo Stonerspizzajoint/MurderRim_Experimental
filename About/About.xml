@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>MurderRim - Worker Drones</name>
+  <author>Stonerspizzajoint</author>
+  <modVersion>1.3</modVersion>
+  <supportedVersions>
+    <li>1.5</li>
+  </supportedVersions>
+  <modDependencies>
+    <li>			
+      <packageId>Ludeon.RimWorld.Biotech</packageId>
+		  <displayName>Biotech</displayName>
+    </li>
+    <li>
+      <packageId>ludeon.rimworld.ideology</packageId>
+      <displayName>Ideology</displayName>
+    </li>
+    <li>
+      <packageId>vanillaracesexpanded.android</packageId>
+		  <displayName>Vanilla Races Expanded - Android</displayName>
+      <steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2975771801</steamWorkshopUrl>
+    </li>
+  </modDependencies>
+	<loadBefore>
+	</loadBefore>
+	<loadAfter>
+		<li>brrainz.harmony</li>
+		<li>Ludeon.RimWorld</li>
+		<li>Ludeon.RimWorld.Royalty</li>
+		<li>Ludeon.RimWorld.Anomaly</li>
+    <li>oskarpotocki.vanillafactionsexpanded.core</li>
+    <li>vanillaracesexpanded.android</li>
+    <li>ceteam.combatextended</li>
+    <li>nals.facialanimation</li>
+	</loadAfter>
+  <packageId>Stonerspizzajoint.MurderDronesMod</packageId>
+  <description>This is my first mod ive ever made, so any advice or help i would love :D 
+
+This Mod Simply adds, Worker Drones from the web series "Murder Drones" utilizing the mod VRE - androids, it doesnt do much more than that. If there is a demand for more, i can try to add other drone types and unique abilities from the Show.
+ 
+If there are any issues or questions, feel free to let me know.
+Anyways, Thank you! :D
+
+Credit:
+Thanks to Liam Vickers and Glitch Productions for their design and concept.
+</description>
+</ModMetaData>

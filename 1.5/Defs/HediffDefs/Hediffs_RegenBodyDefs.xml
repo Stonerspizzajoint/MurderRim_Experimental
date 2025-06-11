@@ -1,0 +1,173 @@
+<Defs>
+    <HediffDef>
+		<defName>MD_RoboticReconstruction</defName>
+		<defaultLabelColor>(0.15, 0.6, 0.2)</defaultLabelColor>
+		<description>This body part is being reconstructed.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<isBad>false</isBad>
+		<label>reconstructing</label>
+		<alwaysShowSeverity>true</alwaysShowSeverity>
+		<maxSeverity>1</maxSeverity>
+		<stages>
+			<li>
+				<label>chassis</label>
+				<becomeVisible>true</becomeVisible>
+				<partEfficiencyOffset>-1.0</partEfficiencyOffset>
+				<statOffsets>
+					<PawnBeauty>-2</PawnBeauty>
+				</statOffsets>
+			</li>
+			<li>
+				<label>actuators</label>
+				<becomeVisible>true</becomeVisible>
+				<partEfficiencyOffset>-1.0</partEfficiencyOffset>
+				<minSeverity>0.1</minSeverity>
+				<statOffsets>
+					<PawnBeauty>-2</PawnBeauty>
+				</statOffsets>
+			</li>
+			<li>
+				<label>wiring</label>
+				<becomeVisible>true</becomeVisible>
+				<partEfficiencyOffset>-0.75</partEfficiencyOffset>
+				<minSeverity>0.5</minSeverity>
+				<statOffsets>
+					<PawnBeauty>-2</PawnBeauty>
+				</statOffsets>
+			</li>
+			<li>
+				<label>chassis covering</label>
+				<becomeVisible>true</becomeVisible>
+				<partEfficiencyOffset>-0.5</partEfficiencyOffset>
+				<minSeverity>0.75</minSeverity>
+				<statOffsets>
+					<PawnBeauty>-1</PawnBeauty>
+				</statOffsets>
+			</li>
+			<li>
+				<label>finishing</label>
+				<becomeVisible>true</becomeVisible>
+				<partEfficiencyOffset>0</partEfficiencyOffset>
+				<minSeverity>1</minSeverity>
+				<statOffsets>
+					<PawnBeauty>-1</PawnBeauty>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+  <HediffDef>
+    <defName>MD_ResurrectionStasis</defName>
+    <label>Resurrection Stasis</label>
+    <description>This Android is in a stasis state while its critical components regenerate. It is immobilized until fully restored.</description>
+    <defaultLabelColor>(0.15, 0.6, 0.2)</defaultLabelColor>
+    <hediffClass>WorkerDronesMod.Hediff_ResurrectionStasis</hediffClass>
+    <preventsCrawling>true</preventsCrawling>
+    <preventsDeath>true</preventsDeath>
+    <isBad>false</isBad>
+    <stages>
+			<li>
+        <capMods>
+			    <li>
+				    <capacity>Moving</capacity>
+            <setMax>0</setMax>
+			    </li>
+			    <li>
+				    <capacity>Manipulation</capacity>
+            <setMax>0</setMax>
+			    </li>
+			    <li>
+			      <capacity>Consciousness</capacity>
+            <setMax>0</setMax>
+			    </li>
+			    <li>
+				    <capacity>Hearing</capacity>
+            <setMax>0</setMax>
+			    </li>
+			    <li>
+				    <capacity>Sight</capacity>
+            <setMax>0</setMax>
+			    </li>
+			    <li>
+			      <capacity>Talking</capacity>
+            <setMax>0</setMax>
+			    </li>
+        </capMods>
+			</li>
+		</stages>
+  </HediffDef>
+
+	<HediffDef>
+		<defName>MD_OilLoss</defName>
+		<label>oil craving</label>
+		<description>Due to a lack of oil, this android's systems are breaking down. This causes disorientation and a painful craving for oil.</description>
+		<hediffClass>WorkerDronesMod.Hediff_NeutroOilCraving</hediffClass>
+		<defaultLabelColor>(1, 0.2, 0.2)</defaultLabelColor>
+		<initialSeverity>0.01</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+		<everCurableByItem>false</everCurableByItem>
+    	<stages>
+    	  <li>
+    	    <label>minor</label>
+    	    <painOffset>0.05</painOffset>
+    	    <capMods>
+    	      <li>
+    	        <capacity>Consciousness</capacity>
+    	        <setMax>0.9</setMax>
+    	      </li>
+    	    </capMods>
+			<extraTooltip>ALERT: Higher severity increases the likely hood of a dangerous mental break!</extraTooltip>
+    	  </li>
+    	  <li>
+    	    <label>moderate</label>
+    	    <minSeverity>0.35</minSeverity>
+    	    <painOffset>0.1</painOffset>
+    	    <capMods>
+    	      <li>
+    	        <capacity>Consciousness</capacity>
+    	        <setMax>0.8</setMax>
+    	      </li>
+    	    </capMods>
+			<extraTooltip>WARNING: Dangerous mental break possible!</extraTooltip>
+    	  </li>
+    	  <li>
+    	    <label>major</label>
+    	    <minSeverity>0.7</minSeverity>
+    	    <painOffset>0.15</painOffset>
+    	    <capMods>
+    	      <li>
+    	        <capacity>Consciousness</capacity>
+    	        <setMax>0.5</setMax>
+    	      </li>
+    	    </capMods>
+			<extraTooltip>WARNING: Dangerous mental break likely!</extraTooltip>
+    	  </li>
+    	</stages>
+		<comps>
+			<li Class="WorkerDronesMod.HediffCompProperties_SeverityFromNeutroOil">
+				<severityPerHourBelow50>0.05</severityPerHourBelow50>
+				<severityPerHourAbove50>0.5</severityPerHourAbove50>
+			</li>
+		</comps>
+	</HediffDef>
+
+  <HediffDef>
+	<defName>MD_FleshyPart</defName>
+    <label>Fleshy Internals</label>
+	<defaultLabelColor>(0.15, 0.6, 0.2)</defaultLabelColor>
+	<description>This body part has regenerated and useable, but any attempt to remove it wont give any useful part.</description>
+	<hediffClass>HediffWithComps</hediffClass>
+    <isBad>false</isBad>
+    <alwaysShowSeverity>true</alwaysShowSeverity>
+    <initialSeverity>0.01</initialSeverity>
+    <spawnThingOnRemoved>Filth_Blood</spawnThingOnRemoved>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>0.65</severityPerDay>
+      </li>
+      <li Class="WorkerDronesMod.HediffCompProperties_ReplaceWithVRECounterpart">
+        <severityThreshold>1.0</severityThreshold>
+      </li>
+    </comps>
+	</HediffDef>
+</Defs>

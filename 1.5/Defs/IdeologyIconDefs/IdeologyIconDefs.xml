@@ -1,0 +1,36 @@
+<Defs>
+  <IdeoIconDef>
+    <defName>Solver</defName>
+    <iconPath>UI/Icons/Ideoligions/Icon_Solver</iconPath>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>WorkerDrone</defName>
+    <iconPath>UI/Icons/Ideoligions/Icon_WorkerDrone</iconPath>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>DisassemblyDrone</defName>
+    <iconPath>UI/Icons/Ideoligions/Icon_DisassemblyDrone</iconPath>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>AbsoluteDrone</defName>
+    <iconPath>UI/Icons/Ideoligions/Icon_AbsoluteDrone</iconPath>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>AbsoluteDrone1</defName>
+    <iconPath>UI/Icons/Ideoligions/Icon_AbsoluteDrone1</iconPath>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>JCJ</defName>
+    <iconPath>UI/Icons/Ideoligions/Icon_JCJ</iconPath>
+  </IdeoIconDef>
+
+  <IdeoIconDef>
+    <defName>WorkerHardHat</defName>
+    <iconPath>UI/Icons/Ideoligions/Icon_WorkerHardHat</iconPath>
+  </IdeoIconDef>
+</Defs>

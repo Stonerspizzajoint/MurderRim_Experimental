@@ -1,0 +1,167 @@
+<Defs>
+
+
+  	<VREAndroids.AndroidGeneDef Name="MD_DisplayColorBase" Abstract="True">
+		<displayCategory>VREA_Hardware</displayCategory>
+		<canGenerateInGeneSet>false</canGenerateInGeneSet>
+		<displayOrderInCategory>10006</displayOrderInCategory>
+		<isCoreComponent>false</isCoreComponent>
+		<modExtensions>
+			<li Class="VanillaGenesExpanded.GeneExtension">
+				<backgroundPathXenogenes>UI/Icons/Genes/GeneBackground_Hardware</backgroundPathXenogenes>
+				<backgroundPathEndogenes>UI/Icons/Genes/GeneBackground_Hardware</backgroundPathEndogenes>
+			</li>
+			<li Class="WorkerDronesMod.GenePrerequisitesExtension">
+				<prerequisiteGeneDefNames>
+					<li>MD_DisplayEyes</li>
+					<li>MD_DisplayEye</li>
+					<li>MD_DisplayEyes_DD</li>
+				</prerequisiteGeneDefNames>
+			</li>
+		</modExtensions>
+	</VREAndroids.AndroidGeneDef>
+	
+	<VREAndroids.AndroidGeneDef ParentName="MD_DisplayColorBase">
+    	<defName>MD_DisplayColor_White</defName>
+    	<label>white display</label>
+    	<labelShortAdj>pale</labelShortAdj>
+    	<description>Carriers of this gene have white eyes and lights.</description>
+    	<skinColorOverride>(255, 255, 255)</skinColorOverride>
+	    <iconPath>Pawn/Display/DisplayEyesBase/DisplayEyes1</iconPath>
+    	<exclusionTags>
+      		<li>EyeColor</li>
+	  		<li>SkinColorOverride</li>
+    	</exclusionTags>
+		<biostatCpx>1</biostatCpx>
+    	<randomChosen>true</randomChosen>
+    	<randomBrightnessFactor>1</randomBrightnessFactor>
+  	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="MD_DisplayColorBase">
+    	<defName>MD_DisplayColor_Pink</defName>
+    	<label>pink display</label>
+    	<labelShortAdj>pale</labelShortAdj>
+    	<description>Carriers of this gene have pink eyes and lights.</description>
+    	<skinColorOverride>(255, 0, 222)</skinColorOverride>
+	    <iconPath>Pawn/Display/DisplayEyesBase/DisplayEyes1</iconPath>
+    	<exclusionTags>
+      		<li>EyeColor</li>
+	  		<li>SkinColorOverride</li>
+    	</exclusionTags>
+		<biostatCpx>1</biostatCpx>
+    	<randomChosen>true</randomChosen>
+    	<randomBrightnessFactor>1</randomBrightnessFactor>
+  	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="MD_DisplayColorBase">
+    	<defName>MD_DisplayColor_Purple</defName>
+    	<label>purple display</label>
+    	<labelShortAdj>pale</labelShortAdj>
+    	<description>Carriers of this gene have white purple and lights.</description>
+    	<skinColorOverride>(163, 102, 255)</skinColorOverride>
+	    <iconPath>Pawn/Display/DisplayEyesBase/DisplayEyes1</iconPath>
+    	<exclusionTags>
+      		<li>EyeColor</li>
+	  		<li>SkinColorOverride</li>
+    	</exclusionTags>
+		<biostatCpx>1</biostatCpx>
+    	<randomChosen>true</randomChosen>
+    	<randomBrightnessFactor>1</randomBrightnessFactor>
+  	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="MD_DisplayColorBase">
+    	<defName>MD_DisplayColor_Red</defName>
+    	<label>red display</label>
+    	<labelShortAdj>pale</labelShortAdj>
+    	<description>Carriers of this gene have red eyes and lights.</description>
+    	<skinColorOverride>(255, 0, 0)</skinColorOverride>
+	    <iconPath>Pawn/Display/DisplayEyesBase/DisplayEyes1</iconPath>
+    	<exclusionTags>
+      		<li>EyeColor</li>
+	  		<li>SkinColorOverride</li>
+    	</exclusionTags>
+		<biostatCpx>1</biostatCpx>
+    	<randomChosen>true</randomChosen>
+    	<randomBrightnessFactor>1</randomBrightnessFactor>
+  	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="MD_DisplayColorBase">
+    	<defName>MD_DisplayColor_Orange</defName>
+    	<label>orange display</label>
+    	<labelShortAdj>pale</labelShortAdj>
+    	<description>Carriers of this gene have orange eyes and lights.</description>
+    	<skinColorOverride>(255, 147, 15)</skinColorOverride>
+	    <iconPath>Pawn/Display/DisplayEyesBase/DisplayEyes1</iconPath>
+    	<exclusionTags>
+      		<li>EyeColor</li>
+	  		<li>SkinColorOverride</li>
+    	</exclusionTags>
+		<biostatCpx>1</biostatCpx>
+    	<randomChosen>true</randomChosen>
+    	<randomBrightnessFactor>1</randomBrightnessFactor>
+  	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="MD_DisplayColorBase">
+    	<defName>MD_DisplayColor_Blue</defName>
+    	<label>blue display</label>
+    	<labelShortAdj>pale</labelShortAdj>
+    	<description>Carriers of this gene have blue eyes and lights.</description>
+    	<skinColorOverride>(15, 119, 255)</skinColorOverride>
+	    <iconPath>Pawn/Display/DisplayEyesBase/DisplayEyes1</iconPath>
+    	<exclusionTags>
+      		<li>EyeColor</li>
+	  		<li>SkinColorOverride</li>
+    	</exclusionTags>
+		<biostatCpx>1</biostatCpx>
+    	<randomChosen>true</randomChosen>
+    	<randomBrightnessFactor>1</randomBrightnessFactor>
+  	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="MD_DisplayColorBase">
+    	<defName>MD_DisplayColor_Teal</defName>
+    	<label>teal display</label>
+    	<labelShortAdj>pale</labelShortAdj>
+    	<description>Carriers of this gene have teal eyes and lights.</description>
+    	<skinColorOverride>(57, 244, 247)</skinColorOverride>
+	    <iconPath>Pawn/Display/DisplayEyesBase/DisplayEyes1</iconPath>
+    	<exclusionTags>
+      		<li>EyeColor</li>
+	  		<li>SkinColorOverride</li>
+    	</exclusionTags>
+		<biostatCpx>1</biostatCpx>
+    	<randomChosen>true</randomChosen>
+    	<randomBrightnessFactor>1</randomBrightnessFactor>
+  	</VREAndroids.AndroidGeneDef>
+
+		<VREAndroids.AndroidGeneDef ParentName="MD_DisplayColorBase">
+    	<defName>MD_DisplayColor_Green</defName>
+    	<label>green display</label>
+    	<labelShortAdj>pale</labelShortAdj>
+    	<description>Carriers of this gene have green eyes and lights.</description>
+    	<skinColorOverride>(126, 255, 79)</skinColorOverride>
+	    <iconPath>Pawn/Display/DisplayEyesBase/DisplayEyes1</iconPath>
+    	<exclusionTags>
+      		<li>EyeColor</li>
+	  		<li>SkinColorOverride</li>
+    	</exclusionTags>
+		<biostatCpx>1</biostatCpx>
+    	<randomChosen>true</randomChosen>
+    	<randomBrightnessFactor>1</randomBrightnessFactor>
+  	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="MD_DisplayColorBase">
+    	<defName>MD_DisplayColor_Yellow</defName>
+    	<label>yellow display</label>
+    	<labelShortAdj>pale</labelShortAdj>
+    	<description>Carriers of this gene have yellow eyes and lights.</description>
+    	<skinColorOverride>(247, 219, 36)</skinColorOverride>
+	    <iconPath>Pawn/Display/DisplayEyesBase/DisplayEyes1</iconPath>
+    	<exclusionTags>
+      		<li>EyeColor</li>
+	  		<li>SkinColorOverride</li>
+    	</exclusionTags>
+		<biostatCpx>1</biostatCpx>
+    	<randomChosen>true</randomChosen>
+    	<randomBrightnessFactor>1</randomBrightnessFactor>
+  	</VREAndroids.AndroidGeneDef>
+</Defs>

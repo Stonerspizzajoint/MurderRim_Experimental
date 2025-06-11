@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<VREAndroids.AndroidGeneDef Name="MD_WorkerDroneBase" Abstract="True">
+		<displayCategory>VREA_Hardware</displayCategory>
+		<canGenerateInGeneSet>false</canGenerateInGeneSet>
+		<displayOrderInCategory>10000</displayOrderInCategory>
+		<isCoreComponent>false</isCoreComponent>
+		<modExtensions>
+			<li Class="VanillaGenesExpanded.GeneExtension">
+				<backgroundPathXenogenes>UI/Icons/Genes/GeneBackground_Hardware</backgroundPathXenogenes>
+				<backgroundPathEndogenes>UI/Icons/Genes/GeneBackground_Hardware</backgroundPathEndogenes>
+			</li>
+		</modExtensions>
+	</VREAndroids.AndroidGeneDef>
+
+ <!--Drone Body-->
+	<VREAndroids.AndroidGeneDef ParentName="MD_WorkerDroneBase">
+		<defName>MD_DroneBody</defName>
+		<label>Worker Drone Frame</label>
+		<labelShortAdj>Worker Drone</labelShortAdj>
+		<displayOrderInCategory>9999</displayOrderInCategory>
+		<description>Androids with this Hardware, have a Drone type body with a screen display for their face.
+The Body houses an improved reactor, leading to better power efficiency. Also a chance to spawn wearing a hardhat.
+		</description>
+		<iconPath>Pawn/WorkerDrone/Body_HQ/Drone_Male_south</iconPath>
+		<biostatCpx>3</biostatCpx>
+		<biostatMet>3</biostatMet>
+		<statFactors>
+			<Mass>0.75</Mass>
+			<WorkSpeedGlobal>1.1</WorkSpeedGlobal>
+			<VEF_BodySize_Multiplier>0.85</VEF_BodySize_Multiplier>
+			<VEF_PawnRenderPosOffset>0.5</VEF_PawnRenderPosOffset>
+		</statFactors>
+		<disablesNeeds>
+			<li>Outdoors</li>
+		</disablesNeeds>
+		<exclusionTags>
+			<li>MD_DroneBody</li>
+			<li>AG_Bodies</li>
+			<li>Bodies</li>
+			<li>Body</li>
+			<li>Fur</li>
+		</exclusionTags>
+		<fur>MD_DroneBodyfur</fur>
+		<skinColorOverride>(255,255,255)</skinColorOverride>
+		<skinIsHairColor>false</skinIsHairColor>
+		<tattoosVisible>false</tattoosVisible>
+		<renderNodeProperties>
+			<li>
+				<debugLabel>Fur</debugLabel>
+				<nodeClass>PawnRenderNode_Fur</nodeClass>
+				<workerClass>PawnRenderNodeWorker_Fur</workerClass>
+				<baseLayer>5</baseLayer>
+				<rotDrawMode>Fresh, Rotting</rotDrawMode>
+				<colorType>Skin</colorType>
+				<parentTagDef>Body</parentTagDef>
+				<drawSize>1</drawSize>
+			</li>
+			<li Class="VFECore.PawnRenderNodeProperties_Omni">
+				<nodeClass>VFECore.PawnRenderNode_Omni</nodeClass>
+				<workerClass>PawnRenderNodeWorker_Body</workerClass>
+				<visibleFacing>
+					<li>South</li>
+				</visibleFacing>
+      			<conditionalGraphics>
+					<alts>
+						<li>
+							<!--Blank Display when dead or downed-->
+        					<requirements>
+          						<li>Dead</li>
+        					</requirements>
+							<texPath>Pawn/Display/DisplayEyesBlank/DisplayEyesBlank</texPath>
+						</li>
+					</alts>
+					<!--Normal Display-->
+					<shader>TransparentPostLight</shader>
+					<colorA>
+						<skinColor>true</skinColor>
+					</colorA>
+        			<texPaths>
+          				<li>Pawn/WorkerDrone/Body_HQ/Lights/MD_WorkerDroneCoreLight</li>
+        			</texPaths>
+      			</conditionalGraphics>
+				<rotDrawMode>Fresh, Rotting</rotDrawMode>
+				<parentTagDef>Body</parentTagDef>
+				<drawSize>1</drawSize>
+				<side>Center</side>
+				<drawData>
+					<defaultData>
+						<layer>5</layer>
+						<offset>(0, 0, 0)</offset>
+					</defaultData>
+				</drawData>
+			</li>
+		</renderNodeProperties>
+		<!--Head types-->
+		<forcedHeadTypes>
+			<li>MD_Drone_Head</li>
+		</forcedHeadTypes>
+		<!--Hair and Beard-->
+		<hairTagFilter>
+			<whitelist>false</whitelist>
+			<tags>
+				<li>Shaved</li>
+			</tags>
+		</hairTagFilter>
+		<beardTagFilter>
+			<whitelist>true</whitelist>
+			<tags>
+				<li>MoustacheOnly</li>
+				<li>NoBeard</li>
+			</tags>
+		</beardTagFilter>
+		<bodyType>Standard</bodyType>
+		<modExtensions Inherit="false">
+			<li Class="VanillaGenesExpanded.GeneExtension">
+		    	<backgroundPathXenogenes>UI/Icons/Genes/GeneBackground_Hardware</backgroundPathXenogenes>
+		    	<backgroundPathEndogenes>UI/Icons/Genes/GeneBackground_Hardware</backgroundPathEndogenes>
+				<headDessicatedGraphicPath>Pawn/WorkerDrone/Drone_Dead/Head/Drone_Skull</headDessicatedGraphicPath>
+				<skullGraphicPath>Pawn/WorkerDrone/Drone_Dead/Head/Drone_Skull</skullGraphicPath>
+				<useSkinColorForFur>true</useSkinColorForFur>
+				<useMaskForFur>true</useMaskForFur>
+			</li>
+  			<li MayRequire="mlie.showmeyourhands" Class="WorkerDronesMod.HandTextureExtension">
+    			<mainTexturePath>OtherMods/Showmeyourhands/Hand</mainTexturePath>
+    			<mainCleanTexturePath>OtherMods/Showmeyourhands/HandClean</mainCleanTexturePath>
+    			<offTexturePath>OtherMods/Showmeyourhands/OffHand</offTexturePath>
+    			<offCleanTexturePath>OtherMods/Showmeyourhands/OffHandClean</offCleanTexturePath>
+    			<shaderType>CutoutComplex</shaderType>  <!-- reference to a ShaderTypeDef -->
+				<mainMaskPath>OtherMods/Showmeyourhands/Handm</mainMaskPath>
+				<offMaskPath>OtherMods/Showmeyourhands/OffHandm</offMaskPath>
+  			</li>
+			<li Class="WorkerDronesMod.GeneBackstoryFilterExtension">
+				<allowedSpawnCategories>
+					<li>WorkerDrone</li>
+				</allowedSpawnCategories>
+			</li>
+			<li Class="WorkerDronesMod.GenePrerequisitesExtension">
+				<prerequisiteGeneDefNames>
+					<li>MD_DisplayEyes</li>
+					<li>MD_DisplayEyes_DD</li>
+					<li>MD_DisplayEyes_XX</li>
+				</prerequisiteGeneDefNames>
+			</li>
+		</modExtensions>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="MD_WorkerDroneBase">
+		<defName>MD_MemorySleepProcessing</defName>
+		<label>sleep processing</label>
+		<description>Android with this hardware don't need to reformat their memory the normal way. Instead, they employ advanced sleep processing that minimizes reactor power drain while also serving as an alternative formatting method.</description>
+		<iconPath>UI/Icons/Genes/Gene_Sleepy</iconPath>
+		<biostatCpx>3</biostatCpx>
+		<biostatMet>-1</biostatMet>
+		<disablesNeeds>
+			<li>VREA_MemorySpace</li>
+		</disablesNeeds>
+		<hediffGiversCannotGive>
+			<li>VREA_Overheating</li>
+		</hediffGiversCannotGive>
+		<exclusionTags>
+		 <li>AndroidRAM</li>
+		 <li>VREA_SleepMode</li>
+		 <li>VREA_MemoryProcessing</li>
+		</exclusionTags>
+		<causesNeed>Rest</causesNeed>
+		<modExtensions>
+    		<li Class="WorkerDronesMod.BlockFromAndroidWindowExtension">
+			    <mustHaveAtLeastOne>true</mustHaveAtLeastOne>
+				<geneTypeTag>AndroidRAM</geneTypeTag>
+			</li>
+		</modExtensions>
+	</VREAndroids.AndroidGeneDef>
+<!--
+	<VREAndroids.AndroidGeneDef ParentName="MD_WorkerDroneBase">
+		<defName>MD_FacialRecognitionDisabled</defName>
+		<label>Facial Recognition Disabled</label>
+		<geneClass>WorkerDronesMod.Gene_FacialRecognitionDisabled</geneClass>
+		<description>Disabled the android's facial recognition hardware, so it relies solely on voice recognition to identify others. Only pawns with a strong bond are remembered; all others, even if hostile, will be forgotten each day as their memory is reset. Additionally, androids with this hardware internally perceive any non-android as indistinct black silhouettes, unable to distinguish their features.</description>
+		<iconPath>UI/Icons/Genes/Gene_FacialRecognitionDisabled</iconPath>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>-1</biostatMet>
+	</VREAndroids.AndroidGeneDef>
+-->
+	<VREAndroids.AndroidGeneDef ParentName="VREA_NeutroCirculation">
+		<defName>MD_NeutroamineOil</defName>
+		<label>Neutro oil circulation</label>
+		<description>While still relying on neutroamine as their synthetic lifeblood, these androids are equipped with an advanced compression module that refines the fluid into a denser, more efficient form. The altered neutroamine takes on a darker, oil-like appearance, symbolizing an upgrade in internal design. (This change is purely cosmetic, with no effect on function or performance.)</description>
+		<iconPath>UI/Icons/Genes/MD_Icon_OilBlood</iconPath>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>0</biostatMet>
+		<exclusionTags>
+		 <li>AndroidBloodCirculation</li>
+		</exclusionTags>
+		<modExtensions Inherit="false">
+			<li Class="VanillaGenesExpanded.GeneExtension">
+		    	<backgroundPathXenogenes>UI/Icons/Genes/GeneBackground_Hardware</backgroundPathXenogenes>
+		    	<backgroundPathEndogenes>UI/Icons/Genes/GeneBackground_Hardware</backgroundPathEndogenes>
+				<customBloodThingDef>MD_FilthNeutroamineOil</customBloodThingDef>
+				<customBloodSmearThingDef>MD_FilthNeutroamineOilSmear</customBloodSmearThingDef>
+				<customBloodIcon>UI/Icons/Medical/OilBlood_BleedingIcon</customBloodIcon>
+				<customBloodEffect>MD_Damage_HitDrone</customBloodEffect>
+				<customWoundsFromFleshtype>MD_DroneFlesh</customWoundsFromFleshtype>
+			</li>
+    		<li Class="WorkerDronesMod.BlockFromAndroidWindowExtension">
+			    <mustHaveAtLeastOne>true</mustHaveAtLeastOne>
+				<geneTypeTag>NeutroCirculation</geneTypeTag>
+			</li>
+		</modExtensions>
+	</VREAndroids.AndroidGeneDef>
+</Defs>

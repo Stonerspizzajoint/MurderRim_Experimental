@@ -1,0 +1,124 @@
+<Patch>
+<!--Drone HardHat-->
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Combat Extended</li>
+        </mods>
+        <match Class="PatchOperationReplace">
+            <xpath>Defs/ThingDef[defName="MD_Headgear_Hardhat"]/statBases/ArmorRating_Blunt</xpath>
+            <value>
+			    <ArmorRating_Blunt>0.8</ArmorRating_Blunt>
+            </value>
+        </match>
+    </Operation>
+
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Combat Extended</li>
+        </mods>
+        <match Class="PatchOperationReplace">
+            <xpath>Defs/ThingDef[defName="MD_Headgear_Hardhat"]/statBases/ArmorRating_Sharp</xpath>
+            <value>
+                <ArmorRating_Sharp>0.03</ArmorRating_Sharp>
+            </value>
+        </match>
+    </Operation>
+<!--Drone Goggles HardHat-->
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Combat Extended</li>
+        </mods>
+        <match Class="PatchOperationReplace">
+            <xpath>Defs/ThingDef[defName="MD_Headgear_GoggleHardhat"]/statBases/ArmorRating_Blunt</xpath>
+            <value>
+			    <ArmorRating_Blunt>0.8</ArmorRating_Blunt>
+            </value>
+        </match>
+    </Operation>
+
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Combat Extended</li>
+        </mods>
+        <match Class="PatchOperationReplace">
+            <xpath>Defs/ThingDef[defName="MD_Headgear_GoggleHardhat"]/statBases/ArmorRating_Sharp</xpath>
+            <value>
+                <ArmorRating_Sharp>0.03</ArmorRating_Sharp>
+            </value>
+        </match>
+    </Operation>
+<!---->
+<!-- JCJenson Apparel -->
+    <!--Jackets-->
+    <Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="MD_Apparel_CaptainCoat" or defName="MD_Apparel_CorprateLeader"]/statBases/StuffEffectMultiplierArmor</xpath>
+		<value>
+			<StuffEffectMultiplierArmor>5</StuffEffectMultiplierArmor>
+		</value>
+	</Operation>
+
+    <Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="MD_Apparel_CaptainCoat"]/statBases</xpath>
+		<value>
+			<Bulk>7.5</Bulk>
+			<WornBulk>2</WornBulk>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThingDef[defName="MD_Apparel_CorprateLeader"]/statBases</xpath>
+		<value>
+			<Bulk>5</Bulk>
+			<WornBulk>1</WornBulk>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="MD_Apparel_CorprateLeader"]/costStuffCount</xpath>
+		<value>
+			<costStuffCount>60</costStuffCount>
+		</value>
+	</Operation>
+    <!---->
+    <!--Shirts-->
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="MD_Apparel_CompanyOutfit"]/statBases/StuffEffectMultiplierArmor</xpath>
+		<value>
+			<StuffEffectMultiplierArmor>1</StuffEffectMultiplierArmor>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/ThingDef[defName="MD_Apparel_CompanyOutfit"]/costStuffCount</xpath>
+		<value>
+			<costStuffCount>45</costStuffCount>
+		</value>
+	</Operation>
+    <!---->
+    <!--Name Tag -->
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Combat Extended</li>
+        </mods>
+        <match Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="MD_Apparel_NameTag"]/statBases</xpath>
+            <value>
+			    <ArmorRating_Blunt>0</ArmorRating_Blunt>
+            </value>
+        </match>
+    </Operation>
+
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Combat Extended</li>
+        </mods>
+        <match Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="MD_Apparel_NameTag"]/statBases</xpath>
+            <value>
+                <ArmorRating_Sharp>0</ArmorRating_Sharp>
+            </value>
+        </match>
+    </Operation>
+    <!---->
+<!---->
+</Patch>

@@ -1,0 +1,114 @@
+<Defs>
+	<PawnKindDef Name="DisassemblyDrone">
+		<defName>MD_DisassemblyDrone</defName>
+		<label>Disessembly Drone</label>
+        <isFighter>true</isFighter>
+		<race>Human</race>
+		<apparelMoney>300~3800</apparelMoney>
+        <forceNormalGearQuality>true</forceNormalGearQuality>
+        <canUseAvoidGrid>false</canUseAvoidGrid>
+		<canBeScattered>false</canBeScattered>
+		<xenotypeSet Inherit="False">
+      		<xenotypeChances>
+        		<MD_MurderDroneBase>999</MD_MurderDroneBase>
+      		</xenotypeChances>
+    	</xenotypeSet>
+		<fleeHealthThresholdRange>0~0</fleeHealthThresholdRange>
+        <forcedTraits>
+            <MD_ManicBloodlust>0</MD_ManicBloodlust>
+        </forcedTraits>
+		<apparelTags>
+			<li>JCJensonDisassembly</li>
+			<li>JCJensonBasic</li>
+		</apparelTags>
+		<apparelIgnoreSeasons>true</apparelIgnoreSeasons>
+        <apparelIgnorePollution>true</apparelIgnorePollution>
+        <aiAvoidCover>true</aiAvoidCover>
+		<apparelAllowHeadgearChance>0</apparelAllowHeadgearChance>
+		<combatPower>50</combatPower>
+		<initialWillRange>16~19</initialWillRange>
+		<initialResistanceRange>38~58</initialResistanceRange>
+		<modExtensions>
+			<li Class="VFECore.PawnKindDefExtension">
+				<factionColourApparelLayerList>
+					<li>OnSkin</li>	
+				</factionColourApparelLayerList>
+			</li>
+		</modExtensions>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="DisassemblyDrone">
+		<defName>MD_DisassemblyDroneSquadLeader</defName>
+		<label>Disessembly Drone Squad Leader</label>
+		<isBoss>true</isBoss>
+        <isFighter>true</isFighter>
+		<maxPerGroup>1</maxPerGroup>
+		<race>Human</race>
+		<apparelMoney>300~3800</apparelMoney>
+        <immuneToTraps>true</immuneToTraps>
+        <forceNormalGearQuality>true</forceNormalGearQuality>
+        <canUseAvoidGrid>true</canUseAvoidGrid>
+		<xenotypeSet Inherit="False">
+      		<xenotypeChances>
+        		<MD_MurderDroneBase>999</MD_MurderDroneBase>
+      		</xenotypeChances>
+    	</xenotypeSet>
+        <forcedTraits>
+            <MD_ManicBloodlust>0</MD_ManicBloodlust>
+        </forcedTraits>
+		<apparelTags>
+			<li>JCJensonDisassemblyLeader</li>
+			<li>JCJensonBasic</li>
+		</apparelTags>
+		<apparelIgnoreSeasons>true</apparelIgnoreSeasons>
+        <apparelIgnorePollution>true</apparelIgnorePollution>
+        <aiAvoidCover>false</aiAvoidCover>
+		<combatPower>60</combatPower>
+		<initialWillRange>16~19</initialWillRange>
+		<initialResistanceRange>38~58</initialResistanceRange>
+		<modExtensions>
+			<li Class="VFECore.PawnKindDefExtension">
+				<factionColourApparelLayerList>
+					<li>OnSkin</li>	
+				</factionColourApparelLayerList>
+			</li>
+		</modExtensions>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="DisassemblyDrone">
+		<defName>MD_DisassemblyDroneZoneCommander</defName>
+		<label>Disessembly Drone Zone Commander</label>
+        <factionLeader>true</factionLeader>
+        <isFighter>true</isFighter>
+		<race>Human</race>
+		<apparelMoney>300~3800</apparelMoney>
+        <immuneToTraps>true</immuneToTraps>
+        <forceNormalGearQuality>true</forceNormalGearQuality>
+        <canUseAvoidGrid>true</canUseAvoidGrid>
+		<xenotypeSet Inherit="False">
+      		<xenotypeChances>
+        		<MD_MurderDroneBase>999</MD_MurderDroneBase>
+      		</xenotypeChances>
+    	</xenotypeSet>
+        <forcedTraits>
+            <MD_ManicBloodlust>0</MD_ManicBloodlust>
+        </forcedTraits>
+		<apparelTags>
+			<li>JCJensonDisassemblyLeader</li>
+			<li>JCJensonBasic</li>
+		</apparelTags>
+		<apparelIgnoreSeasons>true</apparelIgnoreSeasons>
+        <apparelIgnorePollution>true</apparelIgnorePollution>
+        <aiAvoidCover>true</aiAvoidCover>
+		<combatPower>60</combatPower>
+		<initialWillRange>16~19</initialWillRange>
+		<initialResistanceRange>38~58</initialResistanceRange>
+		<modExtensions>
+			<li Class="VFECore.PawnKindDefExtension">
+				<factionColourApparelLayerList>
+					<li>OnSkin</li>	
+				</factionColourApparelLayerList>
+			</li>
+		</modExtensions>
+	</PawnKindDef>
+</Defs>

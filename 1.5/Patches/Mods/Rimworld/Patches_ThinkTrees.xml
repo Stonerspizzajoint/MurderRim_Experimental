@@ -1,0 +1,177 @@
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThinkTreeDef[defName="MentalStateNonCritical"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalMentalStates"]/states</xpath>
+    <value>
+      <li>MD_ConfusedWander</li>
+    </value>
+  </Operation>
+
+<Operation Class="PatchOperationAdd">
+  <xpath>/Defs/ThinkTreeDef[defName="Abilities_Aggressive"]/thinkRoot/subNodes/li[1]/subNodes</xpath>
+  <value>
+    <!--==============OverHeating Protection==============-->
+    <li Class="ThinkNode_ConditionalHasAbility">
+      <ability>MD_InterchangeableHandsAbility</ability>
+      <subNodes>
+          <!-- If the pawn's heat is too high, and has ranged hediffs, use the ability -->
+        <li Class="WorkerDronesMod.ThinkNode_ConditionalHasAnyHediff">
+          <hediffList>
+            <li>MD_interchangeableRanged_NinjaStar</li>
+            <li>MD_interchangeableRanged_SMGhand</li>
+            <li>MD_interchangeableRanged_RocketLauncherhand</li>
+            <li>MD_interchangeableRanged_BeamWeaponhand</li>
+          </hediffList>
+          <subNodes>
+            <li Class="WorkerDronesMod.ThinkNode_ConditionalHeatAboveThreshold">
+              <heatThreshold>0.6</heatThreshold>
+              <subNodes>
+                <li Class="JobGiver_AICastAbilityOnSelf">
+                  <ability>MD_InterchangeableHandsAbility</ability>
+                </li>
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+      </subNodes>
+    </li>
+
+<!--==============Flight Tree==============-->
+
+    <!--====Flight Powered Pounce====-->
+    <li Class="ThinkNode_ConditionalHasAbility">
+      <ability>MD_WingPoweredFlight</ability>
+      <subNodes>
+        <li Class="WorkerDronesMod.ThinkNode_ConditionalHeatAboveThreshold">
+          <heatThreshold>0.55</heatThreshold>
+          <invert>true</invert>
+          <subNodes>
+            <li Class="WorkerDronesMod.ThinkNode_ConditionalHasAnyHediff">
+              <hediffList>
+                <li>MD_interchangeable_ChainsawHands</li>
+                <li>MD_interchangeable_ClawHands</li>
+                <li>MD_interchangeable_BladeHands</li>
+              </hediffList>
+              <subNodes>
+                <li Class="WorkerDronesMod.JobGiver_AICastWingPoweredPounce">
+                  <ability>MD_WingPoweredFlight</ability>
+                </li>
+              </subNodes>
+            </li>
+            <!--====Flight Powered Tactical Relocation====-->
+            <li Class="WorkerDronesMod.ThinkNode_ConditionalHasAnyHediff">
+              <hediffList>
+                <li>MD_interchangeableRanged_NinjaStar</li>
+                <li>MD_interchangeableRanged_SMGhand</li>
+                <li>MD_interchangeableRanged_RocketLauncherhand</li>
+                <li>MD_interchangeableRanged_BeamWeaponhand</li>
+              </hediffList>
+              <subNodes>
+                <li Class="WorkerDronesMod.JobGiver_AICastWingPoweredTacticalMove">
+                  <ability>MD_WingPoweredFlight</ability>
+                </li>
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>   
+      </subNodes>
+    </li>
+
+
+      <!--==============Melee Tree==============-->
+    <li Class="ThinkNode_ConditionalHasAbility">
+      <ability>MD_InterchangeableHandsAbility</ability>
+      <subNodes>
+          <!-- If the pawn does not have any of the interchangeable hands, use the ability -->
+        <li Class="WorkerDronesMod.ThinkNode_ConditionalHasAnyHediff">
+          <hediffList>
+            <li>MD_interchangeable_ChainsawHands</li>
+            <li>MD_interchangeable_ClawHands</li>
+            <li>MD_interchangeable_BladeHands</li>
+          </hediffList>
+          <invert>true</invert>
+          <subNodes>
+            <li Class="ThinkNode_ConditionalRandom">
+              <chance>0.5</chance>
+              <subNodes>
+                <li Class="WorkerDronesMod.JobGiver_AICastMeleeAbilityOnSelf">
+                  <ability>MD_InterchangeableHandsAbility</ability>
+                </li>
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+
+        <li Class="ThinkNode_ConditionalHasTarget">
+          <subNodes>
+            <li Class="ThinkNode_ConditionalUnderCombatPressure">
+              <maxThreatDistance>10</maxThreatDistance>
+              <minCloseTargets>1</minCloseTargets>
+              <subNodes>
+                <!-- If the pawn does not have any of the interchangeable hands, use the ability -->
+                <li Class="WorkerDronesMod.ThinkNode_ConditionalHasAnyHediff">
+                  <hediffList>
+                    <li>MD_interchangeable_ChainsawHands</li>
+                    <li>MD_interchangeable_ClawHands</li>
+                    <li>MD_interchangeable_BladeHands</li>
+                  </hediffList>
+                  <invert>true</invert>
+                  <subNodes>
+                    <li Class="WorkerDronesMod.JobGiver_AICastMeleeAbilityOnSelf">
+                      <ability>MD_InterchangeableHandsAbility</ability>
+                    </li>
+                  </subNodes>
+                </li>
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+      </subNodes>
+    </li>
+
+      <!--==============Ranged Tree==============-->
+    <li Class="ThinkNode_ConditionalHasAbility">
+      <ability>MD_InterchangeableHandsAbility_Ranged</ability>
+      <subNodes>
+        <li Class="ThinkNode_ConditionalHasTarget">
+          <subNodes>
+            <!-- If the pawn's heat is too high, and has ranged hediffs, use the ability -->
+            <li Class="WorkerDronesMod.ThinkNode_ConditionalHasAnyHediff">
+              <hediffList>
+                <li>MD_interchangeableRanged_NinjaStar</li>
+                <li>MD_interchangeableRanged_SMGhand</li>
+                <li>MD_interchangeableRanged_RocketLauncherhand</li>
+                <li>MD_interchangeableRanged_BeamWeaponhand</li>
+              </hediffList>
+              <invert>true</invert>
+              <subNodes>
+                <li Class="WorkerDronesMod.ThinkNode_ConditionalHeatAboveThreshold">
+                  <heatThreshold>0.45</heatThreshold>
+                  <invert>true</invert>
+                  <subNodes>
+                    <li Class="ThinkNode_ConditionalUnderCombatPressure">
+                      <maxThreatDistance>10</maxThreatDistance>
+                      <minCloseTargets>1</minCloseTargets>
+                      <invert>true</invert>
+                      <subNodes>
+                        <li Class="ThinkNode_ConditionalRandom">
+                          <chance>0.6</chance>
+                          <subNodes>
+                            <li Class="JobGiver_AICastAbilityOnSelf">
+                              <ability>MD_InterchangeableHandsAbility_Ranged</ability>
+                            </li>
+                          </subNodes>
+                        </li>
+                      </subNodes>
+                    </li>
+                  </subNodes>
+                </li>
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+      </subNodes>
+    </li>
+
+  </value>
+</Operation>
+</Patch>

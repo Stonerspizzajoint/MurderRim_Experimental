@@ -1,0 +1,11 @@
+<Patch>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/DesignationCategoryDef[defName="Zone"]/specialDesignatorClasses</xpath>
+    <value>
+      <li>WorkerDronesMod.Designator_Cells_ShadeAreaExpand</li>
+      <li>WorkerDronesMod.Designator_Cells_ShadeAreaClear</li>
+    </value>
+  </Operation>
+
+</Patch>

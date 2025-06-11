@@ -1,0 +1,13 @@
+<Defs>
+    <RulePackDef>
+		<defName>MD_BootLooped_Rules</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>damaged_past->stunned</li>
+				<li>damaged_past->looped</li>
+				<li>damaged_past->booted</li>
+				<li>destroyed_past->damaged_past</li>
+			</rulesStrings>
+		</rulePack>
+	</RulePackDef>
+</Defs>
