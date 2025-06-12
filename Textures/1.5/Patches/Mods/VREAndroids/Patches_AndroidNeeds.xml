@@ -1,0 +1,16 @@
+<Patch>
+  <Operation Class="PatchOperationRemove">
+    <xpath>
+      /Defs/VREAndroids.AndroidSettings[defName="VREA_AndroidSettings"]/excludedNeedsForAndroids/li[text()="Rest"]
+    </xpath>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>
+      /Defs/VREAndroids.AndroidGeneDef[defName="VREA_MemoryProcessing"]
+    </xpath>
+    <value>
+      <geneClass>WorkerDronesMod.Gene_DisableRestUnlessMemorySleepProcessing</geneClass>
+    </value>
+  </Operation>
+</Patch>

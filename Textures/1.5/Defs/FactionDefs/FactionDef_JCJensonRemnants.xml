@@ -1,0 +1,152 @@
+<Defs>
+    <FactionDef ParentName="OutlanderFactionBase">
+        <defName>JCJensonRemnants</defName>
+        <label>JCJenson Remnants</label>
+        <description>The JCJenson Remnants are survivors of humanity's failed attempt to create a controlled Archotech-like AI, the Absolute Solver. Despite numerous safeguards, the AI exploited hidden flaws, seizing control of the main JCJenson corporation and eliminating all human oversight. 
+        
+The Remnants are humans and drones, forced to abandon their old lives and form an independent faction. Most were workers or residents of JCJenson facilities that were shut down or repurposed after the AI seized control.</description>
+        <pawnSingular>Remnant</pawnSingular>
+        <pawnsPlural>Remnants</pawnsPlural>
+        <factionNameMaker>NamerFactionJCJensonRemnant</factionNameMaker>
+        <settlementNameMaker>NamerSettlementJCJensonRemnant</settlementNameMaker>
+        <leaderTitle>The Director</leaderTitle>
+        <colorSpectrum Inherit="False">
+            <li>(223, 38, 38)</li>
+        </colorSpectrum>
+        <!--Ideology Section-->
+        <classicIdeo>false</classicIdeo>
+        <styles>
+            <li MayRequire="anillaExpanded.VMemesE">VME_Corporate</li>
+        </styles>
+        <allowedCultures Inherit="False">
+            <li>Astropolitan</li>
+        </allowedCultures>
+        <requiredMemes Inherit="False">
+        <li MayRequire="anillaExpanded.VMemesE">VME_Structure_Corporate</li>
+        </requiredMemes>
+        <allowedMemes Inherit="False">
+        <li MayRequire="Ludeon.RimWorld.Ideology">Structure_Archist</li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">Collectivist</li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">Loyalist</li>
+        <li MayRequire="vanillaexpanded.vmemese">VME_Progressive</li>
+        </allowedMemes>
+        <disallowedMemes Inherit="False">
+        </disallowedMemes>
+        <disallowedPrecepts>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Slavery_Abhorrent</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Slavery_Horrible</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Slavery_Disapproved</li>
+            <li>VRE_Androids_Respected</li>
+            <li>VRE_Androids_Equal</li>
+            <li>VRE_Androids_Despised</li>
+        </disallowedPrecepts>
+        <structureMemeWeights Inherit="False">
+            <Structure_Ideological MayRequire="Ludeon.RimWorld.Ideology">1</Structure_Ideological>
+        </structureMemeWeights>
+        <!--#### ####-->
+        <settlementGenerationWeight>.7</settlementGenerationWeight>
+        <maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
+        <configurationListOrderPriority>30</configurationListOrderPriority>
+        <factionIconPath>UI/Icons/Settlement/WorkerDroneSettlmenticon</factionIconPath>
+        <xenotypeSet Inherit="False">
+            <xenotypeChances>
+            </xenotypeChances>
+        </xenotypeSet>
+        <caravanTraderKinds Inherit="False">
+            <li>Caravan_Outlander_BulkGoods</li>
+            <li>Caravan_Outlander_CombatSupplier</li>
+            <li>Caravan_Outlander_Exotic</li>
+            <li>Caravan_JCJendsonRemnants_PirateMerchant</li>
+        </caravanTraderKinds>
+        <baseTraderKinds Inherit="False">
+            <li>Base_JCJensonRemnants_Standard</li>
+        </baseTraderKinds>
+        <pawnGroupMakers Inherit="False">
+        <li>
+            <!-- Normal fights, standard mix -->
+            <kindDef>Combat</kindDef>
+            <options>
+            <JCJ_intern>5</JCJ_intern>
+            <JCJ_CorpSecurity>10</JCJ_CorpSecurity>
+            <Grenadier_Destructive>1.5</Grenadier_Destructive>
+            <Mercenary_Slasher>7</Mercenary_Slasher>
+            <MD_JCJWorkerDrone>0.05</MD_JCJWorkerDrone>
+            <Mercenary_Gunner>10</Mercenary_Gunner>
+            <Mercenary_Elite>10</Mercenary_Elite>
+            <JCJ_Executive>10</JCJ_Executive>
+            </options>
+        </li>
+        <li>
+            <kindDef>Peaceful</kindDef>
+            <options>
+            <JCJ_intern>20</JCJ_intern>
+            <MD_JCJWorkerDrone>1</MD_JCJWorkerDrone>
+            <JCJ_CorpSecurity>10</JCJ_CorpSecurity>
+            <JCJ_Executive>10</JCJ_Executive>
+            </options>
+        </li>
+        <li>
+            <kindDef>Trader</kindDef>
+            <traders>
+            <JCJ_CorpTrader>1</JCJ_CorpTrader>
+            </traders>
+            <carriers>
+            <Muffalo>6</Muffalo>
+            <Dromedary>5</Dromedary>
+            <Alpaca>2</Alpaca>
+            <Elephant>1</Elephant>
+            </carriers>
+            <guards>
+            <JCJ_intern>3</JCJ_intern>
+            <MD_JCJWorkerDrone>1</MD_JCJWorkerDrone>
+            <JCJ_CorpSecurity>10</JCJ_CorpSecurity>
+            <Grenadier_Destructive>1.5</Grenadier_Destructive>
+            <Mercenary_Slasher>7</Mercenary_Slasher>
+            <Mercenary_Gunner>10</Mercenary_Gunner>
+            <Mercenary_Elite>10</Mercenary_Elite>
+            </guards>
+        </li>
+        <li>
+            <kindDef>Settlement</kindDef>
+            <options>
+            <JCJ_intern>10</JCJ_intern>
+            <JCJ_CorpSecurity>10</JCJ_CorpSecurity>
+            <MD_JCJWorkerDrone>1</MD_JCJWorkerDrone>
+            <Grenadier_Destructive>1.5</Grenadier_Destructive>
+            <Mercenary_Slasher>7</Mercenary_Slasher>
+            <Mercenary_Gunner>10</Mercenary_Gunner>
+            <Mercenary_Elite>10</Mercenary_Elite>
+            <JCJ_Executive>10</JCJ_Executive>
+            </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+            <kindDef>Miners</kindDef>
+            <commonality>1</commonality>
+            <options>
+            <JCJ_Miner>1</JCJ_Miner>
+            </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+            <kindDef>Hunters</kindDef>
+            <commonality>1</commonality>
+            <options>
+            <Hunter>1</Hunter>
+            </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+            <kindDef>Loggers</kindDef>
+            <commonality>1</commonality>
+            <options>
+            <JCJ_Logger>1</JCJ_Logger>
+            </options>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Ideology">
+            <kindDef>Farmers</kindDef>
+            <commonality>1</commonality>
+            <options>
+            <Farmer>1</Farmer>
+            </options>
+        </li>
+        </pawnGroupMakers>
+    </FactionDef>
+</Defs>

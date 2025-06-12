@@ -1,0 +1,68 @@
+<Defs>
+	<EffecterDef>
+		<defName>MD_Damage_HitDrone</defName>
+		<children>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+				<positionRadius>0.4</positionRadius>
+				<fleckDef>AirPuff</fleckDef>
+				<burstCount>4~5</burstCount>
+				<speed>0.4~0.8</speed>
+				<scale>1.0~1.1</scale>
+				<color>(5, 5, 5)</color>
+				<spawnLocType>OnSource</spawnLocType>
+			</li>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+				<positionRadius>0.1</positionRadius>
+				<fleckDef>BloodSplash</fleckDef>
+				<burstCount>2~3</burstCount>
+				<scale>1.1~1.4</scale>
+				<color>(5, 5, 5)</color>
+				<spawnLocType>OnSource</spawnLocType>
+			</li>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+				<positionRadius>0.0</positionRadius>
+				<fleckDef>BodyImpact</fleckDef>
+				<burstCount>1</burstCount>
+				<scale>0.4</scale>
+				<color>(5, 5, 5)</color>
+				<spawnLocType>OnSource</spawnLocType>
+			</li>
+		</children>
+		<offsetTowardsTarget>0.25~0.25</offsetTowardsTarget>
+		<positionRadius>0.1</positionRadius>
+	</EffecterDef>
+
+	<EffecterDef>
+		<defName>MD_Damage_NaniteHit</defName>
+		<children>
+      		<li>
+        		<subEffecterClass>SubEffecter_SoundTriggered</subEffecterClass>
+        		<soundDef>MD_NaniteAcidSizzle</soundDef>
+      		</li>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+				<positionRadius>0.4</positionRadius>
+				<fleckDef>AirPuff</fleckDef>
+				<burstCount>4~5</burstCount>
+				<speed>0.4~0.8</speed>
+				<scale>0.6~1.0</scale>
+				<color>(255, 255, 255)</color>
+				<spawnLocType>OnSource</spawnLocType>
+			</li>
+			<li>
+				<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+				<positionRadius>0.1</positionRadius>
+				<fleckDef>MD_LiquidSplash</fleckDef>
+				<burstCount>2~3</burstCount>
+				<scale>1.1~1.4</scale>
+				<color>(255, 255, 0)</color>
+				<spawnLocType>OnSource</spawnLocType>
+			</li>
+		</children>
+		<offsetTowardsTarget>0.25~0.25</offsetTowardsTarget>
+		<positionRadius>0.1</positionRadius>
+	</EffecterDef>
+</Defs>

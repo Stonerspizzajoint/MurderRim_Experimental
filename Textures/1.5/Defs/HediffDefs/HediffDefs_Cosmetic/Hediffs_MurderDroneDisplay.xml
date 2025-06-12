@@ -1,0 +1,257 @@
+<Defs>
+<!--Drafted and undrafted cosmetic eye hediffs-->
+	<HediffDef ParentName="MD_CosmeticDisplayBase">
+		<defName>MD_Drafted_DisplayEyes_DD</defName>
+        <extraTooltip>Drafted or Hostile</extraTooltip>
+		<renderNodeProperties>
+			<!--X Eyes South-->
+			<li Class="VFECore.PawnRenderNodeProperties_Omni">
+				<nodeClass>VFECore.PawnRenderNode_Omni</nodeClass>
+				<workerClass>PawnRenderNodeWorker_Eye</workerClass>
+				<visibleFacing>
+					<li>South</li>
+					<li>East</li>
+					<li>West</li>
+				</visibleFacing>
+      			<conditionalGraphics>
+					<alts>
+						<li>
+							<!--Blank Display when dead or downed-->
+        					<requirements>
+          						<li>Dead</li>
+        					</requirements>
+							<texPath>Pawn/Display/DisplayEyesBlank/DisplayEyesBlank</texPath>
+						</li>
+					</alts>
+					<!--Normal Display-->
+					<shader>TransparentPostLight</shader>
+					<colorA>
+						<skinColor>true</skinColor>
+					</colorA>
+        			<texPaths>
+          				<li>Pawn/Display/DisplayEyesMurder/XEyes</li>
+        			</texPaths>
+      			</conditionalGraphics>
+				<rotDrawMode>Fresh, Rotting</rotDrawMode>
+				<parentTagDef>Head</parentTagDef>
+				<drawSize>0.23</drawSize>
+				<side>Center</side>
+				<drawData>
+					<defaultData>
+						<layer>54</layer>
+						<offset>(0, 0, -0.04)</offset>
+					</defaultData>
+					<dataEast>
+						<layer>54</layer>
+						<offset>(0.047, 0, -0.04)</offset>
+					</dataEast>
+					<dataWest>
+						<layer>54</layer>
+						<offset>(-0.047, 0, -0.04)</offset>
+						<flip>true</flip>
+					</dataWest>
+				</drawData>
+			</li>
+		</renderNodeProperties>
+	</HediffDef>
+
+<!--Eye HeadBand in Normal state-->
+	<HediffDef ParentName="MD_CosmeticDisplayBase">
+		<defName>MD_Normal_HeadBand_DD</defName>
+		<label>Eye Band</label>
+        <extraTooltip>normal</extraTooltip>
+		<renderNodeProperties>
+			<li>
+				<workerClass>PawnRenderNodeWorker_Head</workerClass>
+				<visibleFacing>
+					<li>East</li>
+					<li>West</li>
+					<li>South</li>
+				</visibleFacing>
+        		<texPaths>
+          			<li>Pawn/DisassemblyDrone/Head/Eye_Headband/Eyeband</li>
+        		</texPaths>
+				<colorType>Skin</colorType>
+				<shaderTypeDef>Cutout</shaderTypeDef>
+				<parentTagDef>Head</parentTagDef>
+				<drawSize>0.7</drawSize>
+				<drawData>
+					<scaleOffsetByBodySize>false</scaleOffsetByBodySize>
+					<defaultData>
+						<offset>(0, 0, -0.32)</offset>
+						<layer>66</layer>
+					</defaultData>
+					<dataNorth>
+						<layer>-2</layer>
+					</dataNorth>
+					<dataEast>
+						<offset>(0, 0, -0.37)</offset>
+						<layer>66</layer>
+					</dataEast>
+					<dataWest>
+						<offset>(0, 0, -0.37)</offset>
+						<layer>66</layer>
+						<flip>true</flip>
+					</dataWest>
+				</drawData>
+				<children>
+					<!--Eye HeadBand Lights-->
+					<li Class="VFECore.PawnRenderNodeProperties_Omni">
+						<nodeClass>VFECore.PawnRenderNode_Omni</nodeClass>
+						<visibleFacing>
+							<li>East</li>
+							<li>West</li>
+							<li>South</li>
+						</visibleFacing>
+      					<conditionalGraphics>
+							<shader>TransparentPostLight</shader>
+							<alts>
+								<li>
+        							<requirements>
+          								<li>Dead</li>
+        							</requirements>
+									<texPath>Pawn/Display/DisplayEyesBlank/DisplayEyesBlank</texPath>
+								</li>
+							</alts>
+							<colorA>
+								<skinColor>true</skinColor>
+							</colorA>
+        					<texPaths>
+          						<li>Pawn/DisassemblyDrone/Head/Eye_Headband/Lights/EyebandLights</li>
+        					</texPaths>
+      					</conditionalGraphics>
+						<drawData>
+							<scaleOffsetByBodySize>false</scaleOffsetByBodySize>
+							<defaultData>
+								<layer>67</layer>
+							</defaultData>
+							<dataNorth>
+								<layer>-2</layer>
+							</dataNorth>
+							<dataEast>
+								<layer>67</layer>
+							</dataEast>
+							<dataWest>
+								<layer>67</layer>
+								<flip>true</flip>
+							</dataWest>
+						</drawData>
+					</li>
+				</children>
+			</li>
+		</renderNodeProperties>
+	</HediffDef>
+
+<!--Eye HeadBand in confused state-->
+	<HediffDef ParentName="MD_CosmeticDisplayBase">
+		<defName>MD_IsConfused_HeadBandRed_DD</defName>
+		<label>Eye Band</label>
+        <extraTooltip>Damaged</extraTooltip>
+		<renderNodeProperties>
+			<li>
+				<workerClass>PawnRenderNodeWorker_Head</workerClass>
+				<visibleFacing>
+					<li>East</li>
+					<li>West</li>
+					<li>South</li>
+				</visibleFacing>
+        		<texPaths>
+          			<li>Pawn/DisassemblyDrone/Head/Eye_Headband/ConfusedState/DamagedEyeband</li>
+        		</texPaths>
+				<colorType>Skin</colorType>
+				<shaderTypeDef>Cutout</shaderTypeDef>
+				<parentTagDef>Head</parentTagDef>
+				<drawSize>0.7</drawSize>
+				<drawData>
+					<scaleOffsetByBodySize>false</scaleOffsetByBodySize>
+					<defaultData>
+						<offset>(0, 0, -0.32)</offset>
+						<layer>66</layer>
+					</defaultData>
+					<dataNorth>
+						<layer>-2</layer>
+					</dataNorth>
+					<dataEast>
+						<offset>(0, 0, -0.37)</offset>
+						<layer>66</layer>
+					</dataEast>
+					<dataWest>
+						<offset>(0, 0, -0.37)</offset>
+						<layer>66</layer>
+						<flip>true</flip>
+					</dataWest>
+				</drawData>
+				<children>
+					<!--Damaged HeadBand Red Lights-->
+					<li Class="VFECore.PawnRenderNodeProperties_Omni">
+						<nodeClass>VFECore.PawnRenderNode_Omni</nodeClass>
+						<visibleFacing>
+							<li>East</li>
+							<li>West</li>
+							<li>South</li>
+						</visibleFacing>
+      					<conditionalGraphics>
+							<shader>TransparentPostLight</shader>
+							<colorA>
+								<skinColor>false</skinColor>
+							</colorA>
+        					<texPaths>
+          						<li>Pawn/DisassemblyDrone/Head/Eye_Headband/ConfusedState/Lights/DamagedEyebandRedLight</li>
+        					</texPaths>
+      					</conditionalGraphics>
+						<parentTagDef>Head</parentTagDef>
+						<drawData>
+							<scaleOffsetByBodySize>false</scaleOffsetByBodySize>
+							<defaultData>
+								<layer>67</layer>
+							</defaultData>
+							<dataNorth>
+								<layer>-2</layer>
+							</dataNorth>
+							<dataEast>
+								<layer>67</layer>
+							</dataEast>
+							<dataWest>
+								<layer>67</layer>
+							</dataWest>
+						</drawData>
+					</li>
+					<!--Damaged HeadBand Lights-->
+					<li Class="VFECore.PawnRenderNodeProperties_Omni">
+						<nodeClass>VFECore.PawnRenderNode_Omni</nodeClass>
+						<visibleFacing>
+							<li>East</li>
+							<li>West</li>
+							<li>South</li>
+						</visibleFacing>
+      					<conditionalGraphics>
+							<shader>TransparentPostLight</shader>
+							<colorA>
+								<skinColor>true</skinColor>
+							</colorA>
+        					<texPaths>
+          						<li>Pawn/DisassemblyDrone/Head/Eye_Headband/ConfusedState/Lights/DamagedEyebandLight</li>
+        					</texPaths>
+      					</conditionalGraphics>
+						<parentTagDef>Head</parentTagDef>
+						<drawData>
+							<scaleOffsetByBodySize>false</scaleOffsetByBodySize>
+							<defaultData>
+								<layer>67</layer>
+							</defaultData>
+							<dataNorth>
+								<layer>-2</layer>
+							</dataNorth>
+							<dataEast>
+								<layer>67</layer>
+							</dataEast>
+							<dataWest>
+								<layer>67</layer>
+							</dataWest>
+						</drawData>
+					</li>
+				</children>
+			</li>
+		</renderNodeProperties>
+	</HediffDef>
+</Defs>

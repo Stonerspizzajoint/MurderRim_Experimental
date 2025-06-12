@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<!--Normal Worker Drone Head-->
+	<HeadTypeDef ParentName="AverageBase">
+		<defName>MD_Drone_Head</defName>
+		<graphicPath>Pawn/WorkerDrone/Head_HQ/Drone_Head</graphicPath>
+		<randomChosen>false</randomChosen>
+		<hairMeshSize>(1.48, 1.5)</hairMeshSize>
+		<eyeOffsetEastWest>(0.13, 0, 0.18)</eyeOffsetEastWest>
+		<beardOffset>(0, 0, 0.038)</beardOffset>
+		<requiredGenes>
+			<li>MD_DroneBody</li>
+		</requiredGenes>
+		<selectionWeight>1</selectionWeight>
+		<modExtensions>
+			<li Class="VFECore.HeadExtension">
+			 <forcedHeadShader>CutoutComplex</forcedHeadShader>
+			</li>
+		</modExtensions>
+	</HeadTypeDef>
+
+<!--Disassembly Drone Head-->
+	<HeadTypeDef ParentName="AverageBase">
+		<defName>MD_MurderDrone_Head</defName>
+		<graphicPath>Pawn/WorkerDrone/Head_HQ/Drone_Head</graphicPath>
+		<randomChosen>false</randomChosen>
+		<hairMeshSize>(1.48, 1.5)</hairMeshSize>
+		<eyeOffsetEastWest>(0.13, 0, 0.18)</eyeOffsetEastWest>
+		<beardOffset>(0, 0, 0.038)</beardOffset>
+		<requiredGenes>
+			<li>MD_MurderDroneBody</li>
+		</requiredGenes>
+		<selectionWeight>1</selectionWeight>
+		<modExtensions>
+			<li Class="VFECore.HeadExtension">
+			 <forcedHeadShader>CutoutComplex</forcedHeadShader>
+			</li>
+		</modExtensions>
+	</HeadTypeDef>
+</Defs>

@@ -1,0 +1,14 @@
+<Patch>
+    <!--========Wing Powered Flight Buff========-->
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Combat Extended</li>
+        </mods>
+        <match Class="PatchOperationReplace">
+            <xpath>Defs/AbilityDef[defName="MD_WingPoweredFlight"]/verbProperties/range</xpath>
+            <value>
+                <range>24.9</range>
+            </value>
+        </match>
+    </Operation>
+</Patch>

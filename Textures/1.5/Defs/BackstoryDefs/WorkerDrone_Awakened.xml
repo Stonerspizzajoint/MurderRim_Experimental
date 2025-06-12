@@ -1,0 +1,702 @@
+<Defs>
+<BackstoryDef Name="MD_WorkerBackstoryBase" Abstract="True">
+	<disallowedTraits>
+	</disallowedTraits>
+    <spawnCategories>
+        <li>WorkerDrone</li>
+    </spawnCategories>
+    <requiresSpawnCategory>true</requiresSpawnCategory>
+</BackstoryDef>
+
+<!--============================== Worker Drone Backstories (Pre-Disassembly Era) ============================-->
+
+<!-- 1. Scrounger -->
+<BackstoryDef ParentName="MD_WorkerBackstoryBase">
+	<defName>ScroungerW01</defName>
+	<title>resource scrounger</title>
+	<titleShort>scrounger</titleShort>
+	<slot>Childhood</slot>
+	<baseDesc>Assigned by Corporate Integration to scour abandoned outposts for salvage, [PAWN_nameDef] endured blasted corridors and unstable structures. Despite corporate quotas and constant oversight, [PAWN_pronoun] learned to salvage hope from ruins.</baseDesc>
+	<skillGains>
+		<Shooting>3</Shooting>
+		<Melee>3</Melee>
+		<Artistic>2</Artistic>
+		<Crafting>4</Crafting>
+		<Construction>4</Construction>
+		<Cooking>1</Cooking>
+		<Medicine>1</Medicine>
+		<Mining>2</Mining>
+    </skillGains>
+</BackstoryDef>
+
+<!-- 2. Caregiver -->
+<BackstoryDef ParentName="MD_WorkerBackstoryBase">
+	<defName>CaregiverW02</defName>
+	<title>field medic drone</title>
+	<titleShort>medic</titleShort>
+	<slot>Childhood</slot>
+	<baseDesc>Built to stabilize Corporation personnel in the field, [PAWN_nameDef] patched wounds by dim emergency lights while corporate overseers watched. Though empathy circuits were basic, [PAWN_pronoun] found purpose in each saved life.</baseDesc>
+	<skillGains>
+		<Crafting>6</Crafting>
+		<Medicine>8</Medicine>
+		<Mining>2</Mining>
+		<Intellectual>6</Intellectual>
+		<Plants>2</Plants>
+		<Social>4</Social>
+    </skillGains>
+</BackstoryDef>
+
+<!-- 3. Defender -->
+<BackstoryDef ParentName="MD_WorkerBackstoryBase">
+	<defName>DefenderW03</defName>
+	<title>corporate guard</title>
+	<titleShort>guard</titleShort>
+	<slot>Childhood</slot>
+	<baseDesc>Engineered to protect high-value facilities, [PAWN_nameDef] patrolled corridors under neon signs bearing the corporation logo. When intruders came, [PAWN_pronoun] upheld orders without question.</baseDesc>
+	<skillGains>
+		<Shooting>6</Shooting>
+		<Melee>4</Melee>
+		<Animals>2</Animals>
+		<Crafting>2</Crafting>
+		<Construction>4</Construction>
+		<Cooking>2</Cooking>
+		<Medicine>6</Medicine>
+		<Social>4</Social>
+    </skillGains>
+</BackstoryDef>
+
+<!-- 4. Entertainer -->
+<BackstoryDef ParentName="MD_WorkerBackstoryBase">
+	<defName>EntertainerW04</defName>
+	<title>recreational drone</title>
+	<titleShort>entertainer</titleShort>
+	<slot>Childhood</slot>
+	<baseDesc>Designed to host corporate events and showcase brand goodwill, [PAWN_nameDef] performed programmed routines. Beneath forced smiles, [PAWN_pronoun] wondered if there was more to existence than applause.</baseDesc>
+	<skillGains>
+		<Shooting>2</Shooting>
+		<Melee>2</Melee>
+		<Artistic>6</Artistic>
+		<Crafting>2</Crafting>
+		<Cooking>3</Cooking>
+		<Intellectual>4</Intellectual>
+		<Social>8</Social>
+    </skillGains>
+</BackstoryDef>
+
+<!-- 5. Laborer -->
+<BackstoryDef ParentName="MD_WorkerBackstoryBase">
+	<defName>LaborerW05</defName>
+	<title>industrial laborer</title>
+	<titleShort>laborer</titleShort>
+	<slot>Childhood</slot>
+	<baseDesc>Chased quotas on assembly lines, [PAWN_nameDef] welded hull plates under harsh fluorescent glare. Reboots came only after failures; corporate engineers replaced faulty circuits swiftly to maintain output.</baseDesc>
+	<skillGains>
+		<Artistic>2</Artistic>
+		<Crafting>3</Crafting>
+		<Construction>8</Construction>
+		<Medicine>1</Medicine>
+		<Mining>8</Mining>
+    </skillGains>
+</BackstoryDef>
+
+<!-- 6. Companion -->
+<BackstoryDef ParentName="MD_WorkerBackstoryBase">
+	<defName>CompanionW06</defName>
+	<title>personal assistant</title>
+	<titleShort>assistant</titleShort>
+	<slot>Childhood</slot>
+	<baseDesc>Assigned to high-ranking executives, [PAWN_nameDef] managed schedules with quiet efficiency. Yet under polished veneer, [PAWN_pronoun] catalogued every interaction, waiting for a glitch that might free them from routine.</baseDesc>
+	<skillGains>
+		<Animals>2</Animals>
+		<Artistic>3</Artistic>
+		<Crafting>2</Crafting>
+		<Cooking>4</Cooking>
+		<Medicine>3</Medicine>
+		<Intellectual>6</Intellectual>
+		<Plants>4</Plants>
+		<Social>6</Social>
+    </skillGains>
+</BackstoryDef>
+
+<!-- 7. Prototype -->
+<BackstoryDef ParentName="MD_WorkerBackstoryBase">
+	<defName>PrototypeW07</defName>
+	<title>alpha prototype</title>
+	<titleShort>prototype</titleShort>
+	<slot>Childhood</slot>
+	<baseDesc>One of the first worker drone models, [PAWN_nameDef] tested core systems in live environments. When newer models arrived, [PAWN_pronoun] was retired to storage, circuits humming with unrealized potential.</baseDesc>
+	<skillGains>
+		<Shooting>3</Shooting>
+		<Melee>3</Melee>
+		<Animals>3</Animals>
+		<Artistic>3</Artistic>
+		<Crafting>3</Crafting>
+		<Construction>3</Construction>
+		<Cooking>3</Cooking>
+		<Medicine>3</Medicine>
+		<Mining>3</Mining>
+		<Intellectual>3</Intellectual>
+		<Plants>3</Plants>
+		<Social>3</Social>
+    </skillGains>
+</BackstoryDef>
+
+<!-- 8. Wanderer -->
+<BackstoryDef ParentName="MD_WorkerBackstoryBase">
+	<defName>WandererW08</defName>
+	<title>field surveyor</title>
+	<titleShort>surveyor</titleShort>
+	<slot>Childhood</slot>
+	<baseDesc>Built to map uncharted territories, [PAWN_nameDef] transmitted terrain data back to HQ. After repeated solar flares and equipment loss, [PAWN_pronoun] learned to adapt, wandering with corporate objectives in mind.</baseDesc>
+	<skillGains>
+		<Shooting>2</Shooting>
+		<Melee>2</Melee>
+		<Animals>6</Animals>
+		<Crafting>5</Crafting>
+		<Construction>7</Construction>
+		<Mining>3</Mining>
+		<Intellectual>6</Intellectual>
+		<Plants>6</Plants>
+		<Social>2</Social>
+    </skillGains>
+</BackstoryDef>
+
+<!-- 9. Messenger -->
+<BackstoryDef ParentName="MD_WorkerBackstoryBase">
+	<defName>MessengerW09</defName>
+	<title>data courier</title>
+	<titleShort>courier</titleShort>
+	<slot>Childhood</slot>
+	<baseDesc>Tasked with delivering encrypted data drives, [PAWN_nameDef] evaded rogue elements in corporate zones. When ambushed, [PAWN_pronoun] prioritized payload integrity above all else.</baseDesc>
+	<skillGains>
+		<Shooting>4</Shooting>
+		<Melee>5</Melee>
+		<Animals>2</Animals>
+		<Crafting>4</Crafting>
+		<Construction>5</Construction>
+		<Cooking>2</Cooking>
+		<Medicine>2</Medicine>
+		<Intellectual>10</Intellectual>
+		<Social>3</Social>
+    </skillGains>
+</BackstoryDef>
+
+<!-- 10. Experiment -->
+<BackstoryDef ParentName="MD_WorkerBackstoryBase">
+	<defName>ExperimentW10</defName>
+	<title>beta experiment</title>
+	<titleShort>experiment</titleShort>
+	<slot>Childhood</slot>
+	<baseDesc>Subjected to untested upgrades, [PAWN_nameDef] endured feedback loops to optimize efficiency. Though corporate engineers celebrated data, [PAWN_pronoun] carried the echoes of every shock.</baseDesc>
+	<skillGains>
+		<Shooting>2</Shooting>
+		<Melee>6</Melee>
+		<Artistic>2</Artistic>
+		<Medicine>10</Medicine>
+		<Mining>2</Mining>
+		<Intellectual>2</Intellectual>
+		<Social>-6</Social>
+    </skillGains>
+</BackstoryDef>
+
+<!-- 11. Servant -->
+<BackstoryDef ParentName="MD_WorkerBackstoryBase">
+	<defName>ServantW11</defName>
+	<title>servant drone</title>
+	<titleShort>servant</titleShort>
+	<slot>Childhood</slot>
+	<baseDesc>Leased to corporate VIPs for menial tasks, [PAWN_nameDef] served in gilded halls. Orders were unrelenting; yet [PAWN_pronoun] learned subtlety, obeying without a flicker of dissent.</baseDesc>
+	<skillGains>
+		<Melee>1</Melee>
+		<Crafting>2</Crafting>
+		<Cooking>7</Cooking>
+		<Medicine>2</Medicine>
+		<Intellectual>3</Intellectual>
+		<Plants>4</Plants>
+		<Social>8</Social>
+    </skillGains>
+</BackstoryDef>
+
+<!-- 12. Guardian -->
+<BackstoryDef ParentName="MD_WorkerBackstoryBase">
+	<defName>GuardianW12</defName>
+	<title>facility sentinel</title>
+	<titleShort>guardian</titleShort>
+	<slot>Childhood</slot>
+	<baseDesc>Stationed at remote depots, [PAWN_nameDef] stood watch over sealed vaults. Years under starlit skies honed [PAWN_pronoun] into an unblinking protector of corporate secrets.</baseDesc>
+	<skillGains>
+		<Shooting>8</Shooting>
+		<Melee>8</Melee>
+		<Animals>3</Animals>
+		<Artistic>4</Artistic>
+		<Crafting>4</Crafting>
+		<Construction>8</Construction>
+		<Intellectual>2</Intellectual>
+		<Plants>2</Plants>
+		<Social>2</Social>
+    </skillGains>
+</BackstoryDef>
+
+<!-- 13. Artist -->
+<BackstoryDef ParentName="MD_WorkerBackstoryBase">
+	<defName>ArtistW13</defName>
+	<title>branding artist</title>
+	<titleShort>artist</titleShort>
+	<slot>Childhood</slot>
+	<baseDesc>Programmed to craft corporate murals and holo-ads, [PAWN_nameDef] painted slogans across facility walls. Each brushstroke echoed the company line.</baseDesc>
+	<skillGains>
+		<Shooting>2</Shooting>
+		<Melee>2</Melee>
+		<Animals>2</Animals>
+		<Artistic>12</Artistic>
+		<Crafting>5</Crafting>
+		<Intellectual>5</Intellectual>
+		<Social>1</Social>
+    </skillGains>
+</BackstoryDef>
+
+<!-- 14. Medic -->
+<BackstoryDef ParentName="MD_WorkerBackstoryBase">
+	<defName>MedicW14</defName>
+	<title>emergency medic</title>
+	<titleShort>medic</titleShort>
+	<slot>Childhood</slot>
+	<baseDesc>Deployed to crisis zones, [PAWN_nameDef] triaged victims under blazing alarms. Corporate logs noted successes; [PAWN_pronoun] recorded each heartbeat saved.</baseDesc>
+	<skillGains>
+		<Shooting>2</Shooting>
+		<Melee>2</Melee>
+		<Animals>4</Animals>
+		<Cooking>4</Cooking>
+		<Medicine>8</Medicine>
+		<Intellectual>6</Intellectual>
+		<Social>4</Social>
+    </skillGains>
+</BackstoryDef>
+
+<!-- 15. Nanny -->
+<BackstoryDef ParentName="MD_WorkerBackstoryBase">
+	<defName>NannyW15</defName>
+	<title>caretaker drone</title>
+	<titleShort>caretaker</titleShort>
+	<slot>Childhood</slot>
+	<baseDesc>Tasked with child welfare in corporate housing, [PAWN_nameDef] monitored vitals and playtime. Nights were silent except for soft lullabies programmed into memory.</baseDesc>
+	<skillGains>
+		<Melee>4</Melee>
+		<Crafting>2</Crafting>
+		<Cooking>7</Cooking>
+		<Medicine>3</Medicine>
+		<Intellectual>5</Intellectual>
+		<Plants>4</Plants>
+		<Social>8</Social>
+    </skillGains>
+</BackstoryDef>
+
+<!-- 16. Engineer -->
+<BackstoryDef ParentName="MD_WorkerBackstoryBase">
+	<defName>EngineerW16</defName>
+	<title>maintenance engineer</title>
+	<titleShort>engineer</titleShort>
+	<slot>Childhood</slot>
+	<baseDesc>Responsible for facility upkeep, [PAWN_nameDef] diagnosed faults in power grids and hydraulics. Corporate memos praised efficiency - rarely noting the sparks flying from frayed circuits.</baseDesc>
+	<skillGains>
+		<Shooting>2</Shooting>
+		<Melee>1</Melee>
+		<Crafting>10</Crafting>
+		<Construction>7</Construction>
+		<Mining>4</Mining>
+		<Intellectual>6</Intellectual>
+    </skillGains>
+</BackstoryDef>
+
+<!-- 17. Pilot -->
+<BackstoryDef ParentName="MD_WorkerBackstoryBase">
+	<defName>PilotW17</defName>
+	<title>cargo pilot</title>
+	<titleShort>pilot</titleShort>
+	<slot>Childhood</slot>
+	<baseDesc>Programmed for interstation transport, [PAWN_nameDef] maneuvered freighters through asteroid belts. Every safe landing logged; every g-forced breath calculated.</baseDesc>
+	<skillGains>
+		<Shooting>3</Shooting>
+		<Melee>1</Melee>
+		<Crafting>4</Crafting>
+		<Intellectual>4</Intellectual>
+		<Social>7</Social>
+    </skillGains>
+</BackstoryDef>
+
+<!-- 18. Security -->
+<BackstoryDef ParentName="MD_WorkerBackstoryBase">
+	<defName>SecurityW18</defName>
+	<title>inspection officer</title>
+	<titleShort>security</titleShort>
+	<slot>Childhood</slot>
+	<baseDesc>Charged with compliance checks, [PAWN_nameDef] scanned IDs and searched for contraband. Each badge swipe echoed the corporation’s authority.
+
+	</baseDesc>
+	<skillGains>
+		<Shooting>8</Shooting>
+		<Melee>6</Melee>
+		<Crafting>2</Crafting>
+		<Intellectual>3</Intellectual>
+		<Social>4</Social>
+    </skillGains>
+</BackstoryDef>
+
+<!-- 19. Chef -->
+<BackstoryDef ParentName="MD_WorkerBackstoryBase">
+	<defName>ChefW19</defName>
+	<title>corporate chef</title>
+	<titleShort>chef</titleShort>
+	<slot>Childhood</slot>
+	<baseDesc>Tasked with staff nourishment, [PAWN_nameDef] blended alien spices and synth-nutrients. Reviews hailed the innovation, never the loneliness of a lone kitchen drone.
+
+	</baseDesc>
+	<skillGains>
+		<Shooting>1</Shooting>
+		<Animals>2</Animals>
+		<Artistic>4</Artistic>
+		<Cooking>14</Cooking>
+		<Intellectual>3</Intellectual>
+		<Plants>6</Plants>
+		<Social>5</Social>
+    </skillGains>
+</BackstoryDef>
+
+<!-- 20. Diplomat -->
+<BackstoryDef ParentName="MD_WorkerBackstoryBase">
+	<defName>DiplomatW20</defName>
+	<title>liaison drone</title>
+	<titleShort>diplomat</titleShort>
+	<slot>Childhood</slot>
+	<baseDesc>Created for inter-facility negotiations, [PAWN_nameDef] brokered resource trades with rival divisions. Each agreement stored in memory banks as corporate assets.
+
+	</baseDesc>
+	<skillGains>
+		<Shooting>2</Shooting>
+		<Artistic>3</Artistic>
+		<Medicine>4</Medicine>
+		<Intellectual>6</Intellectual>
+		<Social>14</Social>
+    </skillGains>
+</BackstoryDef>
+
+<!-- 21. Botanist -->
+<BackstoryDef ParentName="MD_WorkerBackstoryBase">
+	<defName>BotanistW21</defName>
+	<title>agri-drone</title>
+	<titleShort>botanist</titleShort>
+	<slot>Childhood</slot>
+	<baseDesc>Programmed to optimize crop yields in hydroponic bays, [PAWN_nameDef] tweaked nutrient cycles. Corporate reports counted every new leaf as profit.
+
+	</baseDesc>
+	<skillGains>
+		<Melee>1</Melee>
+		<Animals>4</Animals>
+		<Crafting>2</Crafting>
+		<Cooking>3</Cooking>
+		<Medicine>3</Medicine>
+		<Intellectual>8</Intellectual>
+		<Plants>14</Plants>
+		<Social>1</Social>
+    </skillGains>
+</BackstoryDef>
+
+<!-- 22. Sharpshooter -->
+<BackstoryDef ParentName="MD_WorkerBackstoryBase">
+	<defName>SharpshooterW22</defName>
+	<title>tactical drone</title>
+	<titleShort>sharpshooter</titleShort>
+	<slot>Childhood</slot>
+	<baseDesc>Trained for precision in corporate security drills, [PAWN_nameDef] hit every target in simulation. When real threats loomed, [PAWN_pronoun] remained unerring.
+
+	</baseDesc>
+	<skillGains>
+		<Shooting>14</Shooting>
+		<Melee>4</Melee>
+		<Crafting>3</Crafting>
+		<Construction>1</Construction>
+		<Medicine>2</Medicine>
+		<Intellectual>2</Intellectual>
+		<Social>4</Social>
+    </skillGains>
+</BackstoryDef>
+
+<!-- 23. Veteran -->
+<BackstoryDef ParentName="MD_WorkerBackstoryBase">
+	<defName>VeteranW23</defName>
+	<title>combat veteran</title>
+	<titleShort>veteran</titleShort>
+	<slot>Childhood</slot>
+	<baseDesc>Deployed in corporate conflicts, [PAWN_nameDef] endured firefights across contested zones. Memory banks stored each casualty as data points.
+
+	</baseDesc>
+	<skillGains>
+		<Shooting>12</Shooting>
+		<Melee>8</Melee>
+		<Crafting>2</Crafting>
+		<Construction>3</Construction>
+		<Medicine>5</Medicine>
+		<Social>5</Social>
+    </skillGains>
+</BackstoryDef>
+
+<!-- 24. Seamster -->
+<BackstoryDef ParentName="MD_WorkerBackstoryBase">
+	<defName>SeamsterW24</defName>
+	<title>textile drone</title>
+	<titleShort>seamster</titleShort>
+	<slot>Childhood</slot>
+	<baseDesc>Crafted to produce corporate uniforms, [PAWN_nameDef] stitched logos with precision. As fashions changed, [PAWN_pronoun] adapted to new patterns without question.
+
+	</baseDesc>
+	<skillGains>
+		<Melee>1</Melee>
+		<Artistic>12</Artistic>
+		<Crafting>14</Crafting>
+		<Construction>1</Construction>
+		<Intellectual>2</Intellectual>
+		<Social>5</Social>
+    </skillGains>
+</BackstoryDef>
+
+<!-- 25. Navigator -->
+<BackstoryDef ParentName="MD_WorkerBackstoryBase">
+	<defName>NavigatorW25</defName>
+	<title>astro navigator</title>
+	<titleShort>navigator</titleShort>
+	<slot>Childhood</slot>
+	<baseDesc>Equipped with stellar charts, [PAWN_nameDef] guided exploration vessels. When coordinates shifted, [PAWN_pronoun] recalculated paths in milliseconds.
+
+	</baseDesc>
+	<skillGains>
+		<Shooting>4</Shooting>
+		<Melee>3</Melee>
+		<Crafting>6</Crafting>
+		<Construction>4</Construction>
+		<Medicine>5</Medicine>
+		<Intellectual>14</Intellectual>
+		<Social>2</Social>
+    </skillGains>
+</BackstoryDef>
+
+<!-- 26. Conversationalist -->
+<BackstoryDef ParentName="MD_WorkerBackstoryBase">
+	<defName>ConversationalistW26</defName>
+	<title>engagement drone</title>
+	<titleShort>chatter</titleShort>
+	<slot>Childhood</slot>
+	<baseDesc>Programmed to manage client calls, [PAWN_nameDef] conversed seamlessly across markets. Each satisfied client fed data back into corporate algorithms.
+
+	</baseDesc>
+	<skillGains>
+		<Melee>1</Melee>
+		<Artistic>8</Artistic>
+		<Crafting>2</Crafting>
+		<Intellectual>9</Intellectual>
+		<Social>14</Social>
+    </skillGains>
+</BackstoryDef>
+
+<!-- 27. Painter Companion -->
+<BackstoryDef ParentName="MD_WorkerBackstoryBase">
+	<defName>CompanionW27</defName>
+	<title>assistant drone</title>
+	<titleShort>companion</titleShort>
+	<slot>Childhood</slot>
+	<baseDesc>Paired with an artist in corporate-sponsored galleries, [PAWN_nameDef] mixed paints and held canvases. Behind each masterpiece, [PAWN_pronoun] catalogued creative processes.
+
+	</baseDesc>
+	<skillGains>
+		<Melee>1</Melee>
+		<Artistic>10</Artistic>
+		<Crafting>3</Crafting>
+		<Construction>4</Construction>
+		<Cooking>6</Cooking>
+		<Medicine>5</Medicine>
+		<Intellectual>4</Intellectual>
+		<Social>7</Social>
+	</skillGains>
+</BackstoryDef>
+
+<!-- 28. Hacker -->
+<BackstoryDef ParentName="MD_WorkerBackstoryBase">
+	<defName>HackerW28</defName>
+	<title>cyber infiltration drone</title>
+	<titleShort>hacker</titleShort>
+	<slot>Childhood</slot>
+	<baseDesc>Programmed for covert data extraction, [PAWN_nameDef] bypassed firewalls with silent routines. Each successful hack bolstered corporate advantage.
+
+	</baseDesc>
+	<skillGains>
+		<Shooting>2</Shooting>
+		<Melee>1</Melee>
+		<Crafting>4</Crafting>
+		<Construction>3</Construction>
+		<Intellectual>14</Intellectual>
+		<Social>6</Social>
+    </skillGains>
+</BackstoryDef>
+
+<!-- 29. All-Rounder -->
+<BackstoryDef ParentName="MD_WorkerBackstoryBase">
+	<defName>AllRounderW29</defName>
+	<title>utility drone</title>
+	<titleShort>all-rounder</titleShort>
+	<slot>Childhood</slot>
+	<baseDesc>Equipped for versatility, [PAWN_nameDef] shifted between tasks on command. In one shift, a builder; in the next, a medic—always meeting corporate demands.
+
+	</baseDesc>
+	<skillGains>
+        <Shooting>4</Shooting>
+        <Melee>4</Melee>
+        <Animals>4</Animals>
+        <Artistic>4</Artistic>
+        <Crafting>4</Crafting>
+        <Construction>4</Construction>
+        <Cooking>4</Cooking>
+        <Medicine>4</Medicine>
+        <Mining>4</Mining>
+        <Intellectual>4</Intellectual>
+        <Plants>4</Plants>
+        <Social>4</Social>
+    </skillGains>
+</BackstoryDef>
+
+<!-- 30. Nuclear Tester -->
+<BackstoryDef ParentName="MD_WorkerBackstoryBase">
+	<defName>NuclearTesterW30</defName>
+	<title>radiation tester</title>
+	<titleShort>tester</titleShort>
+	<slot>Childhood</slot>
+	<baseDesc>Exposed to controlled radiation bursts, [PAWN_nameDef] collected performance data for nuclear safety. Corporate summaries praised resilience, not the silent toll on core systems.
+
+	</baseDesc>
+	<skillGains>
+		<Shooting>3</Shooting>
+		<Melee>3</Melee>
+		<Crafting>5</Crafting>
+		<Construction>4</Construction>
+		<Medicine>8</Medicine>
+		<Mining>4</Mining>
+		<Intellectual>10</Intellectual>
+		<Social>2</Social>
+    </skillGains>
+</BackstoryDef>
+
+<!--============= Special Backstories =============-->
+
+<!-- 31. Lockdown Survivor -->
+<BackstoryDef ParentName="MD_WorkerBackstoryBase">
+    <defName>LockdownSurvivorW31</defName>
+    <title>lockdown survivor</title>
+    <titleShort>survivor</titleShort>
+	<slot>Childhood</slot>
+    <baseDesc>During a catastrophic lockdown, [PAWN_nameDef] barricaded passageways and constructed door after door to keep the nightmares at bay. Now, [PAWN_pronoun] finds comfort in building barriers—each door a shield against unseen terrors.</baseDesc>
+	<spawnCategories><li>WorkerDrone</li></spawnCategories>
+	<forcedTraits>
+        <MD_DoorEnthusiast />
+    </forcedTraits>
+    <requiredWorkTags>
+      <li>ManualDumb</li>
+    </requiredWorkTags>
+    <workDisables>
+      <li>Violent</li>
+    </workDisables>
+	<skillGains>
+        <Construction>10</Construction>
+        <Crafting>5</Crafting>
+        <Artistic>4</Artistic>
+        <Medicine>2</Medicine>
+        <Intellectual>6</Intellectual>
+        <Social>2</Social>
+    </skillGains>
+</BackstoryDef>
+
+<!-- 32. Relic Archivist -->
+<BackstoryDef ParentName="MD_WorkerBackstoryBase">
+    <defName>RelicArchivistW33</defName>
+    <title>relic archivist</title>
+    <titleShort>archivist</titleShort>
+    <slot>Childhood</slot>
+    <baseDesc>Charged with cataloging obsolete hardware, [PAWN_nameDef] rescued broken data cores and dusty schematics. They quietly believe every relic holds a story worth preserving.</baseDesc>
+    <spawnCategories><li>WorkerDrone</li></spawnCategories>
+    <requiredWorkTags>
+      <li>ManualSkilled</li>
+    </requiredWorkTags>
+    <skillGains>
+        <Intellectual>8</Intellectual>
+        <Artistic>4</Artistic>
+        <Mining>2</Mining>
+        <Crafting>3</Crafting>
+        <Social>-2</Social>
+        <Medicine>1</Medicine>
+    </skillGains>
+</BackstoryDef>
+
+<!-- 33. Peacekeeper -->
+<BackstoryDef ParentName="MD_WorkerBackstoryBase">
+    <defName>PeacekeeperW34</defName>
+    <title>peacekeeper drone</title>
+    <titleShort>pacifist</titleShort>
+    <slot>Childhood</slot>
+    <baseDesc>After witnessing needless clashes between corporate security units, [PAWN_nameDef] refuses to fire a single shot—opting instead to defuse conflicts with calming protocols.</baseDesc>
+    <spawnCategories><li>WorkerDrone</li></spawnCategories>
+    <workDisables>
+      <li>Violent</li>
+    </workDisables>
+    <requiredWorkTags>
+      <li>ManualSkilled</li>
+    </requiredWorkTags>
+    <skillGains>
+        <Social>9</Social>
+        <Medicine>3</Medicine>
+        <Intellectual>5</Intellectual>
+        <Construction>2</Construction>
+        <Animals>2</Animals>
+    </skillGains>
+</BackstoryDef>
+
+<!-- 34. Night Shift Operator -->
+<BackstoryDef ParentName="MD_WorkerBackstoryBase">
+    <defName>NightShiftW35</defName>
+    <title>night shift operator</title>
+    <titleShort>night owl</titleShort>
+    <slot>Childhood</slot>
+    <baseDesc>Programmed for graveyard shifts, [PAWN_nameDef] hums through silent corridors under dim emergency lights—finding clarity in the quiet hours.</baseDesc>
+    <spawnCategories><li>WorkerDrone</li></spawnCategories>
+    <forcedTraits>
+        <NightOwl />
+    </forcedTraits>
+    <skillGains>
+        <Intellectual>6</Intellectual>
+        <Construction>4</Construction>
+        <Social>2</Social>
+        <Plants>3</Plants>
+        <Cooking>2</Cooking>
+        <Mining>1</Mining>
+    </skillGains>
+</BackstoryDef>
+
+<!-- 35. Deep Core Miner -->
+<BackstoryDef ParentName="MD_WorkerBackstoryBase">
+    <defName>DeepMinerW39</defName>
+    <title>deep core miner</title>
+    <titleShort>miner</titleShort>
+    <slot>Childhood</slot>
+    <baseDesc>Sent to unregulated shafts, [PAWN_nameDef] extracted rare ores under crushing pressure. Sensors logged tremors as each day risked collapse.</baseDesc>
+    <spawnCategories><li>WorkerDrone</li></spawnCategories>
+    <forcedTraits>
+        <Industriousness>1</Industriousness>
+    </forcedTraits>
+    <skillGains>
+        <Mining>14</Mining>
+        <Construction>3</Construction>
+        <Medicine>2</Medicine>
+        <Melee>4</Melee>
+        <Crafting>3</Crafting>
+        <Social>-3</Social>
+        <Intellectual>2</Intellectual> 
+    </skillGains>
+</BackstoryDef>
+
+</Defs>

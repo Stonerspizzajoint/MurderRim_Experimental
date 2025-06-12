@@ -1,0 +1,19 @@
+<Defs>
+  <RecipeDef ParentName="VREA_SurgeryAndroid">
+    <defName>MD_ExtractNeutroamine</defName>
+    <label>extract neutroamine</label>
+    <description>Extract neutroamine from the target. The operation will fail to produce neutroamine if the target does not have enough neutroamine.\n\nneutroamine can be administered to others to reduce neutro loss or to satiate those who feed on neutroamine.</description>
+    <workerClass>WorkerDronesMod.Recipe_ExtractNeutroamine</workerClass>
+    <jobString>Extracting neutroamine.</jobString>
+    <workAmount>500</workAmount>
+    <hideBodyPartNames>true</hideBodyPartNames>
+    <targetsBodyPart>false</targetsBodyPart>
+    <isViolation>true</isViolation>
+    <descriptionHyperlinks>
+      <ThingDef>Neutroamine</ThingDef>
+    </descriptionHyperlinks>
+    <uiIconThing>Neutroamine</uiIconThing>
+    <anesthetize>false</anesthetize>
+    <workSkillLearnFactor>2</workSkillLearnFactor>
+  </RecipeDef>
+</Defs>

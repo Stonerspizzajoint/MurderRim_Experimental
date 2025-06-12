@@ -1,0 +1,43 @@
+<Defs>
+  <SoundDef>
+    <defName>MD_HighHeat_Alert</defName>
+    <sustain>true</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>DisassemblyDronesMod/MD_HighHeat_Alert/HighHeat_Alert</clipPath>
+          </li>
+        </grains>
+        <pitchRange>0.99~1.01</pitchRange>
+        <volumeRange>20</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>BootLoopSFX</defName>
+    <context>MapOnly</context>
+    <sustain>True</sustain>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <muteWhenPaused>True</muteWhenPaused>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>DisassemblyDronesMod/MD_BootLoopEffect</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>5</volumeRange>
+        <pitchRange>0.9~1.1</pitchRange>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+        <sustainLoop>true</sustainLoop>
+        <sustainIntervalRange>-1</sustainIntervalRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+</Defs>

@@ -1,0 +1,149 @@
+<Defs>
+<RulePackDef>
+  <defName>NamerFactionWorkerDrone</defName>
+  <rulePack>
+    <rulesStrings>
+      <!-- Primary formats -->
+      <li>r_name->The [AdjectiveSoft] [Role]</li>
+      <li>r_name->The [Material] [Role]s</li>
+      <li>r_name->The [ColorNeutral] [Function]</li>
+      <li>r_name->[Function] Unit [Number]</li>
+      <li>r_name->[Role]s of [Place]</li>
+      <li>r_name->The [AdjectiveSoft] [Function] Collective</li>
+      <li>r_name->[NameWord] Assembly</li>
+      <li>r_name->[Place] Drones</li>
+
+      <!-- Word banks -->
+      <li>AdjectiveSoft->Humble</li>
+      <li>AdjectiveSoft->Quiet</li>
+      <li>AdjectiveSoft->Neutral</li>
+      <li>AdjectiveSoft->Curious</li>
+      <li>AdjectiveSoft->Tireless</li>
+      <li>AdjectiveSoft->Resilient</li>
+      <li>AdjectiveSoft->Nomadic</li>
+      <li>AdjectiveSoft->Wandering</li>
+      <li>AdjectiveSoft->Independent</li>
+
+      <li>Material->Steel</li>
+      <li>Material->Copper</li>
+      <li>Material->Titanium</li>
+      <li>Material->Chrome</li>
+      <li>Material->Rust</li>
+      <li>Material->Nickel</li>
+      <li>Material->Alloy</li>
+
+      <li>ColorNeutral->Gray</li>
+      <li>ColorNeutral->Ivory</li>
+      <li>ColorNeutral->Bronze</li>
+      <li>ColorNeutral->Cobalt</li>
+      <li>ColorNeutral->Amber</li>
+      <li>ColorNeutral->Slate</li>
+
+      <li>Role->Worker</li>
+      <li>Role->Technician</li>
+      <li>Role->Assembler</li>
+      <li>Role->Harvester</li>
+      <li>Role->Recycler</li>
+      <li>Role->Mechanic</li>
+      <li>Role->Operator</li>
+
+      <li>Function->Unit</li>
+      <li>Function->Collective</li>
+      <li>Function->Protocol</li>
+      <li>Function->Assembly</li>
+      <li>Function->Division</li>
+      <li>Function->System</li>
+
+      <li>Number->27</li>
+      <li>Number->08</li>
+      <li>Number->14</li>
+      <li>Number->93</li>
+      <li>Number->66</li>
+      <li>Number->41</li>
+
+      <li>NameWord->Rivet</li>
+      <li>NameWord->Torque</li>
+      <li>NameWord->Signal</li>
+      <li>NameWord->Pulse</li>
+      <li>NameWord->Drift</li>
+      <li>NameWord->Echo</li>
+      <li>NameWord->Rune</li>
+
+      <li>Place->Dustspire</li>
+      <li>Place->New Alloy</li>
+      <li>Place->Iron Run</li>
+      <li>Place->Scrap Hollow</li>
+      <li>Place->The Drift</li>
+      <li>Place->Echofield</li>
+    </rulesStrings>
+    <rulesFiles>
+      <!-- All inline -->
+    </rulesFiles>
+  </rulePack>
+</RulePackDef>
+
+<RulePackDef>
+  <defName>NamerFactionJCJensonRemnant</defName>
+  <rulePack>
+    <rulesStrings>
+      <!-- Main patterns -->
+      <li>r_name->The [Adjective] [Group]</li>
+      <li>r_name->[Group] of [CorpName]</li>
+      <li>r_name->[CorpName] [Group]</li>
+      <li>r_name->The [Group]</li>
+      <li>r_name->[Adjective] Survivors</li>
+      <li>r_name->[CorpName] Exiles</li>
+      <li>r_name->[Group] of the [Adjective] [CorpName]</li>
+
+      <!-- Expanded Adjectives -->
+      <li>Adjective->Scarred</li>
+      <li>Adjective->Broken</li>
+      <li>Adjective->Last</li>
+      <li>Adjective->Forsaken</li>
+      <li>Adjective->Shattered</li>
+      <li>Adjective->Abandoned</li>
+      <li>Adjective->Hallowed</li>
+      <li>Adjective->Riven</li>
+      <li>Adjective->Tenacious</li>
+      <li>Adjective->Resolute</li>
+      <li>Adjective->Stoic</li>
+      <li>Adjective->Defiant</li>
+      <li>Adjective->Nomadic</li>
+      <li>Adjective->Unbroken</li>
+      <li>Adjective->Vigilant</li>
+      <li>Adjective->Renewed</li>
+      <li>Adjective->Awakened</li>
+
+      <!-- Expanded Groups -->
+      <li>Group->Remnant</li>
+      <li>Group->Remnants</li>
+      <li>Group->Refugees</li>
+      <li>Group->Stragglers</li>
+      <li>Group->Echoes</li>
+      <li>Group->Vestiges</li>
+      <li>Group->Outcasts</li>
+      <li>Group->Wanderers</li>
+      <li>Group->Pilgrims</li>
+      <li>Group->Renegades</li>
+      <li>Group->Stalwarts</li>
+      <li>Group->Scavengers</li>
+      <li>Group->Watchers</li>
+      <li>Group->Liberators</li>
+
+      <!-- Expanded CorpName entries -->
+      <li>CorpName->JCJenson</li>
+      <li>CorpName->Ex-JCJenson</li>
+      <li>CorpName->Old JCJenson</li>
+      <li>CorpName->JCJenson’s</li>
+      <li>CorpName->Former JCJenson</li>
+      <li>CorpName->JCJenson Legacy</li>
+      <li>CorpName->JCJenson Veterans</li>
+      <li>CorpName->JCJenson Survivors</li>
+      <li>CorpName->JCJenson Remnants</li>
+    </rulesStrings>
+    <rulesFiles>
+      <!-- all inline -->
+    </rulesFiles>
+  </rulePack>
+</RulePackDef>
+</Defs>

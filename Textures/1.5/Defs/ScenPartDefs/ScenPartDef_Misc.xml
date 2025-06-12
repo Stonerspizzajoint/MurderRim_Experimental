@@ -1,0 +1,10 @@
+<Defs>
+    <ScenPartDef>
+        <defName>StartAtNight</defName>
+        <scenPartClass>WorkerDronesMod.ScenPart_StartAtNight</scenPartClass>
+        <category>StartingImportant</category>
+        <label>Start at night</label>
+        <description>Sets the game start time to night</description>
+        <summaryPriority>100</summaryPriority>
+    </ScenPartDef>
+</Defs>

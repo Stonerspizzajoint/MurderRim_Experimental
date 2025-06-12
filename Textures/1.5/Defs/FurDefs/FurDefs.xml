@@ -1,0 +1,26 @@
+<Defs>
+
+<!--Worker Drone "Fur"-->
+  <FurDef>
+    <defName>MD_DroneBodyfur</defName>
+    <noGraphic>true</noGraphic>
+    <bodyTypeGraphicPaths>
+      <Male>Pawn/WorkerDrone/Body_HQ/Drone_Male</Male>
+      <Female>Pawn/WorkerDrone/Body_HQ/Drone_Female</Female>
+      <Child>Pawn/WorkerDrone/Body_HQ/Drone_Male</Child>
+      <Baby>Pawn/WorkerDrone/Baby/Drone_Baby</Baby>
+    </bodyTypeGraphicPaths>
+  </FurDef>
+
+<!--Disassembly drone "Fur"-->
+  <FurDef>
+    <defName>MD_MurderDroneBodyfur</defName>
+    <noGraphic>true</noGraphic>
+    <bodyTypeGraphicPaths>
+      <Male>Pawn/DisassemblyDrone/Body/MurderDrone_Male</Male>
+      <Female>Pawn/DisassemblyDrone/Body/MurderDrone_Female</Female>
+      <Child>Pawn/DisassemblyDrone/Body/MurderDrone_Male</Child>
+      <Baby>Pawn/WorkerDrone/Baby/Drone_Baby</Baby>
+    </bodyTypeGraphicPaths>
+  </FurDef>
+</Defs>

@@ -1,0 +1,76 @@
+<Defs>
+    <HediffDef Name="MD_CosmeticBase" Abstract="True">
+        <defaultLabelColor>(200, 200, 200)</defaultLabelColor>
+        <hediffClass>HediffWithComps</hediffClass>
+        <scenarioCanAdd>false</scenarioCanAdd>
+        <allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+        <maxSeverity>1.0</maxSeverity>
+        <isBad>false</isBad>
+        <keepOnBodyPartRestoration>true</keepOnBodyPartRestoration>
+    </HediffDef>
+
+    <HediffDef ParentName="MD_CosmeticBase">
+        <defName>MD_DroneSkinHead</defName>
+        <label>Human skin covering</label>
+        <description>A grotesque mask fashioned from the flayed skin of a human, crudely stretched over the drone’s head. The unsettling disguise gives the machine a disturbing appearance, as if mocking the humanity it imitates.</description>
+		<defaultInstallPart>Head</defaultInstallPart>
+        <renderNodeProperties>
+			<li>
+				<nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+				<workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+				<parentTagDef>Head</parentTagDef>
+                <anchorTag>RightEye</anchorTag>
+                <side>Center</side>
+				<drawSize>1</drawSize>
+				<texPaths>
+					<li>Pawn/ZombieDrone/Head/ZombieDroneSkin_Head</li>
+				</texPaths>
+				<drawData>
+					<defaultData>
+						<offset>(0, 0, 0)</offset>
+						<layer>50.5</layer>
+					</defaultData>
+                </drawData>
+			</li>
+		</renderNodeProperties>
+        <stages>
+            <li>
+                <statOffsets>
+                    <PawnBeauty>-1</PawnBeauty>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <HediffDef ParentName="MD_CosmeticBase">
+        <defName>MD_DroneSkinBody</defName>
+        <label>Human skin covering</label>
+        <description>A grotesque form from the flayed skin of a human, crudely stitched onto the drone’s body. This unsettling disguise gives the machine a disturbing, mock-human appearance, as if parodying the form it imitates.</description>
+		<defaultInstallPart>Torso</defaultInstallPart>
+        <renderNodeProperties>
+			<li>
+				<nodeClass>PawnRenderNode_Body</nodeClass>
+				<workerClass>PawnRenderNodeWorker_Body</workerClass>
+				<parentTagDef>Body</parentTagDef>
+                <side>Center</side>
+				<drawSize>1</drawSize>
+				<texPaths>
+					<li>Pawn/ZombieDrone/Body/ZombieDroneSkin_Body</li>
+				</texPaths>
+				<drawData>
+					<defaultData>
+						<offset>(0, 0, 0)</offset>
+						<layer>50.5</layer>
+					</defaultData>
+                </drawData>
+			</li>
+		</renderNodeProperties>
+        <stages>
+            <li>
+                <statOffsets>
+                    <PawnBeauty>-1</PawnBeauty>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+</Defs>

@@ -1,0 +1,43 @@
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Combat Extended</li>
+        </mods>
+        <match Class="PatchOperationAddModExtension">
+		    <xpath>Defs/DamageDef[defName="MD_Beam"]</xpath>
+		    <value>
+			    <li Class="CombatExtended.DamageDefExtensionCE">
+				    <isAmbientDamage>true</isAmbientDamage>
+			    </li>
+		    </value>
+        </match>
+    </Operation>
+
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Combat Extended</li>
+        </mods>
+        <match Class="PatchOperationAddModExtension">
+		    <xpath>Defs/DamageDef[defName="MD_NaniteAcid"]</xpath>
+		    <value>
+			    <li Class="CombatExtended.DamageDefExtensionCE">
+				    <isAmbientDamage>true</isAmbientDamage>
+			    </li>
+		    </value>
+        </match>
+    </Operation>
+
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Combat Extended</li>
+        </mods>
+        <match Class="PatchOperationAddModExtension">
+		    <xpath>Defs/DamageDef[defName="MD_OverHeating"]</xpath>
+		    <value>
+			    <li Class="CombatExtended.DamageDefExtensionCE">
+				    <isAmbientDamage>true</isAmbientDamage>
+			    </li>
+		    </value>
+        </match>
+    </Operation>
+</Patch>

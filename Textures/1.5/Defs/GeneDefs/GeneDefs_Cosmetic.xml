@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<VREAndroids.AndroidGeneDef ParentName="MD_SolverDroneBase" Name="MD_CoreEyeBase" Abstract="True">
+		<exclusionTags>
+			<li>Headbone</li>
+		</exclusionTags>
+		<randomChosen>true</randomChosen>
+		<biostatCpx>1</biostatCpx>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="MD_WorkerDroneBase" Name="MD_DroneEyesBase" Abstract="True">
+		<exclusionTags>
+			<li>Headbone</li>
+			<li>OnlyHumanlike</li>
+		</exclusionTags>
+		<randomChosen>true</randomChosen>
+		<biostatCpx>1</biostatCpx>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="MD_DisassemblyDroneBase" Name="MD_DisassemblyDroneEyesBase" Abstract="True">
+		<exclusionTags>
+			<li>Headbone</li>
+			<li>OnlyHumanlike</li>
+		</exclusionTags>
+		<randomChosen>true</randomChosen>
+		<biostatCpx>1</biostatCpx>
+	</VREAndroids.AndroidGeneDef>
+
+<!--### WORKER DRONE ###-->
+<!--Screen Eyes-->
+  <VREAndroids.AndroidGeneDef ParentName="MD_DroneEyesBase">
+  	<defName>MD_DisplayEyes</defName>
+  	<label>display eyes</label>
+  	<description>Vibrant display with 2 eyes.</description>
+  	<iconPath>UI/Icons/Genes/Gene_WorkerDroneDisplay</iconPath>
+	<geneClass>WorkerDronesMod.Gene_HediffSwitcherActivator</geneClass>
+  	<selectionWeight>0</selectionWeight>
+    <modExtensions>
+    <li Class="WorkerDronesMod.GeneHediffSwitcherExtension">
+      <stateHediffs>
+        <li>
+          <state>Normal</state>
+          <hediffDef>MD_Normal_DisplayEyes</hediffDef>
+        </li>
+        <li>
+          <state>HighHeat</state>
+          <hediffDef>MD_HighHeat_DisplayEyes</hediffDef>
+        </li>
+        <li>
+          <state>Downed</state>
+          <hediffDef>MD_Warning_DisplayEyes</hediffDef>
+        </li>
+		<li>
+          <state>Sleeping</state>
+          <hediffDef>MD_SleepMode_DisplayEyes</hediffDef>
+        </li>
+      </stateHediffs>
+    </li>
+	<li Class="WorkerDronesMod.GenePrerequisitesExtension">
+		<prerequisiteGeneDefNames>
+			<li>MD_DroneBody</li>
+			<li>MD_MurderDroneBody</li>
+		</prerequisiteGeneDefNames>
+	</li>
+  </modExtensions>
+		<renderNodeProperties>
+			<!--Fatal Error when dead-->
+    		<li Class="VFECore.PawnRenderNodeProperties_Omni">
+				<nodeClass>VFECore.PawnRenderNode_Omni</nodeClass>
+				<workerClass>PawnRenderNodeWorker_Eye</workerClass>
+      			<conditionalGraphics>
+					<alts>
+						<li>
+							<!--Fatal Error when dead-->
+							<shader>Cutout</shader>
+							<colorA>
+								<color>(204,2,2)</color>
+							</colorA>
+        					<requirements>
+          						<li>Dead</li>
+        					</requirements>
+							<texPath>Pawn/Display/DisplayEyesError/DisplayFatalError/DisplayFatalError</texPath>
+						</li>
+					</alts>
+					<!--Blank Display-->
+					<texPath>Pawn/Display/DisplayEyesBlank/DisplayEyesBlank</texPath>
+      			</conditionalGraphics>
+				<visibleFacing>
+					<li>South</li>
+				</visibleFacing>
+				<parentTagDef>Head</parentTagDef>
+				<drawSize>0.3</drawSize>
+				<drawData>
+					<defaultData>
+						<layer>54</layer>
+						<offset>(0, 0, 0)</offset>
+					</defaultData>
+				</drawData>
+    		</li>
+		</renderNodeProperties>
+</VREAndroids.AndroidGeneDef>
+<!--### ###-->
+
+<!--### DISASSEMBLY DRONE ###-->
+<VREAndroids.AndroidGeneDef ParentName="MD_DisassemblyDroneEyesBase">
+  <defName>MD_DisplayEyes_DD</defName>
+  <label>Disassembly Drone Display</label>
+  <description>Display eyes that cycle to normal when not drafted, and alternate eyes when drafted. This specific display, shows an X when drafted or Hostile.</description>
+  <iconPath>UI/Icons/Genes/Gene_MurderDroneDisplay</iconPath>
+  <geneClass>WorkerDronesMod.Gene_HediffSwitcherActivator</geneClass>
+  <selectionWeight>0</selectionWeight>
+
+  <modExtensions>
+    <li Class="WorkerDronesMod.GeneHediffSwitcherExtension">
+      <stateHediffs>
+        <li>
+          <state>Normal</state>
+          <hediffDef>MD_Normal_DisplayEyes</hediffDef>
+        </li>
+        <li>
+          <state>Drafted</state>
+          <hediffDef>MD_Drafted_DisplayEyes_DD</hediffDef>
+		  <overrideMapping>true</overrideMapping>
+        </li>
+        <li>
+          <state>HighHeat</state>
+          <hediffDef>MD_HighHeat_DisplayEyes</hediffDef>
+        </li>
+        <li>
+          <state>Downed</state>
+          <hediffDef>MD_Warning_DisplayEyes</hediffDef>
+        </li>
+		<li>
+          <state>Hostile</state>
+          <hediffDef>MD_Drafted_DisplayEyes_DD</hediffDef>
+        </li>
+		<li>
+          <state>Sleeping</state>
+          <hediffDef>MD_SleepMode_DisplayEyes</hediffDef>
+        </li>
+      </stateHediffs>
+    </li>
+	<li Class="WorkerDronesMod.GenePrerequisitesExtension">
+		<prerequisiteGeneDefNames>
+			<li>MD_DroneBody</li>
+			<li>MD_MurderDroneBody</li>
+		</prerequisiteGeneDefNames>
+	</li>
+	<li Class="WorkerDronesMod.GeneResearchExtension">
+    	<requiredResearch>MD_DisassemblyDroneTech</requiredResearch>
+    </li>
+  </modExtensions>
+  <renderNodeProperties>
+		<!--Fatal Error when dead-->
+    	<li Class="VFECore.PawnRenderNodeProperties_Omni">
+			<nodeClass>VFECore.PawnRenderNode_Omni</nodeClass>
+			<workerClass>PawnRenderNodeWorker_Eye</workerClass>
+      		<conditionalGraphics>
+				<alts>
+					<li>
+						<!--Fatal Error when dead-->
+						<shader>Cutout</shader>
+						<colorA>
+							<color>(204,2,2)</color>
+						</colorA>
+        				<requirements>
+          					<li>Dead</li>
+        				</requirements>
+						<texPath>Pawn/Display/DisplayEyesError/DisplayFatalError/DisplayFatalError</texPath>
+					</li>
+				</alts>
+				<!--Blank Display-->
+				<texPath>Pawn/Display/DisplayEyesBlank/DisplayEyesBlank</texPath>
+      		</conditionalGraphics>
+			<visibleFacing>
+				<li>South</li>
+			</visibleFacing>
+			<parentTagDef>Head</parentTagDef>
+			<drawSize>0.3</drawSize>
+			<side>Center</side>
+			<drawData>
+				<defaultData>
+					<layer>54</layer>
+					<offset>(0, 0, 0)</offset>
+				</defaultData>
+			</drawData>
+    	</li>
+  </renderNodeProperties>
+</VREAndroids.AndroidGeneDef>
+
+<!--### X.X Eyes ###-->
+<VREAndroids.AndroidGeneDef ParentName="MD_DisassemblyDroneEyesBase">
+  <defName>MD_DisplayEyes_XX</defName>
+  <label>X Eyes</label>
+  <description>Vibrant display with 2 X shaped eyes.</description>
+  <iconPath>UI/Icons/Genes/Gene_XXDisplay</iconPath>
+  <geneClass>WorkerDronesMod.Gene_HediffSwitcherActivator</geneClass>
+  <selectionWeight>0</selectionWeight>
+
+  <modExtensions>
+    <li Class="WorkerDronesMod.GeneHediffSwitcherExtension">
+      <stateHediffs>
+        <li>
+          <state>Normal</state>
+          <hediffDef>MD_Normal_XXDisplayEyes</hediffDef>
+        </li>
+        <li>
+          <state>HighHeat</state>
+          <hediffDef>MD_HighHeat_DisplayEyes</hediffDef>
+        </li>
+        <li>
+          <state>Downed</state>
+          <hediffDef>MD_Warning_DisplayEyes</hediffDef>
+        </li>
+		<li>
+          <state>Sleeping</state>
+          <hediffDef>MD_SleepMode_DisplayEyes</hediffDef>
+        </li>
+      </stateHediffs>
+    </li>
+	<li Class="WorkerDronesMod.GenePrerequisitesExtension">
+		<prerequisiteGeneDefNames>
+			<li>MD_DroneBody</li>
+			<li>MD_MurderDroneBody</li>
+		</prerequisiteGeneDefNames>
+	</li>
+	<li Class="WorkerDronesMod.GeneResearchExtension">
+    	<requiredResearch>MD_DisassemblyDroneTech</requiredResearch>
+    </li>
+  </modExtensions>
+  <renderNodeProperties>
+		<!--Fatal Error when dead-->
+    	<li Class="VFECore.PawnRenderNodeProperties_Omni">
+			<nodeClass>VFECore.PawnRenderNode_Omni</nodeClass>
+			<workerClass>PawnRenderNodeWorker_Eye</workerClass>
+      		<conditionalGraphics>
+				<alts>
+					<li>
+						<!--Fatal Error when dead-->
+						<shader>Cutout</shader>
+						<colorA>
+							<color>(204,2,2)</color>
+						</colorA>
+        				<requirements>
+          					<li>Dead</li>
+        				</requirements>
+						<texPath>Pawn/Display/DisplayEyesError/DisplayFatalError/DisplayFatalError</texPath>
+					</li>
+				</alts>
+				<!--Blank Display-->
+				<texPath>Pawn/Display/DisplayEyesBlank/DisplayEyesBlank</texPath>
+      		</conditionalGraphics>
+			<visibleFacing>
+				<li>South</li>
+			</visibleFacing>
+			<parentTagDef>Head</parentTagDef>
+			<drawSize>0.3</drawSize>
+			<side>Center</side>
+			<drawData>
+				<defaultData>
+					<layer>54</layer>
+					<offset>(0, 0, 0)</offset>
+				</defaultData>
+			</drawData>
+    	</li>
+  </renderNodeProperties>
+</VREAndroids.AndroidGeneDef>
+
+<!--### CORE HEART ###-->
+<!--Screen Eyes-->
+  <VREAndroids.AndroidGeneDef ParentName="MD_CoreEyeBase">
+  	<defName>MD_DisplayEye</defName>
+  	<label>display eye</label>
+  	<description>Vibrant display, that only displays one eye.</description>
+  	<iconPath>UI/Icons/Genes/Gene_DisplayOneEye</iconPath>
+	<geneClass>WorkerDronesMod.Gene_HediffSwitcherActivator</geneClass>
+	<prerequisite>MD_CoreHeartBody</prerequisite>
+  	<selectionWeight>0</selectionWeight>
+    <modExtensions>
+    <li Class="WorkerDronesMod.GeneHediffSwitcherExtension">
+      <stateHediffs>
+        <li>
+          <state>Normal</state>
+          <hediffDef>MD_Normal_DisplayEye</hediffDef>
+        </li>
+        <li>
+          <state>HighHeat</state>
+          <hediffDef>MD_HighHeat_DisplayEye</hediffDef>
+        </li>
+        <li>
+          <state>Downed</state>
+          <hediffDef>MD_Warning_DisplayEye</hediffDef>
+        </li>
+		<li>
+          <state>Sleeping</state>
+          <hediffDef>MD_SleepMode_DisplayEye</hediffDef>
+        </li>
+      </stateHediffs>
+    </li>
+    <li Class="WorkerDronesMod.BlockFromAndroidWindowExtension">
+    	<blockFromAndroidWindow>true</blockFromAndroidWindow>
+    	<cannotBeRemoved>true</cannotBeRemoved>
+	</li>
+	</modExtensions>
+</VREAndroids.AndroidGeneDef>
+<!--### ###-->
+
+</Defs>

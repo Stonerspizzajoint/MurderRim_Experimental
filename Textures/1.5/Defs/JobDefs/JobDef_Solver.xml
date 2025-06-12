@@ -1,0 +1,21 @@
+<Defs>
+  <JobDef>
+    <defName>MD_Job_RefuelWithNeutroamine</defName>
+    <driverClass>WorkerDronesMod.JobDriver_RefuelWithNeutroamineOil</driverClass>
+    <reportString>Consuming Neutroamine</reportString>
+    <playerInterruptible>true</playerInterruptible>
+  </JobDef>
+
+  <JobDef>
+    <defName>MD_Job_RefuelWithCorpse</defName>
+    <driverClass>WorkerDronesMod.JobDriver_ConsumeAndroidCorpse</driverClass>
+    <reportString>Consuming Neutroamine</reportString>
+    <playerInterruptible>true</playerInterruptible>
+  </JobDef>
+
+  <JobDef>
+    <defName>MD_UseInterchangeableHandsRanged</defName>
+    <driverClass>JobDriver_CastAbility</driverClass>
+    <reportString>Switching to Ranged</reportString>
+  </JobDef>
+</Defs>

@@ -1,0 +1,69 @@
+<Defs>
+<!--Ranged and Melee Upgrades-->
+	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>MD_InterchangeableHands_BasicRanged</defName>
+		<label>interchangeable hands (Ranged)</label>
+		<prerequisite>MD_WeakenedSolver</prerequisite>
+		<description>An upgrade to interchangeable hands, that adds ranged and melee weaponry.</description>
+		<iconPath>UI/Icons/Genes/Gene_interchangeable_BasicUpgrade</iconPath>
+		<displayOrderInCategory>999999</displayOrderInCategory>
+		<biostatCpx>3</biostatCpx>
+		<biostatMet>-3</biostatMet>
+		<abilities>
+			<li>MD_InterchangeableHandsAbility_Ranged</li>
+		</abilities>
+		<modExtensions>
+			<li Class="VanillaGenesExpanded.GeneExtension">
+				<backgroundPathXenogenes>UI/Icons/Genes/GeneBackground_Hardware</backgroundPathXenogenes>
+				<backgroundPathEndogenes>UI/Icons/Genes/GeneBackground_Hardware</backgroundPathEndogenes>
+			</li>
+			<li Class="WorkerDronesMod.GeneResearchExtension">
+      			<requiredResearch>MD_DisassemblyBasicUpgrade</requiredResearch>
+    		</li>
+		</modExtensions>
+	</VREAndroids.AndroidGeneDef>
+
+    <VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>MD_interchangeable_AdeptUpgrade</defName>
+		<label>Advanced upgrade</label>
+        <prerequisite>MD_InterchangeableHands_BasicRanged</prerequisite>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>-1</biostatMet>
+		<description>An upgrade to interchangeable hands, that adds ranged and melee weaponry.</description>
+		<iconPath>UI/Icons/Genes/Gene_interchangeable_AdeptUpgrade</iconPath>
+		<displayOrderInCategory>1000000</displayOrderInCategory>
+		<selectionWeight>0</selectionWeight>
+		<modExtensions>
+			<li Class="VanillaGenesExpanded.GeneExtension">
+				<backgroundPathXenogenes>UI/Icons/Genes/GeneBackGround/GeneBackground_DisassemblyHardware</backgroundPathXenogenes>
+				<backgroundPathEndogenes>UI/Icons/Genes/GeneBackGround/GeneBackground_DisassemblyHardware</backgroundPathEndogenes>
+				<backgroundPathArchite>UI/Icons/Genes/GeneBackGround/GeneBackground_DisassemblyHardware</backgroundPathArchite>
+			</li>
+			<li Class="WorkerDronesMod.GeneResearchExtension">
+      			<requiredResearch>MD_DisassemblyAdeptUpgrade</requiredResearch>
+    		</li>
+		</modExtensions>
+	</VREAndroids.AndroidGeneDef>
+
+    <VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+		<defName>MD_interchangeable_HighTechUpgrade</defName>
+		<label>High-Tech upgrade</label>
+        <prerequisite>MD_interchangeable_AdeptUpgrade</prerequisite>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>-1</biostatMet>
+		<description>An upgrade to interchangeable hands, that adds ranged and melee weaponry.</description>
+		<iconPath>UI/Icons/Genes/Gene_InterchangeableHands_HighTechUpgrade</iconPath>
+		<displayOrderInCategory>1000001</displayOrderInCategory>
+		<selectionWeight>0</selectionWeight>
+		<modExtensions>
+			<li Class="VanillaGenesExpanded.GeneExtension">
+				<backgroundPathXenogenes>UI/Icons/Genes/GeneBackGround/GeneBackground_DisassemblyHardware</backgroundPathXenogenes>
+				<backgroundPathEndogenes>UI/Icons/Genes/GeneBackGround/GeneBackground_DisassemblyHardware</backgroundPathEndogenes>
+				<backgroundPathArchite>UI/Icons/Genes/GeneBackGround/GeneBackground_DisassemblyHardware</backgroundPathArchite>
+			</li>
+			<li Class="WorkerDronesMod.GeneResearchExtension">
+      			<requiredResearch>MD_DisassemblyHighTechUpgrade</requiredResearch>
+    		</li>
+		</modExtensions>
+	</VREAndroids.AndroidGeneDef> 
+</Defs>

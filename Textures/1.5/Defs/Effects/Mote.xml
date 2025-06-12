@@ -1,0 +1,60 @@
+<Defs>
+  <ThingDef ParentName="MoteBase">
+    <defName>MD_Mote_DroneOverHeating</defName>
+    <thingClass>MoteAttached</thingClass>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.35</fadeInTime>
+      <fadeOutTime>0.25</fadeOutTime>
+      <solidTime>999999</solidTime>
+      <needsMaintenance>True</needsMaintenance>
+    </mote>
+    <graphicData>
+      <graphicClass>Graphic_PawnBodySilhouette</graphicClass>
+      <color>(1,1,0, 1.0)</color>
+      <shaderType>MoteMultiplyAddScroll</shaderType>
+      <texPath>Things/Mote/Transparent</texPath>
+      <shaderParameters>
+        <_MultiplyTexA>/Things/Mote/Cloudy_A</_MultiplyTexA>
+        <_MultiplyTexB>/Things/Mote/Cloudy_C</_MultiplyTexB>
+        <_detailIntensity>1.3</_detailIntensity>
+        <_texAScale>0.3</_texAScale>
+        <_texBScale>0.35</_texBScale>
+        <_DetailScale>0.75</_DetailScale>
+        <_texAScrollSpeed>(0, 0.15, 0)</_texAScrollSpeed>
+        <_texBScrollSpeed>(0.1, -0.15, 0)</_texBScrollSpeed>
+        <_detailScrollSpeed>(0.2, 0.0, 0)</_detailScrollSpeed>
+        <_DetailOffset>(0.345, 0.0)</_DetailOffset>
+        <_DetailDistortion>0.1</_DetailDistortion>
+      </shaderParameters>
+    </graphicData>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_Railgun_Charge</defName>
+    <thingClass>MoteAttached</thingClass>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <mote>
+      <fadeInTime>0.15</fadeInTime>
+      <fadeOutTime>0.3</fadeOutTime>
+      <solidTime>999999</solidTime>
+      <needsMaintenance>True</needsMaintenance>
+      <growthRate>0.01</growthRate>
+    </mote>
+    <graphicData>
+      <texPath>Things/Mote/BlastEMP</texPath>
+      <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+      <shaderType>MoteHellfireCannon_Charge</shaderType>
+      <color>(0.2, 1, 0.4, 1.0)</color>
+      <drawSize>0.5</drawSize>
+      <shaderParameters>
+        <_RandomTex>/Things/Mote/RandomFlicker</_RandomTex>
+        <_FlickerFrequency>0.5</_FlickerFrequency>
+        <_FlickerAmount>1.0</_FlickerAmount>
+        <_InnerCircleIntensity>0</_InnerCircleIntensity>
+        <_InnerCircleSize>0</_InnerCircleSize>
+        <_InnerCircleShimmerAmount>0.25</_InnerCircleShimmerAmount>
+      </shaderParameters>
+    </graphicData>
+  </ThingDef>
+</Defs>

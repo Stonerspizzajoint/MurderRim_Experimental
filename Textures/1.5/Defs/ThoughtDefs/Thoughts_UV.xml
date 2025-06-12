@@ -1,0 +1,17 @@
+<Defs>
+    <ThoughtDef>
+        <defName>MD_RecoveryOverheating</defName>
+        <workerClass>ThoughtWorker_InSunlight</workerClass>
+        <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+        <requiredGenes>
+            <li>MD_WeakenedSolver</li>
+        </requiredGenes>
+        <stages>
+            <li>
+                <label>Unbearable Sunlight</label>
+                <description>The sunlight is causing me to overheat! my entire body feels like its on fire!</description>
+                <baseMoodEffect>-30</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+</Defs>

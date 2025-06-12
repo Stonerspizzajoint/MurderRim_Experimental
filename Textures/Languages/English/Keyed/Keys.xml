@@ -1,0 +1,28 @@
+<LanguageData>
+    <MD.OillossRate>Oilloss rate</MD.OillossRate>
+	<MD.TotalOilLoss>Total oil loss in {0}</MD.TotalOilLoss>
+	<MD.OilLeakedOutCompletely>Oil Empty</MD.OilLeakedOutCompletely>
+	<MD.ConsumeAndroidCorpse>Consume android corpse</MD.ConsumeAndroidCorpse>
+	<MD.ConsumeNeutroamine>Consume neutroamine</MD.ConsumeNeutroamine>
+	<MD.CannotConsumeNeutroamine>Oil is already full!</MD.CannotConsumeNeutroamine>
+	<MD.NeutroamineConsumptionDisabled>Neutroamine consumption is disabled</MD.NeutroamineConsumptionDisabled>
+	<MD.NotSafeToConsumeSunlight>Not safe to consume in sunlight!</MD.NotSafeToConsumeSunlight>
+	
+	<MD.NotValidTarget>Target must be a pawn</MD.NotValidTarget>
+	<MD.PawnNOTAffectedByNaniteBuildup>Pawn is not affected by nanite acid buildup</MD.PawnNOTAffectedByNaniteBuildup>
+
+	<MD.OverheatingProtection>Overheating protection:\nPrevents weapon use if internal heat exceeds safe limits.</MD.OverheatingProtection>
+  	<MD.CurrentHeatGeneration>Current Heat Generation: {0} per tick</MD.CurrentHeatGeneration>
+  	<MD.CoolingSystemExplanation><![CDATA[<i>A cooling system monitors the internal heat produced each tick.</i>]]></MD.CoolingSystemExplanation>
+  	<MD.HeatSources><![CDATA[<b>Heat Sources:</b>]]></MD.HeatSources>
+  	<MD.HeatSource.Injuries>• Injuries contribute based on severity.</MD.HeatSource.Injuries>
+  	<MD.HeatSource.Sunlight>• Sunlight exposure increases heat gain.</MD.HeatSource.Sunlight>
+  	<MD.HeatSource.Regeneration>• Limb regeneration also generates heat.</MD.HeatSource.Regeneration>
+  	<MD.Thresholds><![CDATA[<b>Thresholds:</b>]]></MD.Thresholds>
+  	<MD.Threshold.Low>• Below {0} – No visual warning.</MD.Threshold.Low>
+  	<MD.Threshold.Medium>• Between {0} and {1} – Moderate heat warning.</MD.Threshold.Medium>
+  	<MD.Threshold.High>• Above {0} – High heat warning.</MD.Threshold.High>
+
+	<MD.OilTargetValue>Target Value: {0}</MD.OilTargetValue>
+
+</LanguageData>
