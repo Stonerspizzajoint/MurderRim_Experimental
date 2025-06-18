@@ -42,4 +42,48 @@
       </li>
     </modExtensions>
   </FactionDef>
+
+  <FactionDef ParentName="PlayerFactionBase">
+    <defName>MD_DisassemblyDronePlayer</defName>
+    <label>Disassembly Squad</label>
+    <description>A squad of Disassembly Drones deployed by JCJenson to eliminate rogue units and enforce corporate directives.</description>
+    <isPlayer>true</isPlayer>
+    <basicMemberKind>MD_DisassemblyDrone</basicMemberKind>
+    <pawnSingular>disassembly drone</pawnSingular>
+    <pawnsPlural>disassembly drones</pawnsPlural>
+    <factionNameMaker>NamerFactionOutlander</factionNameMaker>
+    <settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+    <techLevel>Spacer</techLevel>
+    <allowedCultures>
+      <li>Astropolitan</li>
+    </allowedCultures>
+    <backstoryFilters>
+      <li>
+        <categories>
+          <li>WorkerDrone</li>
+        </categories>
+      </li>
+    </backstoryFilters>
+    <colorSpectrum>
+      <li>(87,250,255)</li>
+    </colorSpectrum>
+    <factionIconPath>UI/Icons/Settlement/DisassemblyDroneSettlmentIcon</factionIconPath>
+    <startingResearchTags>
+      <li>ClassicStart</li>
+    </startingResearchTags>
+    <startingTechprintsResearchTags>
+      <li>ClassicStart</li>
+      <li>ClassicStartTechprints</li>
+    </startingTechprintsResearchTags>
+    <apparelStuffFilter>
+        <thingDefs>
+            <li>Leather_Panthera</li>
+        </thingDefs>
+    </apparelStuffFilter>
+    <modExtensions>
+      <li Class="VFECore.FactionDefExtension">
+        <strangerInBlackReplacement>MD_DisassemblyDrone</strangerInBlackReplacement>
+      </li>
+    </modExtensions>
+  </FactionDef>
 </Defs>

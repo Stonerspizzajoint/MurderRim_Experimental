@@ -3,7 +3,9 @@
 
 	<VREAndroids.AndroidGeneDef ParentName="MD_SolverDroneBase" Name="MD_CoreEyeBase" Abstract="True">
 		<exclusionTags>
-			<li>Headbone</li>
+			<li>MD_DisplayEye</li>
+			<li>Eyes</li>
+			<li>Eye</li>
 		</exclusionTags>
 		<randomChosen>true</randomChosen>
 		<biostatCpx>1</biostatCpx>
@@ -11,7 +13,9 @@
 
 	<VREAndroids.AndroidGeneDef ParentName="MD_WorkerDroneBase" Name="MD_DroneEyesBase" Abstract="True">
 		<exclusionTags>
-			<li>Headbone</li>
+			<li>MD_DisplayEye</li>
+			<li>Eyes</li>
+			<li>Eye</li>
 			<li>OnlyHumanlike</li>
 		</exclusionTags>
 		<randomChosen>true</randomChosen>
@@ -20,7 +24,9 @@
 
 	<VREAndroids.AndroidGeneDef ParentName="MD_DisassemblyDroneBase" Name="MD_DisassemblyDroneEyesBase" Abstract="True">
 		<exclusionTags>
-			<li>Headbone</li>
+			<li>MD_DisplayEye</li>
+			<li>Eyes</li>
+			<li>Eye</li>
 			<li>OnlyHumanlike</li>
 		</exclusionTags>
 		<randomChosen>true</randomChosen>

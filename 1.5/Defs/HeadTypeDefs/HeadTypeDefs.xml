@@ -37,4 +37,18 @@
 			</li>
 		</modExtensions>
 	</HeadTypeDef>
+
+<!--Normal Worker Drone Head-->
+	<HeadTypeDef ParentName="AverageBase">
+		<defName>MD_CoreHeart_Head</defName>
+		<graphicPath>Pawn/CoreHeart/CoreHeart</graphicPath>
+		<randomChosen>false</randomChosen>
+		<hairMeshSize>(1.48, 1.5)</hairMeshSize>
+		<eyeOffsetEastWest>(0.13, 0, 0.18)</eyeOffsetEastWest>
+		<beardOffset>(0, 0, 0.038)</beardOffset>
+		<requiredGenes>
+			<li>MD_CoreHeartBody</li>
+		</requiredGenes>
+		<selectionWeight>1</selectionWeight>
+	</HeadTypeDef>
 </Defs>

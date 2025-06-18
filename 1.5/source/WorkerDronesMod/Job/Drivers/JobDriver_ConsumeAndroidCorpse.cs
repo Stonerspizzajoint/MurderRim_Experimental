@@ -13,8 +13,8 @@ namespace WorkerDronesMod
     {
         // Base ticks to wait per organ consumed.
         public const int ConsumeTicks = 100;
-        public const float OilPerUnitDefault = 2f;
-        public const float OilPerUnitOrgan = 10f;
+        public const float OilPerUnitDefault = RefuelUtils.OilPerUnitDefault;
+        public const float OilPerUnitOrgan = RefuelUtils.OilPerUnitOrgan;
 
         // Vital organs yield a higher oil bonus.
         private static readonly HashSet<string> VitalOrgans = new HashSet<string>
@@ -89,6 +89,15 @@ namespace WorkerDronesMod
                 defaultCompleteMode = ToilCompleteMode.Delay,
                 defaultDuration = totalConsumeTicks
             };
+
+            // add this so that, no matter how the Toil ends,
+            // your sustainer will be cleaned up immediately:
+            consumeDelay.AddFinishAction(() =>
+            {
+                sustain?.End();
+                sustain = null;
+            });
+
             consumeDelay.WithProgressBar(TargetIndex.A, () => 1f - ((float)ticksLeft / totalConsumeTicks));
             yield return consumeDelay;
 

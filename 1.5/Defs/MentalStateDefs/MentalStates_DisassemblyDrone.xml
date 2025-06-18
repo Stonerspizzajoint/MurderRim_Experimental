@@ -17,4 +17,25 @@
         <recoveryMessage>{0} has recovered from their wandering confusion.</recoveryMessage>
         <baseInspectLine>Mental state: Confused and wandering</baseInspectLine>
     </MentalStateDef>
+
+    <MentalStateDef ParentName="BaseMentalState">
+        <defName>MD_RefuelMadness</defName>
+        <label>refuel frenzy</label>
+        <stateClass>WorkerDronesMod.MentalState_RefuelMadness</stateClass>
+        <category>Misc</category>
+        <minTicksBeforeRecovery>40000</minTicksBeforeRecovery>
+        <maxTicksBeforeRecovery>60000</maxTicksBeforeRecovery>
+        <recoveryMtbDays>0.2</recoveryMtbDays>
+        <blockRandomInteraction>true</blockRandomInteraction>
+        <recoverFromCaptured>true</recoverFromCaptured>
+        <blockNormalThoughts>true</blockNormalThoughts>
+        <recoverFromSleep>true</recoverFromSleep>
+        <inCaravanCanDo>true</inCaravanCanDo>
+        <nameColor>(0.9,0.2,0.5)</nameColor>
+        <beginLetterLabel>refuel frenzy</beginLetterLabel>
+        <beginLetter>{0} has entered a frenzy due to dangerously low oil levels. If no neutromine is available, they will attack and kill android pawns; otherwise, they will attack any pawn if none exist.</beginLetter>
+        <beginLetterDef>ThreatSmall</beginLetterDef>
+        <recoveryMessage>{0} has recovered from their refuel frenzy.</recoveryMessage>
+        <baseInspectLine>Mental state: Frenzied and seeking oil</baseInspectLine>
+    </MentalStateDef>
 </Defs>

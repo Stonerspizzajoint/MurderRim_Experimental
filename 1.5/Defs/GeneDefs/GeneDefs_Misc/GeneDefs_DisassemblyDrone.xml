@@ -175,6 +175,8 @@ The Body houses an improved reactor, leading to better power efficiency.
 		</abilities>
 		<exclusionTags>
 			<li>MD_InterchangeableHands</li>
+			<li>Hands</li>
+			<li>Hand</li>
 		</exclusionTags>
 		<modExtensions>
 			<li Class="WorkerDronesMod.GeneResearchExtension">
@@ -259,6 +261,7 @@ The Body houses an improved reactor, leading to better power efficiency.
 		<selectionWeight>0</selectionWeight>
 		<exclusionTags>
 			<li>MD_NaniteAcidTail</li>
+			<li>Tail</li>
 		</exclusionTags>
 		<modExtensions>
 			<li Class="WorkerDronesMod.GeneResearchExtension">
@@ -287,6 +290,7 @@ The Body houses an improved reactor, leading to better power efficiency.
 		<ignoreDarkness>true</ignoreDarkness>
 		<exclusionTags>
 			<li>MD_HeadBand</li>
+			<li>Headbone</li>
 		</exclusionTags>
 		<statOffsets>
 			<NightVisionEfficiency MayRequire="CETeam.CombatExtended">0.8</NightVisionEfficiency>
@@ -330,7 +334,7 @@ The Body houses an improved reactor, leading to better power efficiency.
 		<description>Androids with this are hardwired to accept reprogramming without distress, and dont mind it when told to reprogram even if Awakened.</description>
 		<iconPath>UI/Icons/Genes/Subroutines/Gene_ClearInstructions</iconPath>
 		<biostatCpx>1</biostatCpx>
-		<biostatMet>-1</biostatMet>
+		<biostatMet>0</biostatMet>
 		<exclusionTags>
 		  <li>AndroidAwakeningProtocols</li>
 		</exclusionTags>

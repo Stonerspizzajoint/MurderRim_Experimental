@@ -31,14 +31,34 @@
 			<li>MD_HeadBand</li>
 			<li>MD_NaniteAcidTail</li>
 			<li>MD_BladedWings</li>
+			<li>Wing</li>
+			<li>Wings</li>
 			<li>MD_InterchangeableHands</li>
 			<li>MD_DroneBody</li>
 			<li>OnlyHumanlike</li>
+			<li>BodyType</li>
 			<li>AG_Bodies</li>
 			<li>Bodies</li>
 			<li>Body</li>
+			<li>Antennas</li>
+			<li>Antenna</li>
+			<li>AG_Antennae</li>
+			<li>Tusk</li>
+			<li>Tusks</li>
+			<li>AG_Tusks</li>
 			<li>Fur</li>
+			<li>Headbone</li>
+			<li>AG_Heads</li>
+			<li>Heads</li>
+			<li>Head</li>
+			<li>Hands</li>
+			<li>Jaw</li>
+			<li>Nose</li>
+			<li>Ears</li>
 		</exclusionTags>
+		<forcedHeadTypes>
+			<li>MD_CoreHeart_Head</li>
+		</forcedHeadTypes>
 		<statOffsets>
 			<PawnBeauty>-2</PawnBeauty>
 		</statOffsets>
@@ -69,6 +89,11 @@
 				<def>NightOwl</def>
 			</li>
 		</forcedTraits>
+		<exclusionTags>
+			<li>AG_Armour</li>
+			<li>Armour</li>
+			<li>Armor</li>
+		</exclusionTags>
 		<iconPath>UI/Icons/Genes/Gene_WeakenedSolver</iconPath>
 		<displayOrderInCategory>10003</displayOrderInCategory>
 		<biostatCpx>3</biostatCpx>
@@ -183,6 +208,9 @@
           				<hediffDef>MD_FangsOut</hediffDef>
         			</li>
       			</stateHediffs>
+    		</li>
+			<li Class="WorkerDronesMod.GeneResearchExtension">
+      			<requiredResearch>MD_DisassemblyDroneTech</requiredResearch>
     		</li>
 		</modExtensions>
 	</VREAndroids.AndroidGeneDef>

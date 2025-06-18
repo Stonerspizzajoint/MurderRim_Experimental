@@ -1,4 +1,5 @@
-﻿using HarmonyLib;
+﻿using System.Collections.Generic;
+using HarmonyLib;
 using RimWorld;
 using Verse;
 using VREAndroids;
@@ -8,33 +9,43 @@ namespace WorkerDronesMod.Patches
     [HarmonyPatch(typeof(HediffGiver_Bleeding), "OnIntervalPassed")]
     public static class HediffGiver_Bleeding_OnIntervalPassed_Patch
     {
+        // keep track of which pawns we've already handled
+        private static readonly HashSet<int> _processedPawnIds = new HashSet<int>();
+
         [HarmonyPriority(2147483647)]
         public static bool Prefix(Pawn pawn, Hediff cause)
         {
-            // If the pawn has the WeakenedSolver gene, do not apply any bleeding hediff.
+            int id = pawn.thingIDNumber;
+
+            // if we’ve already seen this pawn, skip immediately
+            if (_processedPawnIds.Contains(id))
+                return false;
+
+            // 1) WeakenedSolver gene: skip bleeding forever after this first check
             if (pawn.HasActiveGene(MD_DefOf.MD_WeakenedSolver))
             {
                 if (DebugSettings.godMode)
                     Log.Message($"[HediffGiver_Bleeding] {pawn.LabelShort} has MD_WeakenedSolver; skipping bleeding hediff.");
-                return false; // Skip the original method completely.
+
+                _processedPawnIds.Add(id);
+                return false; // never run the original
             }
 
-            // Next, check if the pawn has the MD_NeutroamineOil gene.
+            // 2) NeutroamineOil gene: apply our custom hediff once, then never again
             if (pawn.HasActiveGene(MD_DefOf.MD_NeutroamineOil))
             {
-                HediffSet hediffSet = pawn.health.hediffSet;
-
-                // Update or add VREA_NeutroLoss based on the pawn’s bleed rate.
+                var hediffSet = pawn.health.hediffSet;
                 if (hediffSet.BleedRateTotal >= 0f)
                 {
                     HealthUtility.AdjustSeverity(pawn, VREA_DefOf.VREA_NeutroLoss, hediffSet.BleedRateTotal * 0.001f);
                 }
 
-                return false; // Skip the original method.
+                return false; // skip the vanilla bleeding
             }
 
-            // For pawns without either gene, run the original method.
+            // 3) Everyone else: run the original method
             return true;
         }
     }
 }
+

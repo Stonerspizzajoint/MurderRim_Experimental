@@ -16,7 +16,7 @@ namespace WorkerDronesMod
     public class JobDriver_RefuelWithNeutroamineOil : JobDriver
     {
         // Conversion factor: amount of oil recovered per neutroamine unit.
-        public const float OilPerNeutroamineUnit = 10f;
+        public const float OilPerNeutroamineUnit = RefuelUtils.OilPerNeutroamineUnit;
         // Consumption time per neutroamine unit—in ticks.
         public const float ConsumptionTimePerUnit = 100f;
 

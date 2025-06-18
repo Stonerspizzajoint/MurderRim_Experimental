@@ -6,6 +6,25 @@
     </value>
   </Operation>
 
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThinkTreeDef[defName="MentalStateCritical"]/thinkRoot/subNodes</xpath>
+    <value>
+        <li Class="ThinkNode_ConditionalMentalState">
+          <state>MD_RefuelMadness</state>
+          <subNodes>
+            <li Class="ThinkNode_Priority">
+              <subNodes>
+                <li Class="WorkerDronesMod.JobGiver_RefuelMadness" />
+                <li Class="JobGiver_WanderAnywhere">
+                  <maxDanger>Deadly</maxDanger>
+                </li>
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+    </value>
+  </Operation>
+
 <Operation Class="PatchOperationAdd">
   <xpath>/Defs/ThinkTreeDef[defName="Abilities_Aggressive"]/thinkRoot/subNodes/li[1]/subNodes</xpath>
   <value>

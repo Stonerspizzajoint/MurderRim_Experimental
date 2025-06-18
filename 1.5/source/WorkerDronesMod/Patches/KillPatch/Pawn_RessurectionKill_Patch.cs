@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using HarmonyLib;
+using RimWorld;
 using Verse;
 using Verse.AI;
 using VREAndroids;
@@ -11,6 +12,17 @@ namespace WorkerDronesMod.Patches
     {
         static bool Prefix(Pawn __instance, DamageInfo? dinfo, Hediff exactCulprit)
         {
+
+            // 0) If this kill is coming from an execution cut, let them die naturally
+            if (dinfo.HasValue && dinfo.Value.Def == DamageDefOf.ExecutionCut
+                || exactCulprit?.def == HediffDefOf.ExecutionCut)
+            {
+                // if they somehow had a stasis hediff, remove it first:
+                RemoveStasisIfPresent(__instance);
+                return true;  // proceed with vanilla Kill()
+            }
+
+
             // If the pawn is already dead, cancel any further Kill() logic.
             if (__instance.Dead)
             {

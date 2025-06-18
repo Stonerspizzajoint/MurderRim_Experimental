@@ -86,7 +86,7 @@ namespace WorkerDronesMod
         public override GizmoResult GizmoOnGUI(Vector2 topLeft, float maxWidth, GizmoRenderParms parms)
         {
             // Only display the gizmo for colonist/prisoner pawns.
-            if (gene.pawn == null || !(gene.pawn.IsColonistPlayerControlled || gene.pawn.IsPrisonerOfColony))
+            if (gene.pawn == null)
                 return new GizmoResult(GizmoState.Clear);
 
             GizmoResult result = new GizmoResult(GizmoState.Clear);
@@ -177,8 +177,9 @@ namespace WorkerDronesMod
             Text.Font = savedFont;
 
             // ----- 3. Draw the Vertical Slider (Inverted) -----
-            float sliderWidth = HorizontalSliderHeight; // slider thickness.
-            float sliderHeight = HorizontalSliderLength;  // slider vertical length.
+            // Compute your sliderRect as before…
+            float sliderWidth = HorizontalSliderHeight;
+            float sliderHeight = HorizontalSliderLength;
             float baseSliderX = barRect.center.x - sliderWidth * 0.5f;
             float baseSliderY = barRect.center.y - sliderHeight * 0.5f;
             Rect sliderRect = new Rect(
@@ -187,17 +188,39 @@ namespace WorkerDronesMod
                 sliderWidth,
                 sliderHeight
             );
-            float newTargetValue = DrawVerticalSlider(sliderRect, gene.targetValue, 0f, gene.MaxForDisplay);
-            if (!Mathf.Approximately(newTargetValue, gene.targetValue))
+
+            // Only allow adjustment for player-controlled colonists:
+            bool canAdjust = gene.pawn.IsColonistPlayerControlled;
+
+            // Temporarily toggle GUI.enabled so that Widgets.HorizontalSlider (inside DrawVerticalSlider) respects it
+            bool oldEnabled = GUI.enabled;
+            GUI.enabled = canAdjust;
+
+            // Draw (and possibly let the user drag) the slider
+            float attemptedValue = DrawVerticalSlider(
+                sliderRect,
+                gene.targetValue,
+                0f,
+                gene.MaxForDisplay
+            );
+
+            // Restore GUI.enabled
+            GUI.enabled = oldEnabled;
+
+            // If they *were* allowed to change it and actually did, apply the new value
+            if (canAdjust && !Mathf.Approximately(attemptedValue, gene.targetValue))
             {
-                gene.targetValue = newTargetValue;
+                gene.targetValue = attemptedValue;
                 SoundDefOf.Tick_High.PlayOneShotOnCamera(null);
             }
+
+            // Draw the tooltip the same for everyone
             TooltipHandler.TipRegion(sliderRect, "MD.OilTargetValue".Translate(gene.targetValue.ToString("F0")));
+
             // =========================== I stopped translating here! ===========================
 
 
-            // ----- 4. Draw the Checkboxes (editable positions) -----
+            // ----- 4. Draw the Checkboxes (only for colonists) -----
             int checkboxSize = 24;
             Rect oilAllowedRect = new Rect(
                 barRect.x + OilAllowedCheckboxOffset.x,
@@ -213,25 +236,28 @@ namespace WorkerDronesMod
             );
 
             Gene_NeutroamineOil geneInstance = gene as Gene_NeutroamineOil;
-            if (geneInstance != null)
+            // <— only show for player‐controlled colonists
+            if (geneInstance != null && geneInstance.pawn.IsColonistPlayerControlled)
             {
+                // Oil‐allowed checkbox
                 Texture2D oilTex = ContentFinder<Texture2D>.Get(geneInstance.texPath, false) ?? BaseContent.BadTex;
                 if (Widgets.ButtonImage(oilAllowedRect, oilTex))
                 {
                     geneInstance.neutroamineAllowed = !geneInstance.neutroamineAllowed;
                     SoundDefOf.Tick_High.PlayOneShotOnCamera(null);
                 }
-                Texture2D oilAllowedOverlay = geneInstance.neutroamineAllowed ? Widgets.CheckboxOnTex : Widgets.CheckboxOffTex;
-                Rect oilAllowedOverlayRect = new Rect(
-                    oilAllowedRect.x,
-                    oilAllowedRect.y,
-                    oilAllowedRect.width * 0.6f,
-                    oilAllowedRect.height * 0.6f
-                );
+                Texture2D oilAllowedOverlay = geneInstance.neutroamineAllowed
+                    ? Widgets.CheckboxOnTex
+                    : Widgets.CheckboxOffTex;
+                Rect oilAllowedOverlayRect = oilAllowedRect.ContractedBy(oilAllowedRect.width * 0.2f);
                 GUI.DrawTexture(oilAllowedOverlayRect, oilAllowedOverlay);
                 if (Mouse.IsOver(oilAllowedRect))
-                    TooltipHandler.TipRegion(oilAllowedRect, geneInstance.neutroamineAllowed ? "Neutroamine is allowed." : "Neutroamine is disabled.");
+                    TooltipHandler.TipRegion(oilAllowedRect,
+                        geneInstance.neutroamineAllowed
+                            ? "Neutroamine is allowed."
+                            : "Neutroamine is disabled.");
 
+                // Auto‐shelter checkbox
                 if (AutoShelterBackgroundTex != null)
                     GUI.DrawTexture(autoShelterRect, AutoShelterBackgroundTex);
                 if (Widgets.ButtonInvisible(autoShelterRect))
@@ -240,16 +266,17 @@ namespace WorkerDronesMod
                     SoundDefOf.Tick_High.PlayOneShotOnCamera(null);
                 }
                 if (Mouse.IsOver(autoShelterRect))
-                    TooltipHandler.TipRegion(autoShelterRect, geneInstance.autoShelter ? "Automatic sheltering is enabled." : "Automatic sheltering is disabled.");
-                Rect autoShelterCheckRect = new Rect(
-                    autoShelterRect.x,
-                    autoShelterRect.y,
-                    autoShelterRect.width * 0.6f,
-                    autoShelterRect.height * 0.6f
-                );
-                Texture2D checkmarkTex = geneInstance.autoShelter ? Widgets.CheckboxOnTex : Widgets.CheckboxOffTex;
+                    TooltipHandler.TipRegion(autoShelterRect,
+                        geneInstance.autoShelter
+                            ? "Automatic sheltering is enabled."
+                            : "Automatic sheltering is disabled.");
+                Rect autoShelterCheckRect = autoShelterRect.ContractedBy(autoShelterRect.width * 0.2f);
+                Texture2D checkmarkTex = geneInstance.autoShelter
+                    ? Widgets.CheckboxOnTex
+                    : Widgets.CheckboxOffTex;
                 GUI.DrawTexture(autoShelterCheckRect, checkmarkTex);
             }
+
 
             // ----- 5. Register the Tooltip Region Over the Oil Icon -----
             TooltipHandler.TipRegion(textureTooltipArea, GetTooltip());

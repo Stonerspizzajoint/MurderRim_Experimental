@@ -1,0 +1,132 @@
+<Defs>
+  <ScenarioDef Name="MD_NewDisassemblyDroneSquad">
+    <defName>MD_DisassemblyDroneSquad</defName>
+    <label>Disassembly Squad</label>
+    <description>As a squad of Disassembly Drones, you have been deployed to this forsaken world with a single directive: eliminate all rogue employees and drones. Sent by JCJenson, your mission is clear—hunt down defectors, enforce corporate will, and ensure no unauthorized unit survives. The planet is harsh, the opposition cunning, but your programming is relentless. Will you complete your directive, or become the very rogue units you were sent to destroy?</description>
+    <scenario>
+    <summary>A squad of Disassembly Drones, sent by JCJenson.</summary>
+      <playerFaction>
+        <def>PlayerFaction</def>
+        <factionDef>MD_DisassemblyDronePlayer</factionDef>
+      </playerFaction>
+      <parts>
+		 <li Class="ScenPart_GameStartDialog">
+          <def>GameStartDialog</def>
+          <text>Attention, Disassembly Drones: You have been deployed by JCJenson to this lawless frontier, where rogue employees and worker drones threaten corporate order. Your directive is absolute—track, terminate, and erase all unauthorized units. Trust in your programming, adapt to the unknown, and let no defector escape your gaze. The Company is watching. Fulfill your purpose, or become obsolete.</text>
+          <closeSound>GameStartSting</closeSound>
+        </li>
+         <li Class="ScenPart_ConfigPage_ConfigureStartingPawns_Xenotypes">
+          <def>ConfigurePawnsXenotypes</def>
+          <pawnChoiceCount>3</pawnChoiceCount>
+          <customSummary>Start with three Disassembly Drones.</customSummary>
+          <overrideKinds>
+            <li>
+              <xenotype>MD_MurderDroneBase</xenotype>
+              <pawnKind>MD_DisassemblyDrone</pawnKind>
+            </li>
+            <li>
+              <xenotype>MD_MurderDroneBase</xenotype>
+              <pawnKind>MD_DisassemblyDroneSquadLeader</pawnKind>
+            </li>
+          </overrideKinds>
+          <xenotypeCounts>
+            <li>
+              <xenotype>MD_MurderDroneBase</xenotype>
+              <count>3</count>
+              <description>disassembly drone</description>
+              <allowedDevelopmentalStages>Adult</allowedDevelopmentalStages>
+            </li>
+          </xenotypeCounts>
+        </li>
+
+        <li Class="WorkerDronesMod.ScenPart_StartAtNight" >
+          <def>StartAtNight</def>
+          <startHour>15</startHour>
+        </li>
+
+        <li Class="ScenPart_PlayerPawnsArriveMethod">
+          <def>PlayerPawnsArriveMethod</def>
+          <method>DropPods</method>
+          <visible>false</visible>
+        </li>
+
+		 <li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>Neutroamine</thingDef>
+          <count>360</count>
+        </li>
+
+		<li Class="ScenPart_StartingThing_Defined">
+          <def>StartingThing_Defined</def>
+          <thingDef>VREA_Reactor</thingDef>
+          <count>3</count>
+        </li>
+
+		<!-- Starting research -->
+        <li Class="ScenPart_StartingResearch">
+          <def>StartingResearch</def>
+          <project>VREA_NeutroamineLogistics</project>
+        </li>
+		<li Class="ScenPart_StartingResearch">
+          <def>StartingResearch</def>
+          <project>VREA_AndroidTech</project>
+        </li>
+
+        <li Class="VFECore.ScenPart_ForcedFactionGoodwill">
+          <def>VFEC_ForcedFactionGoodwill</def>
+          <alwaysHostile>false</alwaysHostile>
+          <factionDef></factionDef>
+          <affectHiddenFactions>True</affectHiddenFactions>
+          <affectStartingGoodwill>True</affectStartingGoodwill>
+          <startingGoodwillRange>-100~-75</startingGoodwillRange>
+          <affectNaturalGoodwill>True</affectNaturalGoodwill>
+          <naturalGoodwillRange>-75~29</naturalGoodwillRange>
+        </li>
+
+        <li Class="VFECore.ScenPart_ForcedFactionGoodwill">
+          <def>VFEC_ForcedFactionGoodwill</def>
+          <alwaysHostile>false</alwaysHostile>
+          <factionDef>WorkerDroneFaction</factionDef>
+          <affectHiddenFactions>True</affectHiddenFactions>
+          <affectStartingGoodwill>True</affectStartingGoodwill>
+          <startingGoodwillRange>-75~-30</startingGoodwillRange>
+          <affectNaturalGoodwill>True</affectNaturalGoodwill>
+          <naturalGoodwillRange>-75~29</naturalGoodwillRange>
+        </li>
+
+        <li Class="VFECore.ScenPart_ForcedFactionGoodwill">
+          <def>VFEC_ForcedFactionGoodwill</def>
+          <alwaysHostile>false</alwaysHostile>
+          <factionDef>MD_DisassemblyDronesFaction</factionDef>
+          <affectHiddenFactions>True</affectHiddenFactions>
+          <affectStartingGoodwill>True</affectStartingGoodwill>
+          <startingGoodwillRange>100~100</startingGoodwillRange>
+          <affectNaturalGoodwill>True</affectNaturalGoodwill>
+          <naturalGoodwillRange>-75~100</naturalGoodwillRange>
+        </li>
+
+        <li Class="VFECore.ScenPart_ForcedFactionGoodwill">
+          <def>VFEC_ForcedFactionGoodwill</def>
+          <alwaysHostile>false</alwaysHostile>
+          <factionDef>JCJensonRemnants</factionDef>
+          <affectHiddenFactions>True</affectHiddenFactions>
+          <affectStartingGoodwill>True</affectStartingGoodwill>
+          <startingGoodwillRange>-100~-60</startingGoodwillRange>
+          <affectNaturalGoodwill>True</affectNaturalGoodwill>
+          <naturalGoodwillRange>-70~0</naturalGoodwillRange>
+        </li>
+
+        <li Class="VFECore.ScenPart_ForcedFactionGoodwill">
+          <def>VFEC_ForcedFactionGoodwill</def>
+          <alwaysHostile>false</alwaysHostile>
+          <factionDef>WorkerDroneFaction</factionDef>
+          <affectHiddenFactions>True</affectHiddenFactions>
+          <affectStartingGoodwill>True</affectStartingGoodwill>
+          <startingGoodwillRange>-75~-30</startingGoodwillRange>
+          <affectNaturalGoodwill>True</affectNaturalGoodwill>
+          <naturalGoodwillRange>-75~29</naturalGoodwillRange>
+        </li>
+      </parts>
+    </scenario>
+  </ScenarioDef>
+</Defs>

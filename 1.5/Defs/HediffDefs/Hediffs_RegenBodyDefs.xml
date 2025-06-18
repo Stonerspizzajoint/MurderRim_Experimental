@@ -117,7 +117,7 @@
     	      </li>
     	    </capMods>
 			<extraTooltip>ALERT: Higher severity increases the likely hood of a dangerous mental break!</extraTooltip>
-    	  </li>
+		  </li>
     	  <li>
     	    <label>moderate</label>
     	    <minSeverity>0.35</minSeverity>
@@ -129,7 +129,13 @@
     	      </li>
     	    </capMods>
 			<extraTooltip>WARNING: Dangerous mental break possible!</extraTooltip>
-    	  </li>
+        	<mentalStateGivers>
+        	  <li>
+        	    <mentalState>MD_RefuelMadness</mentalState>
+        	    <mtbDays>5</mtbDays>
+        	  </li>
+        	</mentalStateGivers>
+		  </li>
     	  <li>
     	    <label>major</label>
     	    <minSeverity>0.7</minSeverity>
@@ -141,6 +147,12 @@
     	      </li>
     	    </capMods>
 			<extraTooltip>WARNING: Dangerous mental break likely!</extraTooltip>
+        	<mentalStateGivers>
+        	  <li>
+        	    <mentalState>MD_RefuelMadness</mentalState>
+        	    <mtbDays>0.5</mtbDays>
+        	  </li>
+        	</mentalStateGivers>
     	  </li>
     	</stages>
 		<comps>

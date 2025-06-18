@@ -112,10 +112,10 @@
           <count>2</count>
         </li>
 		<li Class="ScenPart_StartingThing_Defined">
-          <def>StartingThing_Defined</def>
-          <thingDef>VREA_AirFilter</thingDef>
-          <count>2</count>
-        </li>
+      <def>StartingThing_Defined</def>
+      <thingDef>VREA_AirFilter</thingDef>
+      <count>2</count>
+    </li>
 		<li Class="ScenPart_StartingThing_Defined">
           <def>StartingThing_Defined</def>
           <thingDef>VREA_OpticalUnit</thingDef>
@@ -135,9 +135,8 @@
 		 <li Class="ScenPart_StartingResearch">
           <def>StartingResearch</def>
           <project>VREA_AndroidTech</project>
-        </li>
-		
-        
+      </li>
+      
       </parts>
     </scenario>
   </ScenarioDef>

@@ -96,6 +96,11 @@
     <Compile Include="Abilities\Solver\Comps\Comp_AbilityHeatEffect.cs" />
     <Compile Include="Abilities\Solver\Comps\CompAbilityEffect_NeutroamineOilCost.cs" />
     <Compile Include="Abilities\Solver\Comps\Comp_ToggleHediffEffect.cs" />
+    <Compile Include="Gene\Classes\Gene_LearningByObservation.cs" />
+    <Compile Include="Gene\ModExtentions\GeneExtension_Learning.cs" />
+    <Compile Include="Patches\VREAndroids\Patch_Recipe_RemoveArtificialBodyPart_ApplyOnPawn.cs" />
+    <Compile Include="Scenerio\ScenPart_StartAtNight.cs" />
+    <Compile Include="Startup.cs" />
     <Compile Include="Components\GameComponents\XenotypeTracker.cs" />
     <Compile Include="Components\MapComponents\PendingRaidMapComponent.cs" />
     <Compile Include="Factions\Extentions\RaidRestrictions.cs" />
@@ -141,6 +146,7 @@
     <Compile Include="Hediff\WithComps\Hediff_MemoryVirus.cs" />
     <Compile Include="Job\Drivers\JobDriver_ConsumeAndroidCorpse.cs" />
     <Compile Include="Job\Drivers\JobDriver_RefuelWithNeutroamineOil.cs" />
+    <Compile Include="Job\Givers\JobGiver_RefuelMadness.cs" />
     <Compile Include="Job\Givers\JobGiver_RefuelNeutroamineOil.cs" />
     <Compile Include="Job\Givers\JobGiver_AICastWingPoweredTacticalMove.cs" />
     <Compile Include="Job\Givers\JobGiver_AICastMeleeAbilityOnSelf.cs" />
@@ -148,6 +154,7 @@
     <Compile Include="Job\ThinkNode\Conditional\ThinkNode_IsDisassemblyDrone.cs" />
     <Compile Include="Job\ThinkNode\Conditional\ThinkNode_ConditionalHeatAboveThreshold.cs" />
     <Compile Include="Job\ThinkNode\Conditional\ThinkNode_ConditionalHasAnyHediff.cs" />
+    <Compile Include="MentalState\MentalState_RefuelMadness.cs" />
     <Compile Include="MentalState\MentalState_ConfusedWander.cs" />
     <Compile Include="ModSettings\WorkerDronesModSettings.cs" />
     <Compile Include="Patches\Buildings\BedPatches\Patch_PawnRenderer_GetBodyPos_AnimalBed.cs" />
@@ -189,10 +196,13 @@
     <Compile Include="Patches\VREAndroids\Bleedingpatches\Hediff_Injury_BleedRate_Patch.cs" />
     <Compile Include="Patches\VREAndroids\Bleedingpatches\HediffGiver_Bleeding_OnIntervalPassed_Patch.cs" />
     <Compile Include="Patches\VREAndroids\Bleedingpatches\HealthCardUtility_DrawHediffListing_Patch.cs" />
+    <Compile Include="Patches\VREAndroids\Patch_Building_NeutroCasket_Tick.cs" />
+    <Compile Include="Patches\VREAndroids\Patch_Recipe_AdministerNeutroamineForAndroid.cs" />
     <Compile Include="Patches\VREAndroids\Patch_HideMoteForCoreHeart.cs" />
     <Compile Include="PawnRenderNode\Properties\PawnRenderNodeProperties_EyeVariant.cs" />
     <Compile Include="PawnRenderNode\Worker\PawnRenderNodeWorker_EyeVariant.cs" />
     <Compile Include="Pawn\Comp\CompProperties_DisassemblyDrone.cs" />
+    <Compile Include="Recipes\Recipe_ExtractNeutroamine.cs" />
     <Compile Include="Things\CompProperties\CompProperties_Railgun.cs" />
     <Compile Include="Things\CompProperties\CompProperties_AnimalBedUser.cs" />
     <Compile Include="Things\CompProperties\CompProperties_ApparelRestriction.cs" />
@@ -209,11 +219,13 @@
     <Compile Include="Things\Patches\UpdateSkinColor_Weapon\Patch_NotifyEquipmentAdded_UpdateWeaponColor.cs" />
     <Compile Include="Things\Patches\Verb_Shoot\Patch_Verb_Shoot_TryCastShot.cs" />
     <Compile Include="Trader\StockGenerator_AndroidSlavesOnly.cs" />
-    <Compile Include="Utils\GeneUtiliy\InteractionUtiliy.cs" />
     <Compile Include="Utils\HediffExtentions\GeneHediffSwitcherUtility.cs" />
     <Compile Include="Utils\helper\AbilityHediffUtility.cs" />
     <Compile Include="Utils\helper\GeneHediffSwitcherState.cs" />
+    <Compile Include="Utils\Solver\SurgerySafetyUtility.cs" />
+    <Compile Include="Utils\Solver\RefuelMadnessUtility.cs" />
     <Compile Include="Utils\Solver\Gene\SolverGeneUtility.cs" />
+    <Compile Include="Utils\Solver\RefuelUtils.cs" />
     <Compile Include="Utils\Solver\SimpleFlyerUtility.cs" />
     <Compile Include="Utils\Solver\RoboticLimbRegenerator.cs" />
     <Compile Include="Hediff\Solver\WithComps\Hediff_OverHeatingDamage.cs" />
@@ -272,7 +284,7 @@
     <Folder Include="Trackers\Combat\" />
     <Folder Include="Trackers\Event\" />
     <Folder Include="Trackers\Managers\" />
-    <Folder Include="Utils\Solver\Delay\" />
+    <Folder Include="Utils\GeneUtiliy\" />
     <Folder Include="Utils\Solver\Tickers\" />
     <Folder Include="Utils\Tracker\" />
   </ItemGroup>

@@ -182,25 +182,6 @@ namespace WorkerDronesMod.Patches
                             g.GetModExtension<BlockFromAndroidWindowExtension>().cannotBeRemoved)
                 .ToList();
 
-            var missingRequired = requiredGenes.Where(g => !selectedGenes.Contains(g)).ToList();
-            if (missingRequired.Any())
-            {
-                validGenes.AddRange(missingRequired);
-                Traverse.Create(__instance).Field("selectedGenes").SetValue(validGenes);
-
-                List<string> invalidLabels = missingRequired.Select(g => $"Locked: {g.label}").Distinct().ToList();
-                TaggedString message = "You cannot remove the following locked genes:\n\n";
-                message += GenText.ToLineList(invalidLabels, "  - ");
-
-                Find.WindowStack.Add(new Dialog_MessageBox(
-                    text: message,
-                    buttonAText: "OK".Translate(),
-                    buttonADestructive: false
-                ));
-
-                return false;
-            }
-
             if (validGenes.Count != selectedGenes.Count)
             {
                 Traverse.Create(__instance).Field("selectedGenes").SetValue(validGenes);

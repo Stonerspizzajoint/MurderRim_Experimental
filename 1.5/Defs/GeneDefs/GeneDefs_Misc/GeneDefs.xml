@@ -183,6 +183,7 @@ The Body houses an improved reactor, leading to better power efficiency. Also a 
 		<biostatMet>-1</biostatMet>
 	</VREAndroids.AndroidGeneDef>
 -->
+
 	<VREAndroids.AndroidGeneDef ParentName="VREA_NeutroCirculation">
 		<defName>MD_NeutroamineOil</defName>
 		<label>Neutro oil circulation</label>
@@ -191,7 +192,10 @@ The Body houses an improved reactor, leading to better power efficiency. Also a 
 		<biostatCpx>1</biostatCpx>
 		<biostatMet>0</biostatMet>
 		<exclusionTags>
-		 <li>AndroidBloodCirculation</li>
+		 	<li>AndroidBloodCirculation</li>
+			<li>AG_BloodType</li>
+			<li>BloodType</li>
+			<li>Blood</li>
 		</exclusionTags>
 		<modExtensions Inherit="false">
 			<li Class="VanillaGenesExpanded.GeneExtension">
@@ -209,4 +213,28 @@ The Body houses an improved reactor, leading to better power efficiency. Also a 
 			</li>
 		</modExtensions>
 	</VREAndroids.AndroidGeneDef>
+
+    <VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
+        <defName>MD_LearningByObservation</defName>
+        <label>observational learning</label>
+		<description>Androids with this subroutine can learn by observing others perform tasks, as well as by watching television broadcasts.</description>
+        <geneClass>WorkerDronesMod.Gene_LearningByObservation</geneClass>
+		<iconPath>UI/Icons/Genes/Gene_LearningByObservation</iconPath>
+		<displayOrderInCategory>1000002</displayOrderInCategory>
+        <biostatCpx>1</biostatCpx>
+        <biostatMet>-1</biostatMet>
+        <exclusionTags>
+            <li>Learning</li>
+        </exclusionTags>
+        <modExtensions>
+            <li Class="WorkerDronesMod.GeneExtension_Learning">
+                <observationRadius>12.5</observationRadius>
+                <checkIntervalTicks>150</checkIntervalTicks>
+                <xpPerObservation>75</xpPerObservation>
+
+        		<xpPerTVObservation>30</xpPerTVObservation>
+        		<tvMaxSkillLevel>8</tvMaxSkillLevel>
+            </li>
+        </modExtensions>
+    </VREAndroids.AndroidGeneDef>
 </Defs>

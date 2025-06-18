@@ -93,7 +93,15 @@ namespace WorkerDronesMod
         public static JobDef MD_Job_RefuelWithNeutroamine;
 
         public static JobDef MD_Job_RefuelWithCorpse;
+
+        public static JobDef WatchTelevision;
         //------------------------------------
+
+        //------------------RecipeDefs------------------
+
+        public static RecipeDef MD_ExtractNeutroamine;
+
+        //-------------------------------------
 
         //------------------MentalStateDefs------------------
         public static MentalStateDef MD_ConfusedWander;

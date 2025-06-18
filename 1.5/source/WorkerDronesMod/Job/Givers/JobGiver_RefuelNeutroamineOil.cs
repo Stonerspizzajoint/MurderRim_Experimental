@@ -118,7 +118,7 @@ namespace WorkerDronesMod
             return null;
         }
 
-        private List<string> CalculateConsumptionPlan(Pawn android, float missingOil)
+        public List<string> CalculateConsumptionPlan(Pawn android, float missingOil)
         {
             var parts = android.health.hediffSet.GetNotMissingParts().ToList();
             parts.RemoveAll(p => p.def.defName.Equals("Ribcage", StringComparison.OrdinalIgnoreCase));
@@ -131,7 +131,7 @@ namespace WorkerDronesMod
             foreach (var p in vital)
             {
                 plan.Add(p.def.defName);
-                total += JobDriver_ConsumeAndroidCorpse.OilPerUnitOrgan;
+                total += RefuelUtils.OilPerUnitOrgan;
                 if (total >= missingOil) break;
             }
             if (total < missingOil)
@@ -139,7 +139,7 @@ namespace WorkerDronesMod
                 foreach (var p in parts.Except(vital))
                 {
                     plan.Add(p.def.defName);
-                    total += JobDriver_ConsumeAndroidCorpse.OilPerUnitDefault;
+                    total += RefuelUtils.OilPerUnitDefault;
                     if (total >= missingOil) break;
                 }
             }

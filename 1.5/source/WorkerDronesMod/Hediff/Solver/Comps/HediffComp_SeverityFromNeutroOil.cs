@@ -43,40 +43,33 @@ namespace WorkerDronesMod
         /// Called every tick; adjusts severity based on the current Neutro Oil level.
         /// Below 50% oil, severity increases in proportion to the oil deficiency.
         /// Above 50%, severity decreases in proportion to the surplus.
-        /// A small dead zone (±0.0001 around 0.5) prevents constant minor adjustments.
         /// </summary>
         public override void CompPostTick(ref float severityAdjustment)
         {
             base.CompPostTick(ref severityAdjustment);
-            if (Pawn?.genes == null)
-                return;
-
-            Gene_NeutroamineOil oilGene = OilGene;
+            var oilGene = OilGene;
             if (oilGene == null)
                 return;
 
             float oilFraction = oilGene.Value / oilGene.InitialResourceMax;
 
-            // Define a small dead zone around 50% (i.e. between 0.4999 and 0.5001)
-            const float deadZoneHalfWidth = 0.0001f;
-            if (Mathf.Abs(oilFraction - 0.5f) <= deadZoneHalfWidth)
+            if (oilFraction >= 0.5f)
             {
-                // Within the dead zone, do nothing.
-                return;
+                // At 50% or more, severity goes down.
+                // scale goes 0→1 as oilFraction goes 0.5→1
+                float scale = (oilFraction - 0.5f) / 0.5f;
+                // severityPerHourAbove50 is per 2500 ticks (1 hour)
+                severityAdjustment -= (Props.severityPerHourAbove50 / 2500f) * scale;
             }
-            else if (oilFraction < 0.5f)
+            else
             {
-                // Scale: when oilFraction is 0.5, scale = 0; when oilFraction is 0, scale = 1.
+                // Below 50%, severity goes up.
+                // scale goes 0→1 as oilFraction goes 0.5→0
                 float scale = (0.5f - oilFraction) / 0.5f;
                 severityAdjustment += (Props.severityPerHourBelow50 / 2500f) * scale;
             }
-            else // oilFraction > 0.5f
-            {
-                // Scale: when oilFraction is 0.5, scale = 0; when oilFraction is 1, scale = 1.
-                float scale = (oilFraction - 0.5f) / 0.5f;
-                severityAdjustment -= (Props.severityPerHourAbove50 / 2500f) * scale;
-            }
         }
+
     }
 }
 

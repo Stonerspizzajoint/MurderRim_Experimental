@@ -3,32 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|c:\\users\\stone\\onedrive\\desktop\\mods\\murderrim - worker drones\\1.5\\source\\workerdronesmod\\patches\\showmeyourhands\\patch_handdrawer_handcolor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|solutionrelative:patches\\showmeyourhands\\patch_handdrawer_handcolor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|c:\\users\\stone\\onedrive\\desktop\\mods\\murderrim - worker drones\\1.5\\source\\workerdronesmod\\gene\\modextentions\\geneextension_learning.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|solutionrelative:gene\\modextentions\\geneextension_learning.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|c:\\users\\stone\\onedrive\\desktop\\mods\\murderrim - worker drones\\1.5\\source\\workerdronesmod\\patches\\raidpatches\\raidrestrictions\\mapcomponent_raidwatcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|solutionrelative:patches\\raidpatches\\raidrestrictions\\mapcomponent_raidwatcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|c:\\users\\stone\\onedrive\\desktop\\mods\\murderrim - worker drones\\1.5\\source\\workerdronesmod\\gene\\classes\\gene_learningbyobservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|solutionrelative:gene\\classes\\gene_learningbyobservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|c:\\users\\stone\\onedrive\\desktop\\mods\\murderrim - worker drones\\1.5\\source\\workerdronesmod\\patches\\raidpatches\\raidrestrictions\\map_finalizeinit_patch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|solutionrelative:patches\\raidpatches\\raidrestrictions\\map_finalizeinit_patch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|c:\\users\\stone\\onedrive\\desktop\\mods\\murderrim - worker drones\\1.5\\source\\workerdronesmod\\patches\\raidpatches\\raidrestrictions\\patch_incidentworker_raidenemy_tryexecuteworker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|solutionrelative:patches\\raidpatches\\raidrestrictions\\patch_incidentworker_raidenemy_tryexecuteworker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\patches\\raidpatches\\raidrestrictions\\patch_storyteller_tryfire.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|solutionrelative:patches\\raidpatches\\raidrestrictions\\patch_storyteller_tryfire.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\components\\mapcomponents\\pendingraidmapcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|solutionrelative:components\\mapcomponents\\pendingraidmapcomponent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\utils\\solver\\gene\\solvergeneutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|solutionrelative:utils\\solver\\gene\\solvergeneutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|c:\\users\\stone\\onedrive\\desktop\\mods\\murderrim - worker drones\\1.5\\source\\workerdronesmod\\defofs\\md_defof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|solutionrelative:defofs\\md_defof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,95 +22,46 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Patch_HandDrawer_HandColor.cs",
-              "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\Patches\\ShowMeYourHands\\Patch_HandDrawer_HandColor.cs",
-              "RelativeDocumentMoniker": "Patches\\ShowMeYourHands\\Patch_HandDrawer_HandColor.cs",
-              "ToolTip": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\Patches\\ShowMeYourHands\\Patch_HandDrawer_HandColor.cs",
-              "RelativeToolTip": "Patches\\ShowMeYourHands\\Patch_HandDrawer_HandColor.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAvAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "MD_DefOf.cs",
+              "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\DefOfs\\MD_DefOf.cs",
+              "RelativeDocumentMoniker": "DefOfs\\MD_DefOf.cs",
+              "ToolTip": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\DefOfs\\MD_DefOf.cs",
+              "RelativeToolTip": "DefOfs\\MD_DefOf.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAQwF4AAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T03:06:01.541Z",
+              "WhenOpened": "2025-06-18T12:42:57.828Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GeneExtension_Learning.cs",
+              "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\Gene\\ModExtentions\\GeneExtension_Learning.cs",
+              "RelativeDocumentMoniker": "Gene\\ModExtentions\\GeneExtension_Learning.cs",
+              "ToolTip": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\Gene\\ModExtentions\\GeneExtension_Learning.cs",
+              "RelativeToolTip": "Gene\\ModExtentions\\GeneExtension_Learning.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-18T12:04:02.108Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "MapComponent_RaidWatcher.cs",
-              "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\Patches\\RaidPatches\\RaidRestrictions\\MapComponent_RaidWatcher.cs",
-              "RelativeDocumentMoniker": "Patches\\RaidPatches\\RaidRestrictions\\MapComponent_RaidWatcher.cs",
-              "ToolTip": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\Patches\\RaidPatches\\RaidRestrictions\\MapComponent_RaidWatcher.cs",
-              "RelativeToolTip": "Patches\\RaidPatches\\RaidRestrictions\\MapComponent_RaidWatcher.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAgwB0AAAAvAAAAAAAAAA==",
+              "Title": "Gene_LearningByObservation.cs",
+              "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\Gene\\Classes\\Gene_LearningByObservation.cs",
+              "RelativeDocumentMoniker": "Gene\\Classes\\Gene_LearningByObservation.cs",
+              "ToolTip": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\Gene\\Classes\\Gene_LearningByObservation.cs",
+              "RelativeToolTip": "Gene\\Classes\\Gene_LearningByObservation.cs",
+              "ViewState": "AgIAANcAAAAAAAAAAAAAwMoAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-06T14:02:53.71Z",
+              "WhenOpened": "2025-06-18T12:01:22.181Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Map_FinalizeInit_Patch.cs",
-              "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\Patches\\RaidPatches\\RaidRestrictions\\Map_FinalizeInit_Patch.cs",
-              "RelativeDocumentMoniker": "Patches\\RaidPatches\\RaidRestrictions\\Map_FinalizeInit_Patch.cs",
-              "ToolTip": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\Patches\\RaidPatches\\RaidRestrictions\\Map_FinalizeInit_Patch.cs",
-              "RelativeToolTip": "Patches\\RaidPatches\\RaidRestrictions\\Map_FinalizeInit_Patch.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-06T14:02:51.314Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Patch_IncidentWorker_RaidEnemy_TryExecuteWorker.cs",
-              "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\Patches\\RaidPatches\\RaidRestrictions\\Patch_IncidentWorker_RaidEnemy_TryExecuteWorker.cs",
-              "RelativeDocumentMoniker": "Patches\\RaidPatches\\RaidRestrictions\\Patch_IncidentWorker_RaidEnemy_TryExecuteWorker.cs",
-              "ToolTip": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\Patches\\RaidPatches\\RaidRestrictions\\Patch_IncidentWorker_RaidEnemy_TryExecuteWorker.cs",
-              "RelativeToolTip": "Patches\\RaidPatches\\RaidRestrictions\\Patch_IncidentWorker_RaidEnemy_TryExecuteWorker.cs",
-              "ViewState": "AgIAAIsAAAAAAAAAAAAgwJQAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-06T08:29:49.663Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Patch_Storyteller_TryFire.cs",
-              "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\Patches\\RaidPatches\\RaidRestrictions\\Patch_Storyteller_TryFire.cs",
-              "RelativeDocumentMoniker": "Patches\\RaidPatches\\RaidRestrictions\\Patch_Storyteller_TryFire.cs",
-              "ToolTip": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\Patches\\RaidPatches\\RaidRestrictions\\Patch_Storyteller_TryFire.cs",
-              "RelativeToolTip": "Patches\\RaidPatches\\RaidRestrictions\\Patch_Storyteller_TryFire.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-06T11:14:58.053Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "PendingRaidMapComponent.cs",
-              "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\Components\\MapComponents\\PendingRaidMapComponent.cs",
-              "RelativeDocumentMoniker": "Components\\MapComponents\\PendingRaidMapComponent.cs",
-              "ToolTip": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\Components\\MapComponents\\PendingRaidMapComponent.cs",
-              "RelativeToolTip": "Components\\MapComponents\\PendingRaidMapComponent.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-06T08:48:53.986Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "SolverGeneUtility.cs",
-              "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\Utils\\Solver\\Gene\\SolverGeneUtility.cs",
-              "RelativeDocumentMoniker": "Utils\\Solver\\Gene\\SolverGeneUtility.cs",
-              "ToolTip": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\Utils\\Solver\\Gene\\SolverGeneUtility.cs",
-              "RelativeToolTip": "Utils\\Solver\\Gene\\SolverGeneUtility.cs",
-              "ViewState": "AgIAAKkAAAAAAAAAAAAwwLYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-06T08:31:44.969Z"
             }
           ]
         }

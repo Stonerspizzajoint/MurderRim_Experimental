@@ -22,6 +22,7 @@ Your satisfaction is our priority, but your survival is not guaranteed.
 			<li>VREA_PsychicallyDeaf</li>
 			<li>MD_DroneBody</li>
       		<li>MD_NeutroamineOil</li>
+			<li>MD_LearningByObservation</li>
       		<li>MD_DisplayEyes</li>
 	  		<li>MD_DisplayColor_Teal</li>
 	  		<li>MD_DisplayColor_Blue</li>
@@ -60,10 +61,10 @@ Your satisfaction is our priority, but your survival is not guaranteed.
 			<li>VREA_ColdTolerant</li>
 			<li>VREA_HeatTolerant</li>
 			<li>VREA_PsychicallyDeaf</li>
-			<li>VREA_NoSkillGain</li>
 			<li>VREA_MentalBreaksDisabled</li>
 			<li>MD_DroneBody</li>
       		<li>MD_NeutroamineOil</li>
+			<li>MD_LearningByObservation</li>
 			<li>Hair_BaldOnly</li>
 			<li>Beard_NoBeardOnly</li>
       		<li>MD_DisplayEyes</li>

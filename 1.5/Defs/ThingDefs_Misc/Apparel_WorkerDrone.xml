@@ -47,7 +47,7 @@
 				<li>Overhead</li>
 			</layers>
 			<tags>
-				<li>IndustrialBasic</li>
+				<li>WorkerDroneBasic</li>
 			</tags>
 			<defaultOutfitTags>
 				<li>Worker</li>
@@ -113,7 +113,7 @@
 				<li>Overhead</li>
 			</layers>
 			<tags>
-				<li>IndustrialBasic</li>
+				<li>WorkerDroneBasic</li>
 			</tags>
 			<defaultOutfitTags>
 				<li>Worker</li>

@@ -2,6 +2,7 @@
 using System.Linq;
 using RimWorld;
 using Verse;
+using VREAndroids;
 
 namespace WorkerDronesMod
 {
@@ -60,37 +61,41 @@ namespace WorkerDronesMod
             if (pawn == null)
                 return false;
 
-            // Check for a vital organ: stomach using your mod def.
-            BodyPartRecord stomach = pawn.health.hediffSet.GetNotMissingParts()
-                .FirstOrDefault(part => part.def == MD_DefOf.Stomach);
-            if (stomach == null)
+            // If we previously flagged a safe removal, but the pawn now has a stomach again, clear the flag:
+            if (SurgerySafetyUtility.HasSafeStomachRemoval(pawn))
             {
-                if (DebugSettings.godMode)
-                    Log.Message($"[SolverGeneUtility] Pawn {pawn.LabelShort} is missing its stomach and is critically damaged.");
-                return true;
-            }
-
-            // Check if the pawn is missing its head.
-            BodyPartRecord head = pawn.health.hediffSet.GetNotMissingParts()
-                .FirstOrDefault(part => part.def == BodyPartDefOf.Head);
-            if (head == null)
-            {
-                // 20% chance to consider a missing head as critical damage.
-                if (Rand.Value < 0.2f)
+                bool nowHasStomach = pawn.health.hediffSet.GetNotMissingParts()
+                    .Any(p => p.def == MD_DefOf.Stomach);
+                if (nowHasStomach)
                 {
-                    if (DebugSettings.godMode)
-                        Log.Message($"[SolverGeneUtility] Pawn {pawn.LabelShort} is missing its head and, with 20% chance, is critically damaged.");
-                    return true;
+                    SurgerySafetyUtility.ClearSafeStomachRemoval(pawn);
                 }
             }
 
-            // Determine critical damage based on intact body parts.
-            int intactParts = pawn.health.hediffSet.GetNotMissingParts()
-                .Count(part => !pawn.health.hediffSet.hediffs.Any(h => h.Part == part && h.def == MD_DefOf.MD_FleshyPart));
-            int totalParts = pawn.RaceProps.body.AllParts.Count;
+            // 1) Stomach‐missing test (skipped if still flagged):
+            if (!SurgerySafetyUtility.HasSafeStomachRemoval(pawn))
+            {
+                bool hasStomach = pawn.health.hediffSet.GetNotMissingParts()
+                    .Any(p => p.def == MD_DefOf.Stomach);
+                if (!hasStomach)
+                    return true;
+            }
 
-            return totalParts > 0 && ((float)intactParts / totalParts) < 0.2f;
+            // 2) Head‐missing test…
+            var missingHead = pawn.health.hediffSet.hediffs
+                .OfType<Hediff_MissingPart>()
+                .FirstOrDefault(h => h.Part.def == BodyPartDefOf.Head);
+            if (missingHead != null && !missingHead.IsFresh && Rand.Value < 0.2f)
+                return true;
+
+            // 3) Overall integrity…
+            int intact = pawn.health.hediffSet.GetNotMissingParts()
+                    .Count(part => !pawn.health.hediffSet.hediffs.Any(h => h.Part == part && h.def == MD_DefOf.MD_FleshyPart));
+            int total = pawn.RaceProps.body.AllParts.Count;
+            return total > 0 && ((float)intact / total) < 0.2f;
         }
+
+
 
         /// <summary>
         /// Enforces critical damage by killing the pawn if it is critically damaged.
@@ -273,7 +278,7 @@ namespace WorkerDronesMod
 
         #endregion
 
-        #region Core Heart Check
+        #region Solver Checks
 
         /// <summary>
         /// Determines whether the given pawn's race is MD_CoreHeartRace.
@@ -281,6 +286,14 @@ namespace WorkerDronesMod
         public static bool IsACoreHeart(Pawn pawn)
         {
             return pawn != null && pawn.def == MD_DefOf.MD_CoreHeartRace;
+        }
+
+        /// <summary>
+        /// Checks if the given pawn has the MD_WeakenedSolver gene.
+        /// </summary>
+        public static bool HasSolver(Pawn pawn)
+        {
+            return pawn != null && pawn.HasActiveGene(MD_DefOf.MD_WeakenedSolver);
         }
 
         #endregion

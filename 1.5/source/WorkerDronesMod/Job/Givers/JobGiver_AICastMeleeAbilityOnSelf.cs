@@ -15,6 +15,9 @@ namespace WorkerDronesMod
 
         protected override Job TryGiveJob(Pawn pawn)
         {
+
+            pawn.jobs.EndCurrentJob(JobCondition.InterruptForced);
+
             if (pawn?.Map == null)
                 return null;
 
