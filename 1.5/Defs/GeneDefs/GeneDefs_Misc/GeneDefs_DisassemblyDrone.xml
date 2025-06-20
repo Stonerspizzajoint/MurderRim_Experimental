@@ -169,7 +169,7 @@ The Body houses an improved reactor, leading to better power efficiency.
 		<description>Androids with this hardware can switch between different melee weapons replaceing their hands.</description>
 		<iconPath>UI/Abilities/DisassemblyDrone/MD_InterchangeableHands</iconPath>
 		<biostatCpx>3</biostatCpx>
-		<biostatMet>-3</biostatMet>
+		<biostatMet>-1</biostatMet>
 		<abilities>
 			<li>MD_InterchangeableHandsAbility</li>
 		</abilities>
@@ -286,7 +286,7 @@ The Body houses an improved reactor, leading to better power efficiency.
  		<iconPath>Pawn/DisassemblyDrone/Head/Eye_Headband/Eyeband_south</iconPath>
  		<selectionWeight>1000</selectionWeight>
  		<biostatCpx>1</biostatCpx>
-		<biostatMet>-2</biostatMet>
+		<biostatMet>-1</biostatMet>
 		<ignoreDarkness>true</ignoreDarkness>
 		<exclusionTags>
 			<li>MD_HeadBand</li>

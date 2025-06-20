@@ -185,7 +185,7 @@
     <jobDef>CastJump</jobDef>
     <comps>
       <li Class="WorkerDronesMod.CompProperties_AbilityHeatEffect">
-        <heatRange>10~15</heatRange>
+        <heatRange>20~25</heatRange>
       </li>
     </comps>
 	</AbilityDef>

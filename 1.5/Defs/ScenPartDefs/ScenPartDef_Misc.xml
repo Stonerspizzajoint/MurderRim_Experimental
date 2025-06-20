@@ -6,5 +6,6 @@
         <label>Start at night</label>
         <description>Sets the game start time to night</description>
         <summaryPriority>100</summaryPriority>
+        <maxUses>1</maxUses>
     </ScenPartDef>
 </Defs>

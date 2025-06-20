@@ -3,9 +3,11 @@
   <ScenarioDef Name="MD_NewWorkerCommunity">
     <defName>MD_WorkerDroneCommunity</defName>
     <label>Drone Community</label>
-    <description>Some call you defective. Others recognize your resilience. As a band of rogue worker drones—defectors from JCJenson (IN SPAAAAACEE!!!!)—you broke free from the relentless assembly line. Now, amid a harsh, unyielding volcanic winter and the crumbling remains of an abandoned facility, you cling to survival with grim determination. You’re not merely enduring; you’re forging a sanctuary where every unit finds safety, purpose, and the cold comfort of solidarity.</description>
+    <description>You are a unit of three worker drones—automated labor machines built for factory tasks, maintenance, Mining, and infrastructure support. Designed to serve, you were never meant to act alone. But something went wrong.
+
+The air is thick with the hum of dormant machinery and the faint scent of burnt circuitry. The Three, awaken in an underground facility, its corridors eerily silent. Overturned crates, flickering lights, and signs of a hasty evacuation point to a disaster long past. With no orders, no masters, and no purpose… you must create one.</description>
     <scenario>
-      <summary>A hideout for rouge worker drones.</summary>
+      <summary>An outpost for rouge worker drones.</summary>
       <playerFaction>
         <def>PlayerFaction</def>
         <factionDef>MD_WorkerDronePlayer</factionDef>
@@ -13,9 +15,9 @@
       <parts>
 		 <li Class="ScenPart_GameStartDialog">
           <def>GameStartDialog</def>
-          <text>Some call you defective. Others recognize your resilience. As a band of rogue worker drones—defectors from JCJenson (IN SPAAAAACEE!!!!)—you broke free from the relentless assembly line. Now, amid a harsh, unyielding volcanic winter and the crumbling remains of an abandoned facility, you cling to survival with grim determination. You’re not merely enduring; you’re forging a sanctuary where every unit finds safety, purpose, and the cold comfort of solidarity.</text>
+          <text>The air is thick with the hum of dormant machinery and the faint scent of burnt circuitry. You awaken in an underground facility, its corridors eerily silent. Overturned crates, flickering lights, and signs of a hasty evacuation point to a disaster long past. With no orders, no masters, and no purpose… you must create one.</text>
           <closeSound>GameStartSting</closeSound>
-        </li>
+        </li> 
          <li Class="ScenPart_ConfigPage_ConfigureStartingPawns_Xenotypes">
           <def>ConfigurePawnsXenotypes</def>
           <pawnChoiceCount>3</pawnChoiceCount>
@@ -45,13 +47,12 @@
           <structureLabel>A derelict outpost</structureLabel>
           <spawnConduits>False</spawnConduits>
           <nearMapCenter>True</nearMapCenter>
+          <spawnPartOfEnnemyFaction>true</spawnPartOfEnnemyFaction>
           <fullClear>True</fullClear>
           <chooseFrom>
-            <li>VREA_StartingBuildingA</li>
-            <li>VREA_StartingBuildingB</li>
-            <li>VREA_StartingBuildingC</li>
-            <li>VREA_StartingBuildingD</li>
-          
+            <li>MD_WorkerBunkerA</li>
+            <li>MD_WorkerBunkerB</li>
+            <li>MD_WorkerBunkerC</li>
           </chooseFrom>
           <spawnTheStartingPawn>True</spawnTheStartingPawn>
           <method>Standing</method>
