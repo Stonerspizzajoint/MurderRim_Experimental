@@ -97,6 +97,7 @@
 		<iconPath>UI/Icons/Genes/Gene_WeakenedSolver</iconPath>
 		<displayOrderInCategory>10003</displayOrderInCategory>
 		<biostatCpx>3</biostatCpx>
+		<biostatMet>3</biostatMet>
 		<prerequisite>MD_HeatScale</prerequisite>
 		<aptitudes>
 			<Melee>8</Melee>
