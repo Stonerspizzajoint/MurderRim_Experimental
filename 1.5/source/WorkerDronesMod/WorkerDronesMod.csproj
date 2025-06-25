@@ -48,9 +48,6 @@
       <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\workshop\content\294100\2890901044\Assemblies\CombatExtended.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="FacialAnimation">
-      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\workshop\content\294100\1635901197\1.5\Assemblies\FacialAnimation.dll</HintPath>
-    </Reference>
     <Reference Include="ShowMeYourHands">
       <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\workshop\content\294100\2475965842\1.5\Assemblies\ShowMeYourHands.dll</HintPath>
       <Private>False</Private>
@@ -101,15 +98,9 @@
     <Compile Include="Abilities\Solver\Comps\Comp_AbilityHeatEffect.cs" />
     <Compile Include="Abilities\Solver\Comps\CompAbilityEffect_NeutroamineOilCost.cs" />
     <Compile Include="Abilities\Solver\Comps\Comp_ToggleHediffEffect.cs" />
-    <Compile Include="Defs\GeneForcedHeadTypeDefExtension.cs" />
     <Compile Include="Gene\Classes\Gene_LearningByObservation.cs" />
     <Compile Include="Gene\ModExtentions\GeneExtension_Learning.cs" />
     <Compile Include="Job\ThinkNode\Conditional\ThinkNode_ConditionalUnderCombatPressureOrEMPSusceptible.cs" />
-    <Compile Include="Patches\FacialAnimations\Facetypepatches\Brow_DefaultResetColor_Patch.cs" />
-    <Compile Include="Patches\FacialAnimations\Facetypepatches\Patch_Pawn_GeneTracker_AddGene_ForceTypes.cs" />
-    <Compile Include="Patches\FacialAnimations\Facetypepatches\LidColorPatch.cs" />
-    <Compile Include="Patches\FacialAnimations\Facetypepatches\EyeballColorPatch.cs" />
-    <Compile Include="Patches\FacialAnimations\Facetypepatches\Patch_PawnGenerator_ForceAllFacialTypes.cs" />
     <Compile Include="Patches\VREAndroids\Patch_Recipe_RemoveArtificialBodyPart_ApplyOnPawn.cs" />
     <Compile Include="Scenerio\ScenPart_StartAtNight.cs" />
     <Compile Include="Startup.cs" />
@@ -233,6 +224,7 @@
     <Compile Include="Trader\StockGenerator_AndroidSlavesOnly.cs" />
     <Compile Include="Utils\HediffExtentions\GeneHediffSwitcherUtility.cs" />
     <Compile Include="Utils\helper\AbilityHediffUtility.cs" />
+    <Compile Include="Utils\helper\FacialAnimationIntegration.cs" />
     <Compile Include="Utils\helper\GeneHediffSwitcherState.cs" />
     <Compile Include="Utils\Solver\SurgerySafetyUtility.cs" />
     <Compile Include="Utils\Solver\RefuelMadnessUtility.cs" />
@@ -268,6 +260,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Alerts\" />
+    <Folder Include="Defs\" />
     <Folder Include="Gene\ConditionalStatAffecter\" />
     <Folder Include="Gene\GeneCategory\ModExtentions\" />
     <Folder Include="Gene\Gene_Resource\Gizmo\" />

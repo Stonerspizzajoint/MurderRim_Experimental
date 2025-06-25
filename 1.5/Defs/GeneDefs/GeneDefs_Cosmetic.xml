@@ -69,7 +69,7 @@
 				<li>MD_MurderDroneBody</li>
 			</prerequisiteGeneDefNames>
 		</li>
-		<li MayRequire="nals.facialanimation" Class="WorkerDronesMod.GeneForcedFacetypesExtension">
+		<li MayRequire="nals.facialanimation" Class="WorkerDronesMod.FacialAnimationCompat.GeneForcedFacetypesExtension">
 			<forcedHeadTypes>
 				<li>WorkerDroneHeadNormal</li>
 			</forcedHeadTypes>
@@ -176,7 +176,7 @@
 	<li Class="WorkerDronesMod.GeneResearchExtension">
     	<requiredResearch>MD_DisassemblyDroneTech</requiredResearch>
     </li>
-		<li MayRequire="nals.facialanimation" Class="WorkerDronesMod.GeneForcedFacetypesExtension">
+		<li MayRequire="nals.facialanimation" Class="WorkerDronesMod.FacialAnimationCompat.GeneForcedFacetypesExtension">
 			<forcedHeadTypes>
 				<li>WorkerDroneHeadNormal</li>
 			</forcedHeadTypes>
@@ -274,7 +274,7 @@
 	<li Class="WorkerDronesMod.GeneResearchExtension">
     	<requiredResearch>MD_DisassemblyDroneTech</requiredResearch>
     </li>
-		<li MayRequire="nals.facialanimation" Class="WorkerDronesMod.GeneForcedFacetypesExtension">
+		<li MayRequire="nals.facialanimation" Class="WorkerDronesMod.FacialAnimationCompat.GeneForcedFacetypesExtension">
 			<forcedHeadTypes>
 				<li>WorkerDroneHeadNormal</li>
 			</forcedHeadTypes>

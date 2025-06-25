@@ -7,4 +7,3 @@ C:\Users\stone\OneDrive\Desktop\Mods\MurderRim - Worker Drones\1.5\source\Worker
 C:\Users\stone\OneDrive\Desktop\Mods\MurderRim - Worker Drones\1.5\source\WorkerDronesMod\obj\Debug\WorkerDronesMod.csproj.CoreCompileInputs.cache
 C:\Users\stone\OneDrive\Desktop\Mods\MurderRim - Worker Drones\1.5\Assemblies\WorkerDronesMod.dll
 C:\Users\stone\OneDrive\Desktop\Mods\MurderRim - Worker Drones\1.5\source\WorkerDronesMod\obj\Debug\WorkerDronesMod.dll
-C:\Users\stone\OneDrive\Desktop\Mods\MurderRim - Worker Drones\1.5\source\WorkerDronesMod\obj\Debug\WorkerDr.B2E4832A.Up2Date
