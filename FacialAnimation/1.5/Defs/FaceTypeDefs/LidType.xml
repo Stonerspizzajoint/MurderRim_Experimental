@@ -1,0 +1,8 @@
+<Defs>
+  <FacialAnimation.LidTypeDef>
+	  <defName>DisplayLidNormal</defName>
+	  <texPath>OtherMods/FacialAnimations/WorkerDrone/Lids/Normal</texPath>
+	  <shader>Map/TransparentPostLight</shader>
+    <raceName>workerdrone</raceName>
+  </FacialAnimation.LidTypeDef>
+</Defs>

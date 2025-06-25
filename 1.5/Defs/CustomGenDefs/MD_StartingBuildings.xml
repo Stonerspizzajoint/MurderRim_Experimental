@@ -1195,4 +1195,47 @@
         <li>ludeon.rimworld.biotech</li>
     </modRequirements>
     </KCSG.StructureLayoutDef>
+
+    <KCSG.StructureLayoutDef>
+    <defName>MD_DisassemblyPodA</defName>
+    <spawnConduits>false</spawnConduits>
+    <layouts>
+        <li>
+        <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,AncientWarwalkerClaw_North,.</li>
+        <li>.,.,.,AncientWarwalkerClaw_North,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+        <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+        <li>.,.,.,.,.,AncientWarwalkerLeg_East,.,.,.,.,.,.,.,.,AncientWarwalkerLeg_North,.,.</li>
+        <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+        <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+        <li>.,.,.,.,.,.,.,.,.,Wall_Plasteel,Door_Plasteel,.,.,.,.,.,.</li>
+        <li>.,.,.,.,.,.,.,.,Wall_Plasteel,Battery_North,.,.,.,AncientWarwalkerFoot,.,.,.</li>
+        <li>AncientWarwalkerClaw_North,.,.,.,.,.,.,.,Wall_Plasteel,.,.,DiningChair_Steel_North,Wall_Plasteel,.,.,.,.</li>
+        <li>.,.,.,.,.,.,.,.,Wall_Plasteel,.,AncientDisplayBank_South,.,Wall_Plasteel,.,.,.,.</li>
+        <li>.,.,AncientWarwalkerLeg_East,.,.,.,.,.,.,Wall_Plasteel,Wall_Plasteel,Wall_Plasteel,.,.,.,.,.</li>
+        <li>.,.,.,.,.,.,.,.,.,.,.,.,.,AncientWarwalkerFoot,.,.,.</li>
+        <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,AncientWarwalkerClaw_East,.</li>
+        </li>
+    </layouts>
+    <terrainGrid>
+        <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+        <li>.,.,.,Marble_RoughHewn,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+        <li>.,.,.,Marble_RoughHewn,Marble_RoughHewn,.,.,.,.,.,.,.,.,.,.,.,.</li>
+        <li>.,.,.,.,Marble_RoughHewn,.,.,.,.,.,.,.,.,.,.,.,.</li>
+        <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+        <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+        <li>.,.,.,.,.,.,.,.,.,.,MetalTile,MetalTile,MetalTile,.,.,.,.</li>
+        <li>.,.,.,.,.,.,.,.,.,MetalTile,MetalTile,MetalTile,MetalTile,.,.,.,.</li>
+        <li>Marble_RoughHewn,.,.,.,.,.,.,.,.,MetalTile,MetalTile,MetalTile,.,.,.,.,.</li>
+        <li>Marble_RoughHewn,Marble_RoughHewn,Marble_RoughHewn,Marble_RoughHewn,Marble_RoughHewn,.,.,.,.,MetalTile,MetalTile,MetalTile,.,.,.,.,.</li>
+        <li>.,Marble_RoughHewn,Marble_RoughHewn,Marble_RoughHewn,Marble_RoughHewn,.,.,.,.,.,.,.,.,.,.,.,.</li>
+        <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+        <li>.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.,.</li>
+    </terrainGrid>
+    <tags>
+        <li>Pod</li>
+    </tags>
+    <modRequirements>
+        <li>ludeon.rimworld.ideology</li>
+    </modRequirements>
+    </KCSG.StructureLayoutDef>
 </Defs>

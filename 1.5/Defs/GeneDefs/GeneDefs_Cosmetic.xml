@@ -43,33 +43,53 @@
 	<geneClass>WorkerDronesMod.Gene_HediffSwitcherActivator</geneClass>
   	<selectionWeight>0</selectionWeight>
     <modExtensions>
-    <li Class="WorkerDronesMod.GeneHediffSwitcherExtension">
-      <stateHediffs>
-        <li>
-          <state>Normal</state>
-          <hediffDef>MD_Normal_DisplayEyes</hediffDef>
-        </li>
-        <li>
-          <state>HighHeat</state>
-          <hediffDef>MD_HighHeat_DisplayEyes</hediffDef>
-        </li>
-        <li>
-          <state>Downed</state>
-          <hediffDef>MD_Warning_DisplayEyes</hediffDef>
-        </li>
-		<li>
-          <state>Sleeping</state>
-          <hediffDef>MD_SleepMode_DisplayEyes</hediffDef>
-        </li>
-      </stateHediffs>
-    </li>
-	<li Class="WorkerDronesMod.GenePrerequisitesExtension">
-		<prerequisiteGeneDefNames>
-			<li>MD_DroneBody</li>
-			<li>MD_MurderDroneBody</li>
-		</prerequisiteGeneDefNames>
-	</li>
-  </modExtensions>
+		<li Class="WorkerDronesMod.GeneHediffSwitcherExtension">
+		<stateHediffs>
+			<li>
+			<state>Normal</state>
+			<hediffDef>MD_Normal_DisplayEyes</hediffDef>
+			</li>
+			<li>
+			<state>HighHeat</state>
+			<hediffDef>MD_HighHeat_DisplayEyes</hediffDef>
+			</li>
+			<li>
+			<state>Downed</state>
+			<hediffDef>MD_Warning_DisplayEyes</hediffDef>
+			</li>
+			<li>
+			<state>Sleeping</state>
+			<hediffDef>MD_SleepMode_DisplayEyes</hediffDef>
+			</li>
+		</stateHediffs>
+		</li>
+		<li Class="WorkerDronesMod.GenePrerequisitesExtension">
+			<prerequisiteGeneDefNames>
+				<li>MD_DroneBody</li>
+				<li>MD_MurderDroneBody</li>
+			</prerequisiteGeneDefNames>
+		</li>
+		<li MayRequire="nals.facialanimation" Class="WorkerDronesMod.GeneForcedFacetypesExtension">
+			<forcedHeadTypes>
+				<li>WorkerDroneHeadNormal</li>
+			</forcedHeadTypes>
+			<forcedBrowTypes>
+				<li>NoBrow_DigitalBrow</li>
+				<li>DisplayWrinkle_DigitalBrow</li>
+			</forcedBrowTypes>
+			<forcedEyeTypes>
+				<li>Normal_DisplayEyes</li>
+				<li>WornOut_DisplayEyes</li>
+				<li>WornOutTired_DisplayEyes</li>
+			</forcedEyeTypes>
+			<forcedLidTypes>
+				<li>DisplayLidNormal</li>
+			</forcedLidTypes>
+			<EyeColorMatchesSkinColor>true</EyeColorMatchesSkinColor>
+			<BrowColorMatchesSkinColor>true</BrowColorMatchesSkinColor>
+			<LidColorMatchesSkinColor>true</LidColorMatchesSkinColor>				
+		</li>
+  	</modExtensions>
 		<renderNodeProperties>
 			<!--Fatal Error when dead-->
     		<li Class="VFECore.PawnRenderNodeProperties_Omni">
@@ -156,7 +176,27 @@
 	<li Class="WorkerDronesMod.GeneResearchExtension">
     	<requiredResearch>MD_DisassemblyDroneTech</requiredResearch>
     </li>
-  </modExtensions>
+		<li MayRequire="nals.facialanimation" Class="WorkerDronesMod.GeneForcedFacetypesExtension">
+			<forcedHeadTypes>
+				<li>WorkerDroneHeadNormal</li>
+			</forcedHeadTypes>
+			<forcedBrowTypes>
+				<li>NoBrow_DigitalBrow</li>
+				<li>DisplayWrinkle_DigitalBrow</li>
+			</forcedBrowTypes>
+			<forcedEyeTypes>
+				<li>Normal_DisplayEyes</li>
+				<li>WornOut_DisplayEyes</li>
+				<li>WornOutTired_DisplayEyes</li>
+			</forcedEyeTypes>
+			<forcedLidTypes>
+				<li>DisplayLidNormal</li>
+			</forcedLidTypes>
+			<EyeColorMatchesSkinColor>true</EyeColorMatchesSkinColor>
+			<BrowColorMatchesSkinColor>true</BrowColorMatchesSkinColor>
+			<LidColorMatchesSkinColor>true</LidColorMatchesSkinColor>				
+		</li>
+  	</modExtensions>
   <renderNodeProperties>
 		<!--Fatal Error when dead-->
     	<li Class="VFECore.PawnRenderNodeProperties_Omni">
@@ -234,6 +274,23 @@
 	<li Class="WorkerDronesMod.GeneResearchExtension">
     	<requiredResearch>MD_DisassemblyDroneTech</requiredResearch>
     </li>
+		<li MayRequire="nals.facialanimation" Class="WorkerDronesMod.GeneForcedFacetypesExtension">
+			<forcedHeadTypes>
+				<li>WorkerDroneHeadNormal</li>
+			</forcedHeadTypes>
+			<forcedBrowTypes>
+				<li>NoBrow_DigitalBrow</li>
+			</forcedBrowTypes>
+			<forcedEyeTypes>
+				<li>XEyes_DisplayEyes</li>
+			</forcedEyeTypes>
+			<forcedLidTypes>
+				<li>DisplayLidNormal</li>
+			</forcedLidTypes>
+			<EyeColorMatchesSkinColor>true</EyeColorMatchesSkinColor>
+			<BrowColorMatchesSkinColor>true</BrowColorMatchesSkinColor>
+			<LidColorMatchesSkinColor>true</LidColorMatchesSkinColor>				
+		</li>
   </modExtensions>
   <renderNodeProperties>
 		<!--Fatal Error when dead-->

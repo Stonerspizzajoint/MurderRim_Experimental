@@ -1,0 +1,43 @@
+<Defs>
+
+ <!--Normal Worker Eyes-->
+  <FacialAnimation.EyeballTypeDef>
+	  <defName>Normal_DisplayEyes</defName>
+	  <texPath>OtherMods/FacialAnimations/WorkerDrone/Eyes/Normal</texPath>
+	  <shader>Map/TransparentPostLight</shader>
+    <raceName>workerdrone</raceName>
+  </FacialAnimation.EyeballTypeDef>
+
+  <FacialAnimation.EyeballTypeDef>
+	  <defName>WornOut_DisplayEyes</defName>
+	  <texPath>OtherMods/FacialAnimations/WorkerDrone/Eyes/WornOut</texPath>
+	  <shader>Map/TransparentPostLight</shader>
+    <raceName>workerdrone</raceName>
+    <probability>0.7</probability>
+  </FacialAnimation.EyeballTypeDef>
+
+  <FacialAnimation.EyeballTypeDef>
+	  <defName>WornOut2_DisplayEyes</defName>
+	  <texPath>OtherMods/FacialAnimations/WorkerDrone/Eyes/WornOut2</texPath>
+	  <shader>Map/TransparentPostLight</shader>
+    <raceName>workerdrone</raceName>
+    <probability>0.5</probability>
+  </FacialAnimation.EyeballTypeDef>
+
+  <FacialAnimation.EyeballTypeDef>
+	  <defName>WornOutTired_DisplayEyes</defName>
+	  <texPath>OtherMods/FacialAnimations/WorkerDrone/Eyes/WornOutTired</texPath>
+	  <shader>Map/TransparentPostLight</shader>
+    <raceName>workerdrone</raceName>
+    <probability>0.3</probability>
+  </FacialAnimation.EyeballTypeDef>
+
+ <!--Disassembly or Solver type Eyes-->
+  <FacialAnimation.EyeballTypeDef>
+	  <defName>XEyes_DisplayEyes</defName>
+	  <texPath>OtherMods/FacialAnimations/WorkerDrone/Eyes/XEyes</texPath>
+	  <shader>Map/TransparentPostLight</shader>
+    <raceName>Disassemblydrone</raceName>
+    <probability>1</probability>
+  </FacialAnimation.EyeballTypeDef>
+</Defs>

@@ -1,0 +1,28 @@
+<Patch>
+<!-- Remove existing facial Hediffs-->
+<!-- Eyes -->
+  <Operation Class="PatchOperationRemove">
+    <xpath>
+    /Defs/VREAndroids.AndroidGeneDef[defName="MD_DisplayEyes"]/modExtensions/li[@Class="WorkerDronesMod.GeneHediffSwitcherExtension"]
+    </xpath>
+  </Operation>
+
+  <Operation Class="PatchOperationRemove">
+    <xpath>
+    /Defs/VREAndroids.AndroidGeneDef[defName="MD_DisplayEyes_DD"]/modExtensions/li[@Class="WorkerDronesMod.GeneHediffSwitcherExtension"]
+    </xpath>
+  </Operation>
+
+  <Operation Class="PatchOperationRemove">
+    <xpath>
+    /Defs/VREAndroids.AndroidGeneDef[defName="MD_DisplayEyes_XX"]/modExtensions/li[@Class="WorkerDronesMod.GeneHediffSwitcherExtension"]
+    </xpath>
+  </Operation>
+
+<!-- Remove fang mouth texture -->
+  <Operation Class="PatchOperationRemove">
+    <xpath>
+    /Defs/VREAndroids.AndroidGeneDef[defName="MD_FangsOut"]/renderNodeProperties
+    </xpath>
+  </Operation>
+</Patch>

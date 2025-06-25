@@ -37,6 +37,42 @@
     </comps>
   </AbilityDef>
 
+<!--EMP Blast-->
+	<AbilityDef ParentName="MD_NoTargetAbilities">
+		<defName>MD_EMPBlast</defName>
+		<label>EMP Blast</label>
+    <description>Causes an EMP blast, affecting electronic type creatures around it.</description>
+    <displayOrder>199</displayOrder>
+    <aiCanUse>true</aiCanUse>
+		<cooldownTicksRange>30000</cooldownTicksRange>
+		<iconPath>UI/Icons/Genes/Hardware/Gene_Power</iconPath>
+    <jobDef>CastAbilityOnThingMelee</jobDef>
+		<verbProperties>
+      <warmupTime>0.5</warmupTime>
+			<range>3.9</range>
+      <warmupEffecter>MD_EMPWarmupEffect</warmupEffecter>
+      <violent>false</violent>
+      <ai_IsWeapon>false</ai_IsWeapon>
+      <onlyManualCast>false</onlyManualCast>
+      <targetParams>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="WorkerDronesMod.CompProperties_Explode">
+				<radius>3.9</radius>
+				<damageType>EMP</damageType>
+				<soundCreated>Explosion_EMP</soundCreated>
+				<damageUser>false</damageUser>
+        <damageAmount>12</damageAmount>
+			</li>
+      <li Class="WorkerDronesMod.CompProperties_AbilityHeatEffect">
+        <heatRange>20~25</heatRange>
+      </li>
+		</comps>
+    </AbilityDef>
+
     <AbilityDef ParentName="MD_NoTargetAbilities">
         <defName>MD_InterchangeableHandsAbility</defName>
         <label>interchangeable hands (Melee)</label>

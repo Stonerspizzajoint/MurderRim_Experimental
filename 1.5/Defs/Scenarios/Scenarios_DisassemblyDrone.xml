@@ -43,13 +43,19 @@
           <def>StartAtNight</def>
           <startHour>15</startHour>
         </li>
-
-        <li Class="ScenPart_PlayerPawnsArriveMethod">
-          <def>PlayerPawnsArriveMethod</def>
-          <method>DropPods</method>
-          <visible>false</visible>
+        <li Class="KCSG.ScenPart_AddStartingStructure">
+          <def>VFEC_AddStartingStructure</def>
+          <structureLabel>A ruined drop ship</structureLabel>
+          <spawnConduits>False</spawnConduits>
+          <nearMapCenter>True</nearMapCenter>
+          <spawnPartOfEnnemyFaction>true</spawnPartOfEnnemyFaction>
+          <fullClear>True</fullClear>
+          <chooseFrom>
+            <li>MD_DisassemblyPodA</li>
+          </chooseFrom>
+          <spawnTheStartingPawn>True</spawnTheStartingPawn>
+          <method>Standing</method>
         </li>
-
 		 <li Class="ScenPart_StartingThing_Defined">
           <def>StartingThing_Defined</def>
           <thingDef>Neutroamine</thingDef>

@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|c:\\users\\stone\\onedrive\\desktop\\mods\\murderrim - worker drones\\1.5\\source\\workerdronesmod\\gene\\classes\\gene_learningbyobservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|solutionrelative:gene\\classes\\gene_learningbyobservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|c:\\users\\stone\\onedrive\\desktop\\mods\\murderrim - worker drones\\1.5\\source\\workerdronesmod\\patches\\facialanimations\\facetypepatches\\eyeballcolorpatch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|solutionrelative:patches\\facialanimations\\facetypepatches\\eyeballcolorpatch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|c:\\users\\stone\\onedrive\\desktop\\mods\\murderrim - worker drones\\1.5\\source\\workerdronesmod\\gene\\modextentions\\geneextension_learning.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|solutionrelative:gene\\modextentions\\geneextension_learning.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|c:\\users\\stone\\onedrive\\desktop\\mods\\murderrim - worker drones\\1.5\\source\\workerdronesmod\\patches\\facialanimations\\facetypepatches\\lidcolorpatch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|solutionrelative:patches\\facialanimations\\facetypepatches\\lidcolorpatch.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|c:\\users\\stone\\onedrive\\desktop\\mods\\murderrim - worker drones\\1.5\\source\\workerdronesmod\\defofs\\md_defof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|solutionrelative:defofs\\md_defof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\defs\\geneforcedheadtypedefextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|solutionrelative:defs\\geneforcedheadtypedefextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\patches\\facialanimations\\facetypepatches\\patch_pawngenerator_forceallfacialtypes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|solutionrelative:patches\\facialanimations\\facetypepatches\\patch_pawngenerator_forceallfacialtypes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,45 +26,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MD_DefOf.cs",
-              "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\DefOfs\\MD_DefOf.cs",
-              "RelativeDocumentMoniker": "DefOfs\\MD_DefOf.cs",
-              "ToolTip": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\DefOfs\\MD_DefOf.cs",
-              "RelativeToolTip": "DefOfs\\MD_DefOf.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAQwF4AAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T12:42:57.828Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "GeneExtension_Learning.cs",
-              "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\Gene\\ModExtentions\\GeneExtension_Learning.cs",
-              "RelativeDocumentMoniker": "Gene\\ModExtentions\\GeneExtension_Learning.cs",
-              "ToolTip": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\Gene\\ModExtentions\\GeneExtension_Learning.cs",
-              "RelativeToolTip": "Gene\\ModExtentions\\GeneExtension_Learning.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Title": "LidColorPatch.cs",
+              "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\Patches\\FacialAnimations\\Facetypepatches\\LidColorPatch.cs",
+              "RelativeDocumentMoniker": "Patches\\FacialAnimations\\Facetypepatches\\LidColorPatch.cs",
+              "ToolTip": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\Patches\\FacialAnimations\\Facetypepatches\\LidColorPatch.cs",
+              "RelativeToolTip": "Patches\\FacialAnimations\\Facetypepatches\\LidColorPatch.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T12:04:02.108Z",
+              "WhenOpened": "2025-06-25T10:52:07.18Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Gene_LearningByObservation.cs",
-              "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\Gene\\Classes\\Gene_LearningByObservation.cs",
-              "RelativeDocumentMoniker": "Gene\\Classes\\Gene_LearningByObservation.cs",
-              "ToolTip": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\Gene\\Classes\\Gene_LearningByObservation.cs",
-              "RelativeToolTip": "Gene\\Classes\\Gene_LearningByObservation.cs",
-              "ViewState": "AgIAAAQBAAAAAAAAAAAcwBABAAAAAAAAAAAAAA==",
+              "Title": "EyeballColorPatch.cs",
+              "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\Patches\\FacialAnimations\\Facetypepatches\\EyeballColorPatch.cs",
+              "RelativeDocumentMoniker": "Patches\\FacialAnimations\\Facetypepatches\\EyeballColorPatch.cs",
+              "ToolTip": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\Patches\\FacialAnimations\\Facetypepatches\\EyeballColorPatch.cs",
+              "RelativeToolTip": "Patches\\FacialAnimations\\Facetypepatches\\EyeballColorPatch.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-18T12:01:22.181Z",
+              "WhenOpened": "2025-06-25T10:51:19.097Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Patch_PawnGenerator_ForceAllFacialTypes.cs",
+              "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\Patches\\FacialAnimations\\Facetypepatches\\Patch_PawnGenerator_ForceAllFacialTypes.cs",
+              "RelativeDocumentMoniker": "Patches\\FacialAnimations\\Facetypepatches\\Patch_PawnGenerator_ForceAllFacialTypes.cs",
+              "ToolTip": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\Patches\\FacialAnimations\\Facetypepatches\\Patch_PawnGenerator_ForceAllFacialTypes.cs",
+              "RelativeToolTip": "Patches\\FacialAnimations\\Facetypepatches\\Patch_PawnGenerator_ForceAllFacialTypes.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAgwFQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-23T00:53:35.014Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GeneForcedHeadTypeDefExtension.cs",
+              "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\Defs\\GeneForcedHeadTypeDefExtension.cs",
+              "RelativeDocumentMoniker": "Defs\\GeneForcedHeadTypeDefExtension.cs",
+              "ToolTip": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\Defs\\GeneForcedHeadTypeDefExtension.cs",
+              "RelativeToolTip": "Defs\\GeneForcedHeadTypeDefExtension.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-22T22:10:15.079Z",
               "EditorCaption": ""
             }
           ]

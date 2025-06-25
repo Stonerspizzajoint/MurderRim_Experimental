@@ -1,0 +1,9 @@
+<Defs>
+    <FacialAnimation.HeadTypeDef>
+        <defName>WorkerDroneHeadNormal</defName>
+        <texPath>OtherMods/FacialAnimations/WorkerDrone/Heads_Blank/Normal</texPath>
+        <shader>Map/CutoutComplex</shader>
+        <raceName>workerdrone</raceName>
+        <colorMode>whiteColor</colorMode>
+    </FacialAnimation.HeadTypeDef>
+</Defs>

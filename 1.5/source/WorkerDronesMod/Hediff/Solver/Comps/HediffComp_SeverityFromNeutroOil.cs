@@ -55,21 +55,21 @@ namespace WorkerDronesMod
 
             if (oilFraction >= 0.5f)
             {
-                // At 50% or more, severity goes down.
-                // scale goes 0→1 as oilFraction goes 0.5→1
+                // At 50% or more, severity decreases as oil increases.
+                // "scale" progresses from 0 (when oilFraction is 0.5) to 1 (when oilFraction is 1).
                 float scale = (oilFraction - 0.5f) / 0.5f;
-                // severityPerHourAbove50 is per 2500 ticks (1 hour)
                 severityAdjustment -= (Props.severityPerHourAbove50 / 2500f) * scale;
             }
             else
             {
-                // Below 50%, severity goes up.
-                // scale goes 0→1 as oilFraction goes 0.5→0
+                // Below 50%, severity increases as oil decreases.
+                // "scale" progresses from 0 (when oilFraction is 0.5) to 1 (when oilFraction is 0).
                 float scale = (0.5f - oilFraction) / 0.5f;
-                severityAdjustment += (Props.severityPerHourBelow50 / 2500f) * scale;
+                // If oil is completely depleted (oilFraction is 0), double the increase rate.
+                float multiplier = (oilFraction <= 0f) ? 2f : 1f;
+                severityAdjustment += (Props.severityPerHourBelow50 / 2500f) * scale * multiplier;
             }
         }
-
     }
 }
 

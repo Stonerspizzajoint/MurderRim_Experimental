@@ -72,6 +72,24 @@ public static class HarmonyPatches
         {
             Log.Message("[WorkerDronesMod] ShowMeYourHands mod not detected → skipping ShowMeYourHands patches.");
         }
+
+        // ─── 4) FacialAnimation PATCHES (only if the FacialAnimation mod is installed & active) ────
+        bool FacialAnimationActive = LoadedModManager.RunningModsListForReading
+                            .Any(mod => mod.PackageId.Equals("nals.facialanimation", StringComparison.OrdinalIgnoreCase));
+
+        if (FacialAnimationActive)
+        {
+            Log.Message("[WorkerDronesMod] FacialAnimations mod detected → applying FacialAnimations patches.");
+            foreach (var patchType in asm.GetTypes()
+                                         .Where(t => t.Namespace == "WorkerDronesMod.Patches.FacialAnimations"))
+            {
+                harmony.CreateClassProcessor(patchType).Patch();
+            }
+        }
+        else
+        {
+            Log.Message("[WorkerDronesMod] FacialAnimations mod not detected → skipping FacialAnimations patches.");
+        }
     }
 }
 

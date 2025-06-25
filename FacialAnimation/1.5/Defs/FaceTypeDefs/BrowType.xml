@@ -1,0 +1,16 @@
+<Defs>
+  <FacialAnimation.BrowTypeDef>
+	  <defName>NoBrow_DigitalBrow</defName>
+	  <texPath>OtherMods/FacialAnimations/WorkerDrone/Brows/NoBrow</texPath>
+	  <shader>Map/Transparent</shader>
+    <raceName>workerdrone</raceName>
+  </FacialAnimation.BrowTypeDef>
+
+  <FacialAnimation.BrowTypeDef>
+	  <defName>DisplayWrinkle_DigitalBrow</defName>
+	  <texPath>OtherMods/FacialAnimations/WorkerDrone/Brows/DisplayWrinkle</texPath>
+	  <shader>Map/TransparentPostLight</shader>
+    <raceName>workerdrone</raceName>
+    <probability>0.2</probability>
+  </FacialAnimation.BrowTypeDef>
+</Defs>

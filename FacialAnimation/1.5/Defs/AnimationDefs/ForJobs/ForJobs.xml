@@ -1,0 +1,19 @@
+<Defs>
+<!--
+  <FacialAnimation.FaceAnimationDef>
+    <defName>WaitCombat_DisassemblyDrone</defName>
+    <animationFrames>
+      <li>
+        <duration>1</duration>
+        <eyeballShapeDef>disassembly-X</eyeballShapeDef>
+        <mouthShapeDef>normal</mouthShapeDef>
+      </li>
+    </animationFrames>
+    <targetJobs>
+      <li>Wait_Combat</li>
+    </targetJobs>
+    <priority>10200</priority>
+    <raceName>DisassemblyDrone</raceName>
+  </FacialAnimation.FaceAnimationDef>
+-->
+</Defs>

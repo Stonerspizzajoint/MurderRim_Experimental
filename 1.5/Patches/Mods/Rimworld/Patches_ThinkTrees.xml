@@ -28,6 +28,34 @@
 <Operation Class="PatchOperationAdd">
   <xpath>/Defs/ThinkTreeDef[defName="Abilities_Aggressive"]/thinkRoot/subNodes/li[1]/subNodes</xpath>
   <value>
+
+  <!--Use EMP when targets are in range and not overheating-->
+    <li Class="ThinkNode_ConditionalHasAbility">
+      <ability>MD_EMPBlast</ability>
+      <subNodes>
+        <li Class="WorkerDronesMod.ThinkNode_ConditionalCombatByEMPWeak">
+          <maxThreatDistance>3.9</maxThreatDistance>
+          <minCloseTargets>2</minCloseTargets>
+          <subNodes>
+            <li Class="WorkerDronesMod.ThinkNode_ConditionalHeatAboveThreshold">
+              <heatThreshold>0.6</heatThreshold>
+              <invert>true</invert>
+              <subNodes>
+                <li Class="ThinkNode_ConditionalHashIntervalTick">
+                  <interval>65</interval>
+                  <subNodes>
+                    <li Class="JobGiver_AICastAbilityOnSelf">
+                      <ability>MD_EMPBlast</ability>
+                    </li>
+                  </subNodes>
+                </li>
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+      </subNodes>
+    </li>
+
     <!--==============OverHeating Protection==============-->
     <li Class="ThinkNode_ConditionalHasAbility">
       <ability>MD_InterchangeableHandsAbility</ability>

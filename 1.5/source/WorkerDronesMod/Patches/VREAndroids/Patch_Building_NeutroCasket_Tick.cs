@@ -7,36 +7,41 @@ using VREAndroids;
 
 namespace WorkerDronesMod.Patches
 {
-    [HarmonyPatch(typeof(Building_NeutroCasket))]
+    [HarmonyPatch(typeof(Building_NeutroCasket), nameof(Building_NeutroCasket.Tick))]
     public static class Patch_Building_NeutroCasket_OilFromFuel
     {
-        // Prefix patch to replace NeutroLoss healing with oil refill
-        [HarmonyPrefix]
-        [HarmonyPatch("Tick")]
-        public static bool Tick_Prefix(Building_NeutroCasket __instance)
+        // Postfix runs after the original Tick() has healed NeutroLoss and consumed 1 fuel per pawn
+        [HarmonyPostfix]
+        public static void Tick_Postfix(Building_NeutroCasket __instance)
         {
-            // Run every 60 ticks if there's power and at least 1 fuel
-            if (__instance.IsHashIntervalTick(60) && __instance.compPower.PowerOn && __instance.compRefuelable.Fuel >= 1f)
+            // Mirror the vanilla guard so we only try to refill oil at the same cadence
+            if (!__instance.IsHashIntervalTick(60)
+                || __instance.compPower?.PowerOn != true
+                // compRefuelable.Fuel has already been decreased by vanilla for each pawn healed,
+                // so require at least 1 left
+                || __instance.compRefuelable?.Fuel < 1f)
             {
-                foreach (Pawn pawn in __instance.CurOccupants)
+                return;
+            }
+
+            foreach (Pawn pawn in __instance.CurOccupants)
+            {
+                // Only androids with the solver gene gain oil
+                if (SolverGeneUtility.HasSolver(pawn))
                 {
-                    // Only for androids with the solver gene
-                    if (SolverGeneUtility.HasSolver(pawn))
+                    var gene = pawn.genes?.GetFirstGeneOfType<Gene_NeutroamineOil>();
+                    if (gene != null && gene.Value < gene.MaxForDisplay)
                     {
-                        var gene = pawn.genes?.GetFirstGeneOfType<Gene_NeutroamineOil>();
-                        if (gene != null && gene.Value < gene.MaxForDisplay)
-                        {
-                            // Consume 1 fuel, add oil per unit
-                            __instance.compRefuelable.ConsumeFuel(1f);
-                            gene.Value += RefuelUtils.OilPerNeutroamineUnit;
-                            gene.Value = Mathf.Min(gene.Value, gene.MaxForDisplay);
-                        }
+                        // Now consume 1 more fuel for oil, *then* top up the gene
+                        __instance.compRefuelable.ConsumeFuel(1f);
+                        gene.Value += RefuelUtils.OilPerNeutroamineUnit;
+                        gene.Value = Mathf.Min(gene.Value, gene.MaxForDisplay);
                     }
                 }
-                return false; // skip original Tick
             }
-            return true; // allow original Tick if conditions aren't met
         }
     }
 }
+
+
 

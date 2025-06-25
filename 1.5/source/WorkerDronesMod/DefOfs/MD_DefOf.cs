@@ -114,6 +114,8 @@ namespace WorkerDronesMod
 
         public static GeneDef MD_MemorySleepProcessing;
 
+        public static GeneDef VREA_EMPVulnerability;
+
         //public static GeneDef MD_FacialRecognitionDisabled;
         //------------------------------------
 
