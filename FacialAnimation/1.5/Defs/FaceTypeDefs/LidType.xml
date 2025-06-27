@@ -1,8 +1,31 @@
 <Defs>
-  <FacialAnimation.LidTypeDef>
+  <FacialAnimation.LidTypeDef Name="WorkerDroneLid" Abstract="True">
+    <raceName>MD_WorkerDroneBase</raceName>
+  </FacialAnimation.LidTypeDef>
+
+  <FacialAnimation.LidTypeDef Name="DisassemblyDroneLid" Abstract="True">
+    <raceName>MD_MurderDroneBase</raceName>
+  </FacialAnimation.LidTypeDef>
+
+  <FacialAnimation.LidTypeDef ParentName="WorkerDroneLid">
 	  <defName>DisplayLidNormal</defName>
 	  <texPath>OtherMods/FacialAnimations/WorkerDrone/Lids/Normal</texPath>
 	  <shader>Map/TransparentPostLight</shader>
-    <raceName>workerdrone</raceName>
+    <colorMode>skinColor</colorMode>
+  </FacialAnimation.LidTypeDef>
+
+  <FacialAnimation.LidTypeDef ParentName="WorkerDroneLid">
+    <defName>Tired_DisplayLidNormal</defName>
+	  <texPath>OtherMods/FacialAnimations/WorkerDrone/Lids/Tired</texPath>
+    <shader>Map/TransparentPostLight</shader>
+    <colorMode>skinColor</colorMode>
+    <probability>0.4</probability>
+  </FacialAnimation.LidTypeDef>
+
+  <FacialAnimation.LidTypeDef ParentName="DisassemblyDroneLid">
+	  <defName>NormalXeye</defName>
+	  <texPath>OtherMods/FacialAnimations/DisassemblyDrone/Lids/NormalXeye</texPath>
+	  <shader>Map/TransparentPostLight</shader>
+    <colorMode>skinColor</colorMode>
   </FacialAnimation.LidTypeDef>
 </Defs>

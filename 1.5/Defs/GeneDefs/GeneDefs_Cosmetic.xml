@@ -70,24 +70,11 @@
 			</prerequisiteGeneDefNames>
 		</li>
 		<li MayRequire="nals.facialanimation" Class="WorkerDronesMod.FacialAnimationCompat.GeneForcedFacetypesExtension">
-			<forcedHeadTypes>
-				<li>WorkerDroneHeadNormal</li>
-			</forcedHeadTypes>
-			<forcedBrowTypes>
-				<li>NoBrow_DigitalBrow</li>
-				<li>DisplayWrinkle_DigitalBrow</li>
-			</forcedBrowTypes>
-			<forcedEyeTypes>
-				<li>Normal_DisplayEyes</li>
-				<li>WornOut_DisplayEyes</li>
-				<li>WornOutTired_DisplayEyes</li>
-			</forcedEyeTypes>
-			<forcedLidTypes>
-				<li>DisplayLidNormal</li>
-			</forcedLidTypes>
-			<EyeColorMatchesSkinColor>true</EyeColorMatchesSkinColor>
-			<BrowColorMatchesSkinColor>true</BrowColorMatchesSkinColor>
-			<LidColorMatchesSkinColor>true</LidColorMatchesSkinColor>				
+			<raceTags>
+				<li>MD_WorkerDroneBase</li>
+			</raceTags>
+			<forceMouthColorWhite>true</forceMouthColorWhite>
+			<EyeColorMatchesSkinColor>true</EyeColorMatchesSkinColor>				
 		</li>
   	</modExtensions>
 		<renderNodeProperties>
@@ -177,24 +164,26 @@
     	<requiredResearch>MD_DisassemblyDroneTech</requiredResearch>
     </li>
 		<li MayRequire="nals.facialanimation" Class="WorkerDronesMod.FacialAnimationCompat.GeneForcedFacetypesExtension">
-			<forcedHeadTypes>
-				<li>WorkerDroneHeadNormal</li>
-			</forcedHeadTypes>
-			<forcedBrowTypes>
-				<li>NoBrow_DigitalBrow</li>
-				<li>DisplayWrinkle_DigitalBrow</li>
-			</forcedBrowTypes>
-			<forcedEyeTypes>
-				<li>Normal_DisplayEyes</li>
-				<li>WornOut_DisplayEyes</li>
-				<li>WornOutTired_DisplayEyes</li>
-			</forcedEyeTypes>
-			<forcedLidTypes>
-				<li>DisplayLidNormal</li>
-			</forcedLidTypes>
-			<EyeColorMatchesSkinColor>true</EyeColorMatchesSkinColor>
-			<BrowColorMatchesSkinColor>true</BrowColorMatchesSkinColor>
-			<LidColorMatchesSkinColor>true</LidColorMatchesSkinColor>				
+			<EyeColorMatchesSkinColor>true</EyeColorMatchesSkinColor>	
+			<raceTags>
+				<li>MD_WorkerDroneBase</li>
+				<li>MD_MurderDroneBase</li>
+			</raceTags>
+			<!--
+			faceParts that are accepted are..
+			Head, Skin, Mouth, Eye, Lid, and Skin.
+			-->
+			<raceTagOptions>
+				<li>
+					<raceTag>MD_MurderDroneBase</raceTag>
+					<facePart>Eye</facePart>
+				</li>
+				<li>
+					<raceTag>MD_MurderDroneBase</raceTag>
+					<facePart>Lid</facePart>
+				</li>
+			</raceTagOptions>
+			<forceMouthColorWhite>true</forceMouthColorWhite>
 		</li>
   	</modExtensions>
   <renderNodeProperties>
@@ -275,21 +264,9 @@
     	<requiredResearch>MD_DisassemblyDroneTech</requiredResearch>
     </li>
 		<li MayRequire="nals.facialanimation" Class="WorkerDronesMod.FacialAnimationCompat.GeneForcedFacetypesExtension">
-			<forcedHeadTypes>
-				<li>WorkerDroneHeadNormal</li>
-			</forcedHeadTypes>
-			<forcedBrowTypes>
-				<li>NoBrow_DigitalBrow</li>
-			</forcedBrowTypes>
 			<forcedEyeTypes>
 				<li>XEyes_DisplayEyes</li>
-			</forcedEyeTypes>
-			<forcedLidTypes>
-				<li>DisplayLidNormal</li>
-			</forcedLidTypes>
-			<EyeColorMatchesSkinColor>true</EyeColorMatchesSkinColor>
-			<BrowColorMatchesSkinColor>true</BrowColorMatchesSkinColor>
-			<LidColorMatchesSkinColor>true</LidColorMatchesSkinColor>				
+			</forcedEyeTypes>			
 		</li>
   </modExtensions>
   <renderNodeProperties>

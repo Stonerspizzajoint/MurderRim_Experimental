@@ -1,0 +1,5 @@
+<Defs>
+    <FacialAnimation.LidOptionTypeDef Name="WorkerDroneLidOption" Abstract="True">
+        <raceName>MD_WorkerDroneBase</raceName>
+    </FacialAnimation.LidOptionTypeDef>
+</Defs>

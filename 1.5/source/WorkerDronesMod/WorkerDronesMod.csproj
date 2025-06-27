@@ -98,9 +98,11 @@
     <Compile Include="Abilities\Solver\Comps\Comp_AbilityHeatEffect.cs" />
     <Compile Include="Abilities\Solver\Comps\CompAbilityEffect_NeutroamineOilCost.cs" />
     <Compile Include="Abilities\Solver\Comps\Comp_ToggleHediffEffect.cs" />
+    <Compile Include="GameCondition\GameCondition_CoreCollapse.cs" />
     <Compile Include="Gene\Classes\Gene_LearningByObservation.cs" />
     <Compile Include="Gene\ModExtentions\GeneExtension_Learning.cs" />
     <Compile Include="Job\ThinkNode\Conditional\ThinkNode_ConditionalUnderCombatPressureOrEMPSusceptible.cs" />
+    <Compile Include="Patches\VREAndroids\NeedPatches\Patch_NeedRest_Interval_Override.cs" />
     <Compile Include="Patches\VREAndroids\Patch_Recipe_RemoveArtificialBodyPart_ApplyOnPawn.cs" />
     <Compile Include="Scenerio\ScenPart_StartAtNight.cs" />
     <Compile Include="Startup.cs" />

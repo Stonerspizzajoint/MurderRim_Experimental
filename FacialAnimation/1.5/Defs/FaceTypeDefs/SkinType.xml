@@ -1,0 +1,18 @@
+<Defs>
+  <FacialAnimation.SkinTypeDef Name="WorkerDroneSkin" Abstract="True">
+    <raceName>MD_WorkerDroneBase</raceName>
+  </FacialAnimation.SkinTypeDef>
+
+  <FacialAnimation.SkinTypeDef ParentName="WorkerDroneSkin">
+	  <defName>DisplaySkinNormal</defName>
+	  <texPath>OtherMods/FacialAnimations/WorkerDrone/Skins/NoSkin</texPath>
+	  <shader>Map/CutoutSkin</shader>
+  </FacialAnimation.SkinTypeDef>
+
+  <FacialAnimation.SkinTypeDef ParentName="WorkerDroneSkin">
+	  <defName>DisplaySkinFreckled</defName>
+	  <texPath>OtherMods/FacialAnimations/WorkerDrone/Skins/Freckled</texPath>
+	  <shader>Map/TransparentPostLight</shader>
+      <probability>0.2</probability>
+  </FacialAnimation.SkinTypeDef>
+</Defs>

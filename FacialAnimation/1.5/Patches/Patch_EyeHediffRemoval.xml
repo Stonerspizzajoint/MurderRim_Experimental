@@ -22,7 +22,7 @@
 <!-- Remove fang mouth texture -->
   <Operation Class="PatchOperationRemove">
     <xpath>
-    /Defs/VREAndroids.AndroidGeneDef[defName="MD_FangsOut"]/renderNodeProperties
+    /Defs/HediffDef[defName="MD_FangsOut"]/renderNodeProperties
     </xpath>
   </Operation>
 </Patch>

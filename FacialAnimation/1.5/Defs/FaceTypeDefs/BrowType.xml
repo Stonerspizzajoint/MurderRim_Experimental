@@ -1,16 +1,27 @@
 <Defs>
-  <FacialAnimation.BrowTypeDef>
-	  <defName>NoBrow_DigitalBrow</defName>
-	  <texPath>OtherMods/FacialAnimations/WorkerDrone/Brows/NoBrow</texPath>
-	  <shader>Map/Transparent</shader>
-    <raceName>workerdrone</raceName>
+  <FacialAnimation.BrowTypeDef Name="WorkerDroneBrow" Abstract="True">
+    <raceName>MD_WorkerDroneBase</raceName>
   </FacialAnimation.BrowTypeDef>
 
-  <FacialAnimation.BrowTypeDef>
-	  <defName>DisplayWrinkle_DigitalBrow</defName>
+  <FacialAnimation.BrowTypeDef ParentName="WorkerDroneBrow">
+    <defName>NormalBrow_DisplayBrow</defName>
+    <texPath>OtherMods/FacialAnimations/WorkerDrone/Brows/NormalBrow</texPath>
+    <shader>Map/TransparentPostLight</shader>
+    <colorMode>skinColor</colorMode>
+  </FacialAnimation.BrowTypeDef>
+
+  <FacialAnimation.BrowTypeDef ParentName="WorkerDroneBrow">
+	  <defName>NormalBrow2_DisplayBrow</defName>
+	  <texPath>OtherMods/FacialAnimations/WorkerDrone/Brows/NormalBrow2</texPath>
+	  <shader>Map/TransparentPostLight</shader>
+    <colorMode>skinColor</colorMode>
+  </FacialAnimation.BrowTypeDef>
+
+  <FacialAnimation.BrowTypeDef ParentName="WorkerDroneBrow">
+	  <defName>DisplayWrinkle_DisplayBrow</defName>
 	  <texPath>OtherMods/FacialAnimations/WorkerDrone/Brows/DisplayWrinkle</texPath>
 	  <shader>Map/TransparentPostLight</shader>
-    <raceName>workerdrone</raceName>
+    <colorMode>skinColor</colorMode>
     <probability>0.2</probability>
   </FacialAnimation.BrowTypeDef>
 </Defs>
