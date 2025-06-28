@@ -8,44 +8,32 @@ namespace WorkerDronesMod
 {
     public class GameCondition_CoreCollapse : GameCondition
     {
-        // Duration to reach full effect (ticks)
-        public override int TransitionTicks => 10000;
-
-        // Dramatic dark sky tint
         private static readonly SkyColorSet CoreCollapseColors = new SkyColorSet(
-            new ColorInt(20, 20, 30).ToColor,   // ambient
-            new ColorInt(100, 110, 120).ToColor, // sun
-            new Color(0.5f, 0.55f, 0.6f),        // shadow
-            0.8f                                 // glow
+            new ColorInt(20, 20, 30).ToColor,
+            new ColorInt(100, 110, 120).ToColor,
+            new Color(0.5f, 0.55f, 0.6f),
+            0.8f
         );
 
-        // Maximum negative temperature offset
         private const float MaxTempOffset = -60f;
-
-        // Animal density impact: near total wipeout
         private const float AnimalDensityImpact = 0.9f;
+        private const int TicksPerDay = 60000;
 
-        // Track game ticks since start
         private int ticksPassed;
+        private bool warningTriggered;
+        private bool collapseTriggered;
 
-        // One-time effect trigger
-        private bool effectTriggered;
+        private int collapseStartTick = -1;
+        private int warningDelayTicks;
 
         private bool sentLetter;
 
         public override void Init()
         {
             base.Init();
-            // Send starting letter
-            if (!sentLetter)
-            {
-                Find.LetterStack.ReceiveLetter(
-                    "Core Collapse",
-                    "The planet's core has ruptured beyond repair, plunging all surface life into endless ice.",
-                    LetterDefOf.ThreatBig
-                );
-                sentLetter = true;
-            }
+
+            // Random delay on day 2 (between 0–60k ticks after day 1)
+            warningDelayTicks = TicksPerDay + Rand.RangeInclusive(0, TicksPerDay);
         }
 
         public override void GameConditionTick()
@@ -53,24 +41,53 @@ namespace WorkerDronesMod
             base.GameConditionTick();
             ticksPassed++;
 
-            // Trigger screen shake and sound once at full collapse
-            if (!effectTriggered && ticksPassed >= TransitionTicks)
+            if (!warningTriggered && ticksPassed >= warningDelayTicks)
+            {
+                // Shake and warn
+                Find.CameraDriver.shaker.DoShake(2f);
+                Messages.Message(
+                    "A deep rumble shakes the ground... something terrible is happening beneath the crust...",
+                    MessageTypeDefOf.ThreatBig
+                );
+                warningTriggered = true;
+                collapseStartTick = ticksPassed + TicksPerDay / 2; // begins half a day later
+            }
+
+            if (warningTriggered && !collapseTriggered && ticksPassed >= collapseStartTick)
             {
                 Find.CameraDriver.shaker.DoShake(3f);
-                // Play collapse sound on map center
                 if (Find.Maps.Count > 0)
                 {
                     var map = Find.Maps[0];
-                    var sound = SoundDef.Named("CoreCollapse_SoundDef");
-                    sound.PlayOneShot(new TargetInfo(map.Center, map, false));
+                    SoundDefOf.Thunder_OffMap.PlayOneShot(new TargetInfo(map.Center, map));
                 }
-                effectTriggered = true;
+
+                Find.LetterStack.ReceiveLetter(
+                    "Core Collapse Initiated",
+                    "The planet's core has ruptured beyond repair. Temperatures will now begin to fall to fatal levels, and the skies will grow ever darker.",
+                    LetterDefOf.ThreatBig
+                );
+
+                collapseTriggered = true;
             }
         }
 
-        public override float SkyTargetLerpFactor(Map map)
+        public override float TemperatureOffset()
         {
-            return GameConditionUtility.LerpInOutValue(this, TransitionTicks, 0.5f);
+            if (!collapseTriggered)
+                return 0f;
+
+            float t = Mathf.Clamp01((ticksPassed - collapseStartTick) / (float)TicksPerDay);
+            return Mathf.Lerp(0f, MaxTempOffset, t);
+        }
+
+        public override float AnimalDensityFactor(Map map)
+        {
+            if (!collapseTriggered)
+                return 1f;
+
+            float t = Mathf.Clamp01((ticksPassed - collapseStartTick) / (float)TicksPerDay);
+            return Mathf.Max(0f, 1f - t * AnimalDensityImpact);
         }
 
         public override SkyTarget? SkyTarget(Map map)
@@ -78,19 +95,31 @@ namespace WorkerDronesMod
             return new SkyTarget?(new SkyTarget(0.7f, CoreCollapseColors, 1f, 1f));
         }
 
-        public override float TemperatureOffset()
+        public override float SkyTargetLerpFactor(Map map)
         {
-            return GameConditionUtility.LerpInOutValue(this, TransitionTicks, MaxTempOffset);
+            return collapseTriggered ? Mathf.Clamp01((ticksPassed - collapseStartTick) / (float)TicksPerDay) : 0f;
         }
 
-        public override float AnimalDensityFactor(Map map)
-        {
-            return Mathf.Max(0f, 1f - GameConditionUtility.LerpInOutValue(this, TransitionTicks, AnimalDensityImpact));
-        }
+        public override bool AllowEnjoyableOutsideNow(Map map) => false;
 
-        public override bool AllowEnjoyableOutsideNow(Map map)
+        public override WeatherDef ForcedWeather()
         {
-            return false;
+            if (!collapseTriggered)
+                return null;
+
+            Map map = Find.AnyPlayerHomeMap;
+            if (map == null) return null;
+
+            int tile = map.Tile;
+            float seasonalTemp = GenTemperature.GetTemperatureFromSeasonAtTile(tile, 0);
+            float effectiveTemp = seasonalTemp + TemperatureOffset();
+
+            if (effectiveTemp <= 0f)
+            {
+                return WeatherDef.Named("SnowHard");
+            }
+
+            return null;
         }
     }
 }

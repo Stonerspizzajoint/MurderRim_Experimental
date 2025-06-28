@@ -6,29 +6,19 @@
     <descriptionFuture>
       A cataclysm deep within the planet has shattered its core, turning the surface into a frozen wasteland of unprecedented cruelty. No biological life can endure the brutal cold, and storms of ice rage endlessly.
     </descriptionFuture>
-    <startMessage>
-      The planet’s inner core has ruptured—its dying embers stolen by the void. A deep freeze spreads outwards; you may never see warmth again…
-    </startMessage>
     <endMessage>
       (This should never happen—Core Collapse is permanent.)
     </endMessage>
-    <letterText>
-      Core Collapse has begun. The world is now locked in perpetual ice and snow—prepare for total biological extinction.
-    </letterText>
     <letterDef>ThreatBig</letterDef>
-    <letterHyperlinks>
-      <!-- you can link to any ThingDefs or MapComponentDefs here -->
-    </letterHyperlinks>
     <canBePermanent>true</canBePermanent>
     <allowUnderground>true</allowUnderground>
     <silencedByConditions>
     </silencedByConditions>
     <natural>false</natural>
     <preventNeutralVisitors>true</preventNeutralVisitors>
-    <preventIncidents>true</preventIncidents>
-    <displayOnUI>true</displayOnUI>
+    <preventIncidents>false</preventIncidents>
     <pennedAnimalsSeekShelter>true</pennedAnimalsSeekShelter>
-    <preventRain>true</preventRain>
+    <preventRain>false</preventRain>
     <weatherDef>SnowHard</weatherDef>
     <!-- massive cold offset to simulate “nothing but frozen wasteland” -->
     <temperatureOffset>-60</temperatureOffset>

@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|solutionrelative:gamecondition\\gamecondition_corecollapse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|c:\\users\\stone\\onedrive\\desktop\\mods\\murderrim - worker drones\\1.5\\source\\workerdronesmod\\patches\\vreandroids\\needpatches\\patch_needrest_interval_override.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\patches\\vreandroids\\needpatches\\patch_needrest_interval_override.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|solutionrelative:patches\\vreandroids\\needpatches\\patch_needrest_interval_override.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -32,7 +32,7 @@
               "RelativeDocumentMoniker": "GameCondition\\GameCondition_CoreCollapse.cs",
               "ToolTip": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Worker Drones\\1.5\\source\\WorkerDronesMod\\GameCondition\\GameCondition_CoreCollapse.cs",
               "RelativeToolTip": "GameCondition\\GameCondition_CoreCollapse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAA6AAAAAAAAAA==",
+              "ViewState": "AgIAABcAAAAAAAAAAAAQwD8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-27T13:06:32.162Z",
               "EditorCaption": ""
@@ -47,8 +47,7 @@
               "RelativeToolTip": "Patches\\VREAndroids\\NeedPatches\\Patch_NeedRest_Interval_Override.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-27T11:49:52.38Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-27T11:49:52.38Z"
             },
             {
               "$type": "Document",
