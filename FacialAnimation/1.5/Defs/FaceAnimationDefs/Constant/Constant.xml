@@ -1,16 +1,16 @@
 <Defs>
   <FacialAnimation.FaceAnimationDef ParentName="WorkerDroneAnimation">
-    <defName>normal</defName>
+    <defName>normalDisplay</defName>
     <animationFrames>
       <li>
         <duration>1</duration>
         <headShapeDef>normal</headShapeDef>
         <browShapeDef>normal</browShapeDef>
         <lidShapeDef>normal</lidShapeDef>
-        <lidOptionShapeDef>normal</lidOptionShapeDef>
+        <lidOptionShapeDef MayRequire="nals.facialanimationexperimentals">normal</lidOptionShapeDef>
         <eyeballShapeDef>normal</eyeballShapeDef>
         <mouthShapeDef>normal</mouthShapeDef>
-        <emotionShapeDef>normal</emotionShapeDef>
+        <emotionShapeDef MayRequire="nals.facialanimationexperimentals">normal</emotionShapeDef>
       </li>
     </animationFrames>
     <priority>0</priority>

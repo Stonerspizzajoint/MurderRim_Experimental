@@ -49,30 +49,6 @@ namespace WorkerDronesMod.Patches
                 int numTicks = TicksUntilTotalNeutroloss(pawn);
                 text += " (" + "VREA.TotalNeutroLoss".Translate(numTicks.ToStringTicksToPeriod(true, false, true, true, false)) + ")";
             }
-
-            if (pawn.HasActiveGene(MD_DefOf.MD_WeakenedSolver))
-            {
-
-                // Consume oil based on how much the pawn is bleeding.
-                Gene_NeutroamineOil oilGene = pawn.genes.GetFirstGeneOfType<Gene_NeutroamineOil>();
-                if (oilGene != null)
-                {
-                    // Define how much oil is lost per unit bleed.
-                    // Adjust oilLossMultiplier to balance the consumption rate.
-                    const float oilLossMultiplier = 0.001f;
-                    oilGene.Value = Mathf.Max(oilGene.Value - (bleedRateTotal * oilLossMultiplier), 0f);
-                }
-
-                Hediff firstHediffOfDef = pawn.health.hediffSet.GetFirstHediffOfDef(MD_DefOf.MD_OilLoss, false);
-                if (firstHediffOfDef != null && firstHediffOfDef.Severity >= 1f)
-                {
-                    text = "MD.OilLeakedOutCompletely".Translate();
-                    return;
-                }
-                text = "MD.OillossRate".Translate() + ": " + bleedRateTotal.ToStringPercent() + "/" + "LetterDay".Translate();
-                int numTicks = TicksUntilTotalNeutroloss(pawn);
-                text += " (" + "MD.TotalOilLoss".Translate(numTicks.ToStringTicksToPeriod(true, false, true, true, false)) + ")";
-            }
         }
 
         public static int TicksUntilTotalNeutroloss(Pawn pawn)
