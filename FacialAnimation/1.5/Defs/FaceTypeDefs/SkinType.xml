@@ -1,6 +1,7 @@
 <Defs>
   <FacialAnimation.SkinTypeDef Name="WorkerDroneSkin" Abstract="True">
     <raceName>MD_WorkerDroneBase</raceName>
+    <enableUnisexTexPath>true</enableUnisexTexPath>
   </FacialAnimation.SkinTypeDef>
 
   <FacialAnimation.SkinTypeDef ParentName="WorkerDroneSkin">

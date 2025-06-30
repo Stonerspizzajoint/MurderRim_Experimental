@@ -1,0 +1,18 @@
+<Defs>
+  <FacialAnimation.FaceAnimationDef ParentName="WorkerDroneAnimation">
+    <defName>laydown_workerdrone</defName>
+    <animationFrames>
+      <li>
+        <duration>1</duration>
+        <browShapeDef>normal</browShapeDef>
+        <lidShapeDef>sleepmode</lidShapeDef>
+        <mouthShapeDef>normal</mouthShapeDef>
+      </li>
+    </animationFrames>
+    <targetJobs>
+      <li>LayDown</li>
+    </targetJobs>
+    <priority>10004</priority>
+    <applyWhenStandingOnly>true</applyWhenStandingOnly>
+  </FacialAnimation.FaceAnimationDef>
+</Defs>

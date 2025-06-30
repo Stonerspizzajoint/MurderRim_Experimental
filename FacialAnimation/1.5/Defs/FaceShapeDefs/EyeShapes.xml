@@ -1,0 +1,11 @@
+<Defs>
+  <FacialAnimation.EyeballShapeDef>
+    <defName>combatmode</defName>
+    <altShapeDef>normal</altShapeDef>
+  </FacialAnimation.EyeballShapeDef>
+
+  <FacialAnimation.EyeballShapeDef>
+    <defName>oval-shaped</defName>
+    <altShapeDef>normal</altShapeDef>
+  </FacialAnimation.EyeballShapeDef>
+</Defs>

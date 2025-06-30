@@ -1,0 +1,9 @@
+<Defs>
+    <FacialAnimation.FaceAnimationDef Name="MurderDroneAnimation" Abstract="True">
+        <raceName>MD_MurderDroneBase</raceName>
+    </FacialAnimation.FaceAnimationDef>  
+
+    <FacialAnimation.FaceAnimationDef Name="WorkerDroneAnimation" Abstract="True">
+        <raceName>MD_WorkerDroneBase</raceName>
+    </FacialAnimation.FaceAnimationDef>
+</Defs>

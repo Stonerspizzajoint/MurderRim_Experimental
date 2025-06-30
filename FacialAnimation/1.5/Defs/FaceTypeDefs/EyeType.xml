@@ -2,10 +2,12 @@
 <!--Bases-->
   <FacialAnimation.EyeballTypeDef Name="WorkerDroneEye" Abstract="True">
     <raceName>MD_WorkerDroneBase</raceName>
+    <enableUnisexTexPath>true</enableUnisexTexPath>
   </FacialAnimation.EyeballTypeDef>
 
   <FacialAnimation.EyeballTypeDef Name="DisassemblyDroneEye" Abstract="True">
     <raceName>MD_MurderDroneBase</raceName>
+    <enableUnisexTexPath>true</enableUnisexTexPath>
   </FacialAnimation.EyeballTypeDef>
 
  <!--Normal Worker Eyes-->
@@ -34,6 +36,7 @@
 	  <texPath>OtherMods/FacialAnimations/WorkerDrone/Eyes/XEyes</texPath>
 	  <shader>Map/TransparentPostLight</shader>
     <raceName>MD_XEyesBase</raceName>
+    <enableUnisexTexPath>true</enableUnisexTexPath>
     <probability>1</probability>
   </FacialAnimation.EyeballTypeDef>
 
@@ -43,38 +46,40 @@
 	  <defName>Normal_DisplayEyes_DD</defName>
 	  <texPath>OtherMods/FacialAnimations/DisassemblyDrone/Eyes/Normal</texPath>
 	  <shader>Map/TransparentPostLight</shader>
-    <raceName>MD_MurderDroneBase</raceName>
   </FacialAnimation.EyeballTypeDef>
 
   <FacialAnimation.EyeballTypeDef ParentName="DisassemblyDroneEye">
 	  <defName>WornOut_DisplayEyes_DD</defName>
 	  <texPath>OtherMods/FacialAnimations/DisassemblyDrone/Eyes/WornOut</texPath>
 	  <shader>Map/TransparentPostLight</shader>
-    <raceName>MD_MurderDroneBase</raceName>
     <probability>0.7</probability>
-  </FacialAnimation.EyeballTypeDef>
-
-  <FacialAnimation.EyeballTypeDef ParentName="DisassemblyDroneEye">
-	  <defName>WornOut2_DisplayEyes_DD</defName>
-	  <texPath>OtherMods/FacialAnimations/DisassemblyDrone/Eyes/WornOut2</texPath>
-	  <shader>Map/TransparentPostLight</shader>
-    <raceName>MD_MurderDroneBase</raceName>
-    <probability>0.5</probability>
   </FacialAnimation.EyeballTypeDef>
 
   <FacialAnimation.EyeballTypeDef ParentName="DisassemblyDroneEye">
 	  <defName>WornOutTired_DisplayEyes_DD</defName>
 	  <texPath>OtherMods/FacialAnimations/DisassemblyDrone/Eyes/WornOutTired</texPath>
 	  <shader>Map/TransparentPostLight</shader>
-    <raceName>MD_MurderDroneBase</raceName>
     <probability>0.3</probability>
   </FacialAnimation.EyeballTypeDef>
 
-  <FacialAnimation.EyeballTypeDef>
-	  <defName>XEyes_DisplayEyes_DD</defName>
-	  <texPath>OtherMods/FacialAnimations/DisassemblyDrone/Eyes/XEyes</texPath>
+  <!--Crazed Variants-->
+  <FacialAnimation.EyeballTypeDef ParentName="DisassemblyDroneEye">
+	  <defName>Crazed_DisplayEyes_DD</defName>
+	  <texPath>OtherMods/FacialAnimations/DisassemblyDrone/Eyes/Normal_Crazed</texPath>
 	  <shader>Map/TransparentPostLight</shader>
-    <raceName>MD_XEyesBase_DD</raceName>
-    <probability>1</probability>
+  </FacialAnimation.EyeballTypeDef>
+
+  <FacialAnimation.EyeballTypeDef ParentName="DisassemblyDroneEye">
+	  <defName>WornOutCrazed_DisplayEyes_DD</defName>
+	  <texPath>OtherMods/FacialAnimations/DisassemblyDrone/Eyes/WornOut_Crazed</texPath>
+	  <shader>Map/TransparentPostLight</shader>
+    <probability>0.7</probability>
+  </FacialAnimation.EyeballTypeDef>
+
+  <FacialAnimation.EyeballTypeDef ParentName="DisassemblyDroneEye">
+	  <defName>WornOutTiredCrazed_DisplayEyes_DD</defName>
+	  <texPath>OtherMods/FacialAnimations/DisassemblyDrone/Eyes/WornOutTired_Crazed</texPath>
+	  <shader>Map/TransparentPostLight</shader>
+    <probability>0.3</probability>
   </FacialAnimation.EyeballTypeDef>
 </Defs>

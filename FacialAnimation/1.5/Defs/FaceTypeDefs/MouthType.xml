@@ -1,0 +1,35 @@
+<Defs>
+    <FacialAnimation.MouthTypeDef Name="WorkerDroneMouth" Abstract="True">
+        <raceName>MD_WorkerDroneBase</raceName>
+        <enableUnisexTexPath>true</enableUnisexTexPath>
+    </FacialAnimation.MouthTypeDef>
+
+    <FacialAnimation.MouthTypeDef Name="MurderDroneMouth" Abstract="True">
+        <raceName>MD_MurderDroneBase</raceName>
+        <enableUnisexTexPath>true</enableUnisexTexPath>
+    </FacialAnimation.MouthTypeDef>
+
+  <FacialAnimation.MouthTypeDef ParentName="WorkerDroneMouth">
+	  <defName>DroneMouthNormal</defName>
+	  <texPath>OtherMods/FacialAnimations/WorkerDrone/Mouths/Normal</texPath>
+	  <shader>Map/Transparent</shader>
+  </FacialAnimation.MouthTypeDef>
+
+  <FacialAnimation.MouthTypeDef ParentName="MurderDroneMouth">
+	  <defName>FangedMouthToothy</defName>
+	  <texPath>OtherMods/FacialAnimations/WorkerDrone/Mouths/Fangs</texPath>
+      <shader>Map/Transparent</shader>
+  </FacialAnimation.MouthTypeDef>
+
+  <FacialAnimation.MouthTypeDef ParentName="MurderDroneMouth">
+	  <defName>FangedMouthToothy2</defName>
+	  <texPath>OtherMods/FacialAnimations/WorkerDrone/Mouths/Fangs2</texPath>
+      <shader>Map/Transparent</shader>
+  </FacialAnimation.MouthTypeDef>
+
+  <FacialAnimation.MouthTypeDef ParentName="MurderDroneMouth">
+	  <defName>FangedMouthTeethy</defName>
+	  <texPath>OtherMods/FacialAnimations/WorkerDrone/Mouths/Fangs3</texPath>
+      <shader>Map/Transparent</shader>
+  </FacialAnimation.MouthTypeDef>
+</Defs>

@@ -1,0 +1,6 @@
+<Defs>
+  <FacialAnimation.MouthShapeDef>
+    <defName>menacing</defName>
+    <altShapeDef>normal</altShapeDef>
+  </FacialAnimation.MouthShapeDef>
+</Defs>

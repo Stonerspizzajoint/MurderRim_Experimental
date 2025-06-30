@@ -175,6 +175,10 @@
 			-->
 			<raceTagOptions>
 				<li>
+					<raceTag>MD_WorkerDroneBase</raceTag>
+					<facePart>Brow</facePart>
+				</li>
+				<li>
 					<raceTag>MD_MurderDroneBase</raceTag>
 					<facePart>Eye</facePart>
 				</li>
@@ -266,7 +270,13 @@
 		<li MayRequire="nals.facialanimation" Class="WorkerDronesMod.FacialAnimationCompat.GeneForcedFacetypesExtension">
 			<forcedEyeTypes>
 				<li>XEyes_DisplayEyes</li>
-			</forcedEyeTypes>			
+			</forcedEyeTypes>
+			<forcedBrowTypes>
+				<li>NoBrow_DisplayBrow</li>
+			</forcedBrowTypes>
+			<forcedLidTypes>
+				<li>DisplayLidNormal</li>
+			</forcedLidTypes>
 		</li>
   </modExtensions>
   <renderNodeProperties>

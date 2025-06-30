@@ -1,0 +1,17 @@
+<Defs>
+    <FacialAnimation.LidshapeDef>
+        <defName>stressed</defName>
+        <altShapeDef>normal</altShapeDef>
+    </FacialAnimation.LidshapeDef>
+
+    <FacialAnimation.LidshapeDef>
+        <defName>NoLid</defName>
+        <altShapeDef>normal</altShapeDef>
+    </FacialAnimation.LidshapeDef>
+
+    <FacialAnimation.LidshapeDef>
+        <defName>sleepmode</defName>
+        <altShapeDef>close</altShapeDef>
+        <disableEyeball>true</disableEyeball>
+    </FacialAnimation.LidshapeDef>
+</Defs>

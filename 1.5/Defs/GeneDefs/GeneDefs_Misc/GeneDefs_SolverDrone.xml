@@ -212,6 +212,17 @@
 			<li Class="WorkerDronesMod.GeneResearchExtension">
       			<requiredResearch>MD_DisassemblyDroneTech</requiredResearch>
     		</li>
+			<li MayRequire="nals.facialanimation" Class="WorkerDronesMod.FacialAnimationCompat.GeneForcedFacetypesExtension">
+				<raceTags>
+					<li>MD_MurderDroneBase</li>
+				</raceTags>
+				<raceTagOptions>
+					<li>
+						<raceTag>MD_MurderDroneBase</raceTag>
+						<facePart>Mouth</facePart>
+					</li>
+				</raceTagOptions>
+			</li>
 		</modExtensions>
 	</VREAndroids.AndroidGeneDef>
 </Defs>

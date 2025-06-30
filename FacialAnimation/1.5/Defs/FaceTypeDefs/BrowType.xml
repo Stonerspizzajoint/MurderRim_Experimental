@@ -1,6 +1,7 @@
 <Defs>
   <FacialAnimation.BrowTypeDef Name="WorkerDroneBrow" Abstract="True">
     <raceName>MD_WorkerDroneBase</raceName>
+    <enableUnisexTexPath>true</enableUnisexTexPath>
   </FacialAnimation.BrowTypeDef>
 
   <FacialAnimation.BrowTypeDef ParentName="WorkerDroneBrow">
@@ -21,7 +22,16 @@
 	  <defName>DisplayWrinkle_DisplayBrow</defName>
 	  <texPath>OtherMods/FacialAnimations/WorkerDrone/Brows/DisplayWrinkle</texPath>
 	  <shader>Map/TransparentPostLight</shader>
+    <enableUnisexTexPath>false</enableUnisexTexPath>
     <colorMode>skinColor</colorMode>
     <probability>0.2</probability>
+  </FacialAnimation.BrowTypeDef>
+
+  <FacialAnimation.BrowTypeDef ParentName="WorkerDroneBrow">
+    <defName>NoBrow_DisplayBrow</defName>
+    <texPath>OtherMods/FacialAnimations/WorkerDrone/Brows/NoBrow</texPath>
+    <shader>Map/TransparentPostLight</shader>
+    <colorMode>skinColor</colorMode>
+    <raceName>NO_BROW</raceName>
   </FacialAnimation.BrowTypeDef>
 </Defs>

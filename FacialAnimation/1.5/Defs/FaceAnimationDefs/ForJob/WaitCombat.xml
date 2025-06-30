@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+  <FacialAnimation.FaceAnimationDef ParentName="MurderDroneAnimation">
+    <defName>Fangs_WaitCombat</defName>
+    <animationFrames>
+      <li>
+        <duration>1</duration>
+        <browShapeDef>normal</browShapeDef>
+        <eyeballShapeDef>combatmode</eyeballShapeDef>
+        <lidShapeDef>NoLid</lidShapeDef>
+        <mouthShapeDef>menacing</mouthShapeDef>
+      </li>
+    </animationFrames>
+    <targetJobs>
+      <li>Wait_Combat</li>
+    </targetJobs>
+    <priority>10302</priority>
+  </FacialAnimation.FaceAnimationDef>
+</Defs>

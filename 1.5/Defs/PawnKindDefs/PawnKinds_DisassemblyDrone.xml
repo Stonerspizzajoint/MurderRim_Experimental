@@ -20,6 +20,7 @@
 		<apparelTags>
 			<li>JCJensonDisassembly</li>
 			<li>JCJensonBasic</li>
+			<li>IndustrialBasic</li>
 		</apparelTags>
 		<apparelIgnoreSeasons>true</apparelIgnoreSeasons>
         <apparelIgnorePollution>true</apparelIgnorePollution>
@@ -59,6 +60,7 @@
 		<apparelTags>
 			<li>JCJensonDisassemblyLeader</li>
 			<li>JCJensonBasic</li>
+			<li>IndustrialBasic</li>
 		</apparelTags>
 		<abilities>
 			<li>MD_EMPBlast</li>
@@ -99,6 +101,7 @@
 		<apparelTags>
 			<li>JCJensonDisassemblyLeader</li>
 			<li>JCJensonBasic</li>
+			<li>IndustrialBasic</li>
 		</apparelTags>
 		<abilities>
 			<li>MD_EMPBlast</li>

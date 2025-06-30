@@ -1,0 +1,18 @@
+<Defs>
+  <FacialAnimation.FaceAnimationDef ParentName="WorkerDroneAnimation">
+    <defName>normal</defName>
+    <animationFrames>
+      <li>
+        <duration>1</duration>
+        <headShapeDef>normal</headShapeDef>
+        <browShapeDef>normal</browShapeDef>
+        <lidShapeDef>normal</lidShapeDef>
+        <lidOptionShapeDef>normal</lidOptionShapeDef>
+        <eyeballShapeDef>normal</eyeballShapeDef>
+        <mouthShapeDef>normal</mouthShapeDef>
+        <emotionShapeDef>normal</emotionShapeDef>
+      </li>
+    </animationFrames>
+    <priority>0</priority>
+  </FacialAnimation.FaceAnimationDef>
+</Defs>
