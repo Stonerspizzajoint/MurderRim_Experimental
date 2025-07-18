@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Assembly Required\\1.6\\source\\WorkerDronesMod\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|c:\\users\\stone\\onedrive\\desktop\\mods\\murderrim - assembly required\\1.6\\source\\workerdronesmod\\zone\\designator\\designator_areashadeareaexpand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|solutionrelative:zone\\designator\\designator_areashadeareaexpand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|c:\\users\\stone\\onedrive\\desktop\\mods\\murderrim - assembly required\\1.6\\source\\workerdronesmod\\zone\\designator\\designator_cells_shadeareaclear.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|solutionrelative:zone\\designator\\designator_cells_shadeareaclear.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|c:\\users\\stone\\onedrive\\desktop\\mods\\murderrim - assembly required\\1.6\\source\\workerdronesmod\\gene\\classes\\gene_droneheadtypeswitcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|solutionrelative:gene\\classes\\gene_droneheadtypeswitcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,7 +19,7 @@
       "RelativeMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|solutionrelative:defofs\\md_defof.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|c:\\users\\stone\\onedrive\\desktop\\mods\\murderrim - assembly required\\1.6\\source\\workerdronesmod\\modsettings\\workerdronesmod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Assembly Required\\1.6\\source\\WorkerDronesMod\\modsettings\\workerdronesmod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E2601DE0-4254-461E-B8F0-38FA12E4F2CF}|WorkerDronesMod.csproj|solutionrelative:modsettings\\workerdronesmod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -109,25 +117,51 @@
           "SelectedChildIndex": 1,
           "Children": [
             {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Designator_Cells_ShadeAreaClear.cs",
+              "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Assembly Required\\1.6\\source\\WorkerDronesMod\\Zone\\Designator\\Designator_Cells_ShadeAreaClear.cs",
+              "RelativeDocumentMoniker": "Zone\\Designator\\Designator_Cells_ShadeAreaClear.cs",
+              "ToolTip": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Assembly Required\\1.6\\source\\WorkerDronesMod\\Zone\\Designator\\Designator_Cells_ShadeAreaClear.cs",
+              "RelativeToolTip": "Zone\\Designator\\Designator_Cells_ShadeAreaClear.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAuwB4AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-18T20:19:39.735Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Designator_AreaShadeAreaExpand.cs",
+              "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Assembly Required\\1.6\\source\\WorkerDronesMod\\Zone\\Designator\\Designator_AreaShadeAreaExpand.cs",
+              "RelativeDocumentMoniker": "Zone\\Designator\\Designator_AreaShadeAreaExpand.cs",
+              "ToolTip": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Assembly Required\\1.6\\source\\WorkerDronesMod\\Zone\\Designator\\Designator_AreaShadeAreaExpand.cs",
+              "RelativeToolTip": "Zone\\Designator\\Designator_AreaShadeAreaExpand.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAuwB4AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-18T20:17:30.026Z",
+              "EditorCaption": ""
+            },
+            {
               "$type": "Bookmark",
               "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Gene_DroneHeadTypeSwitcher.cs",
               "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Assembly Required\\1.6\\source\\WorkerDronesMod\\Gene\\Classes\\Gene_DroneHeadTypeSwitcher.cs",
               "RelativeDocumentMoniker": "Gene\\Classes\\Gene_DroneHeadTypeSwitcher.cs",
               "ToolTip": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Assembly Required\\1.6\\source\\WorkerDronesMod\\Gene\\Classes\\Gene_DroneHeadTypeSwitcher.cs",
               "RelativeToolTip": "Gene\\Classes\\Gene_DroneHeadTypeSwitcher.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAxwBMAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-18T11:00:51.391Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Patch_AndroidGenesGenesInOrder.cs",
               "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Assembly Required\\1.6\\source\\WorkerDronesMod\\Patches\\VREAndroids\\Patch_AndroidGenesGenesInOrder.cs",
               "RelativeDocumentMoniker": "Patches\\VREAndroids\\Patch_AndroidGenesGenesInOrder.cs",
@@ -139,7 +173,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Patch_PreventDeath.cs",
               "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Assembly Required\\1.6\\source\\WorkerDronesMod\\Patches\\KillPatch\\Patch_PreventDeath.cs",
               "RelativeDocumentMoniker": "Patches\\KillPatch\\Patch_PreventDeath.cs",
@@ -151,7 +185,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "WorkerDronesMod.cs",
               "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Assembly Required\\1.6\\source\\WorkerDronesMod\\ModSettings\\WorkerDronesMod.cs",
               "RelativeDocumentMoniker": "ModSettings\\WorkerDronesMod.cs",
@@ -159,12 +193,11 @@
               "RelativeToolTip": "ModSettings\\WorkerDronesMod.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAUwBIAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-18T09:39:16.359Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-18T09:39:16.359Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "WorkerDronesModSettings.cs",
               "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Assembly Required\\1.6\\source\\WorkerDronesMod\\ModSettings\\WorkerDronesModSettings.cs",
               "RelativeDocumentMoniker": "ModSettings\\WorkerDronesModSettings.cs",
@@ -176,7 +209,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "JobGiver_RefuelWithNeutroamine.cs",
               "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Assembly Required\\1.6\\source\\WorkerDronesMod\\Job\\Givers\\JobGiver_RefuelWithNeutroamine.cs",
               "RelativeDocumentMoniker": "Job\\Givers\\JobGiver_RefuelWithNeutroamine.cs",
@@ -188,7 +221,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "JobGiver_AIRefuelWithNeutroamineHostile.cs",
               "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Assembly Required\\1.6\\source\\WorkerDronesMod\\Job\\Givers\\JobGiver_AIRefuelWithNeutroamineHostile.cs",
               "RelativeDocumentMoniker": "Job\\Givers\\JobGiver_AIRefuelWithNeutroamineHostile.cs",
@@ -200,7 +233,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "GeneDefHelper.cs",
               "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Assembly Required\\1.6\\source\\WorkerDronesMod\\Utils\\helper\\GeneDefHelper.cs",
               "RelativeDocumentMoniker": "Utils\\helper\\GeneDefHelper.cs",
@@ -212,7 +245,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "Messages_Message_Patch.cs",
               "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Assembly Required\\1.6\\source\\WorkerDronesMod\\Patches\\VREAndroids\\Bleedingpatches\\Messages_Message_Patch.cs",
               "RelativeDocumentMoniker": "Patches\\VREAndroids\\Bleedingpatches\\Messages_Message_Patch.cs",
@@ -224,7 +257,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "Hediff_Injury_BleedRate_Patch.cs",
               "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Assembly Required\\1.6\\source\\WorkerDronesMod\\Patches\\VREAndroids\\Bleedingpatches\\Hediff_Injury_BleedRate_Patch.cs",
               "RelativeDocumentMoniker": "Patches\\VREAndroids\\Bleedingpatches\\Hediff_Injury_BleedRate_Patch.cs",
@@ -236,7 +269,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "HediffGiver_Bleeding_OnIntervalPassed_Patch.cs",
               "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Assembly Required\\1.6\\source\\WorkerDronesMod\\Patches\\VREAndroids\\Bleedingpatches\\HediffGiver_Bleeding_OnIntervalPassed_Patch.cs",
               "RelativeDocumentMoniker": "Patches\\VREAndroids\\Bleedingpatches\\HediffGiver_Bleeding_OnIntervalPassed_Patch.cs",
@@ -248,7 +281,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "HealthCardUtility_DrawHediffListing_Patch.cs",
               "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Assembly Required\\1.6\\source\\WorkerDronesMod\\Patches\\VREAndroids\\Bleedingpatches\\HealthCardUtility_DrawHediffListing_Patch.cs",
               "RelativeDocumentMoniker": "Patches\\VREAndroids\\Bleedingpatches\\HealthCardUtility_DrawHediffListing_Patch.cs",
@@ -260,7 +293,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "Patch_NeedRest_Interval_Override.cs",
               "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Assembly Required\\1.6\\source\\WorkerDronesMod\\Patches\\VREAndroids\\NeedPatches\\Patch_NeedRest_Interval_Override.cs",
               "RelativeDocumentMoniker": "Patches\\VREAndroids\\NeedPatches\\Patch_NeedRest_Interval_Override.cs",
@@ -272,7 +305,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "RegenerationUtilities.cs",
               "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Assembly Required\\1.6\\source\\WorkerDronesMod\\Utils\\Solver\\RegenerationUtilities.cs",
               "RelativeDocumentMoniker": "Utils\\Solver\\RegenerationUtilities.cs",
@@ -284,7 +317,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "ConditionalStatAffecter_HeatAndSun.cs",
               "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Assembly Required\\1.6\\source\\WorkerDronesMod\\Gene\\ConditionalStatAffecter\\ConditionalStatAffecter_HeatAndSun.cs",
               "RelativeDocumentMoniker": "Gene\\ConditionalStatAffecter\\ConditionalStatAffecter_HeatAndSun.cs",
@@ -296,7 +329,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "MD_DefOf.cs",
               "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Assembly Required\\1.6\\source\\WorkerDronesMod\\DefOfs\\MD_DefOf.cs",
               "RelativeDocumentMoniker": "DefOfs\\MD_DefOf.cs",
@@ -304,12 +337,11 @@
               "RelativeToolTip": "DefOfs\\MD_DefOf.cs",
               "ViewState": "AgIAAJUAAAAAAAAAAAAowKsAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-02T19:53:46.893Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-02T19:53:46.893Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "GeneGizmo_BasicSolver.cs",
               "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Assembly Required\\1.6\\source\\WorkerDronesMod\\Gene\\Solver\\Gene_Resource\\Gizmo\\GeneGizmo_BasicSolver.cs",
               "RelativeDocumentMoniker": "Gene\\Solver\\Gene_Resource\\Gizmo\\GeneGizmo_BasicSolver.cs",
@@ -321,7 +353,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "Gene_BasicSolver.cs",
               "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Assembly Required\\1.6\\source\\WorkerDronesMod\\Gene\\Solver\\Gene_Resource\\Resource\\Gene_BasicSolver.cs",
               "RelativeDocumentMoniker": "Gene\\Solver\\Gene_Resource\\Resource\\Gene_BasicSolver.cs",
@@ -333,7 +365,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "SolverGeneExtention.cs",
               "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Assembly Required\\1.6\\source\\WorkerDronesMod\\Gene\\Solver\\Modextentions\\SolverGeneExtention.cs",
               "RelativeDocumentMoniker": "Gene\\Solver\\Modextentions\\SolverGeneExtention.cs",
@@ -345,7 +377,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 25,
               "Title": "SolverRegenerationUtil.cs",
               "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Assembly Required\\1.6\\source\\WorkerDronesMod\\Utils\\GeneUtiliy\\SolverRegenerationUtil.cs",
               "RelativeDocumentMoniker": "Utils\\GeneUtiliy\\SolverRegenerationUtil.cs",
@@ -357,7 +389,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "SolarUtil.cs",
               "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Assembly Required\\1.6\\source\\WorkerDronesMod\\Utils\\GeneUtiliy\\SolarUtil.cs",
               "RelativeDocumentMoniker": "Utils\\GeneUtiliy\\SolarUtil.cs",
@@ -369,7 +401,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "ExtraSolverUtils.cs",
               "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Assembly Required\\1.6\\source\\WorkerDronesMod\\Utils\\GeneUtiliy\\ExtraSolverUtils.cs",
               "RelativeDocumentMoniker": "Utils\\GeneUtiliy\\ExtraSolverUtils.cs",
@@ -381,7 +413,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "OilUtil.cs",
               "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Assembly Required\\1.6\\source\\WorkerDronesMod\\Utils\\GeneUtiliy\\OilUtil.cs",
               "RelativeDocumentMoniker": "Utils\\GeneUtiliy\\OilUtil.cs",
@@ -393,7 +425,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "HeatUtil.cs",
               "DocumentMoniker": "C:\\Users\\stone\\OneDrive\\Desktop\\Mods\\MurderRim - Assembly Required\\1.6\\source\\WorkerDronesMod\\Utils\\GeneUtiliy\\HeatUtil.cs",
               "RelativeDocumentMoniker": "Utils\\GeneUtiliy\\HeatUtil.cs",

@@ -2,11 +2,17 @@
 using RimWorld;
 using UnityEngine;
 using Verse;
+using System.Collections.Generic;
+
 
 namespace WorkerDronesMod
 {
     public class Designator_Cells_ShadeAreaExpand : Designator_Cells
     {
+        public override bool DragDrawMeasurements => true;
+
+        public override DrawStyleCategoryDef DrawStyleCategory => DrawStyleCategoryDefOf.Areas;
+
         public Designator_Cells_ShadeAreaExpand()
         {
             defaultLabel = "Designate Shade Area";
@@ -40,9 +46,26 @@ namespace WorkerDronesMod
             shadeArea[c] = true;
         }
 
+        public override void DesignateMultiCell(IEnumerable<IntVec3> cells)
+        {
+            Area_Shade shadeArea = GetShadeArea();
+            if (shadeArea == null)
+            {
+                shadeArea = new Area_Shade(Map.areaManager);
+                Map.areaManager.AllAreas.Add(shadeArea);
+            }
+            foreach (var c in cells)
+            {
+                if (CanDesignateCell(c).Accepted)
+                {
+                    shadeArea[c] = true;
+                }
+            }
+        }
+
         public override void SelectedUpdate()
         {
-            // When selected, show the zone overlay.
+            GenUI.RenderMouseoverBracket();
             if (Map != null)
             {
                 Area_Shade shadeArea = GetShadeArea();

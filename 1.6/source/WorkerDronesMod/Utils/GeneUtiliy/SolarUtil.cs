@@ -133,12 +133,8 @@ namespace WorkerDronesMod
             if (pawn?.Map == null)
                 return true; // If not on a map, treat as safe
 
-            // If pawn is roofed, it's safe
-            if (pawn.Position.Roofed(pawn.Map))
-                return true;
-
-            // If pawn is in sunlight, it's not safe
-            return !pawn.Position.InSunlight(pawn.Map);
+            // Use the map-wide safety check
+            return IsMapSafeForSolvers(pawn.Map, null, ext);
         }
 
         public static bool IsMapSafeForSolvers(Map map, RaidRestrictions restrictions, SolverGeneExtension geneExt = null)
