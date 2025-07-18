@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<VREAndroids.AndroidConvertableGenesDef>
+		<defName>MD_AndroidConvertableGenes</defName>
+		<geneCategories>
+			<li>WorkerDroneHardware</li>
+			<li>WorkerDroneSubroutines</li>
+			<li>SolverHardware</li>
+			<li>SolverSubroutines</li>
+			<li>DroneCosmetics</li>
+		</geneCategories>
+	</VREAndroids.AndroidConvertableGenesDef>
+
+</Defs>

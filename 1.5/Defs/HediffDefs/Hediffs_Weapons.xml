@@ -37,13 +37,11 @@
 				<nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
 				<workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
 				<parentTagDef>Head</parentTagDef>
-				<drawSize>0.32</drawSize>
+				<drawSize>1</drawSize>
 				<texPaths>
-					<li>Pawn/DisassemblyDrone/HeadAttachments/MD_Fangs/MurderDrone_Fangs1</li>
-					<li>Pawn/DisassemblyDrone/HeadAttachments/MD_Fangs/MurderDrone_Fangs2</li>
-					<li>Pawn/DisassemblyDrone/HeadAttachments/MD_Fangs/MurderDrone_Fangs3</li>
-					<li>Pawn/DisassemblyDrone/HeadAttachments/MD_Fangs/MurderDrone_Fangs4</li>
-					<li>Pawn/DisassemblyDrone/HeadAttachments/MD_Fangs/MurderDrone_Fangs5</li>
+					<li>Pawn/DisassemblyDrone/HeadAttachments/NewFangs/fangs1</li>
+					<li>Pawn/DisassemblyDrone/HeadAttachments/NewFangs/fangs2</li>
+					<li>Pawn/DisassemblyDrone/HeadAttachments/NewFangs/fangs3</li>
 				</texPaths>
 				<visibleFacing>
 					<li>East</li>
@@ -52,21 +50,10 @@
 				</visibleFacing>
 				<drawData>
 					<defaultData>
-						<offset>(0, 0, -0.14)</offset>
+						<offset>(0, 0, 0)</offset>
 						<layer>54</layer>
 					</defaultData>
 					<scaleOffsetByBodySize>false</scaleOffsetByBodySize>
-					<dataNorth>
-						<layer>54</layer>
-					</dataNorth>
-					<dataEast>
-						<offset>(0.226,0,-0.13)</offset>
-						<layer>54</layer>
-					</dataEast>
-					<dataWest>
-						<offset>(-0.226,0,-0.13)</offset>
-						<layer>54</layer>
-					</dataWest>
 				</drawData>
 			</li>
 		</renderNodeProperties>

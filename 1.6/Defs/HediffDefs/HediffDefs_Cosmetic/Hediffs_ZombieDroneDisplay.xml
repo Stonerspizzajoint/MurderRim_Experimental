@@ -1,0 +1,47 @@
+<Defs>
+<!--Normal State-->
+	<HediffDef ParentName="MD_CosmeticDisplayBase">
+		<defName>MD_Normal_XXDisplayEyes</defName>
+		<extraTooltip>Normal</extraTooltip>
+		<renderNodeProperties>
+			<li Class="VEF.Graphics.PawnRenderNodeProperties_Omni">
+				<nodeClass>VEF.Graphics.PawnRenderNode_Omni</nodeClass>
+				<workerClass>PawnRenderNodeWorker_Eye</workerClass>
+				<visibleFacing>
+					<li>South</li>
+					<li>East</li>
+					<li>West</li>
+				</visibleFacing>
+      			<conditionalGraphics>
+					<alts>
+						<li>
+							<!--Blank Display when dead or downed-->
+        					<requirements>
+          						<li>Dead</li>
+        					</requirements>
+							<texPath>Pawn/Display/DisplayEyesBlank/DisplayEyesBlank</texPath>
+						</li>
+					</alts>
+					<!--Normal Display-->
+					<shader>TransparentPostLight</shader>
+					<colorA>
+						<skinColor>true</skinColor>
+					</colorA>
+        			<texPaths>
+          				<li>Pawn/Display/NewEyes/XEyes/Unisex/normal</li>
+        			</texPaths>
+      			</conditionalGraphics>
+				<rotDrawMode>Fresh, Rotting</rotDrawMode>
+				<parentTagDef>Head</parentTagDef>
+				<drawSize>1</drawSize>
+				<side>Right</side>
+				<drawData>
+					<defaultData>
+						<layer>54</layer>
+						<offset>(0, 0, 0)</offset>
+					</defaultData>
+				</drawData>
+			</li>
+		</renderNodeProperties>
+	</HediffDef>
+</Defs>

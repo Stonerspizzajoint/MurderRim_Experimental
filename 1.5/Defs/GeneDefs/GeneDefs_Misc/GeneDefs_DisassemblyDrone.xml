@@ -165,7 +165,7 @@ The Body houses an improved reactor, leading to better power efficiency.
 	<VREAndroids.AndroidGeneDef ParentName="MD_DisassemblyDroneBase">
 		<defName>MD_InterchangeableHands</defName>
 		<label>interchangeable hands (Melee)</label>
-		<prerequisite>MD_WeakenedSolver</prerequisite>
+		<prerequisite>MD_BasicSolver</prerequisite>
 		<description>Androids with this hardware can switch between different melee weapons replaceing their hands.</description>
 		<iconPath>UI/Abilities/DisassemblyDrone/MD_InterchangeableHands</iconPath>
 		<biostatCpx>3</biostatCpx>
@@ -188,7 +188,7 @@ The Body houses an improved reactor, leading to better power efficiency.
 	<VREAndroids.AndroidGeneDef ParentName="MD_DisassemblyDroneBase">
 		<defName>MD_BladedWings</defName>
 		<label>bladed wings</label>
-		<prerequisite>MD_WeakenedSolver</prerequisite>
+		<prerequisite>MD_BasicSolver</prerequisite>
 		<description>Carriers of this gene have two pairs of bladed wings sprouting from their back.</description>
 		<geneClass>WorkerDronesMod.Gene_HediffSwitcherActivator</geneClass>
 		<iconPath>Pawn/DisassemblyDrone/Natural_Weapons/Bladed_Wings/BladeWings_south</iconPath>
@@ -248,7 +248,7 @@ The Body houses an improved reactor, leading to better power efficiency.
     <VREAndroids.AndroidGeneDef ParentName="MD_DisassemblyDroneBase">
 		<defName>MD_NaniteAcidTail</defName>
 		<label>nanite tail</label>
-		<prerequisite>MD_WeakenedSolver</prerequisite>
+		<prerequisite>MD_BasicSolver</prerequisite>
 		<biostatCpx>1</biostatCpx>
 		<biostatMet>-2</biostatMet>
 		<geneClass>WorkerDronesMod.Gene_HediffApplier</geneClass>
@@ -279,7 +279,7 @@ The Body houses an improved reactor, leading to better power efficiency.
 	<VREAndroids.AndroidGeneDef ParentName="MD_DisassemblyDroneBase">
  		<defName>MD_HeadBand</defName>
  		<label>eye band</label>
-		<prerequisite>MD_WeakenedSolver</prerequisite>
+		<prerequisite>MD_BasicSolver</prerequisite>
 		<geneClass>WorkerDronesMod.Gene_HediffSwitcherActivator</geneClass>
  		<labelShortAdj>eye band</labelShortAdj>
  		<description>Carriers of this hardware have a extra band of specilaized eyes</description>
@@ -317,10 +317,6 @@ The Body houses an improved reactor, leading to better power efficiency.
         			<li>
           			  <state>Normal</state>
           			  <hediffDef>MD_Normal_HeadBand_DD</hediffDef>
-        			</li>
-        			<li>
-        			  <state>IsConfused</state>
-        			  <hediffDef>MD_IsConfused_HeadBandRed_DD</hediffDef>
         			</li>
       			</stateHediffs>
     		</li>

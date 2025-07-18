@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+  <FacialAnimation.FaceAnimationDef ParentName="WorkerDroneAnimation">
+    <defName>RemoveApparel_WorkerDrone</defName>
+    <animationFrames>
+      <li>
+        <duration>1</duration>
+        <lidShapeDef>lidblush</lidShapeDef>
+      </li>
+    </animationFrames>
+    <targetJobs>
+      <li>RemoveApparel</li>
+    </targetJobs>
+    <priority>106</priority>
+    <applyWhenStandingOnly>true</applyWhenStandingOnly>
+  </FacialAnimation.FaceAnimationDef>
+</Defs>

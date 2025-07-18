@@ -1,8 +1,18 @@
 <Patch>
+
   <Operation Class="PatchOperationAdd">
-    <xpath>/Defs/ThinkTreeDef[defName="MentalStateNonCritical"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalMentalStates"]/states</xpath>
+    <xpath>/Defs/ThinkTreeDef[defName="MentalStateCritical"]/thinkRoot/subNodes</xpath>
     <value>
-      <li>MD_ConfusedWander</li>
+        <li Class="ThinkNode_ConditionalMentalState">
+          <state>MD_RecoverAndBootUp</state>
+          <subNodes>
+            <li Class="ThinkNode_Priority">
+              <subNodes>
+                <li Class="WorkerDronesMod.JobGiver_BootupState" />
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
     </value>
   </Operation>
 
@@ -14,9 +24,24 @@
           <subNodes>
             <li Class="ThinkNode_Priority">
               <subNodes>
-                <li Class="WorkerDronesMod.JobGiver_RefuelMadness" />
+                <li Class="WorkerDronesMod.JobGiver_BerserkOilCraving" />
                 <li Class="JobGiver_WanderAnywhere">
                   <maxDanger>Deadly</maxDanger>
+                </li>
+                <!--====Flight Powered Pounce====-->
+                <li Class="ThinkNode_ConditionalHasAbility">
+                  <ability>MD_WingPoweredFlight</ability>
+                  <subNodes>
+                    <li Class="WorkerDronesMod.ThinkNode_ConditionalHeatAboveThreshold">
+                      <heatThreshold>0.55</heatThreshold>
+                      <invert>true</invert>
+                      <subNodes>
+                        <li Class="WorkerDronesMod.JobGiver_AICastWingPoweredPounce">
+                          <ability>MD_WingPoweredFlight</ability>
+                        </li>
+                      </subNodes>
+                    </li>   
+                  </subNodes>
                 </li>
               </subNodes>
             </li>

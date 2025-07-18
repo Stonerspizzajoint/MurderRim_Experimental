@@ -1,0 +1,14 @@
+<Defs>
+	<HediffDef Name="MD_CosmeticDisplayBase" Abstract="True">
+		<label>Drone Display</label>
+		<description>Display eyes that cycle to different displays depending on there state.</description>
+		<defaultLabelColor>(200, 200, 200)</defaultLabelColor>
+		<hediffClass>HediffWithComps</hediffClass>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+		<maxSeverity>1.0</maxSeverity>
+		<defaultInstallPart>Head</defaultInstallPart>
+		<isBad>false</isBad>
+		<keepOnBodyPartRestoration>true</keepOnBodyPartRestoration>
+	</HediffDef>
+</Defs>

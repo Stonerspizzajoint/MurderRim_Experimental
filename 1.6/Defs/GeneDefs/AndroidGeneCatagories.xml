@@ -1,0 +1,40 @@
+<Defs>
+
+<!-- ===== DEV NOTICE ===== -->
+<!-- 
+    Any gene assigned with these categories will be displayed in the android gene window, and will also have "VREA_" added to the beginning of their defname
+    so to properly reference them in code, please ensure you type it as "VREA_(your defname here)".
+
+    also, the only way to add these Categories to the android gene window is by adding them to the "geneCategories" inside of a custom "VREAndroids.AndroidConvertableGenesDef"
+    This is only a temporary solution until I implement something more permanent.
+-->
+    <WorkerDronesMod.AndroidGeneCategoryDef>
+        <defName>SolverHardware</defName>   
+        <label>Hardware - Solver</label>
+        <displayPriorityInXenotype>-1</displayPriorityInXenotype>
+    </WorkerDronesMod.AndroidGeneCategoryDef>
+
+    <WorkerDronesMod.AndroidGeneCategoryDef>
+        <defName>WorkerDroneHardware</defName>   
+        <label>Hardware - Drone</label>
+        <displayPriorityInXenotype>-2</displayPriorityInXenotype>
+    </WorkerDronesMod.AndroidGeneCategoryDef>
+
+    <WorkerDronesMod.AndroidGeneCategoryDef>
+        <defName>WorkerDroneSubroutines</defName>   
+        <label>Subroutine - Drone</label>
+        <displayPriorityInXenotype>9998</displayPriorityInXenotype>
+    </WorkerDronesMod.AndroidGeneCategoryDef>
+
+    <WorkerDronesMod.AndroidGeneCategoryDef>
+        <defName>SolverSubroutines</defName>   
+        <label>Subroutine - Solver</label>
+        <displayPriorityInXenotype>9997</displayPriorityInXenotype>
+    </WorkerDronesMod.AndroidGeneCategoryDef>
+
+    <WorkerDronesMod.AndroidGeneCategoryDef>
+        <defName>DroneCosmetics</defName>   
+        <label>Cosmetic - Drone</label>
+        <displayPriorityInXenotype>6</displayPriorityInXenotype>
+    </WorkerDronesMod.AndroidGeneCategoryDef>
+</Defs>

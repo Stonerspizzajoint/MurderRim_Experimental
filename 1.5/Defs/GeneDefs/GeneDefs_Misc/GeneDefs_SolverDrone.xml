@@ -65,8 +65,7 @@
 		<modExtensions>
 			<li Class="WorkerDronesMod.GenePrerequisitesExtension">
 				<prerequisiteGeneDefNames>
-					<li>MD_HeatScale</li>
-					<li>MD_WeakenedSolver</li>
+					<li>MD_BasicSolver</li>
 				</prerequisiteGeneDefNames>
 			</li>
     		<li Class="WorkerDronesMod.BlockFromAndroidWindowExtension">
@@ -77,18 +76,28 @@
 	</VREAndroids.AndroidGeneDef>
 
 	<VREAndroids.AndroidGeneDef ParentName="MD_SolverDroneBase">
-		<defName>MD_WeakenedSolver</defName>
-		<label>Locked Solver</label>
+		<defName>MD_BasicSolver</defName>
+		<label>TESTING solver</label>
 		<description>Android with this hardware possess a capped varent of the absolute solver, this varent only allows the healing of limbs and wounds, at the cost of heat gain an Neutroamine loss.</description>
-		<geneClass>WorkerDronesMod.Gene_NeutroamineOil</geneClass>
+		<geneClass>WorkerDronesMod.Gene_BasicSolver</geneClass>
 		<resourceLabel>Neutroamine</resourceLabel>
-		<resourceGizmoType>WorkerDronesMod.GeneGizmo_NeutroamineOil</resourceGizmoType>
+		<resourceGizmoType>WorkerDronesMod.GeneGizmo_BasicSolver</resourceGizmoType>
 		<showGizmoWhenDrafted>true</showGizmoWhenDrafted>
+        <resourceGizmoThresholds>
+            <li>0.25</li>
+            <li>0.5</li>
+            <li>0.75</li>
+        </resourceGizmoThresholds>
 		<forcedTraits>
 			<li>
 				<def>NightOwl</def>
 			</li>
 		</forcedTraits>
+		<statOffsets>
+			<ComfyTemperatureMax>75</ComfyTemperatureMax>
+			<ComfyTemperatureMin>-20</ComfyTemperatureMin>
+			<Flammability>0</Flammability>
+		</statOffsets>
 		<exclusionTags>
 			<li>AG_Armour</li>
 			<li>Armour</li>
@@ -98,7 +107,6 @@
 		<displayOrderInCategory>10003</displayOrderInCategory>
 		<biostatCpx>3</biostatCpx>
 		<biostatMet>3</biostatMet>
-		<prerequisite>MD_HeatScale</prerequisite>
 		<aptitudes>
 			<Melee>8</Melee>
 			<Shooting>8</Shooting>
@@ -111,29 +119,16 @@
 			<Suppressability MayRequire="CETeam.CombatExtended">0</Suppressability>
 			<SocialImpact>1</SocialImpact>
 		</statFactors>
-		<statOffsets>
-          	<ArmorRating_Sharp>0.7</ArmorRating_Sharp>
-			<ArmorRating_Blunt>0.7</ArmorRating_Blunt>
-			<ArmorRating_Heat>0.3</ArmorRating_Heat>
-		</statOffsets>
-		<hediffGiversCannotGive>
-			<li>VREA_NeutroLoss</li>
-		</hediffGiversCannotGive>
 		<conditionalStatAffecters>
-			<li Class="VanillaGenesExpanded.ConditionalStatAffecter_Armor">
+			<li Class="WorkerDronesMod.ConditionalStatAffecter_HeatAndSun">
         		<statOffsets>
 					<MoveSpeed>-0.5</MoveSpeed>
-        		</statOffsets>
-      		</li>
-			<li Class="ConditionalStatAffecter_InSunlight">
-        		<statOffsets>
-          			<ArmorRating_Sharp>-0.7</ArmorRating_Sharp>
-					<ArmorRating_Blunt>-0.7</ArmorRating_Blunt>
-					<ArmorRating_Heat>-0.3</ArmorRating_Heat>
-					<MoveSpeed>-0.5</MoveSpeed>
+					<MeleeDodgeChance>-0.5</MeleeDodgeChance>
+					<Flammability>2</Flammability>
         		</statOffsets>
       		</li>
 		</conditionalStatAffecters>
+		<marketValueFactor>5</marketValueFactor>
 		<modExtensions>
 			<li Class="WorkerDronesMod.GeneResearchExtension">
       			<requiredResearch>MD_SolverPrograming</requiredResearch>
@@ -142,40 +137,31 @@
       			<blockFromAndroidWindow>false</blockFromAndroidWindow>
       			<cannotBeRemoved>true</cannotBeRemoved>
 			</li>
-			<li Class="WorkerDronesMod.SolverRegenerationModExtension">
-      			<regenSpeedMultiplier>7</regenSpeedMultiplier>
-      			<minHealingFactor>0.2</minHealingFactor>
-      			<woundHealingWarmupTicks>63</woundHealingWarmupTicks>
-				<additionalWoundDamageWarmupTicks>125</additionalWoundDamageWarmupTicks>
-				<missingLimbWarmupTicks>125</missingLimbWarmupTicks>
-				<additionalDamageLimbDelayTicks>250</additionalDamageLimbDelayTicks>
-				<HeatControl>
-					<heatPerSeverityPoint>0.001</heatPerSeverityPoint>
-				</HeatControl>
-			</li>
+            <li Class="WorkerDronesMod.SolverGeneExtension">
+				<isNerfedSolver>true</isNerfedSolver>
+				<heatOptions>
+                	<heatGainPerTickSun>0.1</heatGainPerTickSun>
+					<ambientCoolingBaseline>10</ambientCoolingBaseline>
+					<headCoverSunlightFactor>0.2</headCoverSunlightFactor>
+					<globalDefaultHeatMultiplier>2</globalDefaultHeatMultiplier>
+				</heatOptions>
+				<oilOptions>
+				    <oilUsePerHeatUnit>0.05</oilUsePerHeatUnit>
+                	<heatPerOil>5</heatPerOil>
+					<oilCravingSpeed>0.005</oilCravingSpeed>
+				</oilOptions>
+				<regenOptions>
+					<regenSpeedMultiplier>7</regenSpeedMultiplier>
+					<minHealingFactor>0.2</minHealingFactor>
+					<woundHealingWarmupTicks>63</woundHealingWarmupTicks>
+					<additionalWoundDamageWarmupTicks>125</additionalWoundDamageWarmupTicks>
+					<missingLimbWarmupTicks>125</missingLimbWarmupTicks>
+					<additionalDamageLimbDelayTicks>250</additionalDamageLimbDelayTicks>
+				</regenOptions>
+            </li>
 		</modExtensions>
-	</VREAndroids.AndroidGeneDef>
-
-	<VREAndroids.AndroidGeneDef ParentName="MD_SolverDroneBase">
-		<defName>MD_HeatScale</defName>
-		<label>Heat Scale</label>
-		<description>Android with this hardware have a display, showing heatbuildup.</description>
-		<geneClass>WorkerDronesMod.Gene_HeatBuildup</geneClass>
-		<resourceLabel>Heat Buildup</resourceLabel>
-		<resourceGizmoType>WorkerDronesMod.GeneGizmo_HeatResource</resourceGizmoType>
-		<showGizmoWhenDrafted>true</showGizmoWhenDrafted>
-		<iconPath>UI/Icons/Genes/Gene_HeatScale</iconPath>
-		<biostatCpx>3</biostatCpx>
-		<prerequisite>MD_WeakenedSolver</prerequisite>
-		<modExtensions>
-			<li Class="WorkerDronesMod.GeneResearchExtension">
-      			<requiredResearch>MD_SolverPrograming</requiredResearch>
-    		</li>
-    		<li Class="WorkerDronesMod.BlockFromAndroidWindowExtension">
-      			<blockFromAndroidWindow>false</blockFromAndroidWindow>
-      			<cannotBeRemoved>true</cannotBeRemoved>
-			</li>
-		</modExtensions>
+		<ignoreDarkness>true</ignoreDarkness>
+		<dislikesSunlight>true</dislikesSunlight>
 	</VREAndroids.AndroidGeneDef>
 
 	<VREAndroids.AndroidGeneDef ParentName="MD_SolverDroneBase">
@@ -220,6 +206,7 @@
 					<li>
 						<raceTag>MD_MurderDroneBase</raceTag>
 						<facePart>Mouth</facePart>
+						<overrideOthers>true</overrideOthers>
 					</li>
 				</raceTagOptions>
 			</li>

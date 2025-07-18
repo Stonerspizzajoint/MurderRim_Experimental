@@ -1,0 +1,204 @@
+<Defs>
+
+<!--#### Solver Drones ####-->
+	<VREAndroids.AndroidGeneDef ParentName="MD_SolverHardware">
+		<defName>MD_CoreHeartBody</defName>
+		<label>core heart</label>
+		<geneClass>WorkerDronesMod.Gene_CoreHeartRace</geneClass>
+		<displayOrderInCategory>10003</displayOrderInCategory>
+		<description>spawn as a CoreHeart at the start, Core Hearts have incresed movement speed but are considered quite ugly.</description>
+        <customEffectDescriptions>
+            <li>Have less heath than most pawns, and if corned, can be killed alot easier.</li>
+            <li>You cannot remove the component once spawned, as it changes the pawns race at the start.</li>
+        </customEffectDescriptions>
+        <iconPath>Pawn/CoreHeart/CoreHeart_south</iconPath>
+		<biostatCpx>3</biostatCpx>
+		<biostatMet>3</biostatMet>
+		<exclusionTags>
+			<li>MD_Fangs</li>
+			<li>MD_HeadBand</li>
+			<li>MD_NaniteAcidTail</li>
+			<li>MD_BladedWings</li>
+			<li>Wing</li>
+			<li>Wings</li>
+			<li>MD_InterchangeableHands</li>
+			<li>MD_DroneBody</li>
+			<li>OnlyHumanlike</li>
+			<li>BodyType</li>
+			<li>AG_Bodies</li>
+			<li>Bodies</li>
+			<li>Body</li>
+			<li>Antennas</li>
+			<li>Antenna</li>
+			<li>AG_Antennae</li>
+			<li>Tusk</li>
+			<li>Tusks</li>
+			<li>AG_Tusks</li>
+			<li>Fur</li>
+			<li>Headbone</li>
+			<li>AG_Heads</li>
+			<li>Heads</li>
+			<li>Head</li>
+			<li>Hands</li>
+			<li>Jaw</li>
+			<li>Nose</li>
+			<li>Ears</li>
+		</exclusionTags>
+		<forcedHeadTypes>
+			<li>MD_CoreHeart_Head</li>
+		</forcedHeadTypes>
+		<statOffsets>
+			<PawnBeauty>-2</PawnBeauty>
+		</statOffsets>
+		<modExtensions>
+			<li Class="WorkerDronesMod.GenePrerequisitesExtension">
+				<prerequisiteGeneDefNames>
+					<li>MD_BasicSolver</li>
+				</prerequisiteGeneDefNames>
+			</li>
+    		<li Class="WorkerDronesMod.BlockFromAndroidWindowExtension">
+      			<blockFromAndroidWindow>true</blockFromAndroidWindow>
+      			<cannotBeRemoved>true</cannotBeRemoved>
+			</li>
+		</modExtensions>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="MD_SolverSubroutine">
+		<defName>MD_BasicSolver</defName>
+		<label>nerfed  solver</label>
+		<description>Android with this hardware possess a capped varent of the absolute solver, this varent only allows the healing of limbs and wounds, at the cost of heat gain an Neutroamine loss.</description>
+		<geneClass>WorkerDronesMod.Gene_BasicSolver</geneClass>
+		<resourceLabel>Neutroamine</resourceLabel>
+		<resourceGizmoType>WorkerDronesMod.GeneGizmo_BasicSolver</resourceGizmoType>
+		<showGizmoWhenDrafted>true</showGizmoWhenDrafted>
+        <resourceGizmoThresholds>
+            <li>0.25</li>
+            <li>0.5</li>
+            <li>0.75</li>
+        </resourceGizmoThresholds>
+		<forcedTraits>
+			<li>
+				<def>NightOwl</def>
+			</li>
+		</forcedTraits>
+		<statOffsets>
+			<ComfyTemperatureMax>75</ComfyTemperatureMax>
+			<ComfyTemperatureMin>-75</ComfyTemperatureMin>
+			<Flammability>0</Flammability>
+		</statOffsets>
+		<exclusionTags>
+			<li>AG_Armour</li>
+			<li>Armour</li>
+			<li>Armor</li>
+		</exclusionTags>
+		<iconPath>UI/Icons/Genes/Gene_WeakenedSolver</iconPath>
+		<displayOrderInCategory>10003</displayOrderInCategory>
+		<biostatCpx>3</biostatCpx>
+		<biostatMet>3</biostatMet>
+		<aptitudes>
+			<Melee>8</Melee>
+			<Shooting>8</Shooting>
+		</aptitudes>
+		<passionMod>
+			<skill>Melee</skill>
+			<modType>AddOneLevel</modType>
+		</passionMod>
+		<statFactors>
+			<Suppressability MayRequire="CETeam.CombatExtended">0</Suppressability>
+			<SocialImpact>1</SocialImpact>
+		</statFactors>
+		<conditionalStatAffecters>
+			<li Class="WorkerDronesMod.ConditionalStatAffecter_HeatAndSun">
+        		<statOffsets>
+					<MoveSpeed>-0.5</MoveSpeed>
+					<MeleeDodgeChance>-0.5</MeleeDodgeChance>
+					<Flammability>2</Flammability>
+        		</statOffsets>
+      		</li>
+		</conditionalStatAffecters>
+		<marketValueFactor>5</marketValueFactor>
+		<modExtensions>
+			<li Class="WorkerDronesMod.GeneResearchExtension">
+      			<requiredResearch>MD_SolverPrograming</requiredResearch>
+    		</li>
+    		<li Class="WorkerDronesMod.BlockFromAndroidWindowExtension">
+      			<blockFromAndroidWindow>false</blockFromAndroidWindow>
+      			<cannotBeRemoved>true</cannotBeRemoved>
+			</li>
+            <li Class="WorkerDronesMod.SolverGeneExtension">
+				<isNerfedSolver>true</isNerfedSolver>
+				<heatOptions>
+                	<heatGainPerTickSun>0.1</heatGainPerTickSun>
+					<ambientCoolingBaseline>10</ambientCoolingBaseline>
+					<headCoverSunlightFactor>0.2</headCoverSunlightFactor>
+					<globalDefaultHeatMultiplier>2</globalDefaultHeatMultiplier>
+					<ambientHeatScale>0.001</ambientHeatScale>
+				</heatOptions>
+				<oilOptions>
+				    <oilUsePerHeatUnit>0.05</oilUsePerHeatUnit>
+                	<heatPerOil>5</heatPerOil>
+					<oilCravingSpeed>0.005</oilCravingSpeed>
+				</oilOptions>
+				<regenOptions>
+					<regenSpeedMultiplier>7</regenSpeedMultiplier>
+					<minHealingFactor>0.2</minHealingFactor>
+					<woundHealingWarmupTicks>63</woundHealingWarmupTicks>
+					<additionalWoundDamageWarmupTicks>125</additionalWoundDamageWarmupTicks>
+					<missingLimbWarmupTicks>125</missingLimbWarmupTicks>
+					<additionalDamageLimbDelayTicks>250</additionalDamageLimbDelayTicks>
+				</regenOptions>
+            </li>
+		</modExtensions>
+		<ignoreDarkness>true</ignoreDarkness>
+		<dislikesSunlight>true</dislikesSunlight>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="MD_SolverHardware">
+		<defName>MD_Fangs</defName>
+		<label>fanged mouth</label>
+		<geneClass>WorkerDronesMod.Gene_HediffSwitcherActivator</geneClass>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>-1</biostatMet>
+		<description>Carriers of this hardware have large fangs that can be used in melee combat.</description>
+		<iconPath>Pawn/DisassemblyDrone/HeadAttachments/MD_Fangs/MurderDrone_Fangs2_south</iconPath>
+		<selectionWeight>0</selectionWeight>
+		<exclusionTags>
+			<li>Jaws</li>
+			<li>Fangs</li>
+			<li>MD_Fangs</li>
+		</exclusionTags>
+		<modExtensions>
+    		<li Class="WorkerDronesMod.GeneHediffSwitcherExtension">
+      			<stateHediffs>
+        			<li>
+          			  <state>Normal</state>
+          			  <hediffDef>MD_FangsRetracted</hediffDef>
+        			</li>
+        			<li>
+          				<state>Hostile</state>
+          				<hediffDef>MD_FangsOut</hediffDef>
+        			</li>
+        			<li>
+          				<state>Drafted</state>
+          				<hediffDef>MD_FangsOut</hediffDef>
+        			</li>
+      			</stateHediffs>
+    		</li>
+			<li Class="WorkerDronesMod.GeneResearchExtension">
+      			<requiredResearch>MD_DisassemblyDroneTech</requiredResearch>
+    		</li>
+			<li MayRequire="nals.facialanimation" Class="WorkerDronesMod.FacialAnimationCompat.GeneForcedFacetypesExtension">
+				<raceTags>
+					<li>MD_MurderDroneBase</li>
+				</raceTags>
+				<raceTagOptions>
+					<li>
+						<raceTag>MD_MurderDroneBase</raceTag>
+						<facePart>Mouth</facePart>
+						<overrideOthers>true</overrideOthers>
+					</li>
+				</raceTagOptions>
+			</li>
+		</modExtensions>
+	</VREAndroids.AndroidGeneDef>
+</Defs>

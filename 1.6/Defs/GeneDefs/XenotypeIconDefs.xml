@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<XenotypeIconDef>
+		<defName>MD_WorkerDroneIcon</defName>
+		<texPath>UI/Icons/Xenotypes/Androidtype_WorkerDrone</texPath>
+	</XenotypeIconDef>
+
+	<XenotypeIconDef>
+		<defName>MD_MurderDroneIcon</defName>
+		<texPath>UI/Icons/Ideoligions/Icon_DisassemblyDrone</texPath>
+	</XenotypeIconDef>
+</Defs>

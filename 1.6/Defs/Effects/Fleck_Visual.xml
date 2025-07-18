@@ -1,0 +1,27 @@
+<Defs>
+    <FleckDef ParentName="FleckBase">
+    <defName>MD_LiquidSplash</defName>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <solidTime>0.07</solidTime>
+    <fadeOutTime>0.08</fadeOutTime>
+    <graphicData>
+      <texPath>Things/Mote/BloodSplash</texPath>
+    </graphicData>
+  </FleckDef>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>Fleck_RailgunLaserSpark</defName>
+    <fadeInTime>0.03</fadeInTime>
+    <solidTime>0.1</solidTime>
+    <fadeOutTime>0.5</fadeOutTime>
+    <altitudeLayer>MoteOverhead</altitudeLayer>
+    <graphicData>
+      <texPath>Things/Mote/SparkThrownBlue</texPath>
+      <shaderType>MoteGlow</shaderType>
+      <drawSize>0.5</drawSize>
+      <color>(0.1, 1.0, 0.1, 1.0)</color>
+    </graphicData>
+    <acceleration>(0, 0, 0.8)</acceleration>
+    <speedPerTime>0.2~0.5</speedPerTime>
+  </FleckDef>
+</Defs>

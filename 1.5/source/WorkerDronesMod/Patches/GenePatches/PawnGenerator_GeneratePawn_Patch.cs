@@ -26,7 +26,7 @@ namespace WorkerDronesMod.Patches
 
                 if (helmetDef != null && steel != null)
                 {
-                    Apparel helmet = ThingMaker.MakeThing(helmetDef, steel) as Apparel;
+                    Apparel helmet = ThingMaker.MakeThing(helmetDef) as Apparel;
 
                     if (helmet != null)
                     {

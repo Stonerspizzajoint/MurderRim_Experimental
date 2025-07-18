@@ -1,0 +1,26 @@
+<Defs>
+  <GameConditionDef>
+    <defName>CoreCollapse</defName>
+    <label>core collapse</label>
+    <conditionClass>WorkerDronesMod.GameCondition_CoreCollapse</conditionClass>
+    <descriptionFuture>
+      A cataclysm deep within the planet has shattered its core, turning the surface into a frozen wasteland of unprecedented cruelty. No biological life can endure the brutal cold, and storms of ice rage endlessly.
+    </descriptionFuture>
+    <endMessage>
+      (This should never happen—Core Collapse is permanent.)
+    </endMessage>
+    <letterDef>ThreatBig</letterDef>
+    <canBePermanent>true</canBePermanent>
+    <allowUnderground>true</allowUnderground>
+    <silencedByConditions>
+    </silencedByConditions>
+    <natural>false</natural>
+    <preventNeutralVisitors>true</preventNeutralVisitors>
+    <preventIncidents>false</preventIncidents>
+    <pennedAnimalsSeekShelter>true</pennedAnimalsSeekShelter>
+    <preventRain>false</preventRain>
+    <weatherDef>SnowHard</weatherDef>
+    <!-- massive cold offset to simulate “nothing but frozen wasteland” -->
+    <temperatureOffset>-60</temperatureOffset>
+  </GameConditionDef>
+</Defs>

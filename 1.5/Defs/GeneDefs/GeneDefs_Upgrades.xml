@@ -3,7 +3,7 @@
 	<VREAndroids.AndroidGeneDef ParentName="VREA_SubroutineBase">
 		<defName>MD_InterchangeableHands_BasicRanged</defName>
 		<label>interchangeable hands (Ranged)</label>
-		<prerequisite>MD_WeakenedSolver</prerequisite>
+		<prerequisite>MD_BasicSolver</prerequisite>
 		<description>An upgrade to interchangeable hands, that adds ranged and melee weaponry.</description>
 		<iconPath>UI/Icons/Genes/Gene_interchangeable_BasicUpgrade</iconPath>
 		<displayOrderInCategory>999999</displayOrderInCategory>

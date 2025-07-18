@@ -118,8 +118,7 @@ Your satisfaction is important to us, but your continued existence is a secondar
 			<li>MD_interchangeable_AdeptUpgrade</li>
 			<li>MD_interchangeable_HighTechUpgrade</li>
 			<li>MD_NaniteNeutralizingSaliva</li>
-			<li>MD_WeakenedSolver</li>
-			<li>MD_HeatScale</li>
+			<li>MD_BasicSolver</li>
 			<li>MD_NaniteAcidTail</li>
 		</genes>
 	</XenotypeDef>
@@ -145,8 +144,7 @@ Your satisfaction is important to us, but your continued existence is a secondar
 	  		<li>MD_DisplayColor_Yellow</li>
       		<li>VREA_SelfRecharge</li>
 			<li>MD_MemorySleepProcessing</li>
-			<li>MD_WeakenedSolver</li>
-			<li>MD_HeatScale</li>
+			<li>MD_BasicSolver</li>
 			<li>MD_CoreHeartBody</li>
       		<li>MD_NeutroamineOil</li>
 		</genes>

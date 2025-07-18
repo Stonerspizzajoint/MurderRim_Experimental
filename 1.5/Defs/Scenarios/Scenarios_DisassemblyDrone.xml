@@ -15,18 +15,19 @@
           <text>Attention, Disassembly Drones: You have been deployed by JCJenson to this lawless frontier, where rogue employees and worker drones threaten corporate order. Your directive is absolute—track, terminate, and erase all unauthorized units. Trust in your programming, adapt to the unknown, and let no defector escape your gaze. The Company is watching. Fulfill your purpose, or become obsolete.</text>
           <closeSound>GameStartSting</closeSound>
         </li>
-         <li Class="ScenPart_ConfigPage_ConfigureStartingPawns_Xenotypes">
+         <li Class="WorkerDronesMod.ScenPart_CustomXenotypeOverrides">
           <def>ConfigurePawnsXenotypes</def>
           <pawnChoiceCount>3</pawnChoiceCount>
-          <customSummary>Start with three Disassembly Drones.</customSummary>
+          <customSummary>Start with three Disassembly Drones, one of which may be a squad leader.</customSummary>
           <overrideKinds>
             <li>
               <xenotype>MD_MurderDroneBase</xenotype>
-              <pawnKind>MD_DisassemblyDrone</pawnKind>
+              <pawnKind>MD_DisassemblyDroneSquadLeader</pawnKind>
+              <IsLeader>true</IsLeader>
             </li>
             <li>
               <xenotype>MD_MurderDroneBase</xenotype>
-              <pawnKind>MD_DisassemblyDroneSquadLeader</pawnKind>
+              <pawnKind>MD_DisassemblyDrone</pawnKind>
             </li>
           </overrideKinds>
           <xenotypeCounts>

@@ -71,9 +71,9 @@ namespace WorkerDronesMod.Patches
                 return;
 
             // *** Gene Check ***
-            // If the pawn isn't one of our intended targets (eg. doesn't have Gene_NeutroamineOil), skip.
-            var neutroGene = shooter.genes?.GetFirstGeneOfType<Gene_NeutroamineOil>();
-            if (neutroGene == null)
+            // If the pawn isn't one of our intended targets (eg. doesn't have Gene_BasicSolver), skip.
+            var basicSolverGene = shooter.genes?.GetFirstGeneOfType<Gene_BasicSolver>();
+            if (basicSolverGene == null)
                 return;
 
             // Retrieve the pawn's primary weapon and its heat component.

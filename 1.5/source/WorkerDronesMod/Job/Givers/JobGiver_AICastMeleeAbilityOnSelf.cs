@@ -15,36 +15,35 @@ namespace WorkerDronesMod
 
         protected override Job TryGiveJob(Pawn pawn)
         {
-
-            pawn.jobs.EndCurrentJob(JobCondition.InterruptForced);
-
-            if (pawn?.Map == null)
+            if (pawn == null || pawn.Map == null)
                 return null;
 
-            // Only iterate real attack targets
-            var potentialTargets = pawn.Map
-                .attackTargetsCache
-                .GetPotentialTargetsFor(pawn)
-                .OfType<Pawn>()
-                .Where(e => e.HostileTo(pawn))
-                .ToList();
+            // Find the closest hostile pawn (no allocations)
+            Pawn closestEnemy = null;
+            float closestDistSq = float.MaxValue;
 
-            // Safely get the closest or bail out
-            var closestEnemy = potentialTargets
-                .OrderBy(e => pawn.Position.DistanceToSquared(e.Position))
-                .FirstOrDefault();
+            foreach (var target in pawn.Map.attackTargetsCache.GetPotentialTargetsFor(pawn))
+            {
+                if (target is Pawn enemy && enemy.HostileTo(pawn))
+                {
+                    float distSq = pawn.Position.DistanceToSquared(enemy.Position);
+                    if (distSq < closestDistSq)
+                    {
+                        closestDistSq = distSq;
+                        closestEnemy = enemy;
+                    }
+                }
+            }
+
             if (closestEnemy == null)
                 return null;
 
-            float distSq = pawn.Position.DistanceToSquared(closestEnemy.Position);
-
-            // Immediate melee?
-            if (distSq <= MeleeSq)
+            // Only end the current job if we're about to give a new one
+            if (closestDistSq <= MeleeSq || (closestDistSq <= ExtendedSq && Rand.Chance(RandomSwitchChance)))
+            {
+                pawn.jobs.EndCurrentJob(JobCondition.InterruptForced);
                 return base.TryGiveJob(pawn);
-
-            // Just outside melee but within extended?
-            if (distSq <= ExtendedSq && Rand.Chance(RandomSwitchChance))
-                return base.TryGiveJob(pawn);
+            }
 
             return null;
         }

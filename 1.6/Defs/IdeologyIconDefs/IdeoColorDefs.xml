@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <IdeoColorDef>
+    <defName>SolverYellow</defName>
+    <colorDef>SolverYellow</colorDef>
+  </IdeoColorDef>
+
+  <!-- Ideo colors -->
+
+  <ColorDef Name="IdeoColorBase" Abstract="True">
+    <colorType>Ideo</colorType>
+  </ColorDef>
+
+  <ColorDef ParentName="IdeoColorBase">
+    <defName>SolverYellow</defName>
+    <color>(242, 240, 3)</color>
+  </ColorDef>
+
+</Defs>

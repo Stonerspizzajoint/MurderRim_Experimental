@@ -29,6 +29,9 @@
 		<combatPower>50</combatPower>
 		<initialWillRange>16~19</initialWillRange>
 		<initialResistanceRange>38~58</initialResistanceRange>
+		<backstoryCategories>
+			<li>DisassemblyDrone</li>
+		</backstoryCategories>
 		<modExtensions>
 			<li Class="VFECore.PawnKindDefExtension">
 				<factionColourApparelLayerList>
@@ -71,6 +74,9 @@
 		<combatPower>60</combatPower>
 		<initialWillRange>16~19</initialWillRange>
 		<initialResistanceRange>38~58</initialResistanceRange>
+		<backstoryCategories>
+			<li>DisassemblyDroneLeader</li>
+		</backstoryCategories>
 		<modExtensions>
 			<li Class="VFECore.PawnKindDefExtension">
 				<factionColourApparelLayerList>
@@ -112,6 +118,9 @@
 		<combatPower>60</combatPower>
 		<initialWillRange>16~19</initialWillRange>
 		<initialResistanceRange>38~58</initialResistanceRange>
+		<backstoryCategories>
+			<li>DisassemblyDroneCommander</li>
+		</backstoryCategories>
 		<modExtensions>
 			<li Class="VFECore.PawnKindDefExtension">
 				<factionColourApparelLayerList>

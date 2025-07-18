@@ -1,0 +1,141 @@
+<Defs>
+
+  <ThingDef ParentName="Human">
+    <defName>MD_CoreHeartRace</defName>
+    <label>core heart</label>
+    <description>The AI core of a Disassembly Drone or a drone posessing the absolute Solver.</description>
+    <statBases>
+      <MoveSpeed>7.6</MoveSpeed>
+    </statBases>
+    <tools Inherit="False">
+      <li>
+        <label>front left claw</label>
+        <labelNoLocation>claw</labelNoLocation>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>8.2</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>14</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+      <li>
+        <label>front right claw</label>
+        <labelNoLocation>claw</labelNoLocation>
+        <capacities>
+          <li>Cut</li>
+        </capacities>
+        <power>8.2</power>
+        <cooldownTime>2</cooldownTime>
+        <linkedBodyPartsGroup>RightHand</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>14</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+    </tools>
+    <uiIconScale>1.15</uiIconScale>
+    <race>
+      <body>MD_CoreHeart</body>
+      <fleshType>MD_DroneFlesh</fleshType>
+      <bloodDef>MD_FilthNeutroamineOil</bloodDef>
+      <renderTree>MD_CoreHeartRender</renderTree>
+      <baseBodySize>0.6</baseBodySize>
+      <baseHealthScale>1</baseHealthScale>
+      <soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+    </race>
+    <recipes>
+      <li>VREA_InstallNeuroPump</li>
+      <li>VREA_InstallReactor</li>
+      <li>VREA_InstallOpticalUnit</li>
+      <li>VREA_InstallAndroidLeg</li>
+      <li>VREA_InstallAndroidArm</li>
+      <li>VREA_InstallAndroidHand</li>
+      <li>RemoveBodyPart</li>
+    </recipes>
+    <butcherProducts>
+      <Neutroamine>2</Neutroamine>
+      <Steel>5</Steel>
+    </butcherProducts>
+    <comps>
+      <li Class="WorkerDronesMod.CompProperties_HatsOnly" /> 
+      <li Class="WorkerDronesMod.CompProperties_AnimalBedUser">
+        <canUseAnimalBeds>true</canUseAnimalBeds>
+        <sleepDrawOffset>(0, 0, -0.15)</sleepDrawOffset>
+      </li>
+    </comps>
+  </ThingDef>
+
+<PawnKindDef ParentName="BasePlayerPawnKind">
+    <defName>MD_CoreHeartBasic</defName>
+    <label>core drone</label>
+    <race>MD_CoreHeartRace</race>
+    <combatPower>20</combatPower>
+    <initialResistanceRange Inherit="False">
+        <min>10</min>
+        <max>20</max>
+    </initialResistanceRange>
+    <initialWillRange Inherit="False">
+        <min>10</min>
+        <max>20</max>
+    </initialWillRange>
+    <nakedChance>0.9</nakedChance>
+    <apparelDisallowTags>
+      <li>Torso</li>
+      <li>Legs</li>
+    </apparelDisallowTags>
+	<xenotypeSet Inherit="False">
+    	<xenotypeChances>
+    		<MD_CoreHeartBase>999</MD_CoreHeartBase>
+    	</xenotypeChances>
+    </xenotypeSet>
+    <useFactionXenotypes>false</useFactionXenotypes>
+    <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>Pawn/CoreHeart/CoreHeart</texPath>
+            <drawSize>1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>Pawn/CoreHeart/CoreHeart</texPath>
+            <drawSize>1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>Pawn/CoreHeart/CoreHeart</texPath>
+            <drawSize>1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>Pawn/CoreHeart/CoreHeart</texPath>
+            <drawSize>1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>Pawn/CoreHeart/CoreHeart</texPath>
+            <drawSize>1</drawSize>
+          </bodyGraphicData>
+        </li>
+    </lifeStages>
+</PawnKindDef>
+
+
+</Defs>

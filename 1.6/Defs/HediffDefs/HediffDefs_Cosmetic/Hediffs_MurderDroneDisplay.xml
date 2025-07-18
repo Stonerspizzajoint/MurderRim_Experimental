@@ -1,0 +1,113 @@
+<Defs>
+<!--Drafted and undrafted cosmetic eye hediffs-->
+	<HediffDef ParentName="MD_CosmeticDisplayBase">
+		<defName>MD_Drafted_DisplayEyes_DD</defName>
+        <extraTooltip>Drafted or Hostile</extraTooltip>
+		<renderNodeProperties>
+			<!--X Eyes South-->
+			<li Class="VEF.Graphics.PawnRenderNodeProperties_Omni">
+				<nodeClass>VEF.Graphics.PawnRenderNode_Omni</nodeClass>
+				<workerClass>PawnRenderNodeWorker_Eye</workerClass>
+				<visibleFacing>
+					<li>South</li>
+					<li>East</li>
+					<li>West</li>
+				</visibleFacing>
+      			<conditionalGraphics>
+					<alts>
+						<li>
+							<!--Blank Display when dead or downed-->
+        					<requirements>
+          						<li>Dead</li>
+        					</requirements>
+							<texPath>Pawn/Display/DisplayEyesBlank/DisplayEyesBlank</texPath>
+						</li>
+					</alts>
+					<!--Normal Display-->
+					<shader>TransparentPostLight</shader>
+					<colorA>
+						<skinColor>true</skinColor>
+					</colorA>
+        			<texPaths>
+          				<li>Pawn/Display/NewEyes/XEye/Unisex/normal</li>
+        			</texPaths>
+      			</conditionalGraphics>
+				<rotDrawMode>Fresh, Rotting</rotDrawMode>
+				<parentTagDef>Head</parentTagDef>
+				<drawSize>1</drawSize>
+				<side>Center</side>
+				<drawData>
+					<defaultData>
+						<layer>54</layer>
+						<offset>(0, 0, 0)</offset>
+					</defaultData>
+				</drawData>
+			</li>
+		</renderNodeProperties>
+	</HediffDef>
+
+<!--Eye HeadBand in Normal state-->
+	<HediffDef ParentName="MD_CosmeticDisplayBase">
+		<defName>MD_Normal_HeadBand_DD</defName>
+		<label>Eye Band</label>
+        <extraTooltip>normal</extraTooltip>
+		<renderNodeProperties>
+			<li>
+				<workerClass>PawnRenderNodeWorker_Head</workerClass>
+				<visibleFacing>
+					<li>East</li>
+					<li>West</li>
+					<li>South</li>
+				</visibleFacing>
+        		<texPaths>
+          			<li>Pawn/DisassemblyDrone/Head/Eye_Headband/NewEyeband/Eyeband</li>
+        		</texPaths>
+				<colorType>Skin</colorType>
+				<shaderTypeDef>Cutout</shaderTypeDef>
+				<parentTagDef>Head</parentTagDef>
+				<drawSize>1</drawSize>
+				<drawData>
+					<scaleOffsetByBodySize>false</scaleOffsetByBodySize>
+					<defaultData>
+						<offset>(0, 0, -0.42)</offset>
+						<layer>66</layer>
+					</defaultData>
+				</drawData>
+				<children>
+					<!--Eye HeadBand Lights-->
+					<li Class="VEF.Graphics.PawnRenderNodeProperties_Omni">
+						<nodeClass>VEF.Graphics.PawnRenderNode_Omni</nodeClass>
+						<visibleFacing>
+							<li>East</li>
+							<li>West</li>
+							<li>South</li>
+						</visibleFacing>
+      					<conditionalGraphics>
+							<shader>TransparentPostLight</shader>
+							<alts>
+								<li>
+        							<requirements>
+          								<li>Dead</li>
+        							</requirements>
+									<texPath>Pawn/Display/DisplayEyesBlank/DisplayEyesBlank</texPath>
+								</li>
+							</alts>
+							<colorA>
+								<skinColor>true</skinColor>
+							</colorA>
+        					<texPaths>
+          						<li>Pawn/DisassemblyDrone/Head/Eye_Headband/NewEyeband/EyebandLights</li>
+        					</texPaths>
+      					</conditionalGraphics>
+						<drawData>
+							<scaleOffsetByBodySize>false</scaleOffsetByBodySize>
+							<defaultData>
+								<layer>67</layer>
+							</defaultData>
+						</drawData>
+					</li>
+				</children>
+			</li>
+		</renderNodeProperties>
+	</HediffDef>
+</Defs>

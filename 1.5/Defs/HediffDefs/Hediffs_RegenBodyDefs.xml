@@ -56,46 +56,15 @@
 		</stages>
 	</HediffDef>
 
-  <HediffDef>
-    <defName>MD_ResurrectionStasis</defName>
-    <label>Resurrection Stasis</label>
-    <description>This Android is in a stasis state while its critical components regenerate. It is immobilized until fully restored.</description>
-    <defaultLabelColor>(0.15, 0.6, 0.2)</defaultLabelColor>
-    <hediffClass>WorkerDronesMod.Hediff_ResurrectionStasis</hediffClass>
-    <preventsCrawling>true</preventsCrawling>
-    <preventsDeath>true</preventsDeath>
-    <isBad>false</isBad>
-    <stages>
-			<li>
-        <capMods>
-			    <li>
-				    <capacity>Moving</capacity>
-            <setMax>0</setMax>
-			    </li>
-			    <li>
-				    <capacity>Manipulation</capacity>
-            <setMax>0</setMax>
-			    </li>
-			    <li>
-			      <capacity>Consciousness</capacity>
-            <setMax>0</setMax>
-			    </li>
-			    <li>
-				    <capacity>Hearing</capacity>
-            <setMax>0</setMax>
-			    </li>
-			    <li>
-				    <capacity>Sight</capacity>
-            <setMax>0</setMax>
-			    </li>
-			    <li>
-			      <capacity>Talking</capacity>
-            <setMax>0</setMax>
-			    </li>
-        </capMods>
-			</li>
-		</stages>
-  </HediffDef>
+	<HediffDef>
+		<defName>MD_SolverDeathPrevention</defName>
+		<label>Death Prevention</label>
+		<description>This Android is equipped with a solver that prevents death (from most causes) and allows for continued operation in critical condition.</description>
+		<defaultLabelColor>(0.15, 0.6, 0.2)</defaultLabelColor>
+		<preventsCrawling>true</preventsCrawling>
+		<preventsDeath>true</preventsDeath>
+		<isBad>false</isBad>
+	</HediffDef>
 
 	<HediffDef>
 		<defName>MD_OilLoss</defName>
@@ -155,12 +124,6 @@
         	</mentalStateGivers>
     	  </li>
     	</stages>
-		<comps>
-			<li Class="WorkerDronesMod.HediffCompProperties_SeverityFromNeutroOil">
-				<severityPerHourBelow50>0.05</severityPerHourBelow50>
-				<severityPerHourAbove50>0.5</severityPerHourAbove50>
-			</li>
-		</comps>
 	</HediffDef>
 
   <HediffDef>

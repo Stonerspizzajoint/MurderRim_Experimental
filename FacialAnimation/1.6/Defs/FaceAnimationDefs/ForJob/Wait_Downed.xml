@@ -1,0 +1,17 @@
+<Defs>
+  <FacialAnimation.FaceAnimationDef ParentName="WorkerDroneAnimation">
+    <defName>Wait_Downed_WorkerDrone</defName>
+    <animationFrames>
+      <li>
+        <duration>1</duration>
+        <eyeballShapeDef>oval-shaped</eyeballShapeDef>
+        <lidShapeDef>stressed</lidShapeDef>
+      </li>
+    </animationFrames>
+    <targetJobs>
+      <li>Wait_Downed</li>
+    </targetJobs>
+    <priority>10003</priority>
+    <applyWhenStandingOnly>true</applyWhenStandingOnly>
+  </FacialAnimation.FaceAnimationDef>
+</Defs>

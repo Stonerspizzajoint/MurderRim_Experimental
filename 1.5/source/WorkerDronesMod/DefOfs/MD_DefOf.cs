@@ -11,15 +11,22 @@ namespace WorkerDronesMod
 
         public static ThingDef MD_FilthNeutroamineOil;
 
+        public static ThingDef SunLamp;
+
         //==================RaceDefs==================
         public static ThingDef MD_CoreHeartRace;
         //====================================MD_Mote_RailgunLaserBase
 
         //==================MoteDefs==================
         public static ThingDef MD_Mote_RailgunLaserBase;
+
+        public static ThingDef MD_Mote_DroneOverHeating;
         //============================================
 
         //------------------------------------
+
+        //------------------EffectorDefs------------------
+        public static EffecterDef MD_UVOverHeating;
 
         //------------------PawnKindDefs------------------
         public static PawnKindDef MD_DisassemblyDrone;
@@ -44,7 +51,7 @@ namespace WorkerDronesMod
         //------------------------------------
 
         //------------------HediffDefs------------------
-        public static HediffDef MD_Overheating;
+        public static HediffDef VREA_Overheating;
 
         public static HediffDef VREA_NeutroLoss;
 
@@ -56,13 +63,13 @@ namespace WorkerDronesMod
 
         public static HediffDef MD_NaniteAcidSting;
 
-        public static HediffDef HD_HeatDamageMonitor;
-
         public static HediffDef MD_DigitalLobotomy;
 
         public static HediffDef MD_RoboticReconstruction;
 
-        public static HediffDef MD_ResurrectionStasis;
+        public static HediffDef MD_interchangeable_ClawHands;
+
+        public static HediffDef MD_SolverDeathPrevention;
 
         public static HediffDef MD_FleshyPart;
         //------------------------------------
@@ -92,7 +99,13 @@ namespace WorkerDronesMod
         //------------------JobDefs------------------
         public static JobDef MD_Job_RefuelWithNeutroamine;
 
+        public static JobDef MD_Job_FeedOil;
+
+        public static JobDef MD_Job_DeliverNeutroamine;
+
         public static JobDef MD_Job_RefuelWithCorpse;
+
+        public static JobDef MD_Job_BootupIdle;
 
         public static JobDef WatchTelevision;
         //------------------------------------
@@ -104,13 +117,23 @@ namespace WorkerDronesMod
         //-------------------------------------
 
         //------------------MentalStateDefs------------------
-        public static MentalStateDef MD_ConfusedWander;
+        public static MentalStateDef MD_RefuelMadness;
+
+        public static MentalStateDef MD_RecoverAndBootUp;
         //-------------------------------------
 
-        //------------------GeneDefs------------------
-        public static GeneDef MD_NeutroamineOil;
+        //------------------ThoughtDefs------------------
 
-        public static GeneDef MD_WeakenedSolver;
+        public static ThoughtDef MD_ConsumedCorpseNeutroamineOil_Happy;
+
+        public static ThoughtDef MD_ConsumedNeutroamineOil_Happy;
+
+        //-----------------------------------------------
+
+        //------------------GeneDefs------------------
+        public static GeneDef MD_BasicSolver;
+
+        public static GeneDef MD_NeutroamineOil;
 
         public static GeneDef MD_MemorySleepProcessing;
 
@@ -127,6 +150,8 @@ namespace WorkerDronesMod
         public static BodyPartDef Torso;
 
         public static BodyPartDef Hand;
+
+        public static BodyPartDef Brain;
         //------------------------------------
 
     }

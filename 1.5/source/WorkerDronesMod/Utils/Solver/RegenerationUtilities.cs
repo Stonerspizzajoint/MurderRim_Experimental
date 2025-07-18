@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using CombatExtended; // Only needed if CE is installed
+using RimWorld;
 using UnityEngine;
 using Verse;
 
@@ -7,7 +8,6 @@ namespace WorkerDronesMod
 {
     public static class RegenerationUtilities
     {
-
         /// <summary>
         /// Gradually heals wounds on a pawn by reducing the severity of each injury,
         /// but only processes the injuries provided by the filtered list.
@@ -25,14 +25,14 @@ namespace WorkerDronesMod
             if (injuriesToHeal == null || injuriesToHeal.Count == 0)
                 return;
 
-            // Obtain the mod extension from the pawn's Neutroamine Oil gene.
-            SolverRegenerationModExtension modExt = null;
-            var gene = pawn.genes?.GetFirstGeneOfType<Gene_NeutroamineOil>();
+            // Obtain the mod extension from the pawn's BasicSolver gene.
+            SolverGeneExtension modExt = null;
+            var gene = pawn.genes?.GetFirstGeneOfType<Gene_BasicSolver>();
             if (gene != null)
-                modExt = gene.def.GetModExtension<SolverRegenerationModExtension>();
+                modExt = gene.def.GetModExtension<SolverGeneExtension>();
 
-            float regenSpeedMultiplier = modExt != null ? modExt.regenSpeedMultiplier : 10f;
-            float minHealingFactor = modExt != null ? modExt.minHealingFactor : 0.2f;
+            float regenSpeedMultiplier = modExt?.regenOptions?.regenSpeedMultiplier ?? 10f;
+            float minHealingFactor = modExt?.regenOptions?.minHealingFactor ?? 0.2f;
 
             int woundCount = injuriesToHeal.Count;
             float healingFactor = 1f / woundCount;
@@ -75,6 +75,17 @@ namespace WorkerDronesMod
                 comp.curDurability += delta;
             }
         }
+
+        public static bool CanDeathBePrevented(Pawn pawn, SolverGeneExtension ext)
+        {
+            // If in true sunlight, death cannot be prevented
+            if (SolarUtil.InTrueSunlight(pawn, ext))
+                return false;
+
+            // If all checks above are false, death can be prevented
+            return true;
+        }
+
     }
 }
 

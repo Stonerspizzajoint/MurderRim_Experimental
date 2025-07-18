@@ -1,0 +1,50 @@
+<Defs>
+    <ResearchProjectDef ParentName="MD_ResearchBase">
+		<defName>MD_DisassemblyDroneTech</defName>
+		<label>D̴̟͂D-̶̦͝X̷̫̑X̷̼̌ Disassembly Hardware</label>
+        <description>Reverse-engineered containment systems for JCJenson's "worker drone disposal" units. Their metastasizing code predates corporate oversight, prioritizing organic and AI extermination and planetary collapse under the guise of routine maintenance.</description>  
+		<baseCost>2000</baseCost>
+		<prerequisites>
+			<li>MD_SolverPrograming</li>
+		</prerequisites>
+        <researchViewX>2.00</researchViewX>
+        <researchViewY>2.20</researchViewY>
+	</ResearchProjectDef>
+
+<!--Melee and Ranged Upgrades-->
+    <ResearchProjectDef ParentName="MD_ResearchBase">
+		<defName>MD_DisassemblyBasicUpgrade</defName>
+		<label>Basic Ranged Hardware</label>
+        <description>Basic Reverse-engineered Ranged and melee Weaponry, used by disassembly drones.</description>  
+		<baseCost>2000</baseCost>
+		<prerequisites>
+			<li>MD_DisassemblyDroneTech</li>
+		</prerequisites>
+  		<researchViewX>2.50</researchViewX>
+  		<researchViewY>3.20</researchViewY>
+	</ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="MD_ResearchBase">
+		<defName>MD_DisassemblyAdeptUpgrade</defName>
+		<label>Advanced Ranged Hardware</label>
+        <description>Advanced Reverse-engineered Ranged and melee Weaponry, used by disassembly drones.</description>  
+		<baseCost>2000</baseCost>
+		<prerequisites>
+			<li>MD_DisassemblyBasicUpgrade</li>
+		</prerequisites>
+  		<researchViewX>2.50</researchViewX>
+  		<researchViewY>4.00</researchViewY>
+	</ResearchProjectDef>
+
+    <ResearchProjectDef ParentName="MD_ResearchBase">
+		<defName>MD_DisassemblyHighTechUpgrade</defName>
+		<label>High-Tech Ranged Hardware</label>
+        <description>High-Tech Reverse-engineered Ranged and melee Weaponry, used by disassembly drones.</description>  
+		<baseCost>2000</baseCost>
+		<prerequisites>
+			<li>MD_DisassemblyAdeptUpgrade</li>
+		</prerequisites>
+  		<researchViewX>2.50</researchViewX>
+  		<researchViewY>4.90</researchViewY>
+	</ResearchProjectDef>
+</Defs>

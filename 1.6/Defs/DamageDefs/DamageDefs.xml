@@ -1,0 +1,77 @@
+<Defs>  
+	<DamageDef Name="NaniteAcidDamageBase">
+		<defName>MD_NaniteAcid</defName>
+		<label>nanite acid</label>
+		<workerClass>DamageWorker_AddInjury</workerClass>
+		<externalViolence>true</externalViolence>
+    <damageEffecter>MD_Damage_NaniteHit</damageEffecter>
+    <makesBlood>false</makesBlood>
+		<deathMessage>{0} has been disassembled by nanites.</deathMessage>
+		<hediff>MD_NaniteAcidBurn</hediff>
+		<harmAllLayersUntilOutside>false</harmAllLayersUntilOutside>
+		<armorCategory>Heat</armorCategory>
+	</DamageDef>
+
+	<DamageDef ParentName="NaniteAcidDamageBase">
+		<defName>MD_NaniteAcidSting</defName>
+		<label>nanite acid sting</label>
+		<deathMessage>{0} has been stabed to death by a nanite tail.</deathMessage>
+		<hediff>MD_NaniteAcidSting</hediff>
+    <additionalHediffs>
+      <li>
+        <hediff>MD_NaniteAcidBuildup</hediff>
+        <severityPerDamageDealt>0.005</severityPerDamageDealt>
+      </li>
+    </additionalHediffs>
+		<harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+		<armorCategory>Heat</armorCategory>
+	</DamageDef>
+
+<DamageDef>
+  <defName>MD_Beam</defName>
+  <label>beam</label>
+  <workerClass>DamageWorker_AddInjury</workerClass>
+  <externalViolence>true</externalViolence>
+  <deathMessage>{0} has been beamed to death.</deathMessage>
+  <hediff>BeamWound</hediff>
+  <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+  <impactSoundType>Bullet</impactSoundType>
+  <armorCategory>Heat</armorCategory>
+  <overkillPctToDestroyPart>0~0.1</overkillPctToDestroyPart>
+  <isRanged>true</isRanged>
+  <makesAnimalsFlee>true</makesAnimalsFlee>
+  <defaultDamage>20</defaultDamage>
+  <defaultArmorPenetration>0.7</defaultArmorPenetration>
+  <buildingDamageFactorImpassable>0.4</buildingDamageFactorImpassable>
+  <buildingDamageFactorPassable>0.2</buildingDamageFactorPassable>
+</DamageDef>
+
+
+  <DamageDef Name="MD_OverHeating">
+    <defName>MD_OverHeating</defName>
+    <workerClass>DamageWorker_Flame</workerClass>
+    <label>overheating</label>
+    <hasForcefulImpact>false</hasForcefulImpact>
+    <makesBlood>false</makesBlood>
+    <canInterruptJobs>false</canInterruptJobs>
+    <externalViolence>true</externalViolence>
+    <deathMessage>{0} has shut down due to overheating.</deathMessage>
+    <hediff>Burn</hediff>
+    <minDamageToFragment>15</minDamageToFragment>
+    <defaultDamage>10</defaultDamage>
+    <defaultArmorPenetration>0</defaultArmorPenetration>
+    <explosionHeatEnergyPerCell>15</explosionHeatEnergyPerCell>
+    <explosionCellFleck>BlastFlame</explosionCellFleck>
+    <explosionColorCenter>(1, 0.7, 0.7)</explosionColorCenter>
+    <explosionColorEdge>(1, 1, 0.7)</explosionColorEdge>
+    <combatLogRules>Damage_Flame</combatLogRules>
+    <canUseDeflectMetalEffect>false</canUseDeflectMetalEffect>
+    <scaleDamageToBuildingsBasedOnFlammability>true</scaleDamageToBuildingsBasedOnFlammability>
+  </DamageDef>
+
+  <DamageDef ParentName="MD_OverHeating">
+    <defName>MD_OverHeating_Burn</defName>
+    <label>burn</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+  </DamageDef>
+</Defs>

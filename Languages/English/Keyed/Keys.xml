@@ -5,7 +5,7 @@
 	<MD.ConsumeAndroidCorpse>Consume android corpse</MD.ConsumeAndroidCorpse>
 	<MD.ConsumeNeutroamine>Consume neutroamine</MD.ConsumeNeutroamine>
 	<MD.CannotConsumeNeutroamine>Oil is already full!</MD.CannotConsumeNeutroamine>
-	<MD.NeutroamineConsumptionDisabled>Neutroamine consumption is disabled</MD.NeutroamineConsumptionDisabled>
+	<MD.NeutroamineConsumptionDisabled>Refuel is disabled</MD.NeutroamineConsumptionDisabled>
 	<MD.NotSafeToConsumeSunlight>Not safe to consume in sunlight!</MD.NotSafeToConsumeSunlight>
 	
 	<MD.NotValidTarget>Target must be a pawn</MD.NotValidTarget>
@@ -24,5 +24,20 @@
   	<MD.Threshold.High>• Above {0} – High heat warning.</MD.Threshold.High>
 
 	<MD.OilTargetValue>Target Value: {0}</MD.OilTargetValue>
+
+	<!--New Solver Gene Keys-->
+	<MD.OilLabel>Oil</MD.OilLabel>
+	<MD.HeatLabel>Heat</MD.HeatLabel>
+	<MD.HeatCritical>OVERHEATING</MD.HeatCritical>
+	<MD.HeatSafe>Safe Temperatures</MD.HeatSafe>
+
+    <MD.AlertDroneLowOilLabel>Drone Low Oil</MD.AlertDroneLowOilLabel>
+	<MD.AlertDroneLowOilDesc>The following drones have less than 20% oil:\n\n{0}\n\nWhile oil is below 20%, oil cravings will rise, increasing the risk of violent mental breaks.</MD.AlertDroneLowOilDesc>
+	<MD.AlertDroneOilCravingSevereLabel>Severe Oil Craving!</MD.AlertDroneOilCravingSevereLabel>
+	<MD.AlertDroneOilCravingSevereDesc>The following drones are suffering from dangerously high oil craving severity:\n{0}</MD.AlertDroneOilCravingSevereDesc>
+	<MD.AlertDroneOilCravingSevereDescription>If left untreated, these drones may enter an oil craving mental state, causing them to attack and kill android pawns or even nearby pawns to replenish their oil.</MD.AlertDroneOilCravingSevereDescription>
+	<MD.AlertDroneOilCravingSevereSolution>Solution: Replenish their oil supply or treat their craving to prevent further harm.</MD.AlertDroneOilCravingSevereSolution>
+
+	<MD.ForceRoofArea>Automatic sheltering</MD.ForceRoofArea>
 
 </LanguageData>

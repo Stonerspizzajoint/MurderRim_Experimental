@@ -1,0 +1,230 @@
+<Defs>
+  <AbilityDef ParentName="AbilityTouchBase">
+    <defName>MD_NeutralizingSaliva</defName>
+    <label>neutrializing saliva</label>
+    <description>By harnessing advanced nanite-targeting enzymes within their saliva, the user can neutralize the corrosive effects of nanite acid buildup in a target. This ability halts further corrosion, stabilizing the target's condition and preventing additional harm.</description>
+    <iconPath>UI/Abilities/DisassemblyDrone/MD_NeutralizingSaliva</iconPath>
+    <stunTargetWhileCasting>true</stunTargetWhileCasting>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <displayOrder>400</displayOrder>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <verbProperties>
+      <verbClass>WorkerDronesMod.Verb_CastAbilityOnNaniteAcid</verbClass>
+      <drawAimPie>false</drawAimPie>
+      <range>-1</range>
+      <warmupTime>1</warmupTime>
+      <soundCast>NeutralizingSaliva_Lick</soundCast>
+      <targetParams>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetSelf>true</canTargetSelf>
+        <canTargetBuildings>false</canTargetBuildings>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetBloodfeeders>true</canTargetBloodfeeders>
+        <neverTargetHostileFaction>true</neverTargetHostileFaction>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="CompProperties_AbilityRequiresCapacity">
+        <capacity>Manipulation</capacity>
+      </li>
+      <li Class="CompProperties_AbilityGiveHediff">
+        <compClass>CompAbilityEffect_GiveHediff</compClass>
+        <hediffDef>MD_NaniteNeutralized</hediffDef>
+        <durationSecondsOverride>60</durationSecondsOverride>
+        <severity>1.0</severity>
+      </li>
+    </comps>
+  </AbilityDef>
+
+<!--EMP Blast-->
+	<AbilityDef ParentName="MD_NoTargetAbilities">
+		<defName>MD_EMPBlast</defName>
+		<label>EMP Blast</label>
+    <description>Causes an EMP blast, affecting electronic type creatures around it.</description>
+    <displayOrder>199</displayOrder>
+    <aiCanUse>true</aiCanUse>
+    <ai_SearchAOEForTargets>true</ai_SearchAOEForTargets>
+		<cooldownTicksRange>30000</cooldownTicksRange>
+		<iconPath>UI/Icons/Genes/Hardware/Gene_Power</iconPath>
+    <jobDef>CastAbilityOnThingMelee</jobDef>
+		<verbProperties>
+      <warmupTime>0.5</warmupTime>
+			<range>3.9</range>
+      <warmupEffecter>MD_EMPWarmupEffect</warmupEffecter>
+      <violent>false</violent>
+      <ai_IsWeapon>false</ai_IsWeapon>
+      <onlyManualCast>false</onlyManualCast>
+      <targetParams>
+        <canTargetMechs>true</canTargetMechs>
+        <canTargetHumans>true</canTargetHumans>
+      </targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="WorkerDronesMod.CompProperties_Explode">
+				<radius>3.9</radius>
+				<damageType>EMP</damageType>
+				<soundCreated>Explosion_EMP</soundCreated>
+				<damageUser>false</damageUser>
+        <damageAmount>12</damageAmount>
+			</li>
+      <li Class="WorkerDronesMod.CompProperties_AbilityHeatEffect">
+        <heatRange>20~25</heatRange>
+      </li>
+		</comps>
+    </AbilityDef>
+
+    <AbilityDef ParentName="MD_NoTargetAbilities">
+        <defName>MD_InterchangeableHandsAbility</defName>
+        <label>interchangeable hands</label>
+        <gizmoClass>WorkerDronesMod.Command_AbilityHediffSwitcher</gizmoClass>
+        <abilityClass>WorkerDronesMod.Ability_HediffSwitcher</abilityClass>
+        <description>Switch between different weapons replaceing your hands. (using while holding a weapon, may drop it)</description>
+        <iconPath>UI/Abilities/DisassemblyDrone/MD_InterchangeableHands</iconPath>
+        <cooldownTicksRange>1</cooldownTicksRange>
+        <displayGizmoWhileUndrafted>false</displayGizmoWhileUndrafted>
+        <displayOrder>201</displayOrder>
+        <hotKey>Misc11</hotKey>
+        <verbProperties>
+            <soundCast>MeleeMiss_BionicPunch</soundCast>
+            <warmupTime>0.1</warmupTime>
+            <range>-1</range>
+		    </verbProperties>
+        <modExtensions>
+            <li Class="WorkerDronesMod.ModExtension_AbilityHediffSwitcher">
+                <selectableHediffs>
+                <!-- List of selectable melee hediffs -->
+                    <li>
+                      <Hediff>MD_interchangeable_ClawHands</Hediff>
+                      <IconPath>Pawn/DisassemblyDrone/Natural_Weapons/MeleeWeapon/Clawed_Hands/ClawedHand_east</IconPath>
+                      <IsMelee>true</IsMelee>
+                      <AIfavored>true</AIfavored>
+                    </li>
+                    <li>
+                      <Hediff>MD_interchangeable_BladeHands</Hediff>
+                      <IconPath>Pawn/DisassemblyDrone/Natural_Weapons/MeleeWeapon/Blade_Hands/BladeHand_east</IconPath>
+                      <IsMelee>true</IsMelee>
+                      <requiredGenes>
+                        <li>MD_interchangeable_AdeptUpgrade</li>
+                      </requiredGenes>
+                    </li>
+                    <li>
+                      <Hediff>MD_interchangeable_ChainsawHands</Hediff>
+                      <IconPath>Pawn/DisassemblyDrone/Natural_Weapons/MeleeWeapon/Chainsaw_Hands/ChainsawHand_east</IconPath>
+                      <IsMelee>true</IsMelee>
+                      <requiredGenes>
+                        <li>MD_interchangeable_HighTechUpgrade</li>
+                      </requiredGenes>
+                    </li>
+                <!-- List of selectable ranged hediffs -->
+                    <li>
+                      <Hediff>MD_interchangeableRanged_NinjaStar</Hediff>
+                      <IsRanged>true</IsRanged>
+                      <requiredGenes>
+                        <li>MD_InterchangeableHands_BasicRanged</li>
+                      </requiredGenes>
+                    </li>
+                    <li>
+                      <Hediff>MD_interchangeableRanged_SMGhand</Hediff>
+                      <IsRanged>true</IsRanged>
+                      <AIfavored>true</AIfavored>
+                      <requiredGenes>
+                        <li>MD_InterchangeableHands_BasicRanged</li>
+                        <li>MD_interchangeable_AdeptUpgrade</li>
+                      </requiredGenes>
+                    </li>
+                    <li>
+                      <Hediff>MD_interchangeableRanged_RocketLauncherhand</Hediff>
+                      <IsRanged>true</IsRanged>
+                      <AIfavored>true</AIfavored>
+                      <requiredGenes>
+                        <li>MD_InterchangeableHands_BasicRanged</li>
+                        <li>MD_interchangeable_AdeptUpgrade</li>
+                      </requiredGenes>
+                    </li>
+                    <li>
+                      <Hediff>MD_interchangeableRanged_BeamWeaponhand</Hediff>
+                      <IsRanged>true</IsRanged>
+                      <AIfavored>true</AIfavored>
+                      <requiredGenes>
+                        <li>MD_InterchangeableHands_BasicRanged</li>
+                        <li>MD_interchangeable_HighTechUpgrade</li>
+                      </requiredGenes>
+                    </li>
+                <!-- Default hediff -->
+                    <li>
+                      <Hediff>MD_interchangeable_NormalHands</Hediff>
+                      <IsDefault>true</IsDefault>
+                    </li>
+                </selectableHediffs>
+            </li>
+        </modExtensions>
+    </AbilityDef>
+
+    <AbilityDef ParentName="MD_NoTargetAbilities">
+        <defName>MD_Dismisswings</defName>
+        <label>Dismissible wings</label>
+        <description>Dismiss or Enable wings</description>
+        <iconPath>Pawn/DisassemblyDrone/Natural_Weapons/Bladed_Wings/Folded/BladeWingsFolded_south</iconPath>
+        <cooldownTicksRange>1</cooldownTicksRange>
+        <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+        <showWhenDrafted>true</showWhenDrafted>
+        <displayOrder>202</displayOrder>
+        <hostile>false</hostile>
+        <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+        <verbProperties>
+            <soundCast>MeleeMiss_BionicPunch</soundCast>
+            <warmupTime>0.1</warmupTime>
+            <range>-1</range>
+            <ai_IsWeapon>false</ai_IsWeapon>
+		    </verbProperties>
+        <comps>
+            <li Class="WorkerDronesMod.CompProperties_ToggleHediffEffect">
+                <hediffDefsToToggle>
+                    <li>MD_BladedWingsFolded</li>
+                </hediffDefsToToggle>
+                <defaultSeverity>1.0</defaultSeverity>
+                <allowedBodyPartDefs>
+                    <li>Torso</li>
+                </allowedBodyPartDefs>
+            </li>
+        </comps>
+    </AbilityDef>
+
+  <AbilityDef>
+		<defName>MD_WingPoweredFlight</defName>
+		<label>wing-powered jump</label>
+		<description>Use wings to jump a short distance. 
+(Raises Heat from 10%~15%)</description>
+		<iconPath>Pawn/DisassemblyDrone/Natural_Weapons/Bladed_Wings/BladeWings_south</iconPath>
+		<cooldownTicksRange>5</cooldownTicksRange>
+    <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+    <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+    <hostile>false</hostile>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<verbProperties>
+			<verbClass>Verb_CastAbilityJump</verbClass>
+			<label>flap wings</label>
+			<violent>false</violent>
+			<forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+			<warmupTime>0.5</warmupTime>
+			<range>14.9</range>
+			<requireLineOfSight>true</requireLineOfSight>
+			<soundCast>MD_BladedWings_Leap</soundCast>
+			<soundLanding>Longjump_Land</soundLanding>
+			<flyWithCarriedThing>true</flyWithCarriedThing>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+				<canTargetPawns>false</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+			</targetParams>
+		</verbProperties>
+    <jobDef>CastJump</jobDef>
+    <comps>
+      <li Class="WorkerDronesMod.CompProperties_AbilityHeatEffect">
+        <heatRange>20~25</heatRange>
+      </li>
+    </comps>
+	</AbilityDef>
+</Defs>

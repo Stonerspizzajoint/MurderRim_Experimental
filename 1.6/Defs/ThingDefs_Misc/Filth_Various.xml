@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<ThingDef ParentName="BaseFilth" Name="MD_FilthNeutroamineOil">
+		<defName>MD_FilthNeutroamineOil</defName>
+		<label>neutroamine oil</label>
+		<statBases>
+			<Beauty>-30</Beauty>
+			<Cleanliness>-10</Cleanliness>
+		</statBases>
+		<graphicData>
+			<texPath>Things/Filth/Spatter</texPath>
+			<color>(5, 5, 5)</color>
+		</graphicData>
+		<filth>
+			<ignoreFilthMultiplierStat>true</ignoreFilthMultiplierStat>
+			<disappearsInDays>35~40</disappearsInDays>
+			<rainWashes>true</rainWashes>
+			<cleaningWorkToReduceThickness>70</cleaningWorkToReduceThickness>
+			<canFilthAttach>true</canFilthAttach>
+			<cleaningSound>Interact_CleanFilth_Fluid</cleaningSound>
+		</filth>
+	</ThingDef>
+
+  <ThingDef ParentName="MD_FilthNeutroamineOil">
+    <defName>MD_FilthNeutroamineOilSmear</defName>
+    <label>neutroamine oil smear</label>
+    <graphicData>
+      <texPath>Things/Filth/CrawlSmear</texPath>
+      <color>(5, 5, 5)</color>
+      <graphicClass>Graphic_ClusterTight</graphicClass>
+      <drawSize>0.9</drawSize>
+    </graphicData>
+  </ThingDef>
+  
+</Defs>

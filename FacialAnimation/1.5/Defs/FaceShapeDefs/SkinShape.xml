@@ -1,0 +1,6 @@
+<Defs>
+    <FacialAnimation.SkinShapeDef>
+        <defName>normal</defName>
+        <altShapeDef>normal</altShapeDef>
+    </FacialAnimation.SkinShapeDef>
+</Defs>

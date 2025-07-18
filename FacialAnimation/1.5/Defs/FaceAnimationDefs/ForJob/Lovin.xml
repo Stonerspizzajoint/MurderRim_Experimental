@@ -1,0 +1,18 @@
+<Defs>
+  <FacialAnimation.FaceAnimationDef ParentName="WorkerDroneAnimation">
+    <defName>Lovin_WorkerDrone</defName>
+    <animationFrames>
+      <li>
+        <duration>1</duration>
+        <lidShapeDef>lidblush</lidShapeDef>
+      </li>
+    </animationFrames>
+    <applyWhenStandingOnly>true</applyWhenStandingOnly>
+    <targetJobs>
+      <li>Lovin</li>
+      <li>MLI_Jobs_MassLoveIn</li>
+      <li>MLI_Jobs_SingleLoveIn</li>
+    </targetJobs>
+    <priority>10404</priority>
+  </FacialAnimation.FaceAnimationDef>
+</Defs>

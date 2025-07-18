@@ -1,0 +1,156 @@
+<Defs>
+
+<!-- ===== Worker Drone Base Genes ===== -->
+
+    <!-- ===== Worker Drone Base Genes ===== -->
+    <VREAndroids.AndroidGeneDef Name="MD_WorkerDroneBase" Abstract="True">
+        <canGenerateInGeneSet>false</canGenerateInGeneSet>
+        <displayOrderInCategory>10000</displayOrderInCategory>
+        <isCoreComponent>false</isCoreComponent>
+        <modExtensions>
+            <li Class="VEF.Genes.GeneExtension">
+            </li>
+        </modExtensions>
+    </VREAndroids.AndroidGeneDef>
+
+    <!-- ===== Worker Drone Subroutines ===== -->
+    <VREAndroids.AndroidGeneDef Name="MD_WorkerDroneSubroutine" ParentName="MD_WorkerDroneBase" Abstract="True">
+        <displayCategory>WorkerDroneSubroutines</displayCategory>
+    </VREAndroids.AndroidGeneDef>
+
+    <!-- ===== Worker Drone Hardware ===== -->
+    <VREAndroids.AndroidGeneDef Name="MD_WorkerDroneHardware" ParentName="MD_WorkerDroneBase" Abstract="True">
+        <displayCategory>WorkerDroneHardware</displayCategory>
+    </VREAndroids.AndroidGeneDef>
+
+<!-- ===== Solver Base Genes ===== -->
+
+    <!-- ===== Solver Subroutines ===== -->
+    <VREAndroids.AndroidGeneDef Name="MD_SolverSubroutineBase" Abstract="True">
+        <displayCategory>SolverSubroutines</displayCategory>
+        <canGenerateInGeneSet>false</canGenerateInGeneSet>
+        <modExtensions>
+            <li Class="VEF.Genes.GeneExtension">
+            </li>
+        </modExtensions>
+    </VREAndroids.AndroidGeneDef>
+
+    <!-- ===== Solver Hardware ===== -->
+    <VREAndroids.AndroidGeneDef Name="MD_SolverHardwareBase" Abstract="True">
+        <displayCategory>SolverHardware</displayCategory>
+        <canGenerateInGeneSet>false</canGenerateInGeneSet>
+        <displayOrderInCategory>10004</displayOrderInCategory>
+        <isCoreComponent>false</isCoreComponent>
+        <modExtensions>
+            <li Class="VEF.Genes.GeneExtension">
+            </li>
+        </modExtensions>
+    </VREAndroids.AndroidGeneDef>
+
+    <!-- ===== Disassembly Subroutines ===== -->
+    <VREAndroids.AndroidGeneDef Name="MD_SolverSubroutine" ParentName="MD_SolverSubroutineBase" Abstract="True">
+        <modExtensions>
+            <li Class="VEF.Genes.GeneExtension">
+                <backgroundPathXenogenes>UI/Icons/Genes/GeneBackGround/GeneBackground_AbsoluteHardware</backgroundPathXenogenes>
+                <backgroundPathEndogenes>UI/Icons/Genes/GeneBackGround/GeneBackground_AbsoluteHardware</backgroundPathEndogenes>
+            </li>
+        </modExtensions>
+    </VREAndroids.AndroidGeneDef>
+
+    <!-- ===== Disassembly Hardware ===== -->
+    <VREAndroids.AndroidGeneDef Name="MD_SolverHardware" ParentName="MD_SolverHardwareBase" Abstract="True">
+        <modExtensions>
+            <li Class="VEF.Genes.GeneExtension">
+                <backgroundPathXenogenes>UI/Icons/Genes/GeneBackGround/GeneBackground_AbsoluteHardware</backgroundPathXenogenes>
+                <backgroundPathEndogenes>UI/Icons/Genes/GeneBackGround/GeneBackground_AbsoluteHardware</backgroundPathEndogenes>
+            </li>
+        </modExtensions>
+    </VREAndroids.AndroidGeneDef>
+
+    <!-- ===== Disassembly Subroutines ===== -->
+    <VREAndroids.AndroidGeneDef Name="MD_DisassemblySubroutineBase" ParentName="MD_SolverSubroutineBase" Abstract="True">
+        <modExtensions>
+            <li Class="VEF.Genes.GeneExtension">
+                <backgroundPathXenogenes>UI/Icons/Genes/GeneBackGround/GeneBackground_DisassemblyHardware</backgroundPathXenogenes>
+                <backgroundPathEndogenes>UI/Icons/Genes/GeneBackGround/GeneBackground_DisassemblyHardware</backgroundPathEndogenes>
+            </li>
+        </modExtensions>
+    </VREAndroids.AndroidGeneDef>
+
+    <!-- ===== Disassembly Hardware ===== -->
+    <VREAndroids.AndroidGeneDef Name="MD_DisassemblyHardwareBase" ParentName="MD_SolverHardwareBase" Abstract="True">
+        <modExtensions>
+            <li Class="VEF.Genes.GeneExtension">
+                <backgroundPathXenogenes>UI/Icons/Genes/GeneBackGround/GeneBackground_DisassemblyHardware</backgroundPathXenogenes>
+                <backgroundPathEndogenes>UI/Icons/Genes/GeneBackGround/GeneBackground_DisassemblyHardware</backgroundPathEndogenes>
+            </li>
+        </modExtensions>
+    </VREAndroids.AndroidGeneDef>
+
+<!-- ===== Cosmetic Drone Base Genes ===== -->
+
+    <!-- ===== Display Color Hardware ===== -->
+    <VREAndroids.AndroidGeneDef Name="MD_DisplayColorBase" Abstract="True">
+        <displayCategory>VREA_Hardware</displayCategory>
+        <canGenerateInGeneSet>false</canGenerateInGeneSet>
+        <displayOrderInCategory>10006</displayOrderInCategory>
+        <isCoreComponent>false</isCoreComponent>
+        <modExtensions>
+            <li Class="VEF.Genes.GeneExtension">
+                <backgroundPathXenogenes>UI/Icons/Genes/GeneBackground_Hardware</backgroundPathXenogenes>
+                <backgroundPathEndogenes>UI/Icons/Genes/GeneBackground_Hardware</backgroundPathEndogenes>
+            </li>
+            <li Class="WorkerDronesMod.GenePrerequisitesExtension">
+                <prerequisiteGeneDefNames>
+                    <li>MD_DisplayEyes</li>
+                    <li>MD_DisplayEye</li>
+                    <li>MD_DisplayEyes_DD</li>
+                    <li>MD_DisplayEyes_XX</li>
+                </prerequisiteGeneDefNames>
+            </li>
+        </modExtensions>
+    </VREAndroids.AndroidGeneDef>
+
+    <!-- ===== Drone Eye Colors ===== -->
+    <VREAndroids.AndroidGeneDef Name="MD_DroneEyeColors" ParentName="MD_DisplayColorBase" Abstract="True">
+        <displayCategory>DroneCosmetics</displayCategory>
+    </VREAndroids.AndroidGeneDef>
+
+    <!-- ===== Core Eye Cosmetics ===== -->
+    <VREAndroids.AndroidGeneDef ParentName="MD_SolverHardwareBase" Name="MD_CoreEyeBase" Abstract="True">
+        <displayCategory>DroneCosmetics</displayCategory>
+        <exclusionTags>
+            <li>MD_DisplayEye</li>
+            <li>Eyes</li>
+            <li>Eye</li>
+        </exclusionTags>
+        <randomChosen>true</randomChosen>
+        <biostatCpx>1</biostatCpx>
+    </VREAndroids.AndroidGeneDef>
+
+    <!-- ===== Drone Eyes Cosmetics ===== -->
+    <VREAndroids.AndroidGeneDef ParentName="MD_WorkerDroneBase" Name="MD_DroneEyesBase" Abstract="True">
+        <displayCategory>DroneCosmetics</displayCategory>
+        <exclusionTags>
+            <li>MD_DisplayEye</li>
+            <li>Eyes</li>
+            <li>Eye</li>
+            <li>OnlyHumanlike</li>
+        </exclusionTags>
+        <randomChosen>true</randomChosen>
+        <biostatCpx>1</biostatCpx>
+    </VREAndroids.AndroidGeneDef>
+
+    <!-- ===== Disassembly Drone Eyes Cosmetics ===== -->
+    <VREAndroids.AndroidGeneDef ParentName="MD_DisassemblyHardwareBase" Name="MD_DisassemblyDroneEyesBase" Abstract="True">
+        <displayCategory>DroneCosmetics</displayCategory>
+        <exclusionTags>
+            <li>MD_DisplayEye</li>
+            <li>Eyes</li>
+            <li>Eye</li>
+            <li>OnlyHumanlike</li>
+        </exclusionTags>
+        <randomChosen>true</randomChosen>
+        <biostatCpx>1</biostatCpx>
+    </VREAndroids.AndroidGeneDef>
+</Defs>

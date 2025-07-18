@@ -1,0 +1,83 @@
+<Defs>
+  <SoundDef>
+    <defName>MD_BeamWeapon_Shooting</defName>
+    <sustain>true</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <sustainStopSound>BeamGraser_Shooting_Resolve</sustainStopSound>
+    <subSounds>
+      <li>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>DisassemblyDronesMod/MD_BeamWeapon_Shooting</clipFolderPath>
+          </li>
+        </grains>
+        <pitchRange>0.99~1.01</pitchRange>
+        <volumeRange>30</volumeRange>
+        <sustainRelease>0.02</sustainRelease>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>MD_MissileLockon</defName>
+    <sustain>true</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>DisassemblyDronesMod/MD_MissileLockon/MD_MissileLockon</clipPath>
+          </li>
+        </grains>
+        <pitchRange>0.99~1.01</pitchRange>
+        <volumeRange>20</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>MD_Railgun_Chargeup</defName>
+    <sustain>true</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>DisassemblyDronesMod/MD_Railgun_Chargeup/MD_Railgun_Chargeup</clipPath>
+          </li>
+        </grains>
+        <pitchRange>1</pitchRange>
+        <volumeRange>20</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>MD_ChainsawIdle</defName>
+    <sustain>true</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>DisassemblyDronesMod/MD_ChainsawIdle/MD_ChainsawIdle</clipPath>
+          </li>
+        </grains>
+        <pitchRange>0.9~1.1</pitchRange>
+        <volumeRange>5</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+</Defs>

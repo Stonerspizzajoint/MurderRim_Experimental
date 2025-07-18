@@ -175,35 +175,53 @@ namespace WorkerDronesMod.Patches
             if (selectedGenes == null)
                 return true;
 
-            var validGenes = selectedGenes.Where(g => GeneValidatorHelper.Validate(g)).ToList();
-
-            var requiredGenes = Utils.AndroidGenesGenesInOrder
-                .Where(g => g.GetModExtension<BlockFromAndroidWindowExtension>() != null &&
-                            g.GetModExtension<BlockFromAndroidWindowExtension>().cannotBeRemoved)
+            // Collect all invalid genes and reasons
+            var invalidGeneInfos = selectedGenes
+                .Select(g =>
+                {
+                    var researchExt = g.GetModExtension<GeneResearchExtension>();
+                    var blockExt = g.GetModExtension<BlockFromAndroidWindowExtension>();
+                    string reason = null;
+                    if (researchExt != null && researchExt.requiredResearch != null && !researchExt.requiredResearch.IsFinished)
+                    {
+                        reason = $"Requires research: {researchExt.requiredResearch.LabelCap}";
+                    }
+                    if (blockExt != null && blockExt.blockFromAndroidWindow)
+                    {
+                        // If both, append reason
+                        if (reason != null)
+                            reason += "; Blocked from use in this window";
+                        else
+                            reason = "Blocked from use in this window";
+                    }
+                    return reason != null ? (Gene: g, Reason: reason) : (Gene: null, Reason: null);
+                })
+                .Where(x => x.Gene != null)
                 .ToList();
 
-            if (validGenes.Count != selectedGenes.Count)
+            if (invalidGeneInfos.Any())
             {
-                Traverse.Create(__instance).Field("selectedGenes").SetValue(validGenes);
-                List<string> researchLabels = selectedGenes
-                    .Where(g => !validGenes.Contains(g))
-                    .Select(g => g.GetModExtension<GeneResearchExtension>().requiredResearch.LabelCap.ToString())
-                    .Distinct()
-                    .ToList();
-
-                TaggedString message = "This xenotype contains genes that require unfinished research:\n\n";
-                message += GenText.ToLineList(researchLabels, "  - ");
+                // Build a message listing all invalid genes and their reasons
+                TaggedString message = "This xenotype contains genes that cannot be used:\n\n";
+                message += GenText.ToLineList(
+                    invalidGeneInfos.Select(x => $"{x.Gene.LabelCap}: {x.Reason}"),
+                    "  - "
+                );
 
                 Find.WindowStack.Add(new Dialog_MessageBox(
                     text: message,
                     buttonAText: "OK".Translate(),
                     buttonADestructive: false
                 ));
+
+                return false; // Cancel the action
             }
 
             return true;
         }
     }
+
+
 
     // Patch AcceptInner for the modification window.
     [HarmonyPatch(typeof(Window_AndroidModification))]

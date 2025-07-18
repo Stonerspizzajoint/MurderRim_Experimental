@@ -1,0 +1,25 @@
+<Defs>
+
+  <FacialAnimation.FaceAnimationDef ParentName="WorkerDroneAnimation">
+    <defName>Thought_Naked_WorkerDrone</defName>
+    <animationFrames>
+      <li>
+        <duration>1</duration>
+        <lidShapeDef>lidblush</lidShapeDef>
+      </li>
+    </animationFrames>
+    <priority>200</priority>
+    <targetThoughtDefs>
+      <li>Naked</li>
+      <li>GroinUncovered_Disapproved_Male</li>
+      <li>GroinUncovered_Disapproved_Female</li>
+      <li>GroinOrChestUncovered_Disapproved_Male</li>
+      <li>GroinOrChestUncovered_Disapproved_Female</li>
+      <li>GroinChestOrHairUncovered_Disapproved_Male</li>
+      <li>GroinChestOrHairUncovered_Disapproved_Female</li>
+      <li>GroinChestHairOrFaceUncovered_Disapproved_Male</li>
+      <li>GroinChestHairOrFaceUncovered_Disapproved_Female</li>
+    </targetThoughtDefs>
+  </FacialAnimation.FaceAnimationDef>
+
+</Defs>

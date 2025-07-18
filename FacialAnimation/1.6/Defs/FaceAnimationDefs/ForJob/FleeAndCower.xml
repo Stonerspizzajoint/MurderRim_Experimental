@@ -1,0 +1,18 @@
+<Defs>
+  <FacialAnimation.FaceAnimationDef ParentName="WorkerDroneAnimation">
+    <defName>FleeAndCower_WorkerDrone</defName>
+    <animationFrames>
+      <li>
+        <duration>1</duration>
+        <eyeballShapeDef>oval-shaped</eyeballShapeDef>
+        <emotionShapeDef MayRequire="nals.facialanimationexperimentals">normal</emotionShapeDef>
+        <lidShapeDef>stressed</lidShapeDef>
+      </li>
+    </animationFrames>
+    <targetJobs>
+      <li>FleeAndCower</li>
+      <li>FleeAndCowerShort</li>
+    </targetJobs>
+    <priority>10201</priority>
+  </FacialAnimation.FaceAnimationDef>
+</Defs>

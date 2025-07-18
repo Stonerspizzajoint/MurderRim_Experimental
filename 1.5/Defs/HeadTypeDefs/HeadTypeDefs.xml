@@ -3,7 +3,7 @@
 <!--Normal Worker Drone Head-->
 	<HeadTypeDef ParentName="AverageBase">
 		<defName>MD_Drone_Head</defName>
-		<graphicPath>Pawn/WorkerDrone/Head_HQ/Drone_Head</graphicPath>
+		<graphicPath>Pawn/WorkerDrone/Head_HQ/normal</graphicPath>
 		<randomChosen>false</randomChosen>
 		<hairMeshSize>(1.48, 1.5)</hairMeshSize>
 		<eyeOffsetEastWest>(0.13, 0, 0.18)</eyeOffsetEastWest>
@@ -22,7 +22,7 @@
 <!--Disassembly Drone Head-->
 	<HeadTypeDef ParentName="AverageBase">
 		<defName>MD_MurderDrone_Head</defName>
-		<graphicPath>Pawn/WorkerDrone/Head_HQ/Drone_Head</graphicPath>
+		<graphicPath>Pawn/WorkerDrone/Head_HQ/normal</graphicPath>
 		<randomChosen>false</randomChosen>
 		<hairMeshSize>(1.48, 1.5)</hairMeshSize>
 		<eyeOffsetEastWest>(0.13, 0, 0.18)</eyeOffsetEastWest>

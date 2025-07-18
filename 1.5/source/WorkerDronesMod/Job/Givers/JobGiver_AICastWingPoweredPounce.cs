@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Collections.Generic;
 using RimWorld;
 using Verse;
 
@@ -12,78 +13,70 @@ namespace WorkerDronesMod
         private const float MinJumpDistance = 10f;
         private const float ShooterTargetChance = 0.5f;
 
-        private int lastJumpTick = -CooldownTicks;
+        // Per-caster cooldowns to allow multiple pawns to use this jobgiver independently
+        private static readonly Dictionary<Pawn, int> lastJumpTick = new Dictionary<Pawn, int>();
 
         protected override LocalTargetInfo GetTarget(Pawn caster, Ability abilityInstance)
         {
             if (caster?.Map == null)
                 return LocalTargetInfo.Invalid;
 
-            // precompute
             int now = Find.TickManager.TicksGame;
             float maxRange = abilityInstance.verb.verbProps.range;
             float maxRangeSq = maxRange * maxRange;
             float minJumpSq = MinJumpDistance * MinJumpDistance;
 
-            // collect real hostile pawns once
-            var enemies = caster.Map
-                .attackTargetsCache
-                .GetPotentialTargetsFor(caster)
-                .OfType<Pawn>()
-                .Where(p =>
-                    p.Spawned && !p.Dead && !p.Downed &&
-                    p.Faction != null && p.Faction.HostileTo(caster.Faction)
-                )
-                .ToList();
-            if (!enemies.Any())
-                return LocalTargetInfo.Invalid;
-
             Pawn chosen = null;
+            Pawn farthestValid = null;
+            float farthestDistSq = -1f;
 
-            // 1) Try a “ranged‐weapon” target
-            if (Rand.Value < ShooterTargetChance)
+            // Find the best target in a single pass
+            foreach (var target in caster.Map.attackTargetsCache.GetPotentialTargetsFor(caster))
             {
-                chosen = enemies
-                    .Where(p =>
-                        (p.Position - caster.Position).LengthHorizontalSquared <= maxRangeSq
-                        && p.equipment?.Primary != null
-                        && p.equipment.Primary.def.Verbs.Any(v => v.range > 1f)
-                    )
-                    .RandomElementWithFallback(null);
-            }
+                if (target is Pawn enemy &&
+                    enemy.Spawned && !enemy.Dead && !enemy.Downed &&
+                    enemy.Faction != null && enemy.Faction.HostileTo(caster.Faction))
+                {
+                    float distSq = (enemy.Position - caster.Position).LengthHorizontalSquared;
 
-            // 2) If no shooter picked, pick the farthest valid pawn
-            if (chosen == null)
-            {
-                chosen = enemies
-                    .Where(p =>
+                    // Try to pick a ranged weapon user within range
+                    if (Rand.Value < ShooterTargetChance &&
+                        distSq <= maxRangeSq &&
+                        enemy.equipment?.Primary != null &&
+                        enemy.equipment.Primary.def.Verbs.Any(v => v.range > 1f))
                     {
-                        float dsq = (p.Position - caster.Position).LengthHorizontalSquared;
-                        return dsq > minJumpSq && dsq <= maxRangeSq;
-                    })
-                    .OrderByDescending(p =>
-                        (p.Position - caster.Position).LengthHorizontalSquared
-                    )
-                    .FirstOrDefault();
+                        chosen = enemy;
+                        break; // Prefer shooter if found
+                    }
+
+                    // Otherwise, track the farthest valid pawn
+                    if (distSq > minJumpSq && distSq <= maxRangeSq && distSq > farthestDistSq)
+                    {
+                        farthestValid = enemy;
+                        farthestDistSq = distSq;
+                    }
+                }
             }
+
+            if (chosen == null)
+                chosen = farthestValid;
 
             if (chosen == null)
                 return LocalTargetInfo.Invalid;
 
-            // decide which cooldown applies
+            // Cooldown logic (per-caster)
             bool isFleeing = IsPawnFleeing(chosen);
             int requiredTicks = isFleeing ? FleeCooldownTicks : CooldownTicks;
-            if (now - lastJumpTick < requiredTicks)
+            int lastTick = lastJumpTick.TryGetValue(caster, out int t) ? t : -CooldownTicks;
+            if (now - lastTick < requiredTicks)
                 return LocalTargetInfo.Invalid;
 
-            // OK to pounce
-            lastJumpTick = now;
+            lastJumpTick[caster] = now;
             return new LocalTargetInfo(chosen);
         }
 
         /// <summary>
         /// Very basic “fleeing” check: any job whose defName contains “Flee”.
-        /// You can refine this to specific JobDefs if you want.
         /// </summary>
         private bool IsPawnFleeing(Pawn pawn)
         {

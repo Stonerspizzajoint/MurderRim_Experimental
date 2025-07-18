@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using RimWorld;
+using System.Collections.Generic;
 using UnityEngine;
 using Verse;
 
@@ -12,11 +13,11 @@ namespace WorkerDronesMod
         private const float SurroundRadius = 2f;
         private const int SurroundEnemyCountThreshold = 4;
 
-        private int lastJumpTick = -CooldownTicks;
+        // Per-caster cooldowns to allow multiple pawns to use this jobgiver independently
+        private static readonly Dictionary<Pawn, int> lastJumpTick = new Dictionary<Pawn, int>();
 
         protected override LocalTargetInfo GetTarget(Pawn caster, Ability abilityInstance)
         {
-            // Null/map/job-target guard
             if (caster?.Map == null || caster.CurJob == null || !caster.CurJob.targetA.IsValid)
                 return LocalTargetInfo.Invalid;
 
@@ -31,51 +32,63 @@ namespace WorkerDronesMod
             if (weaponRange <= 0f)
                 return LocalTargetInfo.Invalid;
 
-            // Gather all valid hostile pawns once
             float surroundSq = SurroundRadius * SurroundRadius;
             float weaponRangeSq = weaponRange * weaponRange;
-            var enemies = map
-                .attackTargetsCache
-                .GetPotentialTargetsFor(caster)
-                .OfType<Pawn>()
-                .Where(p =>
-                    p.Spawned && !p.Dead && !p.Downed &&
-                    p.Faction != null && p.Faction.HostileTo(caster.Faction)
-                )
-                .ToList();
+
+            // Find all valid hostile pawns in a single pass, and check for "surrounded" status
+            int nearbyEnemies = 0;
+            List<Pawn> enemies = new List<Pawn>();
+            foreach (var target in map.attackTargetsCache.GetPotentialTargetsFor(caster))
+            {
+                if (target is Pawn enemy &&
+                    enemy.Spawned && !enemy.Dead && !enemy.Downed &&
+                    enemy.Faction != null && enemy.Faction.HostileTo(caster.Faction))
+                {
+                    enemies.Add(enemy);
+                    if ((enemy.Position - caster.Position).LengthHorizontalSquared <= surroundSq)
+                        nearbyEnemies++;
+                }
+            }
             if (enemies.Count == 0)
                 return LocalTargetInfo.Invalid;
 
-            // Are we surrounded?
-            bool isSurrounded = enemies.Count(e =>
-                (e.Position - caster.Position).LengthHorizontalSquared <= surroundSq
-            ) >= SurroundEnemyCountThreshold;
+            bool isSurrounded = nearbyEnemies >= SurroundEnemyCountThreshold;
 
             // Enforce cooldown unless surrounded
-            if (!isSurrounded && now - lastJumpTick < CooldownTicks)
+            int lastTick = lastJumpTick.TryGetValue(caster, out int t) ? t : -CooldownTicks;
+            if (!isSurrounded && now - lastTick < CooldownTicks)
                 return LocalTargetInfo.Invalid;
 
-            // How far we can jump
             float jumpRange = abilityInstance.verb.verbProps.range;
 
             // Try random candidate cells
             for (int i = 0; i < CandidateAttempts; i++)
             {
                 Vector2 rnd = UnityEngine.Random.insideUnitCircle * jumpRange;
-                var dest = caster.Position + new IntVec3((int)rnd.x, 0, (int)rnd.y);
+                var dest = caster.Position + new IntVec3(Mathf.RoundToInt(rnd.x), 0, Mathf.RoundToInt(rnd.y));
 
-                // Must be on-map and standable
-                if (!dest.InBounds(map)
-                 || !map.terrainGrid.TerrainAt(dest).affordances.Contains(TerrainAffordanceDefOf.Light))
+                if (!dest.InBounds(map))
+                    continue;
+
+                // Must be standable and have the right affordance
+                var terrain = map.terrainGrid.TerrainAt(dest);
+                if (!terrain.affordances.Contains(TerrainAffordanceDefOf.Light) || !dest.Standable(map))
                     continue;
 
                 // At least one enemy falls within weapon range
-                if (enemies.Any(e =>
-                    (e.Position - dest).LengthHorizontalSquared <= weaponRangeSq
-                ))
+                bool enemyInRange = false;
+                foreach (var enemy in enemies)
+                {
+                    if ((enemy.Position - dest).LengthHorizontalSquared <= weaponRangeSq)
+                    {
+                        enemyInRange = true;
+                        break;
+                    }
+                }
+                if (enemyInRange)
                 {
                     if (!isSurrounded)
-                        lastJumpTick = now;
+                        lastJumpTick[caster] = now;
                     return new LocalTargetInfo(dest);
                 }
             }

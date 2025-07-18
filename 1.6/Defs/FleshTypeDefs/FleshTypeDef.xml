@@ -1,0 +1,56 @@
+<Defs>
+	<FleshTypeDef>
+		<defName>MD_DroneFlesh</defName>
+		<corpseCategory>CorpsesAnimal</corpseCategory>
+		<damageEffecter>MD_Damage_HitDrone</damageEffecter>
+		<genericWounds>
+			<li>
+				<texture>Things/Pawn/Wounds/Android_WoundFleshA</texture>
+                <color>(5,5,5)</color>
+			</li>
+			<li>
+				<texture>Things/Pawn/Wounds/Android_WoundFleshB</texture>
+                <color>(5,5,5)</color>
+			</li>
+			<li>
+				<texture>Things/Pawn/Wounds/Android_WoundFleshC</texture>
+                <color>(5,5,5)</color>
+			</li>
+		</genericWounds>
+    	<hediffWounds>
+    	  <li>
+    	    <hediff>MissingBodyPart</hediff>
+    	    <wounds>
+    	      	<li>
+    	        	<textureSouth>Pawn/FleshType/Wounds/MissingEye/MissingEye_Crack</textureSouth>
+    		    	<textureNorth>Pawn/FleshType/Wounds/MissingEye/MissingEye_Crack</textureNorth>
+    	        	<textureEast>Pawn/FleshType/Wounds/MissingEye/MissingEye_Crack</textureEast>
+        	    	<textureWest>Pawn/FleshType/Wounds/MissingEye/MissingEye_Crack</textureWest>
+    	        	<flipWest>true</flipWest>
+    	        	<onlyOnPart>Eye</onlyOnPart>
+    	        	<flipOnWoundAnchorTag>LeftEye</flipOnWoundAnchorTag>
+    	        	<flipOnRotation>South</flipOnRotation>
+    	        	<missingBodyPartFresh>false</missingBodyPartFresh>
+    	        	<scale>1</scale>
+    	        	<drawOffsetSouth>(0, -0.001, -0.24)</drawOffsetSouth>
+    	        	<drawOffsetEastWest>(0, -0.001, -0.24)</drawOffsetEastWest>
+    	      	</li>
+    	      	<li>
+    	        	<textureSouth>Pawn/FleshType/Wounds/MissingEye/MissingEye_Crack</textureSouth>
+    		    	<textureNorth>Pawn/FleshType/Wounds/MissingEye/MissingEye_Crack</textureNorth>
+    	        	<textureEast>Pawn/FleshType/Wounds/MissingEye/MissingEye_Crack</textureEast>
+        	    	<textureWest>Pawn/FleshType/Wounds/MissingEye/MissingEye_Crack</textureWest>
+        	    	<flipWest>true</flipWest>
+        	    	<onlyOnPart>Eye</onlyOnPart>
+        	    	<flipOnWoundAnchorTag>LeftEye</flipOnWoundAnchorTag>
+        	    	<flipOnRotation>South</flipOnRotation>
+        	    	<missingBodyPartFresh>true</missingBodyPartFresh>
+        	    	<scale>1</scale>
+        	    	<drawOffsetSouth>(0, -0.001, -0.24)</drawOffsetSouth>
+        	    	<drawOffsetEastWest>(0, -0.001, -0.24)</drawOffsetEastWest>
+        	  	</li>
+        	</wounds>
+      		</li>
+    	</hediffWounds>
+	</FleshTypeDef>
+</Defs>

@@ -1,0 +1,55 @@
+<Defs>
+    <TraitDef>
+        <defName>MD_DoorEnthusiast</defName>
+        <label>door enthusiast</label>
+        <commonality>1</commonality>
+        <requiredWorkTags>
+            <li>Constructing</li>
+        </requiredWorkTags>
+        <forcedPassions>
+            <li>Construction</li>
+        </forcedPassions>
+        <degreeDatas>
+            <li>
+                <label>Door Enthusiast</label>
+                <description>{PAWN_nameDef} has an unusual appreciation for doors. The more doors the colony has, the happier they become, and automatic doors make them even more delighted.</description>
+                <statOffsets>
+                    <WorkSpeedGlobal>0.05</WorkSpeedGlobal>
+                </statOffsets>
+                <possessions>
+                    <Schematic />
+                </possessions>
+            </li>
+        </degreeDatas>
+    </TraitDef>
+
+    <TraitDef>
+        <defName>MD_ManicBloodlust</defName>
+        <commonality>0</commonality>
+        <requiredWorkTags>
+            <li>Violent</li>
+        </requiredWorkTags>
+        <forcedPassions>
+            <li>Melee</li>
+        </forcedPassions>
+        <degreeDatas>
+            <li>
+                <label>Manic Bloodlust</label>
+                <description>{PAWN_nameDef} revels in carnage, bursting into manic laughter at bloodshed, and is prone to igniting social conflicts.</description>
+                <socialFightChanceFactor>4</socialFightChanceFactor>
+                <allowedMeditationFocusTypes><li>Morbid</li></allowedMeditationFocusTypes>
+                <possessions>
+                    <Skull />
+                </possessions>
+                <disallowedMentalStates>
+                    <li MayRequire="CETeam.CombatExtended">ShellShock</li>
+                    <li>PanicFlee</li>
+                </disallowedMentalStates>
+            </li>
+        </degreeDatas>
+        <conflictingTraits>
+            <li>Bloodlust</li>
+            <li>Kind</li>
+        </conflictingTraits>
+    </TraitDef>
+</Defs>

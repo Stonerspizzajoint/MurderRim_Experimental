@@ -1,0 +1,26 @@
+<Defs>
+  <FacialAnimation.LidTypeDef Name="WorkerDroneLid" Abstract="True">
+    <raceName>MD_WorkerDroneBase</raceName>
+    <enableUnisexTexPath>true</enableUnisexTexPath>
+  </FacialAnimation.LidTypeDef>
+
+  <FacialAnimation.LidTypeDef Name="DisassemblyDroneLid" Abstract="True">
+    <raceName>MD_MurderDroneBase</raceName>
+    <enableUnisexTexPath>true</enableUnisexTexPath>
+  </FacialAnimation.LidTypeDef>
+
+  <FacialAnimation.LidTypeDef ParentName="WorkerDroneLid">
+	  <defName>DisplayLidNormal</defName>
+	  <texPath>OtherMods/FacialAnimations/WorkerDrone/Lids/Normal</texPath>
+	  <shader>Map/TransparentPostLight</shader>
+    <colorMode>skinColor</colorMode>
+  </FacialAnimation.LidTypeDef>
+
+  <FacialAnimation.LidTypeDef ParentName="WorkerDroneLid">
+    <defName>Tired_DisplayLidNormal</defName>
+	  <texPath>OtherMods/FacialAnimations/WorkerDrone/Lids/Tired</texPath>
+    <shader>Map/TransparentPostLight</shader>
+    <colorMode>skinColor</colorMode>
+    <probability>0.4</probability>
+  </FacialAnimation.LidTypeDef>
+</Defs>

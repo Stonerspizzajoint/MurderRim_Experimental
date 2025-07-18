@@ -1,0 +1,18 @@
+C:\Users\stone\OneDrive\Desktop\Mods\MurderRim - Worker Drones\FacialAnimation\1.5\Assemblies\WorkerDronesMod.FacialAnimationCompat.dll
+C:\Users\stone\OneDrive\Desktop\Mods\MurderRim - Worker Drones\FacialAnimation\1.5\Assemblies\WorkerDronesMod.FacialAnimationCompat.pdb
+C:\Users\stone\OneDrive\Desktop\Mods\Murder Drones Mod - Worker Drones\1.5\source\WorkerDronesMod.FacialAnimationCompat\obj\Debug\WorkerDronesMod.FacialAnimationCompat.csproj.AssemblyReference.cache
+C:\Users\stone\OneDrive\Desktop\Mods\Murder Drones Mod - Worker Drones\1.5\source\WorkerDronesMod.FacialAnimationCompat\obj\Debug\WorkerDronesMod.FacialAnimationCompat.csproj.CoreCompileInputs.cache
+C:\Users\stone\OneDrive\Desktop\Mods\Murder Drones Mod - Worker Drones\1.5\source\WorkerDronesMod.FacialAnimationCompat\obj\Debug\WorkerDronesMod.FacialAnimationCompat.dll
+C:\Users\stone\OneDrive\Desktop\Mods\Murder Drones Mod - Worker Drones\1.5\source\WorkerDronesMod.FacialAnimationCompat\obj\Debug\WorkerDronesMod.FacialAnimationCompat.pdb
+C:\Users\stone\OneDrive\Desktop\Mods\MurderRim - Worker Drones\1.5\source\WorkerDronesMod.FacialAnimationCompat\obj\Debug\WorkerDronesMod.FacialAnimationCompat.csproj.AssemblyReference.cache
+C:\Users\stone\OneDrive\Desktop\Mods\MurderRim - Worker Drones\1.5\source\WorkerDronesMod.FacialAnimationCompat\obj\Debug\WorkerDronesMod.FacialAnimationCompat.csproj.CoreCompileInputs.cache
+C:\Users\stone\OneDrive\Desktop\Mods\MurderRim - Worker Drones\1.5\source\WorkerDronesMod.FacialAnimationCompat\obj\Debug\WorkerDronesMod.FacialAnimationCompat.dll
+C:\Users\stone\OneDrive\Desktop\Mods\MurderRim - Worker Drones\1.5\source\WorkerDronesMod.FacialAnimationCompat\obj\Debug\WorkerDronesMod.FacialAnimationCompat.pdb
+C:\Users\stone\OneDrive\Desktop\Mods\MurderRim - Worker Drones\1.6\Assemblies\WorkerDronesMod.FacialAnimationCompat.dll
+C:\Users\stone\OneDrive\Desktop\Mods\MurderRim - Worker Drones\1.6\Assemblies\WorkerDronesMod.FacialAnimationCompat.pdb
+C:\Users\stone\OneDrive\Desktop\Mods\MurderRim - Worker Drones\1.6\source\WorkerDronesMod.FacialAnimationCompat\obj\Debug\WorkerDronesMod.FacialAnimationCompat.csproj.AssemblyReference.cache
+C:\Users\stone\OneDrive\Desktop\Mods\MurderRim - Worker Drones\1.6\source\WorkerDronesMod.FacialAnimationCompat\obj\Debug\WorkerDronesMod.FacialAnimationCompat.csproj.CoreCompileInputs.cache
+C:\Users\stone\OneDrive\Desktop\Mods\MurderRim - Worker Drones\1.6\source\WorkerDronesMod.FacialAnimationCompat\obj\Debug\WorkerDronesMod.FacialAnimationCompat.dll
+C:\Users\stone\OneDrive\Desktop\Mods\MurderRim - Worker Drones\1.6\source\WorkerDronesMod.FacialAnimationCompat\obj\Debug\WorkerDronesMod.FacialAnimationCompat.pdb
+C:\Users\stone\OneDrive\Desktop\Mods\MurderRim - Worker Drones\FacialAnimation\1.6\Assemblies\WorkerDronesMod.FacialAnimationCompat.dll
+C:\Users\stone\OneDrive\Desktop\Mods\MurderRim - Worker Drones\FacialAnimation\1.6\Assemblies\WorkerDronesMod.FacialAnimationCompat.pdb
