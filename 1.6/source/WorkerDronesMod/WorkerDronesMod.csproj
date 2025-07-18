@@ -87,6 +87,7 @@
     <Compile Include="Alerts\Alert_DroneOilCravingSevere.cs" />
     <Compile Include="Defs\AndroidGeneCategoryDef.cs" />
     <Compile Include="GameCondition\GameCondition_CoreCollapse.cs" />
+    <Compile Include="Gene\Classes\Gene_DroneHeadTypeSwitcher.cs" />
     <Compile Include="Gene\Classes\Gene_RandomSkinColor.cs" />
     <Compile Include="Gene\Classes\Gene_LearningByObservation.cs" />
     <Compile Include="Gene\ConditionalStatAffecter\ConditionalStatAffecter_HeatAndSun.cs" />

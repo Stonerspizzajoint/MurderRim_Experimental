@@ -11,3 +11,7 @@ C:\Users\stone\OneDrive\Desktop\Mods\MurderRim - Worker Drones\1.6\source\Worker
 C:\Users\stone\OneDrive\Desktop\Mods\MurderRim - Worker Drones\1.6\source\WorkerDronesMod\obj\Debug\WorkerDronesMod.csproj.CoreCompileInputs.cache
 C:\Users\stone\OneDrive\Desktop\Mods\MurderRim - Worker Drones\1.6\source\WorkerDronesMod\obj\Debug\WorkerDronesMod.dll
 C:\Users\stone\OneDrive\Desktop\Mods\MurderRim - Worker Drones\1.6\Assemblies\WorkerDronesMod.dll
+C:\Users\stone\OneDrive\Desktop\Mods\MurderRim - Assembly Required\1.6\Assemblies\WorkerDronesMod.dll
+C:\Users\stone\OneDrive\Desktop\Mods\MurderRim - Assembly Required\1.6\source\WorkerDronesMod\obj\Debug\WorkerDronesMod.csproj.AssemblyReference.cache
+C:\Users\stone\OneDrive\Desktop\Mods\MurderRim - Assembly Required\1.6\source\WorkerDronesMod\obj\Debug\WorkerDronesMod.csproj.CoreCompileInputs.cache
+C:\Users\stone\OneDrive\Desktop\Mods\MurderRim - Assembly Required\1.6\source\WorkerDronesMod\obj\Debug\WorkerDronesMod.dll

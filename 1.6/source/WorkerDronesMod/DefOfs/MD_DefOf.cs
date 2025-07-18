@@ -171,5 +171,9 @@ namespace WorkerDronesMod
         public static BodyPartDef Brain;
         //------------------------------------
 
+        //------------------HeadTypeDefs------------------
+        public static HeadTypeDef MD_Drone_Head;
+        //------------------------------------------------
+
     }
 }

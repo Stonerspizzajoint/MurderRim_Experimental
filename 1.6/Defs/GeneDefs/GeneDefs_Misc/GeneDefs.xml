@@ -6,6 +6,7 @@
 		<defName>MD_DroneBody</defName>
 		<label>Worker Drone Frame</label>
 		<labelShortAdj>Worker Drone</labelShortAdj>
+		<geneClass>WorkerDronesMod.Gene_DroneHeadTypeSwitcher</geneClass>
 		<displayOrderInCategory>9999</displayOrderInCategory>
 		<description>Androids with this Hardware, have a Drone type body with a screen display for their face.
 The Body houses an improved reactor, leading to better power efficiency. Also a chance to spawn wearing a hardhat.

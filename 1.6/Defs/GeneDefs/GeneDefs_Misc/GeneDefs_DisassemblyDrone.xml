@@ -5,6 +5,7 @@
 		<defName>MD_MurderDroneBody</defName>
 		<label>Murder Drone Frame</label>
 		<labelShortAdj>Murder Drone</labelShortAdj>
+		<geneClass>WorkerDronesMod.Gene_DroneHeadTypeSwitcher</geneClass>
 		<description>Androids with this Hardware, have a Drone type body with a screen display for their face.
 The Body houses an improved reactor, leading to better power efficiency.
 		</description>
