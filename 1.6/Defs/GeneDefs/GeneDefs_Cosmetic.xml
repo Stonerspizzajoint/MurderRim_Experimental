@@ -55,26 +55,154 @@
 						<li>
 							<!--Fatal Error when dead-->
 							<shader>Cutout</shader>
-							<colorA>
-								<color>(204,2,2)</color>
-							</colorA>
         					<requirements>
           						<li>Dead</li>
         					</requirements>
-							<texPath>Pawn/Display/DisplayEyesError/DisplayFatalError/DisplayFatalError</texPath>
+							<texPath>Pawn/Display/DisplayEyesError/DisplayFatalError/Head/FatalError</texPath>
 						</li>
 					</alts>
 					<!--Blank Display-->
 					<texPath>Pawn/Display/DisplayEyesBlank/DisplayEyesBlank</texPath>
       			</conditionalGraphics>
-				<visibleFacing>
-					<li>South</li>
-				</visibleFacing>
 				<parentTagDef>Head</parentTagDef>
-				<drawSize>0.3</drawSize>
+				<drawSize>1</drawSize>
 				<drawData>
 					<defaultData>
-						<layer>54</layer>
+						<layer>60</layer>
+						<offset>(0, 0, 0)</offset>
+					</defaultData>
+				</drawData>
+    		</li>
+		</renderNodeProperties>
+</VREAndroids.AndroidGeneDef>
+<!--### ###-->
+
+<!--BABY Screen Eyes-->
+  <VREAndroids.AndroidGeneDef ParentName="MD_DroneEyesBase">
+  	<defName>MD_BabyDisplayEyes</defName>
+  	<label>Baby display eyes</label>
+  	<description>Vibrant display with 2 eyes.</description>
+  	<iconPath>UI/Icons/Genes/Gene_WorkerDroneDisplay</iconPath>
+	<geneClass>WorkerDronesMod.Gene_HediffSwitcherActivator</geneClass>
+  	<selectionWeight>0</selectionWeight>
+    <modExtensions>
+		<li Class="WorkerDronesMod.GeneHediffSwitcherExtension">
+		<stateHediffs>
+			<li>
+			<state>Normal</state>
+			<hediffDef>MD_Normal_BabyEyes</hediffDef>
+			</li>
+			<li>
+			<state>HighHeat</state>
+			<hediffDef>MD_Normal_BabyEyes</hediffDef>
+			</li>
+			<li>
+			<state>Downed</state>
+			<hediffDef>MD_Normal_BabyEyes</hediffDef>
+			</li>
+			<li>
+			<state>Sleeping</state>
+			<hediffDef>MD_Normal_BabyEyes</hediffDef>
+			</li>
+		</stateHediffs>
+		</li>
+    	<li Class="WorkerDronesMod.BlockFromAndroidWindowExtension">
+      		<blockGene>true</blockGene>
+      		<cannotBeRemoved>true</cannotBeRemoved>
+		</li>
+		<li MayRequire="nals.facialanimation" Class="WorkerDronesMod.FacialAnimationCompat.GeneForcedFacetypesExtension">
+			<raceTags>
+				<li>MD_WorkerDroneBase</li>
+			</raceTags>
+			<forceMouthColorWhite>true</forceMouthColorWhite>
+			<EyeColorMatchesSkinColor>true</EyeColorMatchesSkinColor>				
+		</li>
+  	</modExtensions>
+</VREAndroids.AndroidGeneDef>
+<!--### ###-->
+
+<!--Screen Eyes-->
+  <VREAndroids.AndroidGeneDef ParentName="MD_DroneEyesBase">
+  	<defName>MD_SolverDisplayEyes</defName>
+  	<label>display eyes</label>
+  	<description>Vibrant display with 2 eyes. Solver icon over one eye when casting abilities. (Only With Facial Animations)</description>
+  	<iconPath>UI/Icons/Genes/Gene_SolverDisplay</iconPath>
+	<geneClass>WorkerDronesMod.Gene_HediffSwitcherActivator</geneClass>
+  	<selectionWeight>0</selectionWeight>
+    <modExtensions>
+		<li Class="WorkerDronesMod.GeneHediffSwitcherExtension">
+		<stateHediffs>
+			<li>
+			<state>Normal</state>
+			<hediffDef>MD_Normal_DisplayEyes</hediffDef>
+			</li>
+			<li>
+			<state>HighHeat</state>
+			<hediffDef>MD_HighHeat_DisplayEyes</hediffDef>
+			</li>
+			<li>
+			<state>Downed</state>
+			<hediffDef>MD_Warning_DisplayEyes</hediffDef>
+			</li>
+			<li>
+			<state>Sleeping</state>
+			<hediffDef>MD_SleepMode_DisplayEyes</hediffDef>
+			</li>
+		</stateHediffs>
+		</li>
+		<li Class="WorkerDronesMod.GenePrerequisitesExtension">
+			<prerequisiteGeneDefNames>
+				<li>MD_DroneBody</li>
+				<li>MD_MurderDroneBody</li>
+			</prerequisiteGeneDefNames>
+		</li>
+		<li MayRequire="nals.facialanimation" Class="WorkerDronesMod.FacialAnimationCompat.GeneForcedFacetypesExtension">
+			<raceTags>
+				<li>MD_WorkerDroneBase</li>
+				<li>MD_SolverDroneBase</li>
+			</raceTags>
+			<!--
+			faceParts that are accepted are..
+			Head, Skin, Mouth, Eye, Lid, and Skin.
+			-->
+			<raceTagOptions>
+				<li>
+					<raceTag>MD_WorkerDroneBase</raceTag>
+					<facePart>Brow</facePart>
+				</li>
+				<li>
+					<raceTag>MD_SolverDroneBase</raceTag>
+					<facePart>Eye</facePart>
+				</li>
+			</raceTagOptions>
+			<forceMouthColorWhite>true</forceMouthColorWhite>
+			<EyeColorMatchesSkinColor>true</EyeColorMatchesSkinColor>				
+		</li>
+  	</modExtensions>
+		<renderNodeProperties>
+			<!--Fatal Error when dead-->
+    		<li Class="VEF.Graphics.PawnRenderNodeProperties_Omni">
+				<nodeClass>VEF.Graphics.PawnRenderNode_Omni</nodeClass>
+				<workerClass>PawnRenderNodeWorker_Eye</workerClass>
+      			<conditionalGraphics>
+					<alts>
+						<li>
+							<!--Fatal Error when dead-->
+							<shader>Cutout</shader>
+        					<requirements>
+          						<li>Dead</li>
+        					</requirements>
+							<texPath>Pawn/Display/DisplayEyesError/DisplayFatalError/Head/FatalError</texPath>
+						</li>
+					</alts>
+					<!--Blank Display-->
+					<texPath>Pawn/Display/DisplayEyesBlank/DisplayEyesBlank</texPath>
+      			</conditionalGraphics>
+				<parentTagDef>Head</parentTagDef>
+				<drawSize>1</drawSize>
+				<drawData>
+					<defaultData>
+						<layer>60</layer>
 						<offset>(0, 0, 0)</offset>
 					</defaultData>
 				</drawData>
@@ -168,27 +296,21 @@
 					<li>
 						<!--Fatal Error when dead-->
 						<shader>Cutout</shader>
-						<colorA>
-							<color>(204,2,2)</color>
-						</colorA>
         				<requirements>
           					<li>Dead</li>
         				</requirements>
-						<texPath>Pawn/Display/DisplayEyesError/DisplayFatalError/DisplayFatalError</texPath>
+						<texPath>Pawn/Display/DisplayEyesError/DisplayFatalError/Head/FatalError</texPath>
 					</li>
 				</alts>
 				<!--Blank Display-->
 				<texPath>Pawn/Display/DisplayEyesBlank/DisplayEyesBlank</texPath>
       		</conditionalGraphics>
-			<visibleFacing>
-				<li>South</li>
-			</visibleFacing>
 			<parentTagDef>Head</parentTagDef>
-			<drawSize>0.3</drawSize>
+			<drawSize>1</drawSize>
 			<side>Center</side>
 			<drawData>
 				<defaultData>
-					<layer>54</layer>
+					<layer>60</layer>
 					<offset>(0, 0, 0)</offset>
 				</defaultData>
 			</drawData>
@@ -258,27 +380,21 @@
 					<li>
 						<!--Fatal Error when dead-->
 						<shader>Cutout</shader>
-						<colorA>
-							<color>(204,2,2)</color>
-						</colorA>
         				<requirements>
           					<li>Dead</li>
         				</requirements>
-						<texPath>Pawn/Display/DisplayEyesError/DisplayFatalError/DisplayFatalError</texPath>
+						<texPath>Pawn/Display/DisplayEyesError/DisplayFatalError/Head/FatalError</texPath>
 					</li>
 				</alts>
 				<!--Blank Display-->
 				<texPath>Pawn/Display/DisplayEyesBlank/DisplayEyesBlank</texPath>
       		</conditionalGraphics>
-			<visibleFacing>
-				<li>South</li>
-			</visibleFacing>
 			<parentTagDef>Head</parentTagDef>
-			<drawSize>0.3</drawSize>
+			<drawSize>1</drawSize>
 			<side>Center</side>
 			<drawData>
 				<defaultData>
-					<layer>54</layer>
+					<layer>60</layer>
 					<offset>(0, 0, 0)</offset>
 				</defaultData>
 			</drawData>

@@ -7,6 +7,9 @@ namespace WorkerDronesMod
         // When true, the gene is blocked from being added.
         public bool blockFromAndroidWindow = false;
 
+        // When true, the gene cannot be added to the selected gene list.
+        public bool blockGene = false;
+
         // When true, the gene cannot be removed from the selected gene list.
         public bool cannotBeRemoved = false;
 

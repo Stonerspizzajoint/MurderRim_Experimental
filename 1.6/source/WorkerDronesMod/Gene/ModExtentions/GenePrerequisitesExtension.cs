@@ -11,5 +11,6 @@ namespace WorkerDronesMod
         /// then the gene with this extension is deemed usable.
         /// </summary>
         public List<string> prerequisiteGeneDefNames;
+
     }
 }

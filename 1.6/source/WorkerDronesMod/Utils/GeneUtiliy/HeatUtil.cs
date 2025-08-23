@@ -29,6 +29,8 @@ namespace WorkerDronesMod
         private static readonly Dictionary<Gene_BasicSolver, int> lastDamageTick = new Dictionary<Gene_BasicSolver, int>();
         private static readonly Dictionary<Gene_BasicSolver, Mote> overheatingMotes = new Dictionary<Gene_BasicSolver, Mote>();
         private const int DamageIntervalTicks = 250; // every 250 ticks (~4 seconds)
+        private static List<BodyPartRecord> tempParts = new List<BodyPartRecord>();
+        private static List<BodyPartRecord> tempSelectedParts = new List<BodyPartRecord>();
 
         public static void HandleOverheating(Gene_BasicSolver gene, Pawn pawn)
         {
@@ -50,30 +52,63 @@ namespace WorkerDronesMod
                 mote.Maintain();
             }
 
-            if (currentTick - lastTick >= DamageIntervalTicks)
+            // --- Only apply damage if in sunlight OR has injury/missing part ---
+            bool inSunlight = SolarUtil.InTrueSunlight(pawn);
+            bool hasInjuryOrMissingPart = false;
+
+            // Check for missing part or injury
+            var hediffs = pawn.health.hediffSet.hediffs;
+            for (int i = 0; i < hediffs.Count; i++)
+            {
+                var h = hediffs[i];
+                if (h is Hediff_MissingPart || h is Hediff_Injury)
+                {
+                    hasInjuryOrMissingPart = true;
+                    break;
+                }
+            }
+
+            if ((inSunlight || hasInjuryOrMissingPart) && currentTick - lastTick >= DamageIntervalTicks)
             {
                 lastDamageTick[gene] = currentTick;
 
-                // Always deal burn damage when overheating
-                float damageAmount = gene.ext != null ? gene.ext.heatOptions.burnDamageAmmount : 2.0f;
-                DamageInfo dinfo = new DamageInfo(DamageDefOf.Burn, damageAmount);
-                pawn.TakeDamage(dinfo);
+                float damageAmount = (gene.Oil <= 0f) ? 30f : (gene.ext != null ? gene.ext.heatOptions.burnDamageAmmount : 2.0f);
+
+                // Use static list to avoid allocations
+                tempParts.Clear();
+                tempParts.AddRange(pawn.health.hediffSet.GetNotMissingParts());
+
+                int numParts = Rand.RangeInclusive(1, Math.Min(5, tempParts.Count));
+                tempSelectedParts.Clear();
+                for (int i = 0; i < numParts && tempParts.Count > 0; i++)
+                {
+                    int idx = Rand.Range(0, tempParts.Count);
+                    tempSelectedParts.Add(tempParts[idx]);
+                    tempParts.RemoveAt(idx);
+                }
+
+                foreach (var part in tempSelectedParts)
+                {
+                    DamageInfo dinfo = new DamageInfo(DamageDefOf.Burn, damageAmount, 0, -1, null, part);
+                    pawn.TakeDamage(dinfo);
+                }
 
                 // Chance to catch fire (e.g., 2% per interval)
-                if (Rand.Value < 0.02f)
+                if (Rand.Value < 0.02f && !pawn.IsBurning())
                 {
-                    if (!pawn.IsBurning())
-                    {
-                        FireUtility.TryAttachFire(pawn, 0.15f, pawn);
-                    }
+                    FireUtility.TryAttachFire(pawn, 0.15f, pawn);
                 }
             }
+
 
             if (!warnedGenes.Contains(gene))
             {
                 warnedGenes.Add(gene);
             }
         }
+
+
+
 
 
 
@@ -91,12 +126,12 @@ namespace WorkerDronesMod
         }
 
         /// <summary>
-        /// Adds heat to a pawn's Gene_BasicSolver, applying the global multiplier if allowed.
+        /// Adds heat to a pawn's Gene_BasicSolver, applying the HeatGainMultiplier stat.
         /// </summary>
         /// <param name="pawn">The pawn to add heat to.</param>
         /// <param name="baseHeat">The base heat to add.</param>
         /// <param name="ext">The SolverGeneExtension (optional, will auto-detect if null).</param>
-        /// <param name="heatCanBeMultiplied">If true, applies the global multiplier.</param>
+        /// <param name="heatCanBeMultiplied">[Obsolete] Ignored, multiplier is always applied via stat.</param>
         /// <returns>The final heat value added (after multiplier).</returns>
         public static float AddHeat(Pawn pawn, float baseHeat, SolverGeneExtension ext = null, bool? heatCanBeMultiplied = null)
         {
@@ -114,11 +149,9 @@ namespace WorkerDronesMod
             float ambientMultiplier = HeatAmbientMultiplier(pawn, pawn.AmbientTemperature, ext);
             float finalHeat = baseHeat * ambientMultiplier;
 
-            // If not specified, default to IsSufficientlyCovered logic
-            bool canMultiply = heatCanBeMultiplied ?? SolarUtil.IsSufficientlyCovered(pawn);
-
-            if (canMultiply && ext != null)
-                finalHeat *= ext.heatOptions.globalDefaultHeatMultiplier;
+            // Always apply HeatGainMultiplier stat using MD_DefOf
+            float heatGainMultiplier = pawn.GetStatValue(MD_DefOf.MD_HeatGainMultiplier, true);
+            finalHeat *= heatGainMultiplier;
 
             gene.Heat += finalHeat;
             return finalHeat;
@@ -160,6 +193,10 @@ namespace WorkerDronesMod
                 float extremeAmbientHeat = overTemp * 0.02f * ext.heatOptions.heatGainPerTickSun;
                 gain += extremeAmbientHeat;
             }
+
+            // Apply SolarHeatMultiplier stat
+            float solarHeatMultiplier = pawn.GetStatValue(MD_DefOf.MD_SolarHeatMultiplier, true);
+            gain *= solarHeatMultiplier;
 
             // Apply the calculated heat using the universal method
             return HeatUtil.AddHeat(pawn, gain, ext);
@@ -207,8 +244,6 @@ namespace WorkerDronesMod
             float multiplier = 1f + (ambientTemp - 21f) * scaleFactor;
             return Mathf.Max(multiplier, 0.1f);
         }
-
-
 
         public static bool IsPawnInVacuum(Pawn pawn)
         {

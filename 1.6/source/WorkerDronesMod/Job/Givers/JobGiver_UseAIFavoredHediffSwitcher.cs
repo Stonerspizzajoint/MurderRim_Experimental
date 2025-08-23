@@ -35,12 +35,16 @@ namespace WorkerDronesMod
 
             var currentHediff = ability.selectedOption;
 
+            // Gather all AI-favored ranged and melee options
+            var aiRangedOptions = aiOptions.Where(o => o.IsRanged).ToList();
+            var aiMeleeOptions = aiOptions.Where(o => o.IsMelee).ToList();
+
             // Switch to melee if pawn is about to do a melee attack job
             if (pawn.CurJob != null && pawn.CurJob.def == JobDefOf.AttackMelee)
             {
-                var meleeOption = aiOptions.FirstOrDefault(o => o.IsMelee);
-                if (meleeOption != null && currentHediff != meleeOption)
+                if (aiMeleeOptions.Count > 0 && (currentHediff == null || !aiMeleeOptions.Contains(currentHediff)))
                 {
+                    var meleeOption = aiMeleeOptions.RandomElement();
                     ability.selectedOption = meleeOption;
                     if (!ability.CanCast.Accepted)
                         return null;
@@ -64,6 +68,7 @@ namespace WorkerDronesMod
                 var defaultOption = aiOptions.FirstOrDefault(o => o.IsDefault);
                 if (defaultOption != null && currentHediff != defaultOption)
                 {
+                    Log.Message($"[AI Hediff Switcher] Switching to default because no active enemies found.");
                     ability.selectedOption = defaultOption;
                     if (!ability.CanCast.Accepted)
                         return null;
@@ -73,14 +78,13 @@ namespace WorkerDronesMod
                 return null;
             }
 
-
             // 1. If heat > MeleeHeatThresholdPercent * max, switch to melee immediately
             if (geneSolver != null && geneSolver.InitialResourceMax > 0f &&
                 heat > MeleeHeatThresholdPercent * geneSolver.InitialResourceMax)
             {
-                var meleeOption = aiOptions.FirstOrDefault(o => o.IsMelee);
-                if (meleeOption != null && currentHediff != meleeOption)
+                if (aiMeleeOptions.Count > 0 && (currentHediff == null || !aiMeleeOptions.Contains(currentHediff)))
                 {
+                    var meleeOption = aiMeleeOptions.RandomElement();
                     ability.selectedOption = meleeOption;
                     if (!ability.CanCast.Accepted)
                         return null;
@@ -89,14 +93,12 @@ namespace WorkerDronesMod
                 return null;
             }
 
-
-
             // 2. If enemy is very close (< MeleeSwitchDistance), prioritize melee
             if (dist < MeleeSwitchDistance)
             {
-                var meleeOption = aiOptions.FirstOrDefault(o => o.IsMelee);
-                if (meleeOption != null && currentHediff != meleeOption)
+                if (aiMeleeOptions.Count > 0 && (currentHediff == null || !aiMeleeOptions.Contains(currentHediff)))
                 {
+                    var meleeOption = aiMeleeOptions.RandomElement();
                     ability.selectedOption = meleeOption;
                     if (!ability.CanCast.Accepted)
                         return null;
@@ -108,14 +110,12 @@ namespace WorkerDronesMod
             // 4. If enemy is not close (>= RangedSwitchDistance), switch to ranged for most, but some keep melee
             if (dist >= RangedSwitchDistance)
             {
-                var rangedOption = aiOptions.FirstOrDefault(o => o.IsRanged);
-                var meleeOption = aiOptions.FirstOrDefault(o => o.IsMelee);
-
                 // 80% chance to switch to ranged, 20% chance to keep melee
                 if (Rand.Value < 0.8f)
                 {
-                    if (rangedOption != null && (currentHediff == null || !currentHediff.IsRanged))
+                    if (aiRangedOptions.Count > 0 && (currentHediff == null || !aiRangedOptions.Contains(currentHediff)))
                     {
+                        var rangedOption = aiRangedOptions.RandomElement();
                         ability.selectedOption = rangedOption;
                         if (!ability.CanCast.Accepted)
                             return null;
@@ -124,8 +124,9 @@ namespace WorkerDronesMod
                 }
                 else
                 {
-                    if (meleeOption != null && (currentHediff == null || !currentHediff.IsMelee))
+                    if (aiMeleeOptions.Count > 0 && (currentHediff == null || !aiMeleeOptions.Contains(currentHediff)))
                     {
+                        var meleeOption = aiMeleeOptions.RandomElement();
                         ability.selectedOption = meleeOption;
                         if (!ability.CanCast.Accepted)
                             return null;
@@ -134,7 +135,6 @@ namespace WorkerDronesMod
                 }
                 return null;
             }
-
 
             // 5. Fallback to default if nothing else
             var fallbackDefault = aiOptions.FirstOrDefault(o => o.IsDefault);

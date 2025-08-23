@@ -23,28 +23,27 @@ namespace WorkerDronesMod
             if (basicSolverGene != null)
             {
                 float heatToAdd = Props.heatRange.RandomInRange;
+                float heatGainMultiplier = pawn.GetStatValue(MD_DefOf.MD_HeatGainMultiplier, true);
+                float abilityHeatGainMultiplier = pawn.GetStatValue(MD_DefOf.MD_AbilityHeatGainMultiplier, true);
+                heatToAdd *= heatGainMultiplier * abilityHeatGainMultiplier;
 
-                // Apply globalAbilityHeatMultiplier if sufficiently covered
-                if (SolarUtil.IsSufficientlyCovered(pawn))
-                {
-                    var ext = basicSolverGene.ext;
-                    if (ext != null)
-                    {
-                        heatToAdd *= ext.heatOptions.globalDefaultHeatMultiplier;
-                    }
-                }
 
                 basicSolverGene.Heat = Mathf.Min(
                     basicSolverGene.Heat + heatToAdd,
                     basicSolverGene.InitialResourceMax * 1.3f
                 );
+
+                // Always use corruptionRange for corruption gain
+                float corruptionToAdd = Props.corruptionRange.RandomInRange;
+                float corruptionGainMultiplier = pawn.GetStatValue(MD_DefOf.MD_AbilityCorruptionGainMultiplier, true);
+                corruptionToAdd *= corruptionGainMultiplier;
+                SolverCorruptionUtil.OnSolverAbilityUsed(pawn, corruptionToAdd);
             }
             else
             {
                 Log.Error($"Comp_AbilityHeatEffect: Pawn {pawn.LabelShortCap} does not have a Gene_BasicSolver.");
             }
         }
-
     }
 }
 

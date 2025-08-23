@@ -34,24 +34,24 @@ Also called a M.A.P.C standing for "magnetically amplified photon converger".</d
       <li>
         <verbClass>WorkerDronesMod.Verb_RailgunBeam</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
-        <warmupTime>4.5</warmupTime>
+        <warmupTime>2</warmupTime>
         <aimingChargeMote>Mote_Railgun_Charge</aimingChargeMote>
         <aimingChargeMoteOffset>0.5</aimingChargeMoteOffset>
         <range>15.9</range>
         <soundAiming>MD_Railgun_Chargeup</soundAiming>
-        <burstShotCount>100</burstShotCount>
+        <burstShotCount>10</burstShotCount>
         <onlyManualCast>true</onlyManualCast>
         <showBurstShotStats>false</showBurstShotStats>
-        <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+        <ticksBetweenBurstShots>50</ticksBetweenBurstShots>
         <beamDamageDef>MD_Beam</beamDamageDef>
         <soundCastTail>GunTail_Medium</soundCastTail>
         <muzzleFlashScale>9</muzzleFlashScale>
-        <soundCastBeam>MD_BeamWeapon_Shooting</soundCastBeam>
+        <soundCastBeam>MD_Railgun_Beam</soundCastBeam>
         <beamFleckChancePerTick>0.02</beamFleckChancePerTick>
         <beamMaxDeviation>0</beamMaxDeviation>
         <beamCurvature>0</beamCurvature>
         <beamFullWidthRange>0</beamFullWidthRange>
-        <beamWidth>1</beamWidth>
+        <beamWidth>0</beamWidth>
         <beamMoteDef>MD_Mote_RailgunLaserBase</beamMoteDef>
         <beamEndEffecterDef>RailgunBeam_End</beamEndEffecterDef>
         <beamChanceToStartFire>0.05</beamChanceToStartFire>

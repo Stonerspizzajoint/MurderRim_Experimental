@@ -27,14 +27,14 @@ namespace WorkerDronesMod
                 if (option.requiredGenes != null && option.requiredGenes.Count > 0)
                 {
                     if (pawn.genes == null)
+                    {
                         hasAllGenes = false;
+                    }
                     else
                     {
                         foreach (var geneDef in option.requiredGenes)
                         {
-                            // Try to find the alternate version
-                            GeneDef altDef = DefDatabase<GeneDef>.GetNamedSilentFail("VREA_" + geneDef.defName);
-                            if (!GeneDefHelper.PawnHasAnyGene(pawn, geneDef, altDef))
+                            if (!pawn.genes.HasActiveGene(geneDef))
                             {
                                 hasAllGenes = false;
                                 break;

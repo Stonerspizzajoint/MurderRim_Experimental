@@ -31,7 +31,7 @@ namespace WorkerDronesMod
             if (gene != null)
                 modExt = gene.def.GetModExtension<SolverGeneExtension>();
 
-            float regenSpeedMultiplier = modExt?.regenOptions?.regenSpeedMultiplier ?? 10f;
+            float regenSpeedMultiplier = pawn.GetStatValue(MD_DefOf.MD_RegenSpeedMultiplier, true);
             float minHealingFactor = modExt?.regenOptions?.minHealingFactor ?? 0.2f;
 
             int woundCount = injuriesToHeal.Count;
@@ -75,17 +75,6 @@ namespace WorkerDronesMod
                 comp.curDurability += delta;
             }
         }
-
-        public static bool CanDeathBePrevented(Pawn pawn, SolverGeneExtension ext)
-        {
-            // If in true sunlight, death cannot be prevented
-            if (SolarUtil.InTrueSunlight(pawn))
-                return false;
-
-            // If all checks above are false, death can be prevented
-            return true;
-        }
-
     }
 }
 

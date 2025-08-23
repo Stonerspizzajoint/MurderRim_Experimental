@@ -1,0 +1,136 @@
+<Defs>
+  <ThingDef ParentName="Human">
+    <defName>MD_DroneBabyRace</defName>
+    <label>Pill Baby</label>
+    <description>A newborn Pill Drone, assembled from the code of two parent drones. Its immobile until it is ready to upgrade.</description>
+    <tools Inherit="False" />
+    <uiIconScale>1.15</uiIconScale>
+    <race>
+      <thinkTreeMain>HumanlikeBaby</thinkTreeMain>
+      <thinkTreeConstant>HumanlikeBabyConstant</thinkTreeConstant>
+      <intelligence>Humanlike</intelligence>
+      <body>MD_DroneBabyBody</body>
+      <hasMeat>false</hasMeat>
+      <fleshType>MD_DroneFlesh</fleshType>
+      <bloodDef>MD_FilthNeutroamineOil</bloodDef>
+      <renderTree>Misc</renderTree>
+      <baseBodySize>0.25</baseBodySize>
+      <baseHealthScale>1</baseHealthScale>
+      <soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+      <lifeStageAges Inherit="False">
+        <li>
+          <def>HumanlikeBaby</def>
+          <minAge>0</minAge>
+        </li>
+        <li>
+          <def>HumanlikeBaby</def>
+          <minAge>3</minAge>
+        </li>
+        <li MayRequire="Ludeon.RimWorld.Biotech">
+          <def>HumanlikeBaby</def>
+          <minAge>9</minAge>
+        </li>
+        <li>
+          <def>HumanlikeBaby</def>
+          <minAge>13</minAge>
+        </li>
+        <li>
+          <def>HumanlikeBaby</def>
+          <minAge>18</minAge>
+        </li>
+      </lifeStageAges>
+    </race>
+    <recipes>
+      <li>VREA_InstallNeuroPump</li>
+      <li>VREA_InstallReactor</li>
+      <li>VREA_InstallOpticalUnit</li>
+      <li>RemoveBodyPart</li>
+    </recipes>
+    <butcherProducts>
+      <Neutroamine>2</Neutroamine>
+      <Steel>5</Steel>
+    </butcherProducts>
+  </ThingDef>
+
+<PawnKindDef ParentName="BasePlayerPawnKind">
+    <defName>MD_PillBabyPawn</defName>
+    <label>Pill Baby</label>
+    <race>MD_DroneBabyRace</race>
+    <combatPower>0</combatPower>
+    <pawnGroupDevelopmentStage>1</pawnGroupDevelopmentStage>
+    <minGenerationAge>0</minGenerationAge>
+    <maxGenerationAge>0</maxGenerationAge>
+    <initialResistanceRange Inherit="False">
+        <min>0</min>
+        <max>0</max>
+    </initialResistanceRange>
+    <initialWillRange Inherit="False">
+        <min>0</min>
+        <max>0</max>
+    </initialWillRange>
+    <nakedChance>1</nakedChance>
+    <apparelDisallowTags>
+      <li>Torso</li>
+      <li>Legs</li>
+    </apparelDisallowTags>
+	<xenotypeSet Inherit="False">
+    	<xenotypeChances>
+    		<VREA_AndroidBasic>999</VREA_AndroidBasic>
+    	</xenotypeChances>
+    </xenotypeSet>
+    <useFactionXenotypes>false</useFactionXenotypes>
+    <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>Pawn/BabyDrone/DroneBaby</texPath>
+            <drawSize>1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>Pawn/BabyDrone/DroneBaby</texPath>
+            <drawSize>1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>Pawn/BabyDrone/DroneBaby</texPath>
+            <drawSize>1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>Pawn/BabyDrone/DroneBaby</texPath>
+            <drawSize>1</drawSize>
+          </bodyGraphicData>
+        </li>
+        <li>
+          <bodyGraphicData>
+            <texPath>Pawn/BabyDrone/DroneBaby</texPath>
+            <drawSize>1</drawSize>
+          </bodyGraphicData>
+        </li>
+    </lifeStages>
+    <modExtensions>
+      <li Class="WorkerDronesMod.FixedAndroidBabyGenesExtension">
+        <fixedGenes>
+          <li>VREA_Power</li>
+          <li>VREA_SyntheticBody</li>
+          <li>VREA_SyntheticImmunity</li>
+          <li>VREA_ComponentFreezing</li>
+          <li>VREA_ComponentOverheating</li>
+          <li>VREA_ColdTolerant</li>
+          <li>VREA_HeatTolerant</li>
+          <li>VREA_PsychicallyDeaf</li>
+          <li>MD_NeutroamineOil</li>
+          <li>MD_LearningByObservation</li>
+          <li>MD_BabyDisplayEyes</li>
+          <li>VREA_EMPVulnerability</li>
+          <li>MD_MemorySleepProcessing</li>
+        </fixedGenes>
+      </li>
+    </modExtensions>
+</PawnKindDef>
+</Defs>

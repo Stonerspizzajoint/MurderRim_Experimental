@@ -1,0 +1,20 @@
+<Defs>
+<!-- ===== MANIPULATION TRAITS ===== -->
+    <WorkerDronesMod.SolverTraitDef ParentName="AbsoluteTraitBase">
+        <defName>SolverTrait_SolversTranslate</defName>
+        <label>Solvers Translate</label>
+        <description>Unlocks the eldritch protocol: users can pick up and throw objects by manipulating code-space.</description>
+        <iconPath>UI/Abilities/SolverDrone/MD_SolversHold</iconPath>
+        <tooltipExtra>Manipulation trait for Absolute Solver users. Grants an ability to pick up and throw objects using eldritch code.</tooltipExtra>
+        <defaultX>1.5</defaultX>
+        <defaultY>6</defaultY>
+        <size>0.7</size>
+        <tierLevel>1</tierLevel>
+        <requiredTierLevel>0</requiredTierLevel>
+        <skillPointCost>4</skillPointCost>
+        <GivenAbility>SolversTranslate</GivenAbility>
+        <requiredSolverTraits>
+            <li>SolverTrait_AbsoluteManipulation</li>
+        </requiredSolverTraits>
+    </WorkerDronesMod.SolverTraitDef>
+</Defs>

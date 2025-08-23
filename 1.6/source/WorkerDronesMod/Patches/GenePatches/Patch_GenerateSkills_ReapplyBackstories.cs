@@ -18,6 +18,25 @@ namespace WorkerDronesMod.Patches
             if (pawn?.genes == null || pawn.story == null || pawn.skills == null || pawn.story.traits == null)
                 return;
 
+            // If pawn is a baby android, assign the newborn android backstory and set all skills/passions to 0/None
+            if (BabyAndroidUtil.IsBabyAndroid(pawn))
+            {
+                pawn.story.Childhood = MD_DefOf.NewbornAndroid;
+                // Optionally clear adulthood backstory if desired:
+                // pawn.story.Adulthood = null;
+
+                // Set all skills to 0 and no passion
+                foreach (var skill in pawn.skills.skills)
+                {
+                    skill.Level = 0;
+                    skill.passion = Passion.None;
+                }
+
+                pawn.Notify_DisabledWorkTypesChanged();
+                // No need to apply forced traits or backstory skills/passions for baby androids
+                return;
+            }
+
             // Only affect awakened androids
             if (!pawn.genes.GetGene(VREA_DefOf.VREA_SyntheticBody)?.Active ?? true)
                 return;
@@ -71,7 +90,6 @@ namespace WorkerDronesMod.Patches
                 );
             }
         }
-
 
         private static void ApplyForcedTraits(Pawn pawn)
         {

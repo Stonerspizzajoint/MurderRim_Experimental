@@ -12,16 +12,18 @@ namespace WorkerDronesMod
     /// </summary>
     public class Gene_RandomSkinColor : Gene
     {
+        private Color? persistentColor;
+
         public override void PostAdd()
         {
             base.PostAdd();
-            ApplyRandomSkinColor();
+            SetOrApplySkinColor();
         }
 
         public override void PostMake()
         {
             base.PostMake();
-            ApplyRandomSkinColor();
+            SetOrApplySkinColor();
         }
 
         public override void PostRemove()
@@ -37,59 +39,71 @@ namespace WorkerDronesMod
             }
         }
 
-        private void ApplyRandomSkinColor()
+        private void SetOrApplySkinColor()
         {
             if (pawn == null || pawn.story == null)
                 return;
 
-            // Use custom color palette
-            List<Color> mixingColors = new List<Color>
+            // Prevent random color if pawn is or was a baby android
+            if (BabyAndroidUtil.IsBabyAndroid(pawn) ||
+                BabyAndroidGeneMemoryComponent.Instance.WasBornAsBabyAndroid(pawn.thingIDNumber))
             {
-                new Color32(255, 255, 255, 255), // pale (white)
-                new Color32(255, 0, 222, 255),
-                new Color32(163, 102, 255, 255),
-                new Color32(255, 0, 0, 255),
-                new Color32(255, 147, 15, 255),
-                new Color32(15, 119, 255, 255),
-                new Color32(57, 244, 247, 255),
-                new Color32(126, 255, 79, 255),
-                new Color32(247, 219, 36, 255) // yellow
-            };
+                return;
+            }
 
-            int mixCount = Rand.RangeInclusive(2, 3);
-            List<Color> chosenColors = new List<Color>();
-
-            // Ensure yellow is never the only color chosen and yellow never mixes with white
-            do
+            if (persistentColor == null)
             {
-                chosenColors.Clear();
-                for (int i = 0; i < mixCount; i++)
+                // Use custom color palette
+                List<Color> mixingColors = new List<Color>
                 {
-                    chosenColors.Add(mixingColors[Rand.Range(0, mixingColors.Count)]);
+                    new Color32(255, 255, 255, 255), // pale (white)
+                    new Color32(255, 0, 222, 255),
+                    new Color32(163, 102, 255, 255),
+                    new Color32(255, 0, 0, 255),
+                    new Color32(255, 147, 15, 255),
+                    new Color32(15, 119, 255, 255),
+                    new Color32(57, 244, 247, 255),
+                    new Color32(126, 255, 79, 255),
+                    new Color32(247, 219, 36, 255) // yellow
+                };
+
+                int mixCount = Rand.RangeInclusive(2, 3);
+                List<Color> chosenColors = new List<Color>();
+
+                // Ensure yellow is never the only color chosen and yellow never mixes with white
+                do
+                {
+                    chosenColors.Clear();
+                    for (int i = 0; i < mixCount; i++)
+                    {
+                        chosenColors.Add(mixingColors[Rand.Range(0, mixingColors.Count)]);
+                    }
                 }
-            }
-            while (
-                (chosenColors.Count > 1 && chosenColors.All(c => c == mixingColors[8])) || // Only yellow
-                (chosenColors.Contains(mixingColors[8]) && chosenColors.Contains(mixingColors[0])) // Yellow and white together
-            );
+                while (
+                    (chosenColors.Count > 1 && chosenColors.All(c => c == mixingColors[8])) || // Only yellow
+                    (chosenColors.Contains(mixingColors[8]) && chosenColors.Contains(mixingColors[0])) // Yellow and white together
+                );
 
-            // Blend the chosen colors
-            Color mixedColor = chosenColors[0];
-            for (int i = 1; i < chosenColors.Count; i++)
-            {
-                mixedColor = Color.Lerp(mixedColor, chosenColors[i], 0.5f);
+                // Blend the chosen colors
+                Color mixedColor = chosenColors[0];
+                for (int i = 1; i < chosenColors.Count; i++)
+                {
+                    mixedColor = Color.Lerp(mixedColor, chosenColors[i], 0.5f);
+                }
+
+                // Ensure full brightness (normalize to max channel)
+                float maxChannel = Mathf.Max(mixedColor.r, mixedColor.g, mixedColor.b);
+                if (maxChannel > 0f)
+                {
+                    mixedColor.r /= maxChannel;
+                    mixedColor.g /= maxChannel;
+                    mixedColor.b /= maxChannel;
+                }
+
+                persistentColor = mixedColor;
             }
 
-            // Ensure full brightness (normalize to max channel)
-            float maxChannel = Mathf.Max(mixedColor.r, mixedColor.g, mixedColor.b);
-            if (maxChannel > 0f)
-            {
-                mixedColor.r /= maxChannel;
-                mixedColor.g /= maxChannel;
-                mixedColor.b /= maxChannel;
-            }
-
-            pawn.story.skinColorOverride = mixedColor;
+            pawn.story.skinColorOverride = persistentColor.Value;
 
             // Force graphics update
             if (pawn.Drawer != null && pawn.Drawer.renderer != null)

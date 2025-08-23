@@ -9,6 +9,12 @@
 
   <Operation Class="PatchOperationRemove">
     <xpath>
+    /Defs/VREAndroids.AndroidGeneDef[defName="MD_SolverDisplayEyes"]/modExtensions/li[@Class="WorkerDronesMod.GeneHediffSwitcherExtension"]
+    </xpath>
+  </Operation>
+
+  <Operation Class="PatchOperationRemove">
+    <xpath>
     /Defs/VREAndroids.AndroidGeneDef[defName="MD_DisplayEyes_DD"]/modExtensions/li[@Class="WorkerDronesMod.GeneHediffSwitcherExtension"]
     </xpath>
   </Operation>

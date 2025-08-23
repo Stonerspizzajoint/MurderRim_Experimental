@@ -1,0 +1,11 @@
+<Defs>
+<!--
+  <JobDef>
+    <defName>FuseAndroidBaby</defName>
+    <driverClass>WorkerDronesMod.JobDriver_FuseAndroidBaby</driverClass>
+    <reportString>Fusin'.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <suspendable>false</suspendable>
+  </JobDef>
+-->
+</Defs>

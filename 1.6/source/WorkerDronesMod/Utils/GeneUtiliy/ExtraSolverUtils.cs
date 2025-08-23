@@ -2,6 +2,7 @@
 using RimWorld;
 using System.Security.Cryptography;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace WorkerDronesMod
 {
@@ -45,18 +46,34 @@ namespace WorkerDronesMod
             }
         }
 
+
         private static Area GetShelterArea(Pawn pawn)
         {
             if (pawn?.Map == null)
                 return null;
 
-            foreach (Area area in pawn.Map.areaManager.AllAreas)
+            int currentTick = Find.TickManager.TicksGame;
+            if (shelterAreaCacheTick != currentTick)
             {
-                if (area != null && area.Label == "Shaded Shelter")
-                    return area;
+                // Update cache once per tick
+                Area foundShelter = null;
+                foreach (var area in pawn.Map.areaManager.AllAreas)
+                {
+                    if (area != null && area.Label == "Shaded Shelter")
+                    {
+                        foundShelter = area;
+                        break;
+                    }
+                }
+                shelterAreaCache[pawn.Map] = foundShelter;
+                shelterAreaCacheTick = currentTick;
             }
-            return null;
+
+            shelterAreaCache.TryGetValue(pawn.Map, out var shelterArea);
+            return shelterArea;
         }
+
+
 
         private static void RestrictToShelter(Gene_BasicSolver gene, Area shelterArea)
         {
@@ -118,13 +135,17 @@ namespace WorkerDronesMod
 
         public static bool HasSolver(Pawn pawn)
         {
-            // Check for both base and alternate solver gene defs
-            var solverGenes = GeneDefHelper.GetGeneDefAndAlternative(
-                MD_DefOf.MD_BasicSolver,
-                MD_DefOf.VREA_MD_BasicSolver
-            ).ToArray();
+            return pawn != null
+                && pawn.genes != null
+                && (
+                    pawn.genes.HasActiveGene(MD_DefOf.MD_BasicSolver)
+                    || pawn.genes.HasActiveGene(MD_DefOf.MD_AbsoluteSolver)
+                );
+        }
 
-            return pawn != null && GeneDefHelper.PawnHasAnyGene(pawn, solverGenes);
+        public static bool IsRebooting(Pawn pawn)
+        {
+            return pawn != null && pawn.InMentalState && pawn.MentalStateDef == MD_DefOf.MD_RecoverAndBootUp;
         }
 
         // Placeholder for core heart logic (customize as needed)
@@ -132,6 +153,9 @@ namespace WorkerDronesMod
         {
             return false;
         }
+
+        private static Dictionary<Map, Area> shelterAreaCache = new Dictionary<Map, Area>();
+        private static int shelterAreaCacheTick = -1;
     }
 }
 

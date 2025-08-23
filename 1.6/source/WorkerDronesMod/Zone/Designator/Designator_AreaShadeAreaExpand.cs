@@ -15,10 +15,10 @@ namespace WorkerDronesMod
 
         public Designator_Cells_ShadeAreaExpand()
         {
-            defaultLabel = "Designate Shade Area";
-            defaultDesc = "Designate an area as shade (this area will be used to restrict pawn movement indoors).";
+            defaultLabel = "MD.DesignateShadeArea_Label".Translate();
+            defaultDesc = "MD.DesignateShadeArea_Desc".Translate();
             icon = ContentFinder<Texture2D>.Get("UI/Designators/DesignateShadeAreaExpand", false);
-            hotKey = KeyBindingDefOf.Misc6; // Adjust as needed.
+            hotKey = KeyBindingDefOf.Misc6;
 
             this.soundDragSustain = SoundDefOf.Designate_DragAreaAdd;
             this.soundDragChanged = SoundDefOf.Designate_DragZone_Changed;
@@ -28,10 +28,9 @@ namespace WorkerDronesMod
         public override AcceptanceReport CanDesignateCell(IntVec3 c)
         {
             if (!c.InBounds(Map))
-                return "Out of bounds.";
-            // Require the cell to be roofed (optional).
+                return "OutOfBounds".Translate();
             if (!c.Roofed(Map))
-                return "Cell is not roofed.";
+                return "MD.DesignateShadeArea_NotRoofed".Translate();
             return true;
         }
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Verse;
 using System.Linq;
+using VREAndroids;
 
 namespace WorkerDronesMod.Patches
 {

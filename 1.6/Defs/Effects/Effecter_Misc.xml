@@ -11,6 +11,39 @@
   </EffecterDef>
 
   <EffecterDef>
+    <defName>DisabledByBootup</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_Sustainer</subEffecterClass>
+        <soundDef>EmpDisabled</soundDef>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_Sustainer</subEffecterClass>
+        <soundDef>BootLoopSFX</soundDef>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerChance</subEffecterClass>
+        <fleckDef>BlastEMP</fleckDef>
+        <scale>0.6~1</scale>
+        <spawnLocType>RandomCellOnTarget</spawnLocType>
+        <burstCount>1~1</burstCount>
+        <chancePerTick>0.052</chancePerTick>
+        <positionRadius>0.25</positionRadius>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <fleckDef>Smoke</fleckDef>
+        <ticksBetweenMotes>30</ticksBetweenMotes>
+        <scale>0.6~1.1</scale>
+        <spawnLocType>OnSource</spawnLocType>
+        <absoluteAngle>true</absoluteAngle>
+        <angle>30~70</angle>
+        <speed>0.2~0.35</speed>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <EffecterDef>
     <defName>MD_RailgunWarmupEffect</defName>
     <children>
       <li>
@@ -106,6 +139,80 @@
         <soundDef>MD_LaughterEffect</soundDef>
         <spawnLocType>OnTarget</spawnLocType>
         <chancePerTick>0.00005</chancePerTick>
+      </li>
+    </children>
+  </EffecterDef>
+
+  <EffecterDef>
+    <defName>MD_CoreExit</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SoundTriggered</subEffecterClass>
+        <soundDef>MD_CoreExitSound</soundDef>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>MeatExplosionSplatter</fleckDef>
+        <burstCount>2</burstCount>
+        <rotation>-150~150</rotation>
+        <positionRadius>.75</positionRadius>
+        <speed>0.6~1.1</speed>
+        <scale>.5~.75</scale>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+        <spawnLocType>OnSource</spawnLocType>
+        <color>(5,5,5)</color>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <fleckDef>MeatExplosionSplatter</fleckDef>
+        <burstCount>2</burstCount>
+        <rotation>-150~150</rotation>
+        <positionRadius>.75</positionRadius>
+        <speed>0.6~1.1</speed>
+        <scale>.5~.75</scale>
+        <fleckUsesAngleForVelocity>true</fleckUsesAngleForVelocity>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>Mote_MeatExplosionMist</moteDef>
+        <burstCount>1~2</burstCount>
+        <scale>.4~.7</scale>
+        <rotation>-150~150</rotation>
+        <positionRadius>.75</positionRadius>
+        <spawnLocType>OnSource</spawnLocType>
+        <color>(5,5,5)</color>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>Mote_MeatExplosionMist</moteDef>
+        <burstCount>1~2</burstCount>
+        <scale>.4~.7</scale>
+        <rotation>-150~150</rotation>
+        <positionRadius>.75</positionRadius>
+        <spawnLocType>OnSource</spawnLocType>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>Mote_MeatExplosionFlyingSplatter</moteDef>
+        <burstCount>1</burstCount>
+        <rotation>-150~150</rotation>
+        <positionRadius>0.6</positionRadius>
+        <scale>.5~.75</scale>
+        <speed>0.8~1.2</speed>
+        <spawnLocType>OnSource</spawnLocType>
+        <color>(5,5,5)</color>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>Mote_MeatExplosionFlyingSplatter</moteDef>
+        <burstCount>1</burstCount>
+        <rotation>-150~150</rotation>
+        <positionRadius>0.6</positionRadius>
+        <scale>.5~.75</scale>
+        <speed>0.8~1.2</speed>
+        <spawnLocType>OnSource</spawnLocType>
       </li>
     </children>
   </EffecterDef>

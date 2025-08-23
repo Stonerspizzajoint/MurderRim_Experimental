@@ -1,0 +1,8 @@
+<Defs>
+  <StatCategoryDef>
+    <defName>Solver</defName>
+    <label>Absolute Solver</label>
+    <displayOrder>13</displayOrder>
+    <displayAllByDefault>true</displayAllByDefault>
+  </StatCategoryDef>
+</Defs>

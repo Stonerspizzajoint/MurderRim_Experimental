@@ -1,0 +1,22 @@
+<Patch>
+<!--
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="VREA_AndroidCreationStation"]/comps</xpath>
+        <value>
+            <li Class="WorkerDronesMod.CompProperties_AndroidGestation">
+                <gestationTicks>90000</gestationTicks>
+                <extraGestationPower>500</extraGestationPower>
+            </li>
+        </value>
+    </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThingDef[defName="VREA_AndroidCreationStation"]</xpath>
+    <value>
+      <inspectorTabs>
+        <li>WorkerDronesMod.ITab_AndroidGestation</li>
+      </inspectorTabs>
+    </value>
+  </Operation>
+-->
+</Patch>

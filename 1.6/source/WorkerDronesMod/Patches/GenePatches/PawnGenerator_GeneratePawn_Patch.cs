@@ -15,16 +15,8 @@ namespace WorkerDronesMod.Patches
     {
         public static void Postfix(Pawn __result)
         {
-            // --- Skin color logic: check for both base and alt display color gene ---
-            var displayColorGenes = GeneDefHelper.GetGeneDefAndAlternative(
-                MD_DefOf.MD_DisplayColor_Random,
-                MD_DefOf.VREA_MD_DisplayColor_Random
-            ).ToArray();
-
-            var randomSkinGene = __result.genes?.GenesListForReading
-                .FirstOrDefault(g => displayColorGenes.Contains(g.def) && !g.Overridden);
-
-            if (randomSkinGene != null)
+            // --- Skin color logic: check for base display color gene only ---
+            if (__result.genes?.HasActiveGene(MD_DefOf.MD_DisplayColor_Random) == true)
             {
                 var customColors = new List<Color>
                 {
@@ -55,7 +47,6 @@ namespace WorkerDronesMod.Patches
                     (chosenColors.Contains(customColors[8]) && chosenColors.Contains(customColors[0])) // Yellow and white together
                 );
 
-
                 Color mixedColor = chosenColors[0];
                 for (int i = 1; i < chosenColors.Count; i++)
                 {
@@ -78,13 +69,8 @@ namespace WorkerDronesMod.Patches
                 }
             }
 
-            // --- Hair color logic: only apply if pawn has MD_DroneBody or its alternative ---
-            var droneGenes = GeneDefHelper.GetGeneDefAndAlternative(
-                MD_DefOf.MD_DroneBody,
-                MD_DefOf.VREA_MD_DroneBody
-            ).ToArray();
-
-            if (GeneDefHelper.PawnHasAnyGene(__result, droneGenes) && Rand.Value < 0.1f)
+            // --- Hair color logic: only apply if pawn has MD_DroneBody ---
+            if (__result.genes?.HasGene(MD_DefOf.MD_DroneBody) == true && Rand.Value < 0.1f)
             {
                 if (__result.story != null)
                 {
@@ -99,8 +85,8 @@ namespace WorkerDronesMod.Patches
                 }
             }
 
-            // --- Helmet logic: only apply if pawn has MD_DroneBody or its alternative ---
-            if (GeneDefHelper.PawnHasAnyGene(__result, droneGenes) && Rand.Value < 0.25f)
+            // --- Helmet logic: only apply if pawn has MD_DroneBody ---
+            if (__result.genes?.HasGene(MD_DefOf.MD_DroneBody) == true && Rand.Value < 0.25f)
             {
                 ThingDef helmetDef = MD_DefOf.MD_Headgear_Hardhat;
                 ThingDef steel = ThingDefOf.Steel;

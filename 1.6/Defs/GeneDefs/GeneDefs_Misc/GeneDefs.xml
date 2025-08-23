@@ -42,6 +42,7 @@ The Body houses an improved reactor, leading to better power efficiency. Also a 
 				<rotDrawMode>Fresh, Rotting</rotDrawMode>
 				<colorType>Skin</colorType>
 				<parentTagDef>Body</parentTagDef>
+				<useSkinShader>false</useSkinShader>
 				<drawSize>1</drawSize>
 			</li>
 			<li Class="VEF.Graphics.PawnRenderNodeProperties_Omni">
@@ -104,10 +105,11 @@ The Body houses an improved reactor, leading to better power efficiency. Also a 
 			<li Class="VEF.Genes.GeneExtension">
 		    	<backgroundPathXenogenes>UI/Icons/Genes/GeneBackground_Hardware</backgroundPathXenogenes>
 		    	<backgroundPathEndogenes>UI/Icons/Genes/GeneBackground_Hardware</backgroundPathEndogenes>
-				<headDessicatedGraphicPath>Pawn/WorkerDrone/Drone_Dead/Head/Drone_Skull</headDessicatedGraphicPath>
-				<skullGraphicPath>Pawn/WorkerDrone/Drone_Dead/Head/Drone_Skull</skullGraphicPath>
+				<headDessicatedGraphicPath>Pawn/WorkerDrone/Head_HQ/normal</headDessicatedGraphicPath>
+				<skullGraphicPath>Pawn/WorkerDrone/Head_HQ/normal</skullGraphicPath>
 				<useSkinColorForFur>true</useSkinColorForFur>
 				<useMaskForFur>true</useMaskForFur>
+				<renderCacheOff>false</renderCacheOff>
 			</li>
   			<li MayRequire="mlie.showmeyourhands" Class="WorkerDronesMod.HandTextureExtension">
     			<mainTexturePath>OtherMods/Showmeyourhands/Hand</mainTexturePath>
@@ -126,9 +128,13 @@ The Body houses an improved reactor, leading to better power efficiency. Also a 
 			<li Class="WorkerDronesMod.GenePrerequisitesExtension">
 				<prerequisiteGeneDefNames>
 					<li>MD_DisplayEyes</li>
+					<li>MD_SolverDisplayEyes</li>
 					<li>MD_DisplayEyes_DD</li>
 					<li>MD_DisplayEyes_XX</li>
 				</prerequisiteGeneDefNames>
+			</li>
+			<li Class="WorkerDronesMod.GeneInheritExtension">
+				<AlwaysInherit>true</AlwaysInherit>
 			</li>
 		</modExtensions>
 	</VREAndroids.AndroidGeneDef>

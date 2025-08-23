@@ -1,0 +1,17 @@
+<Defs>
+    <StatDef ParentName="SolverStatBase">
+        <defName>MD_CorruptionDrainMultiplier</defName>
+        <label>corruption drain multiplier</label>
+        <description>Multiplier applied to all corruption drained.</description>
+        <defaultBaseValue>0</defaultBaseValue>
+        <toStringStyle>PercentZero</toStringStyle>
+    </StatDef>
+
+    <StatDef ParentName="SolverStatBase">
+        <defName>MD_HeatGainMultiplier</defName>
+        <label>heat gain multiplier</label>
+        <description>Multiplier applied to all heat gained.</description>
+        <defaultBaseValue>1.0</defaultBaseValue>
+        <toStringStyle>PercentZero</toStringStyle>
+    </StatDef>
+</Defs>

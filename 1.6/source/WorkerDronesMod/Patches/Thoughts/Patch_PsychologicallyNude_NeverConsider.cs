@@ -9,8 +9,8 @@ namespace WorkerDronesMod.Patches
     {
         static bool Prefix(Pawn p, ref ThoughtState __result)
         {
-            // If the pawn has the hats-only comp, treat them as never naked.
-            if (p != null && p.TryGetComp<Comp_HatsOnly>() != null)
+            // If the pawn is a core heart, treat them as never naked.
+            if (p != null && CoreHeartUtils.IsCoreHeart(p))
             {
                 __result = ThoughtState.Inactive;
                 return false; // Skip the original method so the thought never gets applied.

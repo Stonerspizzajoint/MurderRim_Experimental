@@ -16,47 +16,38 @@ namespace WorkerDronesMod
 
         public static void HandleOilCooling(Gene_BasicSolver gene, Pawn pawn, SolverGeneExtension ext)
         {
-            // Don’t cool if there’s no oil, no heat, or heat hasn’t reached the minimum threshold
             if (gene.Oil <= 0f || gene.Heat <= 0f ||
                 !HeatUtil.IsAboveMinimumHeat(gene.Heat, ext.heatOptions.minimumSafeHeat))
             {
-                // Reset warmup if not cooling
-                oilCoolingWarmupTicks.Remove(gene);
+                if (oilCoolingWarmupTicks.ContainsKey(gene))
+                    oilCoolingWarmupTicks.Remove(gene);
                 return;
             }
 
-            // Also skip if in direct sun
             if (SolarUtil.IsInAnySun(pawn) || SolarUtil.IsExtremeAmbientTemperature(pawn))
             {
-                oilCoolingWarmupTicks.Remove(gene);
+                if (oilCoolingWarmupTicks.ContainsKey(gene))
+                    oilCoolingWarmupTicks.Remove(gene);
                 return;
             }
 
             // Warmup logic
-            int warmup;
-            oilCoolingWarmupTicks.TryGetValue(gene, out warmup);
+            if (!oilCoolingWarmupTicks.TryGetValue(gene, out int warmup))
+                warmup = 0;
+
             if (warmup < OilCoolingWarmupDuration)
             {
                 oilCoolingWarmupTicks[gene] = warmup + 1;
-                return; // Still warming up, do not cool yet
+                return;
             }
 
-            // Oil cost scales slightly with ambient temperature
             float costMultiplier = 1f + Mathf.Max(0, pawn.AmbientTemperature - 21f) * 0.01f;
-
-            // Base oil usage amount
             float baseOilUse = ext.oilOptions.oilUsePerHeatUnit * costMultiplier;
-
-            // Check if heat is above 100%
             float heatRatio = gene.Heat / gene.InitialResourceMax;
-            float efficiencyMultiplier = heatRatio > 1f ? 1.5f : 1f; // 50% more effective when above 100% heat
-
-            // Oil used this tick
+            float efficiencyMultiplier = heatRatio > 1f ? 1.5f : 1f;
             float oilUse = Mathf.Min(gene.Oil, baseOilUse);
 
             gene.Oil -= oilUse;
-
-            // Remove heat using AddHeat (negative value)
             HeatUtil.AddHeat(pawn, -oilUse * ext.oilOptions.heatPerOil * efficiencyMultiplier, ext);
         }
 

@@ -15,12 +15,8 @@ namespace WorkerDronesMod.Patches
         [HarmonyPriority(2147483647)]
         public static bool Prefix(Pawn pawn, Hediff cause)
         {
-            var neutroGenes = GeneDefHelper.GetGeneDefAndAlternative(
-                MD_DefOf.MD_NeutroamineOil,
-                MD_DefOf.VREA_MD_NeutroamineOil
-            ).ToArray();
-
-            if (GeneDefHelper.PawnHasAnyGene(pawn, neutroGenes))
+            // Only check for the main gene, not the VREA_ variant
+            if (pawn.genes != null && pawn.genes.HasActiveGene(MD_DefOf.MD_NeutroamineOil))
             {
                 var hediffSet = pawn.health.hediffSet;
                 if (hediffSet.BleedRateTotal >= 0f)

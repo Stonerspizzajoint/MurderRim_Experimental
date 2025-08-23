@@ -1,0 +1,24 @@
+<Defs>
+    <BackstoryDef>
+        <defName>NewbornAndroid</defName>
+        <title>newborn android</title>
+        <titleShort>newborn android</titleShort>
+        <description>[PAWN_nameDef] is a newborn android, a unique fusion of two separate androids' code, forming a distinct child. [PAWN_possessive] early existence is focused on system initialization and basic learning routines.</description>
+        <slot>Childhood</slot>
+        <spawnCategories>
+            <li>NewbornAndroid</li>
+        </spawnCategories>
+        <requiresSpawnCategory>true</requiresSpawnCategory>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>ColonyBirthedAndroid</defName>
+        <title>colony android</title>
+        <titleShort>colony android</titleShort>
+        <slot>Childhood</slot>
+        <description>[PAWN_nameDef] was created and upgraded within the colony, benefiting from the latest advancements and collective experience. [PAWN_possessive] early days were shaped by the colony's technology and guidance.</description>
+        <spawnCategories>
+            <li>ColonyBirthedAndroid</li>
+        </spawnCategories>
+    </BackstoryDef>
+</Defs>

@@ -1,0 +1,104 @@
+<Defs>
+
+<!--Tier 0-->
+  <AbilityDef ParentName="SolverBase">
+    <defName>SolversHold</defName>
+    <label>Solver's Hold</label>
+    <description>Use the absolute solver to immobilize a target temporarily.</description>
+    <iconPath>UI/Abilities/SolverDrone/MD_SolversHold</iconPath>
+    <writeCombatLog>True</writeCombatLog>
+    <statBases>
+      <Ability_Duration>3</Ability_Duration>
+    </statBases>
+    <hotKey>Misc3</hotKey>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <cooldownTicksRange>1000</cooldownTicksRange>
+    <verbProperties>
+      <warmupTime>0.25</warmupTime>
+      <range>24.9</range>
+      <targetParams>
+        <canTargetAnimals>True</canTargetAnimals>
+        <canTargetCorpses>False</canTargetCorpses>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="WorkerDronesMod.CompProperties_AbilityHeatEffect">
+        <heatRange>20~25</heatRange>
+        <corruptionRange>0.01~0.05</corruptionRange>
+      </li>
+      <li Class="WorkerDronesMod.CompProperties_AbilityEffectStunWithCustomMote">
+        <compClass>WorkerDronesMod.CompAbilityEffect_StunWithCustomMote</compClass>
+        <customStunMoteDef>Mote_SolverStun</customStunMoteDef>
+        <stunMoteSpinSpeed>180</stunMoteSpinSpeed>
+      </li>
+      <li Class="WorkerDronesMod.CompProperties_AbilityFleckOnTarget">
+        <fleckDefs>
+          <li>SolverCodeFloatTarget</li>
+          <li>SolverAreaEffect</li>
+        </fleckDefs>
+        <preCastTicks>10</preCastTicks>
+        <UseSkinColor>true</UseSkinColor>
+      </li>
+      <li Class="WorkerDronesMod.CompProperties_AbilityFleckOnCaster">
+        <fleckDef>SolverCodeFloat</fleckDef>
+        <preCastTicks>10</preCastTicks>
+        <UseSkinColor>true</UseSkinColor>
+      </li>
+    </comps>
+  </AbilityDef>
+
+  <AbilityDef ParentName="SolverBase">
+    <defName>SolversTranslate</defName>
+    <label>Solver's Translate</label>
+    <description>Use the absolute solver to telekinetically move (or throw) a target to a nearby location.</description>
+    <iconPath>UI/Abilities/SolverDrone/MD_SolversHold</iconPath>
+    <writeCombatLog>True</writeCombatLog>
+    <hotKey>Misc3</hotKey>
+    <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+    <cooldownTicksRange>300</cooldownTicksRange>
+    <verbProperties>
+      <verbClass>WorkerDronesMod.Verb_SolverTelekinesis</verbClass>
+      <warmupTime>0.5</warmupTime>
+      <range>10.9</range>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetAnimals>true</canTargetAnimals>
+        <canTargetItems>true</canTargetItems>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="WorkerDronesMod.CompProperties_AbilityHeatEffect">
+        <heatRange>10~12.5</heatRange>
+        <corruptionRange>0.005~0.025</corruptionRange>
+      </li>
+      <li Class="WorkerDronesMod.CompProperties_AbilityTelekinesisEffect">
+        <compClass>WorkerDronesMod.Comp_AbilityTelekinesisEffect</compClass>
+        <SpinningIconPath>UI/Icons/Gizmo/Icon_SolverTranslate</SpinningIconPath>
+        <SpinIconSize>2</SpinIconSize>
+      </li>
+      <li Class="WorkerDronesMod.CompProperties_AbilityEffectStunWithCustomMote">
+        <compClass>WorkerDronesMod.CompAbilityEffect_StunWithCustomMote</compClass>
+        <customStunMoteDef>Mote_SolverStun</customStunMoteDef>
+        <stunMoteSpinSpeed>180</stunMoteSpinSpeed>
+      </li>
+      <li Class="WorkerDronesMod.CompProperties_AbilityFleckOnTarget">
+        <fleckDefs>
+          <li>SolverCodeFloatTarget</li>
+          <li>SolverAreaEffect</li>
+        </fleckDefs>
+        <preCastTicks>10</preCastTicks>
+        <UseSkinColor>true</UseSkinColor>
+      </li>
+      <li Class="WorkerDronesMod.CompProperties_AbilityFleckOnCaster">
+        <fleckDef>SolverCodeFloat</fleckDef>
+        <preCastTicks>10</preCastTicks>
+        <UseSkinColor>true</UseSkinColor>
+      </li>
+    </comps>
+  </AbilityDef>
+
+<!--Tier 1-->
+
+<!--Tier 2-->
+</Defs>

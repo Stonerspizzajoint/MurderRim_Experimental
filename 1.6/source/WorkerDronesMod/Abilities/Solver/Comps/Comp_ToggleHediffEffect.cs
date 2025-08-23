@@ -12,7 +12,7 @@ namespace WorkerDronesMod
         public CompProperties_ToggleHediffEffect Props => (CompProperties_ToggleHediffEffect)this.props;
 
         // Tracks whether the toggled hediff(s) are currently active.
-        public bool toggledOn = true;
+        public bool toggledOn = false;
 
         /// <summary>
         /// Called when the ability is cast on local targets.

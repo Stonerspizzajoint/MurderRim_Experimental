@@ -7,7 +7,7 @@ using VREAndroids;
 
 namespace WorkerDronesMod.Patches
 {
-    [HarmonyPatch(typeof(Building_NeutroCasket), nameof(Building_NeutroCasket.Tick))]
+    [HarmonyPatch(typeof(Building_NeutroCasket), nameof(Building_NeutroCasket.TickInterval))]
     public static class Patch_Building_NeutroCasket_OilFromFuel
     {
         // Postfix runs after the original Tick() has healed NeutroLoss and consumed 1 fuel per pawn

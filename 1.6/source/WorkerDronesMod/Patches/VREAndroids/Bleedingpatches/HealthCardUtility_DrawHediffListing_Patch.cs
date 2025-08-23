@@ -37,12 +37,8 @@ namespace WorkerDronesMod.Patches
             // Calculate the current bleeding rate.
             float bleedRateTotal = pawn.health.hediffSet.BleedRateTotal;
 
-            var neutroGenes = GeneDefHelper.GetGeneDefAndAlternative(
-                MD_DefOf.MD_NeutroamineOil,
-                MD_DefOf.VREA_MD_NeutroamineOil
-            ).ToArray();
-
-            if (GeneDefHelper.PawnHasAnyGene(pawn, neutroGenes))
+            // Only check for the main gene, not the VREA_ variant
+            if (pawn.genes != null && pawn.genes.HasActiveGene(MD_DefOf.MD_NeutroamineOil))
             {
                 Hediff firstHediffOfDef = pawn.health.hediffSet.GetFirstHediffOfDef(VREA_DefOf.VREA_NeutroLoss, false);
                 if (firstHediffOfDef != null && firstHediffOfDef.Severity >= 1f)

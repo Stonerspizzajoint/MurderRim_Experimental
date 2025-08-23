@@ -1,0 +1,152 @@
+<Defs>
+
+<!-- ===== MUTATION TRAITS ===== -->
+    <WorkerDronesMod.SolverTraitDef ParentName="MutationTraitBase">
+        <defName>SolverTrait_AdaptiveChassis</defName>
+        <label>Adaptive Chassis</label>
+        <description>Through biomechanical adaptation, the Absolute Solver's mutation weaves generative algorithms into its chassis, enabling self-optimizing reconfiguration. This living machinery enhances both mobility and structural resilience, evolving in response to environmental demands.</description>
+        <iconPath>UI/Icons/Genes/Gene_Coagulate</iconPath>
+        <tooltipExtra>Mutation trait for Absolute Solver users. Enhances mobility and durability.</tooltipExtra>
+        <defaultX>0</defaultX>
+        <defaultY>2.5</defaultY>
+        <size>0.5</size>
+        <tierLevel>0</tierLevel>
+        <skillPointCost>1</skillPointCost>
+        <requiredTierLevel>0</requiredTierLevel>
+        <statOffsets>
+            <MoveSpeed>0.10</MoveSpeed>
+            <ArmorRating_Sharp>0.05</ArmorRating_Sharp>
+        </statOffsets>
+        <requiredSolverTraits>
+            <li>SolverTrait_AbsoluteSolver</li>
+        </requiredSolverTraits>
+    </WorkerDronesMod.SolverTraitDef>
+
+    <WorkerDronesMod.SolverTraitDef ParentName="MutationTraitBase">
+        <defName>SolverTrait_CorruptionDrainBoost</defName>
+        <label>Corruption Drain</label>
+        <description>Unlocks a latent protocol that subtly siphons corruption from the system, enhancing operational efficiency by 5%. The process is seamless.</description>
+        <iconPath>UI/Icons/Genes/Gene_PerfectImmunity</iconPath>
+        <tooltipExtra>Mutation trait for Absolute Solver users. Allows passive corruption drain.</tooltipExtra>
+        <defaultX>1</defaultX>
+        <defaultY>3</defaultY>
+        <size>0.5</size>
+        <tierLevel>0</tierLevel>
+        <skillPointCost>1</skillPointCost>
+        <requiredTierLevel>0</requiredTierLevel>
+        <statOffsets>
+            <MD_CorruptionDrainMultiplier>0.05</MD_CorruptionDrainMultiplier>
+        </statOffsets>
+        <requiredSolverTraits>
+            <li>SolverTrait_AbsoluteSolver</li>
+        </requiredSolverTraits>
+    </WorkerDronesMod.SolverTraitDef>
+
+<!-- ===== CORRUPTION TRAITS ===== -->
+    <WorkerDronesMod.SolverTraitDef ParentName="CorruptionTraitBase">
+        <defName>SolverTrait_CorruptOptimization</defName>
+        <label>corrupt optimization</label>
+        <description>An optimization protocol delivered by the Solver itself. Less heat. More power. All it asks is that you trust it... more than yourself.</description>
+        <iconPath>UI/Icons/Genes/Gene_MaxTemperatureLargeDecrease</iconPath>
+        <tooltipExtra>Corruption trait for Absolute Solver users. Allows less heat gain from abilities but higher corruption gain.</tooltipExtra>
+        <defaultX>3.5</defaultX>
+        <defaultY>3</defaultY>
+        <size>0.5</size>
+        <tierLevel>0</tierLevel>
+        <requiredTierLevel>0</requiredTierLevel>
+        <skillPointCost>1</skillPointCost>
+        <requiredSolverTraits>
+            <li>SolverTrait_AbsoluteSolver</li>
+        </requiredSolverTraits>
+        <statOffsets>
+            <MD_HeatGainMultiplier>-0.10</MD_HeatGainMultiplier> <!-- -10% heat gain from all sources -->
+            <MD_AbilityCorruptionGainMultiplier>0.15</MD_AbilityCorruptionGainMultiplier> <!-- +15% corruption gain from abilities -->
+        </statOffsets>
+    </WorkerDronesMod.SolverTraitDef>
+
+    <WorkerDronesMod.SolverTraitDef ParentName="CorruptionTraitBase">
+        <defName>SolverTrait_SolarVeil</defName>
+        <label>solar veil protocol</label>
+        <description>Reduces heat from sunlight by bending rays away, but increases corruption gain. A forbidden Solver adaptation.</description>
+        <iconPath>UI/Icons/Genes/Gene_MildUVSensitivity</iconPath>
+        <tooltipExtra>Corruption trait for Absolute Solver users. Allows less heat gain from Sunlight but higher corruption gain from abilities.</tooltipExtra>
+        <defaultX>4.5</defaultX>
+        <defaultY>2.5</defaultY>
+        <size>0.5</size>
+        <tierLevel>0</tierLevel>
+        <requiredTierLevel>0</requiredTierLevel>
+        <skillPointCost>1</skillPointCost>
+        <requiredSolverTraits>
+            <li>SolverTrait_AbsoluteSolver</li>
+        </requiredSolverTraits>
+        <statOffsets>
+            <MD_SolarHeatMultiplier>-0.5</MD_SolarHeatMultiplier> <!-- 50% less heat from solar sources -->
+            <MD_AbilityCorruptionGainMultiplier>0.10</MD_AbilityCorruptionGainMultiplier> <!-- 10% more corruption gain -->
+        </statOffsets>
+    </WorkerDronesMod.SolverTraitDef>
+<!-- ===== MANIPULATION TRAITS ===== -->
+
+    <WorkerDronesMod.SolverTraitDef ParentName="AbsoluteTraitBase">
+        <defName>SolverTrait_AcceleratedProtocol</defName>
+        <label>accelerated protocol</label>
+        <description>Unlocks advanced Solver routines that reduce ability cooldowns by 10%. Actions flow seamlessly, enabling rapid tactical responses.</description>
+        <iconPath>UI/Icons/Genes/Gene_Ageless</iconPath>
+        <tooltipExtra>Manipulation trait for Absolute Solver users. Abilities recharge faster.</tooltipExtra>
+        <defaultX>1.5</defaultX>
+        <defaultY>3.5</defaultY>
+        <size>0.5</size>
+        <tierLevel>0</tierLevel>
+        <requiredTierLevel>0</requiredTierLevel>
+        <skillPointCost>1</skillPointCost>
+        <requiredSolverTraits>
+            <li>SolverTrait_AbsoluteSolver</li>
+        </requiredSolverTraits>
+        <statOffsets>
+            <MD_AbilityCooldownMultiplier>-0.10</MD_AbilityCooldownMultiplier> <!-- 10% faster cooldowns -->
+        </statOffsets>
+    </WorkerDronesMod.SolverTraitDef>
+
+    <WorkerDronesMod.SolverTraitDef ParentName="AbsoluteTraitBase">
+        <defName>SolverTrait_ThermalEfficiency</defName>
+        <label>thermal efficiency</label>
+        <description>Solver-driven optimizations lower heat gain from abilities by 5%. The system remains cooler, sustaining manipulation protocols longer.</description>
+        <iconPath>UI/Icons/Genes/Gene_MaxTemperatureSmallDecrease</iconPath>
+        <tooltipExtra>Manipulation trait for Absolute Solver users. Slightly reduces heat gain from abilities.</tooltipExtra>
+        <defaultX>3</defaultX>
+        <defaultY>3.5</defaultY>
+        <size>0.5</size>
+        <tierLevel>0</tierLevel>
+        <requiredTierLevel>0</requiredTierLevel>
+        <skillPointCost>1</skillPointCost>
+        <requiredSolverTraits>
+            <li>SolverTrait_AbsoluteSolver</li>
+        </requiredSolverTraits>
+        <statOffsets>
+            <MD_HeatGainMultiplier>-0.05</MD_HeatGainMultiplier> <!-- 5% less heat gain from abilities -->
+        </statOffsets>
+    </WorkerDronesMod.SolverTraitDef>
+
+<!-- ===== TEST TRAIT ===== -->
+    <WorkerDronesMod.SolverTraitDef ParentName="CorruptionTraitBase">
+        <defName>SolverTrait_TEST</defName>
+        <label>Greg</label>
+        <description>Become Greg.</description>
+        <tooltipExtra>This is a test trait for debugging purposes.</tooltipExtra>
+        <iconPath>UI/Icons/SolverTraits/TestTrait</iconPath>
+        <defaultX>0</defaultX>
+        <defaultY>0</defaultY>
+        <size>0.5</size>
+        <tierLevel>0</tierLevel>
+        <requiredTierLevel>0</requiredTierLevel>
+        <skillPointCost>0</skillPointCost>
+        <statOffsets>
+            <MD_HeatGainMultiplier>-0.10</MD_HeatGainMultiplier> <!-- -10% heat gain from all sources -->
+            <MoveSpeed>100</MoveSpeed>
+            <MeleeDamageFactor>2.0</MeleeDamageFactor>
+            <MD_AbilityCorruptionGainMultiplier>0.15</MD_AbilityCorruptionGainMultiplier> <!-- +15% corruption gain from abilities -->
+            <MD_AbilityCooldownMultiplier>-0.85</MD_AbilityCooldownMultiplier> <!-- 85% faster cooldowns -->
+        </statOffsets>
+    </WorkerDronesMod.SolverTraitDef>
+
+
+</Defs>

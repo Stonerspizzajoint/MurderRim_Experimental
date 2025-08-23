@@ -10,7 +10,13 @@
     <enableUnisexTexPath>true</enableUnisexTexPath>
   </FacialAnimation.EyeballTypeDef>
 
+  <FacialAnimation.EyeballTypeDef Name="SolverDroneEye" Abstract="True">
+    <raceName>MD_SolverDroneBase</raceName>
+    <enableUnisexTexPath>true</enableUnisexTexPath>
+  </FacialAnimation.EyeballTypeDef>
+
  <!--Normal Worker Eyes-->
+
   <FacialAnimation.EyeballTypeDef ParentName="WorkerDroneEye">
 	  <defName>Normal_DisplayEyes</defName>
 	  <texPath>OtherMods/FacialAnimations/WorkerDrone/Eyes/Normal</texPath>
@@ -79,6 +85,50 @@
   <FacialAnimation.EyeballTypeDef ParentName="DisassemblyDroneEye">
 	  <defName>WornOutTiredCrazed_DisplayEyes_DD</defName>
 	  <texPath>OtherMods/FacialAnimations/DisassemblyDrone/Eyes/WornOutTired_Crazed</texPath>
+	  <shader>Map/TransparentPostLight</shader>
+    <probability>0.3</probability>
+  </FacialAnimation.EyeballTypeDef>
+
+ <!--Solver Eyes (Left)-->
+
+  <FacialAnimation.EyeballTypeDef ParentName="SolverDroneEye">
+	  <defName>Normal_SolverDisplayEyes</defName>
+	  <texPath>OtherMods/FacialAnimations/Solver/Eyes/Normal_SolverLeft</texPath>
+	  <shader>Map/TransparentPostLight</shader>
+  </FacialAnimation.EyeballTypeDef>
+
+  <FacialAnimation.EyeballTypeDef ParentName="SolverDroneEye">
+	  <defName>WornOut_SolverDisplayEyes</defName>
+	  <texPath>OtherMods/FacialAnimations/Solver/Eyes/WornOut_SolverLeft</texPath>
+	  <shader>Map/TransparentPostLight</shader>
+    <probability>0.7</probability>
+  </FacialAnimation.EyeballTypeDef>
+
+  <FacialAnimation.EyeballTypeDef ParentName="SolverDroneEye">
+	  <defName>WornOutTired_SolverDisplayEyes</defName>
+	  <texPath>OtherMods/FacialAnimations/Solver/Eyes/WornOutTired_SolverLeft</texPath>
+	  <shader>Map/TransparentPostLight</shader>
+    <probability>0.3</probability>
+  </FacialAnimation.EyeballTypeDef>
+
+ <!--Solver Eyes (Right)-->
+
+  <FacialAnimation.EyeballTypeDef ParentName="SolverDroneEye">
+	  <defName>Normal_SolverDisplayEyes2</defName>
+	  <texPath>OtherMods/FacialAnimations/Solver/Eyes/Normal_SolverRight</texPath>
+	  <shader>Map/TransparentPostLight</shader>
+  </FacialAnimation.EyeballTypeDef>
+
+  <FacialAnimation.EyeballTypeDef ParentName="SolverDroneEye">
+	  <defName>WornOut_SolverDisplayEyes2</defName>
+	  <texPath>OtherMods/FacialAnimations/Solver/Eyes/WornOut_SolverRight</texPath>
+	  <shader>Map/TransparentPostLight</shader>
+    <probability>0.7</probability>
+  </FacialAnimation.EyeballTypeDef>
+
+  <FacialAnimation.EyeballTypeDef ParentName="SolverDroneEye">
+	  <defName>WornOutTired_SolverDisplayEyes2</defName>
+	  <texPath>OtherMods/FacialAnimations/Solver/Eyes/WornOutTired_SolverRight</texPath>
 	  <shader>Map/TransparentPostLight</shader>
     <probability>0.3</probability>
   </FacialAnimation.EyeballTypeDef>

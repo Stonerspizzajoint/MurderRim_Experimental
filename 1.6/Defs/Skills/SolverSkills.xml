@@ -1,0 +1,25 @@
+<Defs>
+<SkillDef>
+    <defName>SolverControl</defName>
+    <label>solver control</label>
+    <description>Mastery over the Solver's power and corruption.</description>
+    <skillLabel>Solver Control</skillLabel>
+    <pawnCreatorSummaryVisible>true</pawnCreatorSummaryVisible>
+    <neverDisabledBasedOnWorkTypes>true</neverDisabledBasedOnWorkTypes>
+    <listOrder>9</listOrder>
+    <generalRules>
+        <rulesStrings>
+            <li>subject->solver control</li>
+            <li>subject->AI mastery</li>
+            <li>subject->corruption management</li>
+            <li>subject->system integration</li>
+            <li>subject->circuit discipline</li>
+            <li>subject->logic control</li>
+            <li>subject->solver proficiency</li>
+            <li>subject->AI synchronization</li>
+            <li>subject->signal handling</li>
+            <li>subject->solver focus</li>
+        </rulesStrings>
+    </generalRules>
+</SkillDef>
+</Defs>

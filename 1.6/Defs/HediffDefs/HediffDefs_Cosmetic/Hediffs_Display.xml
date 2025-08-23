@@ -134,4 +134,44 @@
 			</li>
 		</renderNodeProperties>
 	</HediffDef>
+
+<!--BABY Display-->
+	<HediffDef ParentName="MD_CosmeticDisplayBase">
+		<defName>MD_Normal_BabyEyes</defName>
+		<extraTooltip>Normal</extraTooltip>
+		<renderNodeProperties>
+			<li Class="VEF.Graphics.PawnRenderNodeProperties_Omni">
+				<nodeClass>VEF.Graphics.PawnRenderNode_Omni</nodeClass>
+      			<conditionalGraphics>
+					<alts>
+						<li>
+							<!--Blank Display when dead or downed-->
+        					<requirements>
+          						<li>Dead</li>
+        					</requirements>
+							<texPath>Pawn/Display/DisplayEyesBlank/DisplayEyesBlank</texPath>
+						</li>
+					</alts>
+					<!--Normal Display-->
+					<shader>TransparentPostLight</shader>
+					<colorA>
+						<skinColor>true</skinColor>
+					</colorA>
+        			<texPaths>
+          				<li>Pawn/Display/BabyDisplay/BabyEyes</li>
+        			</texPaths>
+      			</conditionalGraphics>
+				<rotDrawMode>Fresh, Rotting</rotDrawMode>
+				<parentTagDef>Body</parentTagDef>
+				<drawSize>1</drawSize>
+				<side>Center</side>
+				<drawData>
+					<defaultData>
+						<layer>54</layer>
+						<offset>(0, 0, 0)</offset>
+					</defaultData>
+				</drawData>
+			</li>
+		</renderNodeProperties>
+	</HediffDef>
 </Defs>

@@ -53,7 +53,7 @@
         <extraTooltip>normal</extraTooltip>
 		<renderNodeProperties>
 			<li>
-				<workerClass>PawnRenderNodeWorker_Head</workerClass>
+				<workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
 				<visibleFacing>
 					<li>East</li>
 					<li>West</li>
@@ -66,10 +66,11 @@
 				<shaderTypeDef>Cutout</shaderTypeDef>
 				<parentTagDef>Head</parentTagDef>
 				<drawSize>1</drawSize>
+				<side>Center</side>
 				<drawData>
 					<scaleOffsetByBodySize>false</scaleOffsetByBodySize>
 					<defaultData>
-						<offset>(0, 0, -0.42)</offset>
+						<offset>(0, 0, -0.02)</offset>
 						<layer>66</layer>
 					</defaultData>
 				</drawData>

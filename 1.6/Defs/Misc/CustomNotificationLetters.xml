@@ -1,0 +1,6 @@
+<Defs>
+  <LetterDef ParentName="CustomChoiceLetterBase">
+    <defName>BabyAndroidBirth</defName>
+    <letterClass>WorkerDronesMod.ChoiceLetter_BabyAndroidBirth</letterClass>
+  </LetterDef>
+</Defs>

@@ -6,6 +6,7 @@
         <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
         <requiredGenes>
             <li>MD_BasicSolver</li>
+            <li>MD_AbsoluteSolver</li>
         </requiredGenes>
         <stages>
             <li>
@@ -22,6 +23,7 @@
         <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
         <requiredGenes>
             <li>MD_BasicSolver</li>
+            <li>MD_AbsoluteSolver</li>
         </requiredGenes>
         <stages>
             <li>
@@ -38,6 +40,7 @@
         <developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
         <requiredGenes>
             <li>MD_BasicSolver</li>
+            <li>MD_AbsoluteSolver</li>
         </requiredGenes>
         <stages>
             <li>

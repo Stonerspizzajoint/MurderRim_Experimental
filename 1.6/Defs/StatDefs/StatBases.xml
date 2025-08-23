@@ -1,0 +1,8 @@
+<Defs>
+    <StatDef Name="SolverStatBase" Abstract="True">
+        <category>Solver</category>
+        <workerClass>WorkerDronesMod.StatWorker_ShowForSolverGenesOnly</workerClass>
+        <disableIfSkillDisabled>SolverControl</disableIfSkillDisabled>
+        <toStringStyle>PercentZero</toStringStyle>
+    </StatDef>
+</Defs>

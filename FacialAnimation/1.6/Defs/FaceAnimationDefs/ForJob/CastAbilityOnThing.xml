@@ -1,0 +1,23 @@
+<Defs>
+  <FacialAnimation.FaceAnimationDef ParentName="SolverDroneAnimation">
+    <defName>CastAbility_solver</defName>
+    <animationFrames>
+      <li>
+        <duration>1</duration>
+        <browShapeDef>angled</browShapeDef>
+        <eyeballShapeDef>solver</eyeballShapeDef>
+        <mouthShapeDef>open</mouthShapeDef>
+        <browOffset>(0,0,-0.00875)</browOffset>
+        <lidOffset>(0.0,0,-0.005)</lidOffset>
+      </li>
+    </animationFrames>
+    <targetJobs>
+      <li>CastAbilityOnThing</li>
+      <li>CastAbilityOnThingMelee</li>
+      <li>CastAbilityTouch</li>
+      <li>CastAbilityOnThingUninterruptible</li>
+      <li>CastAbilityOnWorldTile</li>
+    </targetJobs>
+    <priority>10199</priority>
+  </FacialAnimation.FaceAnimationDef>
+</Defs>

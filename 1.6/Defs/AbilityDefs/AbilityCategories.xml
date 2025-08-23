@@ -1,0 +1,6 @@
+<Defs>
+  <AbilityCategoryDef>
+    <defName>Solver</defName>
+    <displayOrder>1</displayOrder>
+  </AbilityCategoryDef>
+</Defs>

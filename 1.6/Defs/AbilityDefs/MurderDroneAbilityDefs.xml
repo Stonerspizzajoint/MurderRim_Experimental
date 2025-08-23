@@ -198,7 +198,7 @@
 		<description>Use wings to jump a short distance. 
 (Raises Heat from 10%~15%)</description>
 		<iconPath>Pawn/DisassemblyDrone/Natural_Weapons/Bladed_Wings/BladeWings_south</iconPath>
-		<cooldownTicksRange>5</cooldownTicksRange>
+		<cooldownTicksRange>1000</cooldownTicksRange>
     <displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
     <disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
     <hostile>false</hostile>
@@ -224,6 +224,7 @@
     <comps>
       <li Class="WorkerDronesMod.CompProperties_AbilityHeatEffect">
         <heatRange>20~25</heatRange>
+        <corruptionRange>0.5~1</corruptionRange>
       </li>
     </comps>
 	</AbilityDef>

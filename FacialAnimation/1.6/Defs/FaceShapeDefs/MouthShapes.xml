@@ -5,7 +5,7 @@
   </FacialAnimation.MouthShapeDef>
 
   <FacialAnimation.MouthShapeDef>
-    <defName>dead</defName>
+    <defName>none</defName>
     <altShapeDef>normal</altShapeDef>
   </FacialAnimation.MouthShapeDef>
 </Defs>

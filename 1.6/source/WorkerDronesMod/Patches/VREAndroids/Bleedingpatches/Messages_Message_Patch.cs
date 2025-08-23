@@ -32,12 +32,8 @@ namespace WorkerDronesMod.Patches
             }
             Pawn pawn = obj as Pawn;
 
-            var neutroGenes = GeneDefHelper.GetGeneDefAndAlternative(
-                MD_DefOf.MD_NeutroamineOil,
-                MD_DefOf.VREA_MD_NeutroamineOil
-            ).ToArray();
-
-            if (pawn != null && GeneDefHelper.PawnHasAnyGene(pawn, neutroGenes)
+            // Only check for the main gene, not the VREA_ variant
+            if (pawn != null && pawn.genes != null && pawn.genes.HasActiveGene(MD_DefOf.MD_NeutroamineOil)
                 && text == "CannotRescue".Translate() + ": " + "NoNonPrisonerBed".Translate())
             {
                 text = "CannotRescue".Translate() + ": " + "VREA.NoNeutroCasket".Translate();

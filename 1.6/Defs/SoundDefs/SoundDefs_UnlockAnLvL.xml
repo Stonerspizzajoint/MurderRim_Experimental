@@ -1,0 +1,76 @@
+<Defs>
+  <SoundDef>
+    <defName>MD_CorruptionUnlock</defName>
+    <maxSimultaneous>1</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>   
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>DisassemblyDronesMod/MD_CorruptionUnlock</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>10</volumeRange>
+        <pitchRange>0.99~1.01</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>MD_MutationUnlock</defName>
+    <context>Any</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>DisassemblyDronesMod/MD_MutationUnlock</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>10</volumeRange>
+        <pitchRange>0.99~1.01</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>MD_ManipulationUnlock</defName>
+    <context>Any</context>
+    <maxSimultaneous>1</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>DisassemblyDronesMod/MD_ManipulationUnlock</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>10</volumeRange>
+        <pitchRange>0.99~1.01</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>MD_ControlLevelUp</defName>
+    <context>Any</context>
+    <maxSimultaneous>5</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>DisassemblyDronesMod/MD_ControlLevelUp</clipFolderPath>
+          </li>
+        </grains>
+        <volumeRange>10</volumeRange>
+        <pitchRange>0.99~1.01</pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+</Defs>

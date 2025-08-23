@@ -16,12 +16,8 @@ namespace WorkerDronesMod.Patches
         [HarmonyPriority(int.MaxValue)]
         public static bool Prefix(ref float __result, Hediff_Injury __instance)
         {
-            var neutroGenes = GeneDefHelper.GetGeneDefAndAlternative(
-                MD_DefOf.MD_NeutroamineOil,
-                MD_DefOf.VREA_MD_NeutroamineOil
-            ).ToArray();
-
-            if (GeneDefHelper.PawnHasAnyGene(__instance.pawn, neutroGenes))
+            // Only check for the main gene, not the VREA_ variant
+            if (__instance.pawn?.genes != null && __instance.pawn.genes.HasActiveGene(MD_DefOf.MD_NeutroamineOil))
             {
                 __result = CustomBleedRate(__instance);
                 return false;

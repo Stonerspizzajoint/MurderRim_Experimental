@@ -8,7 +8,7 @@
       <Male>Pawn/WorkerDrone/Body_HQ/Drone_Male</Male>
       <Female>Pawn/WorkerDrone/Body_HQ/Drone_Female</Female>
       <Child>Pawn/WorkerDrone/Body_HQ/Drone_Male</Child>
-      <Baby>Pawn/WorkerDrone/Baby/Drone_Baby</Baby>
+      <Baby>Pawn/WorkerDrone/Body_HQ/Drone_Child</Baby>
     </bodyTypeGraphicPaths>
   </FurDef>
 
@@ -20,7 +20,7 @@
       <Male>Pawn/DisassemblyDrone/Body/MurderDrone_Male</Male>
       <Female>Pawn/DisassemblyDrone/Body/MurderDrone_Female</Female>
       <Child>Pawn/DisassemblyDrone/Body/MurderDrone_Male</Child>
-      <Baby>Pawn/WorkerDrone/Baby/Drone_Baby</Baby>
+      <Baby>Pawn/DisassemblyDrone/Body/MurderDrone_Child</Baby>
     </bodyTypeGraphicPaths>
   </FurDef>
 </Defs>

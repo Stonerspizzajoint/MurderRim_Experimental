@@ -41,4 +41,12 @@
     <playerInterruptible>false</playerInterruptible>
   </JobDef>
 
+<JobDef>
+  <defName>ExitMapFlyingInFormation</defName>
+  <driverClass>WorkerDronesMod.JobDriver_ExitMapFlyingFormation</driverClass>
+  <reportString>Flying off the map in formation...</reportString>
+  <casualInterruptible>false</casualInterruptible>
+  <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+</JobDef>
+
 </Defs>

@@ -1,0 +1,18 @@
+<Defs>
+  <FacialAnimation.FaceAnimationDef ParentName="MurderDroneAnimation">
+    <defName>BootupIdle</defName>
+    <animationFrames>
+      <li>
+        <duration>1</duration>
+        <browShapeDef>NoBrow</browShapeDef>
+        <lidShapeDef>alert</lidShapeDef>
+        <mouthShapeDef>none</mouthShapeDef>
+      </li>
+    </animationFrames>
+    <targetJobs>
+      <li>MD_Job_BootupIdle</li>
+    </targetJobs>
+    <priority>10002</priority>
+    <applyWhenStandingOnly>true</applyWhenStandingOnly>
+  </FacialAnimation.FaceAnimationDef>
+</Defs>

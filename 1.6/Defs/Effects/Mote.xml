@@ -57,4 +57,22 @@
       </shaderParameters>
     </graphicData>
   </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
+    <defName>Mote_SolverStun</defName>
+    <thingClass>WorkerDronesMod.MoteDualAttachedSpinning</thingClass>
+    <altitudeLayer>MoteLow</altitudeLayer>
+    <mote>
+      <solidTime>9999</solidTime>
+      <fadeInTime>0.1</fadeInTime>
+      <fadeOutTime>0.5</fadeOutTime>
+      <needsMaintenance>false</needsMaintenance>
+    </mote>
+    <graphicData>
+      <texPath>UI/Icons/Gizmo/Icon_SolverTranslate</texPath>
+      <shaderType>TransparentPostLight</shaderType>
+      <drawSize>2</drawSize>
+      <drawRotated>true</drawRotated>
+    </graphicData>
+  </ThingDef>
 </Defs>

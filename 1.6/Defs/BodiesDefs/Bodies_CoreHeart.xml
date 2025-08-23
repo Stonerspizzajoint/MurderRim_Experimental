@@ -12,6 +12,8 @@
           <def>Head</def>
           <coverage>0.75</coverage>
           <groups>
+            <li>UpperHead</li>
+            <li>FullHead</li>
             <li>HeadAttackTool</li>
           </groups>
           <parts>
@@ -25,9 +27,6 @@
                 <customLabel>right leg base</customLabel>
                 <coverage>0.14</coverage>
                 <height>Bottom</height>
-                <groups>
-                  <li>Legs</li>
-                </groups>
                 <woundAnchorTag>RightLeg</woundAnchorTag>
                 <flipGraphic>true</flipGraphic>
                 <parts>
@@ -36,9 +35,6 @@
                     <customLabel>right arm</customLabel>
                     <coverage>0.5</coverage>
                     <flipGraphic>true</flipGraphic>
-                    <groups>
-                      <li>Arms</li>
-                    </groups>
                     <parts>
                       <li>
                         <def>Hand</def>
@@ -68,9 +64,6 @@
                     <customLabel>left arm</customLabel>
                     <coverage>0.5</coverage>
                     <flipGraphic>true</flipGraphic>
-                    <groups>
-                      <li>Arms</li>
-                    </groups>
                     <parts>
                       <li>
                         <def>Hand</def>
@@ -90,9 +83,6 @@
                 <customLabel>rear middle leg base</customLabel>
                 <coverage>0.14</coverage>
                 <height>Bottom</height>
-                <groups>
-                  <li>Legs</li>
-                </groups>
                 <woundAnchorTag>LeftLeg</woundAnchorTag>
                 <flipGraphic>false</flipGraphic>
                 <parts>
@@ -101,9 +91,6 @@
                     <customLabel>rear middle arm</customLabel>
                     <coverage>0.5</coverage>
                     <flipGraphic>true</flipGraphic>
-                    <groups>
-                      <li>Arms</li>
-                    </groups>
                     <parts>
                       <li>
                         <def>Hand</def>

@@ -2,14 +2,12 @@
 
 <!-- ===== DEV NOTICE ===== -->
 <!-- 
-    Any gene assigned with these categories will be displayed in the android gene window, and will also have "VREA_" added to the beginning of their defname
-    so to properly reference them in code, please ensure you type it as "VREA_(your defname here)".
-
-    also, the only way to add these Categories to the android gene window is by adding them to the "geneCategories" inside of a custom "VREAndroids.AndroidConvertableGenesDef"
-    This is only a temporary solution until I implement something more permanent.
+    Any gene assigned with these categories will be displayed in the android gene window. 
+    you can also create your own categories by creating a new AndroidGeneCategoryDef, 
+    with the defName of the category you want to create.
 -->
     <WorkerDronesMod.AndroidGeneCategoryDef>
-        <defName>SolverHardware</defName>   
+        <defName>SolverHardware</defName>
         <label>Hardware - Solver</label>
         <displayPriorityInXenotype>-1</displayPriorityInXenotype>
     </WorkerDronesMod.AndroidGeneCategoryDef>

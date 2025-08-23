@@ -11,7 +11,6 @@ namespace WorkerDronesMod
         // Hediff definitions.
         private static readonly HediffDef ReconstructionDef = MD_DefOf.MD_RoboticReconstruction;
         private static readonly HediffDef FleshyPartDef = MD_DefOf.MD_FleshyPart;
-        private static readonly HediffDef MissingBodyPartDef = HediffDefOf.MissingBodyPart;
         private static readonly BodyPartDef StomachDef = MD_DefOf.Stomach;
         private static Dictionary<(Pawn, BodyPartRecord), int> partMissingTick = new Dictionary<(Pawn, BodyPartRecord), int>();
 
@@ -165,9 +164,17 @@ namespace WorkerDronesMod
             Hediff reconstructionHediff = GetReconstructionHediff(pawn, part);
             if (reconstructionHediff != null)
             {
-                reconstructionHediff.Severity += regenOptions.baseSeverityPerTick;
+                float severityPerTick = regenOptions.baseSeverityPerTick;
+
+                // Dramatically slower if rebooting, but not hours
+                if (ExtraSolverUtils.IsRebooting(pawn))
+                {
+                    severityPerTick *= regenOptions.rebootingLimbRegenMultiplier;
+                }
+
+                reconstructionHediff.Severity += severityPerTick;
                 if (DebugSettings.godMode)
-                    Log.Message($"[RoboticLimbRegenerator] Increased severity on {part.def.defName} to {reconstructionHediff.Severity:0.###}.");
+                    Log.Message($"[RoboticLimbRegenerator] Increased severity on {part.def.defName} to {reconstructionHediff.Severity:0.###} (rate: {severityPerTick:0.###}).");
 
                 if (reconstructionHediff.Severity >= 1f)
                 {

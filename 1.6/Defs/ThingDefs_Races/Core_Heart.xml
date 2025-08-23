@@ -71,7 +71,6 @@
       <Steel>5</Steel>
     </butcherProducts>
     <comps>
-      <li Class="WorkerDronesMod.CompProperties_HatsOnly" /> 
       <li Class="WorkerDronesMod.CompProperties_AnimalBedUser">
         <canUseAnimalBeds>true</canUseAnimalBeds>
         <sleepDrawOffset>(0, 0, -0.15)</sleepDrawOffset>

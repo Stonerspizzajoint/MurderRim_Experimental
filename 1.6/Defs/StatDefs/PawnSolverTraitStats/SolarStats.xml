@@ -1,0 +1,9 @@
+<Defs>
+    <StatDef ParentName="SolverStatBase">
+        <defName>MD_SolarHeatMultiplier</defName>
+        <label>solar heat multiplier</label>
+        <description>Multiplier applied to all heat gained from sunlight or solar sources.</description>
+        <defaultBaseValue>1.0</defaultBaseValue>
+        <toStringStyle>PercentZero</toStringStyle>
+    </StatDef>
+</Defs>

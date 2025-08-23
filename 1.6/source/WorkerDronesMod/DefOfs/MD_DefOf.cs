@@ -1,5 +1,6 @@
 ﻿using RimWorld;
 using Verse;
+using Verse.AI;
 
 namespace WorkerDronesMod
 {
@@ -17,18 +18,34 @@ namespace WorkerDronesMod
 
         //==================RaceDefs==================
         public static ThingDef MD_CoreHeartRace;
+
+        public static ThingDef MD_DroneBabyRace;
         //====================================MD_Mote_RailgunLaserBase
 
         //==================MoteDefs==================
         public static ThingDef MD_Mote_RailgunLaserBase;
 
         public static ThingDef MD_Mote_DroneOverHeating;
+
+        public static ThingDef Mote_SolverStun;
         //============================================
+
+        //===================PROJECTILE===================
+        public static ThingDef MD_TelekineticProjectile;
+        //===========================================
 
         //------------------------------------
 
+        //-------------------ToolCapacityDefs------------------
+        public static ToolCapacityDef Stab;
+
+        public static ToolCapacityDef Blunt;
+        //-----------------------------------------------------
+
         //------------------EffectorDefs------------------
         public static EffecterDef MD_UVOverHeating;
+
+        public static EffecterDef MD_CoreExit;
 
         //------------------PawnKindDefs------------------
         public static PawnKindDef MD_DisassemblyDrone;
@@ -38,7 +55,19 @@ namespace WorkerDronesMod
         public static PawnKindDef MD_WorkerDrone;
 
         public static PawnKindDef MD_CoreHeartBasic;
+
+        public static PawnKindDef MD_PillBabyPawn;
+
+        public static PawnKindDef VREA_AndroidAwakened;
         //------------------------------------
+
+        //------------------BackstoryDefs------------------
+        public static BackstoryDef ColonyBirthedAndroid;
+        //-------------------------------------------------
+
+        //-------------------LetterDefs------------------
+        public static LetterDef BabyAndroidBirth;
+        //-----------------------------------------------
 
         //------------------FactionDefs------------------
         public static FactionDef MD_DisassemblyDronesFaction;
@@ -47,9 +76,17 @@ namespace WorkerDronesMod
         //------------------SoundDefs------------------
         public static SoundDef PredatorLarge_Eat;
 
+        public static SoundDef Ingest_Drink;
+
         public static SoundDef MD_BreakingRibcage;
 
         public static SoundDef MD_Railgun_PowerDown;
+
+        public static SoundDef MD_ControlLevelUp;
+
+        public static SoundDef MD_CoreExitSound;
+
+        public static SoundDef Longjump_Land;
         //------------------------------------
 
         //------------------HediffDefs------------------
@@ -69,6 +106,8 @@ namespace WorkerDronesMod
 
         public static HediffDef MD_DigitalLobotomy;
 
+        public static HediffDef MD_BootupComa;
+
         public static HediffDef MD_RoboticReconstruction;
 
         public static HediffDef MD_interchangeable_ClawHands;
@@ -76,6 +115,10 @@ namespace WorkerDronesMod
         public static HediffDef MD_SolverDeathPrevention;
 
         public static HediffDef MD_FleshyPart;
+
+        public static HediffDef MD_BladedWingsFolded;
+
+        public static HediffDef MD_BladedWings;
         //------------------------------------
 
         //------------------DamageDefs------------------
@@ -110,12 +153,16 @@ namespace WorkerDronesMod
         public static JobDef MD_Job_BootupIdle;
 
         public static JobDef WatchTelevision;
+
+        public static JobDef ExitMapFlyingInFormation;
         //------------------------------------
 
+        //------------------DutyDefs------------------
+        public static DutyDef MD_ExitMapPanicFly;
+        //--------------------------------------------
+
         //------------------RecipeDefs------------------
-
         public static RecipeDef MD_ExtractNeutroamine;
-
         //-------------------------------------
 
         //------------------MentalStateDefs------------------
@@ -135,6 +182,8 @@ namespace WorkerDronesMod
         //------------------GeneDefs------------------
         public static GeneDef MD_BasicSolver;
 
+        public static GeneDef MD_AbsoluteSolver;
+
         public static GeneDef MD_NeutroamineOil;
 
         public static GeneDef MD_MemorySleepProcessing;
@@ -143,21 +192,58 @@ namespace WorkerDronesMod
 
         public static GeneDef MD_DroneBody;
 
+        public static GeneDef MD_MurderDroneBody;
+
         public static GeneDef MD_DisplayColor_Random;
 
+        public static GeneDef MD_DisplayEyes;
+        public static GeneDef MD_SolverDisplayEyes;
+        public static GeneDef MD_DisplayEyes_DD;
+        public static GeneDef MD_DisplayEyes_XX;
+        public static GeneDef MD_DisplayEye;
+
+        public static GeneDef MD_BabyDisplayEyes;
+
         //public static GeneDef MD_FacialRecognitionDisabled;
-
-        //ALTERNATE VREA GENEDEFS
-        public static GeneDef VREA_MD_BasicSolver;
-
-        public static GeneDef VREA_MD_NeutroamineOil;
-
-        public static GeneDef VREA_MD_MemorySleepProcessing;
-
-        public static GeneDef VREA_MD_DroneBody;
-
-        public static GeneDef VREA_MD_DisplayColor_Random;
         //------------------------------------
+
+        //------------------SkillDefs------------------
+        public static SkillDef SolverControl;
+        //--------------------------------------------
+
+        //------------------NeedDefs------------------
+        public static NeedDef Joy;
+
+        public static NeedDef Beauty;
+
+        public static NeedDef Comfort;
+
+        public static NeedDef Play;
+        //--------------------------------------------
+
+        //------------------BackStoryDefs------------------
+        public static BackstoryDef NewbornAndroid;
+        //-------------------------------------------------
+
+        //------------------StatDefs------------------
+        public static StatDef MD_HeatGainMultiplier;
+
+        public static StatDef MD_RegenSpeedMultiplier;
+
+        public static StatDef MD_HeatPerSeverity;
+
+        public static StatDef MD_SolarHeatMultiplier;
+
+        public static StatDef MD_AbilityHeatGainMultiplier;
+
+        public static StatDef MD_AbilitySuccessChanceMultiplier;
+
+        public static StatDef MD_AbilityCooldownMultiplier;
+
+        public static StatDef MD_CorruptionDrainMultiplier;
+
+        public static StatDef MD_AbilityCorruptionGainMultiplier;
+        //--------------------------------------------
 
         //------------------BodypartDefs------------------
         public static BodyPartDef Stomach;

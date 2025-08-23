@@ -49,7 +49,7 @@ namespace WorkerDronesMod.Patches
                             {
                                 if (pawn.mindState != null)
                                 {
-                                    pawn.mindState.duty = new PawnDuty(DutyDefOf.ExitMapBest);
+                                    pawn.mindState.duty = new PawnDuty(MD_DefOf.MD_ExitMapPanicFly);
                                     pawn.jobs?.EndCurrentJob(JobCondition.InterruptForced, true);
                                 }
                             }

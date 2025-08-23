@@ -8,7 +8,7 @@ namespace WorkerDronesMod
     public class MentalState_Rebooting : MentalState
     {
         // Number of ticks to wait after healing before ending the mental state (e.g., 120 = 2 seconds)
-        private const int PostHealDelayTicks = 120;
+        private const int PostHealDelayTicks = 500;
         private int postHealTicksLeft = -1;
 
         public override void MentalStateTick(int delta)
@@ -38,6 +38,21 @@ namespace WorkerDronesMod
                 // Reset the countdown if new injuries appear
                 postHealTicksLeft = -1;
             }
+        }
+
+        public override void PreStart()
+        {
+            base.PreStart();
+            if (!pawn.health.hediffSet.HasHediff(MD_DefOf.MD_BootupComa))
+                pawn.health.AddHediff(MD_DefOf.MD_BootupComa);
+        }
+
+        public override void PostEnd()
+        {
+            base.PostEnd();
+            var comaHediff = pawn.health.hediffSet.GetFirstHediffOfDef(MD_DefOf.MD_BootupComa);
+            if (comaHediff != null)
+                pawn.health.RemoveHediff(comaHediff);
         }
     }
 

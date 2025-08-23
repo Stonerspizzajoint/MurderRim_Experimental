@@ -40,11 +40,6 @@ namespace WorkerDronesMod
 
         public class RegenOptions
         {
-            /// <summary>
-            /// A multiplier that speeds up wound and armor regeneration.
-            /// Increase this value to heal faster. Default is 10.0f.
-            /// </summary>
-            public float regenSpeedMultiplier = 10f;
 
             /// <summary>
             /// The minimum healing factor to ensure healing never slows below this fraction.
@@ -62,15 +57,44 @@ namespace WorkerDronesMod
             // Delay to wait if new injuries are added.
             ///<summary>
             public int additionalWoundDamageWarmupTicks = 30;
+
+            /// <summary>
+            /// Represents the number of ticks to wait before attempting to regenerate a missing limb.
+            /// Default value is 100 ticks.
+            /// </summary>
             public int missingLimbWarmupTicks = 100;
+
+            /// <summary>
+            /// Specifies the delay in ticks before addressing additional damage to limbs.
+            /// Default value is 50 ticks.
+            /// </summary>
             public int additionalDamageLimbDelayTicks = 50;
+
+            /// <summary>
+            /// Defines the base severity increment per tick for injuries or conditions.
+            /// Default value is 0.015 severity points per tick.
+            /// </summary>
             public float baseSeverityPerTick = 0.015f;
+
+            /// <summary>
+            /// Indicates the base heat generated per unit of body coverage.
+            /// Default value is 0.28 heat units per coverage.
+            /// </summary>
             public float baseHeatPerCoverage = 0.28f;
+
+            /// <summary>
+            /// Specifies the factor by which severity influences heat generation.
+            /// Default value is 0.1 (10% of severity contributes to heat).
+            /// </summary>
             public float severityHeatFactor = 0.1f;
+
+            /// <summary>
+            /// Multiplier for limb regeneration speed while rebooting. Default is 0.15 (15% speed).
+            /// </summary>
+            public float rebootingLimbRegenMultiplier = 0.15f;
 
             public void ExposeData()
             {
-                Scribe_Values.Look(ref regenSpeedMultiplier, "regenSpeedMultiplier");
                 Scribe_Values.Look(ref minHealingFactor, "minHealingFactor");
                 Scribe_Values.Look(ref woundHealingWarmupTicks, "woundHealingWarmupTicks");
                 Scribe_Values.Look(ref additionalWoundDamageWarmupTicks, "additionalWoundDamageWarmupTicks");
@@ -79,6 +103,7 @@ namespace WorkerDronesMod
                 Scribe_Values.Look(ref baseSeverityPerTick, "baseSeverityPerTick");
                 Scribe_Values.Look(ref baseHeatPerCoverage, "baseHeatPerCoverage");
                 Scribe_Values.Look(ref severityHeatFactor, "severityHeatFactor");
+                Scribe_Values.Look(ref rebootingLimbRegenMultiplier, "rebootingLimbRegenMultiplier");
             }
 
         }
@@ -96,11 +121,6 @@ namespace WorkerDronesMod
             public float minimumSafeHeat = 0.0f;
 
             /// <summary>
-            /// Amount of heat increase corresponding to one severity point of an overheating hediff.
-            /// </summary>
-            public float heatPerSeverity = 0.1f;
-
-            /// <summary>
             /// 
             /// </summary>
             public float burnDamageAmmount = 2.0f;
@@ -113,11 +133,6 @@ namespace WorkerDronesMod
             public float headCoverSunlightFactor = 0.5f; // 0.5 = 50% sunlight heat if head is covered
 
             /// <summary>
-            /// Multiplier applied to all heat gained from abilities. Default is 1.0 (no change).
-            /// </summary>
-            public float globalDefaultHeatMultiplier = 1.0f;
-
-            /// <summary>
             /// How much each degree above/below baseline affects the heat multiplier. Default is 0.01 (1% per degree).
             /// </summary>
             public float ambientHeatScale = 0.01f;
@@ -127,11 +142,9 @@ namespace WorkerDronesMod
             {
                 Scribe_Values.Look(ref heatGainPerTickSun, "heatGainPerTickSun");
                 Scribe_Values.Look(ref minimumSafeHeat, "minimumSafeHeat");
-                Scribe_Values.Look(ref heatPerSeverity, "heatPerSeverity");
                 Scribe_Values.Look(ref burnDamageAmmount, "burnDamageAmmount");
                 Scribe_Values.Look(ref ambientCoolingBaseline, "ambientCoolingBaseline");
                 Scribe_Values.Look(ref headCoverSunlightFactor, "headCoverSunlightFactor");
-                Scribe_Values.Look(ref globalDefaultHeatMultiplier, "globalDefaultHeatMultiplier");
                 Scribe_Values.Look(ref ambientHeatScale, "ambientHeatScale");
             }
         }

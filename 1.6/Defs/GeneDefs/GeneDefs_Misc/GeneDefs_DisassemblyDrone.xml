@@ -97,13 +97,14 @@ The Body houses an improved reactor, leading to better power efficiency.
 		</beardTagFilter>
 		<bodyType>Standard</bodyType>
 		<modExtensions>
-			<li Class="VEF.Genes.GeneExtension">
-				<backgroundPathXenogenes>UI/Icons/Genes/GeneBackGround/GeneBackground_DisassemblyHardware</backgroundPathXenogenes>
-				<backgroundPathEndogenes>UI/Icons/Genes/GeneBackGround/GeneBackground_DisassemblyHardware</backgroundPathEndogenes>
+			<li Class="VEF.Genes.GeneExtension" Inherit="false">
+			    <backgroundPathXenogenes>UI/Icons/Genes/GeneBackGround/GeneBackground_DisassemblyHardware</backgroundPathXenogenes>
+                <backgroundPathEndogenes>UI/Icons/Genes/GeneBackGround/GeneBackground_DisassemblyHardware</backgroundPathEndogenes>
 				<headDessicatedGraphicPath>Pawn/WorkerDrone/Drone_Dead/Head/Drone_Skull</headDessicatedGraphicPath>
 				<skullGraphicPath>Pawn/WorkerDrone/Drone_Dead/Head/Drone_Skull</skullGraphicPath>
 				<useSkinColorForFur>true</useSkinColorForFur>
 				<useMaskForFur>true</useMaskForFur>
+				<renderCacheOff>true</renderCacheOff>
 			</li>
   			<li MayRequire="mlie.showmeyourhands" Class="WorkerDronesMod.HandTextureExtension">
     			<mainTexturePath>OtherMods/Showmeyourhands/Hand</mainTexturePath>
@@ -120,6 +121,7 @@ The Body houses an improved reactor, leading to better power efficiency.
 			<li Class="WorkerDronesMod.GenePrerequisitesExtension">
 				<prerequisiteGeneDefNames>
 					<li>MD_DisplayEyes</li>
+					<li>MD_SolverDisplayEyes</li>
 					<li>MD_DisplayEyes_DD</li>
 					<li>MD_DisplayEyes_XX</li>
 				</prerequisiteGeneDefNames>
@@ -128,6 +130,9 @@ The Body houses an improved reactor, leading to better power efficiency.
 				<allowedSpawnCategories>
 					<li>WorkerDrone</li>
 				</allowedSpawnCategories>
+			</li>
+			<li Class="WorkerDronesMod.GeneInheritExtension">
+				<AlwaysInherit>true</AlwaysInherit>
 			</li>
 		</modExtensions>
 	</VREAndroids.AndroidGeneDef>
@@ -152,7 +157,6 @@ The Body houses an improved reactor, leading to better power efficiency.
 	<VREAndroids.AndroidGeneDef ParentName="MD_DisassemblyHardwareBase">
 		<defName>MD_InterchangeableHands</defName>
 		<label>interchangeable hands (Melee)</label>
-		<prerequisite>MD_BasicSolver</prerequisite>
 		<description>Androids with this hardware can switch between different melee weapons replaceing their hands.</description>
 		<iconPath>UI/Abilities/DisassemblyDrone/MD_InterchangeableHands</iconPath>
 		<biostatCpx>3</biostatCpx>
@@ -166,6 +170,12 @@ The Body houses an improved reactor, leading to better power efficiency.
 			<li>Hand</li>
 		</exclusionTags>
 		<modExtensions>
+			<li Class="WorkerDronesMod.GenePrerequisitesExtension">
+				<prerequisiteGeneDefNames>
+					<li>MD_BasicSolver</li>
+					<li>MD_AbsoluteSolver</li>
+				</prerequisiteGeneDefNames>
+			</li>
 			<li Class="WorkerDronesMod.GeneResearchExtension">
       			<requiredResearch>MD_DisassemblyDroneTech</requiredResearch>
     		</li>
@@ -175,7 +185,6 @@ The Body houses an improved reactor, leading to better power efficiency.
 	<VREAndroids.AndroidGeneDef ParentName="MD_DisassemblyHardwareBase">
 		<defName>MD_BladedWings</defName>
 		<label>bladed wings</label>
-		<prerequisite>MD_BasicSolver</prerequisite>
 		<description>Carriers of this gene have two pairs of bladed wings sprouting from their back.</description>
 		<geneClass>WorkerDronesMod.Gene_HediffSwitcherActivator</geneClass>
 		<iconPath>Pawn/DisassemblyDrone/Natural_Weapons/Bladed_Wings/BladeWings_south</iconPath>
@@ -185,6 +194,10 @@ The Body houses an improved reactor, leading to better power efficiency.
 		<abilities>
 			<li>MD_Dismisswings</li>
 		</abilities>
+		<statOffsets>
+			<MaxFlightTime>10</MaxFlightTime>
+			<FlightCooldown>10</FlightCooldown>
+		</statOffsets>
 		<exclusionTags>
 			<li>Wing</li> 
 			<li>Wings</li>
@@ -207,25 +220,22 @@ The Body houses an improved reactor, leading to better power efficiency.
 			<li>Colonist will ignore terrain movement costs</li>
 		</customEffectDescriptions>
 		<modExtensions>
-    		<li Class="WorkerDronesMod.GeneHediffSwitcherExtension">
-      			<stateHediffs>
-        			<li>
-          				<state>ToggledOff</state>
-        			</li>
-        			<li>
-          				<state>Normal</state>
-          				<hediffDef>MD_BladedWingsFolded</hediffDef>
-        			</li>
-        			<li>
-          				<state>Drafted</state>
-          				<hediffDef>MD_BladedWings</hediffDef>
-        			</li>
-					<li>
-          				<state>Hostile</state>
-          				<hediffDef>MD_BladedWings</hediffDef>
-        			</li>
-      			</stateHediffs>
-    		</li>
+			<li Class="WorkerDronesMod.GenePrerequisitesExtension">
+				<prerequisiteGeneDefNames>
+					<li>MD_BasicSolver</li>
+					<li>MD_AbsoluteSolver</li>
+				</prerequisiteGeneDefNames>
+			</li>
+			<li Class="WorkerDronesMod.WingsFlightControl">
+				<LandedHediff>MD_BladedWingsFolded</LandedHediff>
+				<FlyingHediff>MD_BladedWings</FlyingHediff>
+				<CanFlyInVaccuum>true</CanFlyInVaccuum>
+				<allowedFlyingJobs>
+					<li>AttackMelee</li>
+					<li>ExitMapFlying</li>
+				</allowedFlyingJobs>
+				<LiftOffEffecter>ImpactSmallDustCloud</LiftOffEffecter>
+			</li>
 			<li Class="WorkerDronesMod.GeneResearchExtension">
       			<requiredResearch>MD_DisassemblyDroneTech</requiredResearch>
     		</li>
@@ -235,7 +245,6 @@ The Body houses an improved reactor, leading to better power efficiency.
     <VREAndroids.AndroidGeneDef ParentName="MD_DisassemblyHardwareBase">
 		<defName>MD_NaniteAcidTail</defName>
 		<label>nanite tail</label>
-		<prerequisite>MD_BasicSolver</prerequisite>
 		<biostatCpx>1</biostatCpx>
 		<biostatMet>-2</biostatMet>
 		<geneClass>WorkerDronesMod.Gene_HediffApplier</geneClass>
@@ -251,6 +260,12 @@ The Body houses an improved reactor, leading to better power efficiency.
 			<li>Tail</li>
 		</exclusionTags>
 		<modExtensions>
+			<li Class="WorkerDronesMod.GenePrerequisitesExtension">
+				<prerequisiteGeneDefNames>
+					<li>MD_BasicSolver</li>
+					<li>MD_AbsoluteSolver</li>
+				</prerequisiteGeneDefNames>
+			</li>
 			<li Class="WorkerDronesMod.GeneResearchExtension">
       			<requiredResearch>MD_DisassemblyDroneTech</requiredResearch>
     		</li>
@@ -266,7 +281,6 @@ The Body houses an improved reactor, leading to better power efficiency.
 	<VREAndroids.AndroidGeneDef ParentName="MD_DisassemblyHardwareBase">
  		<defName>MD_HeadBand</defName>
  		<label>eye band</label>
-		<prerequisite>MD_BasicSolver</prerequisite>
 		<geneClass>WorkerDronesMod.Gene_HediffSwitcherActivator</geneClass>
  		<labelShortAdj>eye band</labelShortAdj>
  		<description>Carriers of this hardware have a extra band of specilaized eyes</description>
@@ -296,6 +310,12 @@ The Body houses an improved reactor, leading to better power efficiency.
 			</li>
 		</capMods>
 		<modExtensions>
+			<li Class="WorkerDronesMod.GenePrerequisitesExtension">
+				<prerequisiteGeneDefNames>
+					<li>MD_BasicSolver</li>
+					<li>MD_AbsoluteSolver</li>
+				</prerequisiteGeneDefNames>
+			</li>
 			<li Class="WorkerDronesMod.GeneResearchExtension">
       			<requiredResearch>MD_DisassemblyDroneTech</requiredResearch>
     		</li>

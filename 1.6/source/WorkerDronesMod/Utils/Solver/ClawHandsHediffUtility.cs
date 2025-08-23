@@ -10,6 +10,11 @@ namespace WorkerDronesMod
         public static void ApplyClawHandsIfNeeded(Pawn pawn)
         {
             if (pawn == null || pawn.health == null) return;
+
+            // Only apply if the pawn has the ability
+            if (pawn.abilities?.GetAbility(MD_DefOf.MD_InterchangeableHandsAbility) == null)
+                return;
+
             var hands = pawn.RaceProps.body.AllParts
                 .Where(part => part.def.defName == "Hand" && !pawn.health.hediffSet.PartIsMissing(part));
             foreach (var hand in hands)

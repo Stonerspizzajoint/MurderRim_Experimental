@@ -11,8 +11,12 @@
       </playerFaction>
       <parts>
 		 <li Class="ScenPart_GameStartDialog">
-          <def>GameStartDialog</def>
-          <text>Attention, Disassembly Drones: You have been deployed by JCJenson to this lawless frontier, where rogue employees and worker drones threaten corporate order. Your directive is absolute—track, terminate, and erase all unauthorized units. Trust in your programming, adapt to the unknown, and let no defector escape your gaze. The Company is watching. Fulfill your purpose, or become obsolete.</text>
+            <def>GameStartDialog</def>
+            <text>Your landing was anything but smooth. The shuttle, battered by unpredictable weather, crashed hard into the surface, scattering debris and leaving your squad in the wreckage of a ruined vessel. Systems reboot, sensors flicker, and you emerge from the twisted metal—mission intact, but resources scarce. 
+
+As your optics adjust, a digital alert flashes across your HUD: 
+[JCJenson Priority Transmission]
+"Attention, Disassembly Drones: You have been deployed to this lawless frontier, where rogue employees and worker drones threaten corporate order. Your directive is absolute—track, terminate, and erase all unauthorized units. Trust in your programming, adapt to the unknown, and let no defector escape your gaze. The Company is watching. Prepare for sunrise—your mission begins soon."</text>
           <closeSound>GameStartSting</closeSound>
         </li>
          <li Class="WorkerDronesMod.ScenPart_CustomXenotypeOverrides">
@@ -42,7 +46,7 @@
 
         <li Class="WorkerDronesMod.ScenPart_StartAtNight" >
           <def>StartAtNight</def>
-          <startHour>15</startHour>
+          <startHour>20</startHour>
         </li>
         <li Class="KCSG.ScenPart_AddStartingStructure">
           <def>VFEC_AddStartingStructure</def>
@@ -56,6 +60,14 @@
           </chooseFrom>
           <spawnTheStartingPawn>True</spawnTheStartingPawn>
           <method>Standing</method>
+        </li>
+
+        <li Class="ScenPart_CreateIncident">
+          <def>CreateIncident</def>
+          <incident>Flashstorm</incident>
+          <minDays>0</minDays>
+          <maxDays>0</maxDays>
+          <repeat>false</repeat>
         </li>
 		 <li Class="ScenPart_StartingThing_Defined">
           <def>StartingThing_Defined</def>

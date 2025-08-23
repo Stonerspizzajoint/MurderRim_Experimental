@@ -54,6 +54,7 @@
 			<li Class="WorkerDronesMod.GenePrerequisitesExtension">
 				<prerequisiteGeneDefNames>
 					<li>MD_BasicSolver</li>
+					<li>MD_AbsoluteSolver</li>
 				</prerequisiteGeneDefNames>
 			</li>
     		<li Class="WorkerDronesMod.BlockFromAndroidWindowExtension">
@@ -90,6 +91,7 @@
 			<li>AG_Armour</li>
 			<li>Armour</li>
 			<li>Armor</li>
+			<li>Solver</li>
 		</exclusionTags>
 		<iconPath>UI/Icons/Genes/Gene_WeakenedSolver</iconPath>
 		<displayOrderInCategory>10003</displayOrderInCategory>
@@ -118,6 +120,9 @@
 		</conditionalStatAffecters>
 		<marketValueFactor>5</marketValueFactor>
 		<modExtensions>
+			<li Class="WorkerDronesMod.GeneInheritExtension">
+				<FavoredParentChance>0.1</FavoredParentChance>
+			</li>
 			<li Class="WorkerDronesMod.GeneResearchExtension">
       			<requiredResearch>MD_SolverPrograming</requiredResearch>
     		</li>
@@ -131,7 +136,6 @@
                 	<heatGainPerTickSun>0.1</heatGainPerTickSun>
 					<ambientCoolingBaseline>10</ambientCoolingBaseline>
 					<headCoverSunlightFactor>0.2</headCoverSunlightFactor>
-					<globalDefaultHeatMultiplier>2</globalDefaultHeatMultiplier>
 					<ambientHeatScale>0.001</ambientHeatScale>
 				</heatOptions>
 				<oilOptions>
@@ -140,12 +144,112 @@
 					<oilCravingSpeed>0.005</oilCravingSpeed>
 				</oilOptions>
 				<regenOptions>
-					<regenSpeedMultiplier>7</regenSpeedMultiplier>
 					<minHealingFactor>0.2</minHealingFactor>
 					<woundHealingWarmupTicks>63</woundHealingWarmupTicks>
 					<additionalWoundDamageWarmupTicks>125</additionalWoundDamageWarmupTicks>
 					<missingLimbWarmupTicks>125</missingLimbWarmupTicks>
 					<additionalDamageLimbDelayTicks>250</additionalDamageLimbDelayTicks>
+					<rebootingLimbRegenMultiplier>0.15</rebootingLimbRegenMultiplier>
+				</regenOptions>
+            </li>
+		</modExtensions>
+		<ignoreDarkness>true</ignoreDarkness>
+		<dislikesSunlight>true</dislikesSunlight>
+	</VREAndroids.AndroidGeneDef>
+
+	<VREAndroids.AndroidGeneDef ParentName="MD_SolverSubroutine">
+		<defName>MD_AbsoluteSolver</defName>
+		<label>Absolute Solver</label>
+		<description>A fragment of the Absolute Solver grants immense regenerative power and advanced system control.  
+But with each use, corruption builds — threatening to overwrite the host with the Solver’s will.</description>
+		<geneClass>WorkerDronesMod.Gene_BasicSolver</geneClass>
+		<resourceLabel>Neutroamine</resourceLabel>
+		<resourceGizmoType>WorkerDronesMod.GeneGizmo_BasicSolver</resourceGizmoType>
+		<showGizmoWhenDrafted>true</showGizmoWhenDrafted>
+        <resourceGizmoThresholds>
+            <li>0.25</li>
+            <li>0.5</li>
+            <li>0.75</li>
+        </resourceGizmoThresholds>
+		<forcedTraits>
+			<li>
+				<def>NightOwl</def>
+			</li>
+		</forcedTraits>
+		<statOffsets>
+			<ComfyTemperatureMax>75</ComfyTemperatureMax>
+			<ComfyTemperatureMin>-75</ComfyTemperatureMin>
+			<Flammability>0</Flammability>
+		</statOffsets>
+		<exclusionTags>
+			<li>AG_Armour</li>
+			<li>Armour</li>
+			<li>Armor</li>
+			<li>Solver</li>
+		</exclusionTags>
+		<iconPath>UI/Icons/Genes/Gene_AbsoluteSolver</iconPath>
+		<displayOrderInCategory>10002</displayOrderInCategory>
+		<biostatCpx>3</biostatCpx>
+		<biostatMet>2</biostatMet>
+		<passionMod>
+			<skill>Melee</skill>
+			<modType>AddOneLevel</modType>
+		</passionMod>
+		<statFactors>
+			<Suppressability MayRequire="CETeam.CombatExtended">0</Suppressability>
+			<SocialImpact>1</SocialImpact>
+		</statFactors>
+		<conditionalStatAffecters>
+			<li Class="WorkerDronesMod.ConditionalStatAffecter_HeatAndSun">
+        		<statOffsets>
+					<MoveSpeed>-0.5</MoveSpeed>
+					<MeleeDodgeChance>-0.5</MeleeDodgeChance>
+					<Flammability>2</Flammability>
+        		</statOffsets>
+      		</li>
+			<li Class="WorkerDronesMod.ConditionalStatAffecter_IsSufficientlyCovered">
+        		<statOffsets>
+					<MD_SolarHeatMultiplier>0</MD_SolarHeatMultiplier>
+        		</statOffsets>
+      		</li>
+			<li Class="WorkerDronesMod.ConditionalStatAffecter_IsHeadCovered">
+        		<statOffsets>
+					<MD_SolarHeatMultiplier>0.5</MD_SolarHeatMultiplier>
+        		</statOffsets>
+      		</li>
+		</conditionalStatAffecters>
+		<marketValueFactor>5</marketValueFactor>
+		<modExtensions>
+			<li Class="WorkerDronesMod.GeneInheritExtension">
+				<FavoredParentChance>0.1</FavoredParentChance>
+			</li>
+			<li Class="WorkerDronesMod.GeneResearchExtension">
+      			<requiredResearch>MD_SolverPrograming</requiredResearch>
+    		</li>
+    		<li Class="WorkerDronesMod.BlockFromAndroidWindowExtension">
+      			<blockFromAndroidWindow>true</blockFromAndroidWindow>
+      			<cannotBeRemoved>true</cannotBeRemoved>
+			</li>
+            <li Class="WorkerDronesMod.SolverGeneExtension">
+				<isNerfedSolver>false</isNerfedSolver>
+				<heatOptions>
+                	<heatGainPerTickSun>0.1</heatGainPerTickSun>
+					<ambientCoolingBaseline>10</ambientCoolingBaseline>
+					<headCoverSunlightFactor>0.2</headCoverSunlightFactor>
+					<ambientHeatScale>0.001</ambientHeatScale>
+				</heatOptions>
+				<oilOptions>
+				    <oilUsePerHeatUnit>0.05</oilUsePerHeatUnit>
+                	<heatPerOil>5</heatPerOil>
+					<oilCravingSpeed>0.005</oilCravingSpeed>
+				</oilOptions>
+				<regenOptions>
+					<minHealingFactor>0.2</minHealingFactor>
+					<woundHealingWarmupTicks>63</woundHealingWarmupTicks>
+					<additionalWoundDamageWarmupTicks>125</additionalWoundDamageWarmupTicks>
+					<missingLimbWarmupTicks>125</missingLimbWarmupTicks>
+					<additionalDamageLimbDelayTicks>250</additionalDamageLimbDelayTicks>
+					<rebootingLimbRegenMultiplier>0.15</rebootingLimbRegenMultiplier>
 				</regenOptions>
             </li>
 		</modExtensions>

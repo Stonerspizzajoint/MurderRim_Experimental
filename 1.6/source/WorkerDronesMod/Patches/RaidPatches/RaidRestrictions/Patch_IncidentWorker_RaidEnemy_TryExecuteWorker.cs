@@ -45,21 +45,22 @@ namespace WorkerDronesMod.Patches
                             });
 
                             // Send a warning letter/message to the player
-                            string witness = "Someone";
+                            string witness = "MD.NightRaid_WitnessFallback".Translate();
                             if (!map.mapPawns.FreeColonists.NullOrEmpty())
                             {
                                 var pawn = map.mapPawns.FreeColonists.RandomElement();
                                 witness = pawn.LabelShort;
                             }
 
-                            string letterLabel = "Unsettling Prelude";
-                            string letterText = $"{witness} senses something is lurking, waiting for the cover of darkness. A raid has been delayed until conditions are right.";
+                            string letterLabel = "MD.NightRaid_LetterLabel".Translate();
+                            string letterText = "MD.NightRaid_LetterText".Translate(witness);
                             Find.LetterStack.ReceiveLetter(
                                 letterLabel,
                                 letterText,
                                 LetterDefOf.ThreatSmall,
                                 new TargetInfo(map.Center, map, false)
                             );
+
                             Log.Message("[RaidRestrictions] Raid queued and player notified.");
                         }
                         else

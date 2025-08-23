@@ -1,0 +1,19 @@
+<Defs>
+    <WorkerDronesMod.SolverTraitDef Name="MutationTraitBase" Abstract="True">
+        <solverCategory>Mutation</solverCategory>
+        <unlockSound>MD_MutationUnlock</unlockSound>
+        <size>1</size>
+    </WorkerDronesMod.SolverTraitDef>
+
+    <WorkerDronesMod.SolverTraitDef Name="AbsoluteTraitBase" Abstract="True">
+        <solverCategory>Absolute</solverCategory>
+        <unlockSound>MD_ManipulationUnlock</unlockSound>
+        <size>1</size>
+    </WorkerDronesMod.SolverTraitDef>
+
+    <WorkerDronesMod.SolverTraitDef Name="CorruptionTraitBase" Abstract="True">
+        <solverCategory>Corruption</solverCategory>
+        <unlockSound>MD_CorruptionUnlock</unlockSound>
+        <size>1</size>
+    </WorkerDronesMod.SolverTraitDef>
+</Defs>

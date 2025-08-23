@@ -1,0 +1,18 @@
+<Defs>
+
+  <StatDef ParentName="SolverStatBase">
+    <defName>MD_RegenSpeedMultiplier</defName>
+    <label>regeneration speed multiplier</label>
+    <description>Multiplier for wound and armor regeneration speed for Solver drones.</description>
+    <defaultBaseValue>1.0</defaultBaseValue>
+    <toStringStyle>PercentZero</toStringStyle>
+  </StatDef>
+
+  <StatDef ParentName="SolverStatBase">
+    <defName>MD_HeatPerSeverity</defName>
+    <label>heat per severity</label>
+    <description>How much heat is generated per point of severity healed or affected.</description>
+    <defaultBaseValue>0.05</defaultBaseValue>
+    <toStringStyle>FloatTwo</toStringStyle>
+  </StatDef>
+</Defs>

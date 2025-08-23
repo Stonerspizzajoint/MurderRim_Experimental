@@ -25,12 +25,8 @@ namespace WorkerDronesMod
                 Need_Rest restNeed = pawn.needs.TryGetNeed<Need_Rest>();
                 if (restNeed != null)
                 {
-                    // Use helper to check for either gene
-                    bool hasRequiredGene = GeneDefHelper.PawnHasAnyGene(
-                        pawn,
-                        MD_DefOf.MD_MemorySleepProcessing,
-                        MD_DefOf.VREA_MD_MemorySleepProcessing
-                    );
+                    // Only check for the main gene, not the VREA_ variant
+                    bool hasRequiredGene = pawn.genes != null && pawn.genes.HasActiveGene(MD_DefOf.MD_MemorySleepProcessing);
 
                     // If the gene is missing, keep the rest need full so it never drains.
                     if (!hasRequiredGene)
@@ -40,18 +36,14 @@ namespace WorkerDronesMod
                 }
 
                 // --- Reactor Power Need Logic ---
-                // Get the reactor power need (from your VREAndroids need class)
                 var reactorNeed = pawn.needs.TryGetNeed<VREAndroids.Need_ReactorPower>();
                 if (reactorNeed != null)
                 {
-                    // Determine if the pawn is sleeping
                     bool isSleeping = pawn.CurJob != null &&
                         pawn.CurJob.def.defName.IndexOf("Sleep", StringComparison.OrdinalIgnoreCase) >= 0;
 
                     if (isSleeping)
                     {
-                        // Instead of instantly refilling the reactor power, add a small regeneration bonus
-                        // This slows the drain by restoring a fraction of MaxLevel each update tick.
                         float regenAmount = reactorNeed.MaxLevel * SleepRegenPercentage;
                         reactorNeed.CurLevel = Math.Min(reactorNeed.CurLevel + regenAmount, reactorNeed.MaxLevel);
                     }

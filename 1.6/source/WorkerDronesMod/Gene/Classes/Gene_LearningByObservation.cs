@@ -16,6 +16,7 @@ namespace WorkerDronesMod
         private const float DefaultXP = 50f;
         private const int DefaultTVMaxLevel = 10;
         private const float DefaultTVXP = 30f;
+        private const float AndroidBabyLearningMultiplier = 2.0f; // Baby androids learn twice as fast
 
         // Store the TV learning session for each pawn
         private static readonly Dictionary<Pawn, TVLearningSession> TVLearningSessions = new Dictionary<Pawn, TVLearningSession>();
@@ -25,13 +26,13 @@ namespace WorkerDronesMod
             base.Tick();
 
             if (!pawn.IsHashIntervalTick(GetCheckInterval())) return;
-            if (pawn.Dead || !pawn.Spawned) return;
+            if (pawn.Dead) return;
 
             // Clean up expired sessions
             CleanupTVSessions();
 
-            // Skip if pawn is actively training a skill through work
-            if (IsPawnActivelyTrainingSkill(pawn)) return;
+            // Skip if pawn is actively training a skill through work (except for baby androids)
+            if (!BabyAndroidUtil.IsBabyAndroid(pawn) && IsPawnActivelyTrainingSkill(pawn)) return;
 
             if (IsWatchingTelevision(pawn))
             {
@@ -47,10 +48,22 @@ namespace WorkerDronesMod
                 else
                 {
                     // Otherwise try to learn from a working pawn
-                    Pawn target = FindBestObservationTarget(pawn);
-                    if (target != null)
+                    if (BabyAndroidUtil.IsBabyAndroid(pawn))
                     {
-                        TryLearnFromTarget(pawn, target);
+                        // Learn from all valid targets and learn faster
+                        var targets = FindAllObservationTargets(pawn);
+                        foreach (var target in targets)
+                        {
+                            TryLearnFromTarget(pawn, target, AndroidBabyLearningMultiplier);
+                        }
+                    }
+                    else
+                    {
+                        Pawn target = FindBestObservationTarget(pawn);
+                        if (target != null)
+                        {
+                            TryLearnFromTarget(pawn, target);
+                        }
                     }
                 }
             }
@@ -72,22 +85,19 @@ namespace WorkerDronesMod
 
         private bool IsPawnActivelyTrainingSkill(Pawn pawn)
         {
-            // Check if pawn is doing a job that would normally grant skill XP
             if (pawn.CurJob == null || pawn.CurJob.workGiverDef == null) return false;
 
             WorkTypeDef workType = pawn.CurJob.workGiverDef.workType;
             if (workType == null || workType.relevantSkills.Count == 0) return false;
 
-            // Check if pawn is below max level in any relevant skill
             foreach (SkillDef skillDef in workType.relevantSkills)
             {
                 SkillRecord skill = pawn.skills?.GetSkill(skillDef);
-                if (skill != null && skill.Level < 20) // 20 is max skill level
+                if (skill != null && skill.Level < 20)
                 {
                     return true;
                 }
             }
-
             return false;
         }
 
@@ -98,14 +108,11 @@ namespace WorkerDronesMod
 
         private void HandleTVSession(Pawn learner)
         {
-            // Check if we need to start a new session
             if (!TVLearningSessions.TryGetValue(learner, out TVLearningSession session))
             {
                 StartNewTVSession(learner);
                 return;
             }
-
-            // Continue existing session
             ContinueTVSession(learner, session);
         }
 
@@ -114,58 +121,45 @@ namespace WorkerDronesMod
             List<SkillRecord> skills = learner.skills?.skills;
             if (skills == null || skills.Count == 0) return;
 
-            // Get eligible skills below TV cap
             List<SkillRecord> eligibleSkills = skills
                 .Where(s => s.Level < GetTVMaxSkillLevel())
                 .ToList();
 
             if (eligibleSkills.Count == 0) return;
 
-            // Select a random skill for this session
             SkillDef chosenSkill = eligibleSkills.RandomElement().def;
 
-            // Check if there's a nearby TV watcher to coordinate with
             var nearbyWatchers = GetNearbyTVWatchers(learner);
             foreach (var watcher in nearbyWatchers)
             {
                 if (TVLearningSessions.TryGetValue(watcher, out TVLearningSession existingSession))
                 {
-                    // Coordinate with existing session
                     chosenSkill = existingSession.learnedSkill;
                     break;
                 }
             }
 
-            // Create new learning session
             var newSession = new TVLearningSession
             {
                 learnedSkill = chosenSkill,
                 startTick = Find.TickManager.TicksGame,
-                expiryTick = Find.TickManager.TicksGame + 2500 // 60 seconds at normal speed
+                expiryTick = Find.TickManager.TicksGame + 2500
             };
 
             TVLearningSessions[learner] = newSession;
-
-            // Apply initial learning
             ApplyTVLearning(learner, chosenSkill);
         }
 
         private void ContinueTVSession(Pawn learner, TVLearningSession session)
         {
-            // Check if session is still valid
             SkillRecord skillRec = learner.skills?.GetSkill(session.learnedSkill);
             if (skillRec == null || skillRec.Level >= GetTVMaxSkillLevel())
             {
-                // Skill capped or invalid - start new session
                 TVLearningSessions.Remove(learner);
                 StartNewTVSession(learner);
                 return;
             }
-
-            // Continue learning the same skill
             ApplyTVLearning(learner, session.learnedSkill);
-
-            // Extend session duration
             session.expiryTick = Find.TickManager.TicksGame + 2500;
         }
 
@@ -174,7 +168,6 @@ namespace WorkerDronesMod
             SkillRecord skillRec = learner.skills?.GetSkill(skill);
             if (skillRec == null || skillRec.Level >= GetTVMaxSkillLevel()) return;
 
-            // Calculate XP with learning rate factor
             float baseXP = GetTVXPGainAmount();
             float learningRateFactor = learner.GetStatValue(StatDefOf.LearningRateFactor);
             float adjustedXP = baseXP * learningRateFactor;
@@ -184,24 +177,20 @@ namespace WorkerDronesMod
 
         private bool TryLearnFromTVObserver(Pawn learner)
         {
-            // Only allow if learner is free to learn
-            if (!IsFreeToLearnByObservation(learner))
+            // Allow baby androids to learn even if doing a job
+            if (!BabyAndroidUtil.IsBabyAndroid(learner) && !IsFreeToLearnByObservation(learner))
                 return false;
 
-            // Find nearby pawns watching TV
             var tvWatchers = GetNearbyTVWatchers(learner);
             if (tvWatchers.Count == 0) return false;
 
-            // Find a TV watcher with an active session
             foreach (Pawn tvWatcher in tvWatchers.OrderBy(p => p.Position.DistanceToSquared(learner.Position)))
             {
                 if (TVLearningSessions.TryGetValue(tvWatcher, out TVLearningSession session))
                 {
-                    // Check if learner can learn this skill
                     SkillRecord skillRec = learner.skills?.GetSkill(session.learnedSkill);
                     if (skillRec != null && skillRec.Level < GetTVMaxSkillLevel())
                     {
-                        // Calculate XP with learning rate factor
                         float baseXP = GetTVXPGainAmount();
                         float learningRateFactor = learner.GetStatValue(StatDefOf.LearningRateFactor);
                         float adjustedXP = baseXP * learningRateFactor;
@@ -211,40 +200,91 @@ namespace WorkerDronesMod
                     }
                 }
             }
+            return false;
+        }
 
+        // --- Updated: Use effective position/map for held pawns ---
+        private bool TryGetEffectivePositionAndMap(Pawn pawn, out IntVec3 pos, out Map map)
+        {
+            if (pawn.Spawned)
+            {
+                pos = pawn.Position;
+                map = pawn.Map;
+                return true;
+            }
+            // If being carried by another pawn, use the carrier's position/map
+            if (pawn.ParentHolder is Pawn_CarryTracker carryTracker && carryTracker.pawn != null && carryTracker.pawn.Spawned)
+            {
+                pos = carryTracker.pawn.Position;
+                map = carryTracker.pawn.Map;
+                return true;
+            }
+
+            pos = IntVec3.Invalid;
+            map = null;
             return false;
         }
 
         private List<Pawn> GetNearbyTVWatchers(Pawn centerPawn)
         {
-            if (centerPawn.Map == null) return new List<Pawn>();
+            IntVec3 pos;
+            Map map;
+            if (!TryGetEffectivePositionAndMap(centerPawn, out pos, out map)) return new List<Pawn>();
             float radius = GetObservationRadius();
 
-            return GenRadial.RadialDistinctThingsAround(centerPawn.Position, centerPawn.Map, radius, true)
+            return GenRadial.RadialDistinctThingsAround(pos, map, radius, true)
                 .OfType<Pawn>()
                 .Where(p => p != centerPawn &&
                        p.RaceProps.Humanlike &&
                        p.Faction == centerPawn.Faction &&
                        !p.Dead &&
                        IsWatchingTelevision(p) &&
-                       GenSight.LineOfSight(centerPawn.Position, p.Position, centerPawn.Map))
+                       GenSight.LineOfSight(pos, p.Position, map))
                 .ToList();
         }
 
         private Pawn FindBestObservationTarget(Pawn observer)
         {
-            if (observer.Map == null) return null;
+            IntVec3 pos;
+            Map map;
+            if (!TryGetEffectivePositionAndMap(observer, out pos, out map)) return null;
             float radius = GetObservationRadius();
 
-            return GenRadial.RadialDistinctThingsAround(observer.Position, observer.Map, radius, true)
+            return GenRadial.RadialDistinctThingsAround(pos, map, radius, true)
                 .OfType<Pawn>()
                 .Where(p => IsValidTarget(observer, p))
-                .OrderBy(p => p.Position.DistanceToSquared(observer.Position))
+                .OrderBy(p => p.Position.DistanceToSquared(pos))
                 .FirstOrDefault();
+        }
+
+        private List<Pawn> FindAllObservationTargets(Pawn observer)
+        {
+            IntVec3 pos;
+            Map map;
+            if (!TryGetEffectivePositionAndMap(observer, out pos, out map)) return new List<Pawn>();
+            float radius = GetObservationRadius();
+
+            return GenRadial.RadialDistinctThingsAround(pos, map, radius, true)
+                .OfType<Pawn>()
+                .Where(p => IsValidTarget(observer, p))
+                .ToList();
         }
 
         private bool IsValidTarget(Pawn observer, Pawn target)
         {
+            // Get effective positions and maps for both pawns
+            IntVec3 observerPos, targetPos;
+            Map observerMap, targetMap;
+
+            if (!TryGetEffectivePositionAndMap(observer, out observerPos, out observerMap))
+                return false;
+            if (!TryGetEffectivePositionAndMap(target, out targetPos, out targetMap))
+                return false;
+
+            // Only check line of sight if both are on the same map
+            if (observerMap != targetMap)
+                return false;
+
             return target != observer &&
                    target.RaceProps.Humanlike &&
                    target.Faction == observer.Faction &&
@@ -252,14 +292,14 @@ namespace WorkerDronesMod
                    target.Awake() &&
                    target.CurJob != null &&
                    target.CurJob.workGiverDef != null &&
-                   !IsWatchingTelevision(target) && // Don't learn from TV watchers
-                   GenSight.LineOfSight(observer.Position, target.Position, observer.Map);
+                   !IsWatchingTelevision(target) &&
+                   GenSight.LineOfSight(observerPos, targetPos, observerMap);
         }
 
-        private void TryLearnFromTarget(Pawn observer, Pawn target)
+        private void TryLearnFromTarget(Pawn observer, Pawn target, float xpMultiplier = 1f)
         {
-            // Only allow if observer is free to learn
-            if (!IsFreeToLearnByObservation(observer))
+            // Allow baby androids to learn even if doing a job
+            if (!BabyAndroidUtil.IsBabyAndroid(observer) && !IsFreeToLearnByObservation(observer))
                 return;
 
             WorkTypeDef workType = target.CurJob.workGiverDef.workType;
@@ -272,7 +312,7 @@ namespace WorkerDronesMod
             if (observerSkill == null || targetSkillRecord == null) return;
             if (observerSkill.Level >= targetSkillRecord.Level) return;
 
-            float baseXP = GetXPGainAmount();
+            float baseXP = GetXPGainAmount() * xpMultiplier;
             float learningRateFactor = observer.GetStatValue(StatDefOf.LearningRateFactor);
             float adjustedXP = baseXP * learningRateFactor;
 
@@ -282,19 +322,15 @@ namespace WorkerDronesMod
         // Utility: Only allow learning if not doing a job that uses a skill
         private bool IsFreeToLearnByObservation(Pawn pawn)
         {
-            // If the pawn is not doing any job, they are free to watch/learn
             if (pawn.CurJob == null || pawn.CurJob.workGiverDef == null)
                 return true;
 
-            // If the job's work type is null or has no relevant skills, they are free to learn
             var workType = pawn.CurJob.workGiverDef.workType;
             if (workType == null || workType.relevantSkills == null || workType.relevantSkills.Count == 0)
                 return true;
 
-            // Otherwise, the pawn is busy with a skill-using job
             return false;
         }
-
 
         // Configuration getters with ModExtension fallback
         private float GetObservationRadius()

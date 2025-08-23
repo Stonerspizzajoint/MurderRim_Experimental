@@ -63,7 +63,30 @@
 		<defaultLabelColor>(0.15, 0.6, 0.2)</defaultLabelColor>
 		<preventsCrawling>false</preventsCrawling>
 		<preventsDeath>true</preventsDeath>
+    	<countsAsAddedPartOrImplant>true</countsAsAddedPartOrImplant>
+    	<allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+		<keepOnBodyPartRestoration>true</keepOnBodyPartRestoration>
+		<scenarioCanAdd>false</scenarioCanAdd>
+		<spawnThingOnRemoved>Spark</spawnThingOnRemoved>
 		<isBad>false</isBad>
+	</HediffDef>
+
+	<HediffDef>
+		<defName>MD_BootupComa</defName>
+		<label>bootup state</label>
+		<description>This android is in a temporary bootup state while its systems stabilize.</description>
+		<isBad>false</isBad>
+		<tendable>false</tendable>
+		<stages>
+			<li>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<setMax>0</setMax>
+					</li>
+				</capMods>
+			</li>
+		</stages>
 	</HediffDef>
 
 	<HediffDef>
@@ -130,7 +153,7 @@
 	<defName>MD_FleshyPart</defName>
     <label>Fleshy Internals</label>
 	<defaultLabelColor>(0.15, 0.6, 0.2)</defaultLabelColor>
-	<description>This body part has regenerated and useable, but any attempt to remove it wont give any useful part.</description>
+	<description>This body part has regenerated and useable, but any attempt to remove it wont give any useful parts.</description>
 	<hediffClass>HediffWithComps</hediffClass>
     <isBad>false</isBad>
     <alwaysShowSeverity>true</alwaysShowSeverity>

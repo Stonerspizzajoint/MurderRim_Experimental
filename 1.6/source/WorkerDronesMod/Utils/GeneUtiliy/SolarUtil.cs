@@ -19,49 +19,78 @@ namespace WorkerDronesMod
 
         public static bool IsSufficientlyCovered(Pawn pawn, float requiredCoverage = 0.7f)
         {
+            int tick = Find.TickManager.TicksGame;
+            if (coverageCache.TryGetValue(pawn, out var cache) && cache.tick == tick)
+                return cache.covered;
+
             if (pawn == null || pawn.apparel == null || pawn.apparel.WornApparelCount == 0)
-                return false;
-
-            // Get all natural, not-missing, external body parts
-            var bodyParts = pawn.RaceProps.body.AllParts
-                .Where(part => !pawn.health.hediffSet.PartIsMissing(part) && part.depth == BodyPartDepth.Outside)
-                .ToList();
-
-            if (bodyParts.Count == 0)
-                return false;
-
-            int coveredCount = 0;
-            foreach (var part in bodyParts)
             {
-                if (pawn.apparel.WornApparel.Any(apparel => apparel.def.apparel.CoversBodyPart(part)))
-                    coveredCount++;
+                coverageCache[pawn] = (false, tick);
+                return false;
             }
 
-            float coverage = (float)coveredCount / bodyParts.Count;
-            return coverage >= requiredCoverage;
+            var bodyParts = pawn.RaceProps.body.AllParts;
+            int totalParts = 0;
+            int coveredCount = 0;
+
+            foreach (var part in bodyParts)
+            {
+                if (!pawn.health.hediffSet.PartIsMissing(part) && part.depth == BodyPartDepth.Outside)
+                {
+                    totalParts++;
+                    bool isCovered = false;
+                    foreach (var apparel in pawn.apparel.WornApparel)
+                    {
+                        if (apparel.def.apparel.CoversBodyPart(part))
+                        {
+                            isCovered = true;
+                            break;
+                        }
+                    }
+                    if (isCovered)
+                        coveredCount++;
+                }
+            }
+
+            bool covered = totalParts > 0 && ((float)coveredCount / totalParts) >= requiredCoverage;
+            coverageCache[pawn] = (covered, tick);
+            return covered;
         }
 
         public static bool IsHeadCovered(Pawn pawn)
         {
+            int tick = Find.TickManager.TicksGame;
+            if (headCoverageCache.TryGetValue(pawn, out var cache) && cache.tick == tick)
+                return cache.headCovered;
+
             if (pawn == null || pawn.apparel == null)
-                return false;
-
-            // These are the standard RimWorld body part groups for head coverage
-            var headGroups = new[]
             {
-        BodyPartGroupDefOf.FullHead,
-        BodyPartGroupDefOf.UpperHead
-    };
+                headCoverageCache[pawn] = (false, tick);
+                return false;
+            }
 
+            var headGroups = new[] { BodyPartGroupDefOf.FullHead, BodyPartGroupDefOf.UpperHead };
+            bool headCovered = false;
             foreach (var apparel in pawn.apparel.WornApparel)
             {
-                if (apparel.def.apparel.bodyPartGroups != null &&
-                    apparel.def.apparel.bodyPartGroups.Any(g => headGroups.Contains(g)))
+                var groups = apparel.def.apparel.bodyPartGroups;
+                if (groups != null)
                 {
-                    return true;
+                    foreach (var g in groups)
+                    {
+                        if (g == BodyPartGroupDefOf.FullHead || g == BodyPartGroupDefOf.UpperHead)
+                        {
+                            headCovered = true;
+                            break;
+                        }
+                    }
                 }
+                if (headCovered)
+                    break;
             }
-            return false;
+
+            headCoverageCache[pawn] = (headCovered, tick);
+            return headCovered;
         }
 
 
@@ -133,7 +162,7 @@ namespace WorkerDronesMod
             if (pawn?.Map == null)
                 return true; // If not on a map, treat as safe
 
-            // Use the map-wide safety check
+            // Use the optimized map-wide safety check
             return IsMapSafeForSolvers(pawn.Map, null, ext);
         }
 
@@ -142,18 +171,26 @@ namespace WorkerDronesMod
             if (map == null)
                 return true;
 
-            // Check if any outdoor cell is in sunlight
+            int currentTick = Find.TickManager.TicksGame;
+            if (mapSafetyCache.TryGetValue(map, out var cache))
+            {
+                if (currentTick - cache.lastCheckTick < MapSafetyCheckInterval)
+                    return cache.isSafe;
+            }
+
+            // Expensive check: only run if cache expired
+            bool isSafe = true;
             foreach (var cell in map.AllCells)
             {
                 if (!cell.Roofed(map) && cell.InSunlight(map))
                 {
-                    Log.Message($"[SolarUtil] Found sunlight at {cell} on map {map} - not safe for solvers.");
-                    return false;
+                    isSafe = false;
+                    break;
                 }
             }
 
-            Log.Message($"[SolarUtil] No sunlight found on map {map} - safe for solvers.");
-            return true;
+            mapSafetyCache[map] = (isSafe, currentTick);
+            return isSafe;
         }
 
 
@@ -176,5 +213,13 @@ namespace WorkerDronesMod
             float max = pawn.GetStatValue(StatDefOf.ComfyTemperatureMax, true);
             return ambient > max;
         }
+
+        // --- Optimization Cache---
+        private static Dictionary<Map, (bool isSafe, int lastCheckTick)> mapSafetyCache = new Dictionary<Map, (bool, int)>();
+        private const int MapSafetyCheckInterval = 60; // Check every 60 ticks (1 second)
+
+        private static Dictionary<Pawn, (bool covered, int tick)> coverageCache = new Dictionary<Pawn, (bool, int)>();
+        private static Dictionary<Pawn, (bool headCovered, int tick)> headCoverageCache = new Dictionary<Pawn, (bool, int)>();
+
     }
 }

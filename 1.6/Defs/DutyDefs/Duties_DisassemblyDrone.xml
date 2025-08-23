@@ -1,0 +1,7 @@
+<Defs>
+  <DutyDef>
+    <defName>MD_ExitMapPanicFly</defName>
+    <thinkNode Class="WorkerDronesMod.JobGiver_ExitMapFlyingInFormation">
+    </thinkNode>
+  </DutyDef>
+</Defs>

@@ -1,0 +1,62 @@
+<Defs>
+    <WorkerDronesMod.SolverTraitDef ParentName="AbsoluteTraitBase">
+        <defName>SolverTrait_AbsoluteManipulation</defName>
+        <label>Absolute Manipulation</label>
+        <description>This Core Module unlocks access to basic Solver abilities, allowing the user to perform fundamental Solver actions.</description>
+        <iconPath>UI/Icons/Gizmo/Icon_SolverTranslate</iconPath>
+        <CoreModule>true</CoreModule>
+        <GlowingIcon>true</GlowingIcon>
+        <defaultX>2</defaultX>
+        <defaultY>4.5</defaultY>
+        <size>1</size>
+        <tierLevel>0</tierLevel>
+        <skillPointCost>5</skillPointCost>
+        <requiredTierLevel>0</requiredTierLevel>
+        <GivenAbility>SolversHold</GivenAbility>
+        <requiredSolverTraits>
+            <li>SolverTrait_AcceleratedProtocol</li>
+            <li>SolverTrait_ThermalEfficiency</li>
+        </requiredSolverTraits>
+        <requireOnlyOneTrait>true</requireOnlyOneTrait>
+    </WorkerDronesMod.SolverTraitDef>
+
+    <WorkerDronesMod.SolverTraitDef ParentName="MutationTraitBase">
+        <defName>SolverTrait_EldritchMutation</defName>
+        <label>Eldritch Mutation</label>
+        <description>This Core Module allows Solver users to manipulate their bodies into biomechanical weapons, tools, and other forms, granting them adaptive capabilities for various tasks and combat situations.</description>
+        <iconPath>UI/Icons/Gizmo/Icon_SolverTranslate</iconPath>
+        <CoreModule>true</CoreModule>
+        <GlowingIcon>true</GlowingIcon>
+        <defaultX>0</defaultX>
+        <defaultY>4</defaultY>
+        <size>1</size>
+        <tierLevel>0</tierLevel>
+        <skillPointCost>5</skillPointCost>
+        <requiredTierLevel>0</requiredTierLevel>
+        <requiredSolverTraits>
+            <li>SolverTrait_AdaptiveChassis</li>
+            <li>SolverTrait_CorruptionDrainBoost</li>
+        </requiredSolverTraits>
+        <requireOnlyOneTrait>true</requireOnlyOneTrait>
+    </WorkerDronesMod.SolverTraitDef>
+
+    <WorkerDronesMod.SolverTraitDef ParentName="CorruptionTraitBase">
+        <defName>SolverTrait_Corruption</defName>
+        <label>Corrupted Absolute</label>
+        <description>This Core Module allows Solver users to tap into forbidden technologies and energies, granting them unique and often dangerous abilities at the cost of increased instability.</description>
+        <iconPath>UI/Icons/Gizmo/Icon_SolverTranslate</iconPath>
+        <CoreModule>true</CoreModule>
+        <GlowingIcon>true</GlowingIcon>
+        <defaultX>4</defaultX>
+        <defaultY>4</defaultY>
+        <size>1</size>
+        <tierLevel>0</tierLevel>
+        <skillPointCost>5</skillPointCost>
+        <requiredTierLevel>0</requiredTierLevel>
+        <requiredSolverTraits>
+            <li>SolverTrait_CorruptOptimization</li>
+            <li>SolverTrait_SolarVeil</li>
+        </requiredSolverTraits>
+        <requireOnlyOneTrait>true</requireOnlyOneTrait>
+    </WorkerDronesMod.SolverTraitDef>
+</Defs>

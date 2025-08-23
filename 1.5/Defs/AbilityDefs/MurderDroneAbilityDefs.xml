@@ -222,6 +222,7 @@
     <comps>
       <li Class="WorkerDronesMod.CompProperties_AbilityHeatEffect">
         <heatRange>20~25</heatRange>
+        <corruptionGain>0.1</corruptionGain>
       </li>
     </comps>
 	</AbilityDef>

@@ -8,6 +8,22 @@
           <subNodes>
             <li Class="ThinkNode_Priority">
               <subNodes>
+                <li Class="WorkerDronesMod.JobGiver_BerserkOilCraving" />
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+    </value>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/ThinkTreeDef[defName="MentalStateCritical"]/thinkRoot/subNodes</xpath>
+    <value>
+        <li Class="ThinkNode_ConditionalMentalState">
+          <state>MD_RecoverAndBootUp</state>
+          <subNodes>
+            <li Class="ThinkNode_Priority">
+              <subNodes>
                 <li Class="WorkerDronesMod.JobGiver_BootupState" />
               </subNodes>
             </li>
@@ -21,51 +37,50 @@
   <value>
     <li Class="WorkerDronesMod.ThinkNode_ConditionalSolver">
       <subNodes>
-
-        <li Class="WorkerDronesMod.JobGiver_AIRefuelWithNeutroamineHostile">
-        </li>
-
-        <!-- EMP logic -->
-        <li Class="ThinkNode_ConditionalHasAbility">
-          <ability>MD_EMPBlast</ability>
+        <li Class="ThinkNode_ConditionalUnderCombatPressure">
+          <maxThreatDistance>100</maxThreatDistance>
+          <minCloseTargets>1</minCloseTargets>
           <subNodes>
-            <!-- ...EMP logic as before... -->
-          </subNodes>
-        </li>
-
-        <!-- Flight Tree -->
-        <li Class="ThinkNode_ConditionalHasAbility">
-          <ability>MD_WingPoweredFlight</ability>
-          <subNodes>
-            <li Class="WorkerDronesMod.ThinkNode_ConditionalHeatAboveThreshold">
-              <heatThreshold>1.0</heatThreshold>
-              <invert>true</invert>
+            <!-- Flight Tree -->
+            <li Class="ThinkNode_ConditionalHasAbility">
+              <ability>MD_WingPoweredFlight</ability>
               <subNodes>
-                <li Class="WorkerDronesMod.JobGiver_AICastJumpToShootingPosition">
-                  <ability>MD_WingPoweredFlight</ability>
-                  <ActivationIntervalTicks>1000</ActivationIntervalTicks> <!-- 30 seconds -->
-                </li>
-                <li Class="WorkerDronesMod.ThinkNode_ConditionalIsMeleeHediff">
+                <li Class="WorkerDronesMod.ThinkNode_ConditionalHeatAboveThreshold">
+                  <heatThreshold>1.0</heatThreshold>
+                  <invert>true</invert>
                   <subNodes>
-                    <li Class="WorkerDronesMod.JobGiver_AICastWingPoweredPounce">
+                    <li Class="WorkerDronesMod.JobGiver_AICastJumpToShootingPosition">
                       <ability>MD_WingPoweredFlight</ability>
-                      <ActivationIntervalTicks>1800</ActivationIntervalTicks> <!-- 30 seconds -->
+                      <ActivationIntervalTicks>1000</ActivationIntervalTicks> <!-- 30 seconds -->
+                    </li>
+                    <li Class="WorkerDronesMod.ThinkNode_ConditionalIsMeleeHediff">
+                      <subNodes>
+                        <li Class="ThinkNode_ConditionalRandom">
+                          <chance>0.5</chance>
+                          <subNodes>
+                            <li Class="WorkerDronesMod.JobGiver_AICastWingPoweredPounce">
+                              <ability>MD_WingPoweredFlight</ability>
+                              <ActivationIntervalTicks>1800</ActivationIntervalTicks> <!-- 30 seconds -->
+                            </li>
+                          </subNodes>
+                        </li>
+                      </subNodes>
                     </li>
                   </subNodes>
                 </li>
               </subNodes>
             </li>
-          </subNodes>
-        </li>
 
-        <!-- Hediff Changing Tree -->
-        <li Class="ThinkNode_ConditionalHasAbility">
-          <ability>MD_InterchangeableHandsAbility</ability>
-          <subNodes>
-            <li Class="WorkerDronesMod.JobGiver_UseAIFavoredHediffSwitcher">
-              <MeleeSwitchDistance>1</MeleeSwitchDistance> <!--switch to melee if enemy is closer than this-->
-              <RangedSwitchDistance>4</RangedSwitchDistance> <!--switch to ranged if enemy is farther than this-->
-              <MeleeHeatThresholdPercent>0.9</MeleeHeatThresholdPercent> <!--Switch to melee if heat exceeds this % of max-->
+            <!-- Hediff Changing Tree -->
+            <li Class="ThinkNode_ConditionalHasAbility">
+              <ability>MD_InterchangeableHandsAbility</ability>
+              <subNodes>
+                <li Class="WorkerDronesMod.JobGiver_UseAIFavoredHediffSwitcher">
+                  <MeleeSwitchDistance>1</MeleeSwitchDistance> <!--switch to melee if enemy is closer than this-->
+                  <RangedSwitchDistance>4</RangedSwitchDistance> <!--switch to ranged if enemy is farther than this-->
+                  <MeleeHeatThresholdPercent>0.9</MeleeHeatThresholdPercent> <!--Switch to melee if heat exceeds this % of max-->
+                </li>
+              </subNodes>
             </li>
           </subNodes>
         </li>

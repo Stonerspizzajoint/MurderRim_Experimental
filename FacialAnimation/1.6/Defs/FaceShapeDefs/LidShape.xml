@@ -21,6 +21,12 @@
     </FacialAnimation.LidshapeDef>
 
     <FacialAnimation.LidshapeDef>
+        <defName>alert</defName>
+        <altShapeDef>close</altShapeDef>
+        <disableEyeball>true</disableEyeball>
+    </FacialAnimation.LidshapeDef>
+
+    <FacialAnimation.LidshapeDef>
         <defName>dead</defName>
         <altShapeDef>normal</altShapeDef>
     </FacialAnimation.LidshapeDef>

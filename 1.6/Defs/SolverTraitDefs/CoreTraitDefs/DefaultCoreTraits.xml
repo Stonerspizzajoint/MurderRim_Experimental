@@ -1,0 +1,20 @@
+<Defs>
+    <WorkerDronesMod.SolverTraitDef>
+        <defName>SolverTrait_AbsoluteSolver</defName>
+        <label>Absolute Solver</label>
+        <description>The foundational core of all Solver abilities, this trait marks the bearer as a true Solver—capable of bending reality, rewriting matter, and shaping the world with forbidden technology. The first step on a path of limitless potential... and unimaginable consequences.</description>
+        <iconPath>UI/Icons/Gizmo/Icon_SolverTranslate</iconPath>
+        <GlowingIcon>true</GlowingIcon>
+        <DefaultUnlocked>true</DefaultUnlocked>
+        <CoreModule>true</CoreModule>
+        <tooltipExtra>The core trait of a Solver, granting the ability to manipulate reality and unlock advanced technologies. Essential for accessing all Solver abilities.</tooltipExtra>
+        <defaultX>1.5</defaultX>
+        <defaultY>0</defaultY>
+        <size>2</size>
+        <color>(255, 255, 0)</color>
+        <tierLevel>-1</tierLevel>
+        <skillPointCost>0</skillPointCost>
+        <requiredTierLevel>0</requiredTierLevel>
+    </WorkerDronesMod.SolverTraitDef>
+
+</Defs>

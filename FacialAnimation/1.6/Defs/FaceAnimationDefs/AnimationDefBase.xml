@@ -6,4 +6,8 @@
     <FacialAnimation.FaceAnimationDef Name="WorkerDroneAnimation" Abstract="True">
         <raceName>MD_WorkerDroneBase</raceName>
     </FacialAnimation.FaceAnimationDef>
+
+    <FacialAnimation.FaceAnimationDef Name="SolverDroneAnimation" Abstract="True">
+        <raceName>MD_SolverDroneBase</raceName>
+    </FacialAnimation.FaceAnimationDef>
 </Defs>

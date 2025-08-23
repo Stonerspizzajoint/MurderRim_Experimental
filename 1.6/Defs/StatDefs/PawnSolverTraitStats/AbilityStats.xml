@@ -1,0 +1,33 @@
+<Defs>
+    <StatDef ParentName="SolverStatBase">
+        <defName>MD_AbilityCooldownMultiplier</defName>
+        <label>ability cooldown multiplier</label>
+        <description>Multiplier for ability cooldowns.</description>
+        <defaultBaseValue>1.0</defaultBaseValue>
+        <toStringStyle>PercentZero</toStringStyle>
+    </StatDef>
+
+    <StatDef ParentName="SolverStatBase">
+        <defName>MD_AbilitySuccessChanceMultiplier</defName>
+        <label>ability success chance multiplier</label>
+        <description>Multiplier for ability success chance.</description>
+        <defaultBaseValue>1.0</defaultBaseValue>
+        <toStringStyle>PercentZero</toStringStyle>
+    </StatDef>
+
+    <StatDef ParentName="SolverStatBase">
+        <defName>MD_AbilityHeatGainMultiplier</defName>
+        <label>ability heat gain multiplier</label>
+        <description>Multiplier applied to all heat gained from abilities.</description>
+        <defaultBaseValue>1.0</defaultBaseValue>
+        <toStringStyle>PercentZero</toStringStyle>
+    </StatDef>
+
+    <StatDef ParentName="SolverStatBase">
+        <defName>MD_AbilityCorruptionGainMultiplier</defName>
+        <label>ability corruption gain multiplier</label>
+        <description>Multiplier applied to all corruption gained from abilities.</description>
+        <defaultBaseValue>1.0</defaultBaseValue>
+        <toStringStyle>PercentZero</toStringStyle>
+    </StatDef>
+</Defs>

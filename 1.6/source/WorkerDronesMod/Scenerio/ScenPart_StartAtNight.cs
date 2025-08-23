@@ -7,8 +7,8 @@ namespace WorkerDronesMod
 {
     public class ScenPart_StartAtNight : ScenPart
     {
-        // Default to 22:00 (10 PM) which is deep night in RimWorld
-        public float startHour = 22f;
+        // Default to 20
+        public float startHour = 20f;
 
         public override void ExposeData()
         {
@@ -21,28 +21,31 @@ namespace WorkerDronesMod
             base.DoEditInterface(listing);
             Rect rect = listing.GetScenPartRect(this, ScenPart.RowHeight * 2);
 
+            // Wrap startHour to 0-23
+            if (startHour >= 24f) startHour -= 24f;
+            if (startHour < 0f) startHour += 24f;
+
+            // Display time as RimWorld does (integer hour, 0–23)
+            int hourInt = Mathf.FloorToInt(startHour) % 24;
+            string timeString = $"{hourInt:00}:00";
+            string period = (hourInt >= 18 || hourInt < 6) ? "night" : "day";
+
             // Time display
             Rect labelRect = rect.TopPartPixels(ScenPart.RowHeight);
-            Widgets.Label(labelRect, $"Start time: {startHour:00}:00");
+            Widgets.Label(labelRect, $"Start time: {timeString} ({period})");
 
-            // Night hour slider (18-6)
+            // Hour slider (0–23)
             Rect sliderRect = rect.BottomPartPixels(ScenPart.RowHeight);
             startHour = Widgets.HorizontalSlider(
                 sliderRect,
                 startHour,
-                18f,   // 6 PM
-                30f,   // 6 AM next day (wrapped)
+                0f,   // 0:00
+                23f,  // 23:00
                 true,
-                "18:00 (6 PM)",
-                "6:00 (6 AM)",
+                "0:00",
+                "23:00",
                 roundTo: 1f
             );
-
-            // Wrap values above 24
-            if (startHour >= 24f)
-            {
-                startHour -= 24f;
-            }
         }
 
         public override void PostGameStart()
@@ -51,17 +54,17 @@ namespace WorkerDronesMod
 
             LongEventHandler.QueueLongEvent(() =>
             {
-                // Normalize hour to 0-24 range
-                float normalizedHour = startHour % 24f;
-                if (normalizedHour < 0) normalizedHour += 24f;
+                Map map = Find.CurrentMap;
+                float longitude = map != null ? Find.WorldGrid.LongLatOf(map.Tile).x : 0f;
 
-                // Convert to fraction of day (0-1)
-                float fraction = normalizedHour / 24f;
+                // Calculate tick offset for desired local hour
+                int desiredLocalTick = Mathf.RoundToInt(startHour * GenDate.TicksPerHour);
+                int timeZoneOffset = (int)GenDate.LocalTicksOffsetFromLongitude(longitude);
+                int startTicks = desiredLocalTick - timeZoneOffset;
 
-                // Calculate starting tick for the first day
-                int startTicks = Mathf.RoundToInt(fraction * GenDate.TicksPerDay);
+                // Ensure within first day
+                startTicks = (startTicks + GenDate.TicksPerDay) % GenDate.TicksPerDay;
 
-                // Set game time (absolute ticks since world creation)
                 Find.TickManager.DebugSetTicksGame(startTicks);
             },
             "LoadingMap", false, null);
@@ -69,14 +72,12 @@ namespace WorkerDronesMod
 
         public override string Summary(Scenario scen)
         {
-            float displayHour = startHour % 24f;
-            if (displayHour < 0) displayHour += 24f;
-
-            string period = (displayHour >= 18f || displayHour < 6f) ? "night" : "day";
-            return $"Starts at {displayHour:00}:00 ({period} time)";
+            int hourInt = Mathf.FloorToInt(startHour) % 24;
+            string timeString = $"{hourInt:00}:00";
+            string period = (hourInt >= 18 || hourInt < 6) ? "night" : "day";
+            return $"Starts at {timeString} ({period})";
         }
 
-        // Handle def initialization safely
         public override IEnumerable<string> ConfigErrors()
         {
             foreach (string error in base.ConfigErrors())

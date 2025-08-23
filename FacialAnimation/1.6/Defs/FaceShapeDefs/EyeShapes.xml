@@ -5,6 +5,11 @@
   </FacialAnimation.EyeballShapeDef>
 
   <FacialAnimation.EyeballShapeDef>
+    <defName>solver</defName>
+    <altShapeDef>normal</altShapeDef>
+  </FacialAnimation.EyeballShapeDef>
+
+  <FacialAnimation.EyeballShapeDef>
     <defName>oval-shaped</defName>
     <altShapeDef>normal</altShapeDef>
   </FacialAnimation.EyeballShapeDef>

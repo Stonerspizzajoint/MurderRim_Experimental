@@ -223,9 +223,6 @@
 			<li Class="HediffCompProperties_GiveAbility">
                 <abilityDef>MD_WingPoweredFlight</abilityDef>
 			</li>
-			<li Class="VEF.AnimalBehaviours.HediffCompProperties_Floating">
-
-			</li>
 			<li Class="HediffCompProperties_VerbGiver">
 				<tools>
 					<li>

@@ -47,6 +47,7 @@
     <context>MapOnly</context>
     <maxSimultaneous>2</maxSimultaneous>
     <priorityMode>PrioritizeNearest</priorityMode>
+    <sustainStopSound>MD_Railgun_Shot</sustainStopSound>
     <subSounds>
       <li>
         <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
@@ -56,7 +57,29 @@
           </li>
         </grains>
         <pitchRange>1</pitchRange>
-        <volumeRange>20</volumeRange>
+        <volumeRange>10</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>MD_Railgun_Beam</defName>
+    <sustain>true</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <sustainStopSound>MD_Railgun_PowerDown</sustainStopSound>
+    <subSounds>
+      <li>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>DisassemblyDronesMod/MD_Railgun_Beam</clipFolderPath>
+          </li>
+        </grains>
+        <pitchRange>0.99~1.01</pitchRange>
+        <volumeRange>30</volumeRange>
+        <sustainRelease>0.02</sustainRelease>
       </li>
     </subSounds>
   </SoundDef>

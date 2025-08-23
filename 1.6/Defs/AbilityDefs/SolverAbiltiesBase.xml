@@ -1,0 +1,43 @@
+<Defs>
+  <AbilityDef Name="SolverBase" Abstract="True">
+    <abilityClass>WorkerDronesMod.Solver</abilityClass>
+    <category>Solver</category>
+    <hasExternallyHandledCooldown>True</hasExternallyHandledCooldown>
+    <statBases>
+      <Ability_Duration>0</Ability_Duration>
+    </statBases>
+    <warmupSound>AnomalyAbilityWarmup</warmupSound>
+    <verbProperties>
+      <verbClass>WorkerDronesMod.Verb_CastSolverAbility</verbClass>
+      <soundCast>MD_SolverCast</soundCast>
+      <range>24.9</range>
+      <requireLineOfSight>True</requireLineOfSight>
+      <warmupTime>1</warmupTime>
+      <targetParams>
+        <canTargetBuildings>False</canTargetBuildings>
+        <canTargetAnimals>False</canTargetAnimals>
+        <thingCategory>Item</thingCategory>
+        <mapObjectTargetsMustBeAutoAttackable>False</mapObjectTargetsMustBeAutoAttackable>
+      </targetParams>
+    </verbProperties>
+  </AbilityDef>
+
+<ThingDef ParentName="BaseBullet">
+  <defName>MD_TelekineticProjectile</defName>
+  <label>telekinetic projectile</label>
+  <thingClass>WorkerDronesMod.Projectile_TelekineticThrow</thingClass>
+  <graphicData>
+    <texPath>Projectiles/TelekineticProjectile</texPath> <!-- Use a generic or invisible texture, since you override drawing in C# -->
+    <graphicClass>Graphic_Single</graphicClass>
+    <drawSize>1.2</drawSize>
+  </graphicData>
+  <projectile>
+    <flyOverhead>false</flyOverhead>
+    <speed>60</speed>
+    <damageDef>Blunt</damageDef> <!-- Default, overridden in C# if needed -->
+    <damageAmountBase>1</damageAmountBase>
+    <spinRate>50</spinRate>
+    <explosionRadius>0</explosionRadius>
+  </projectile>
+</ThingDef>
+</Defs>

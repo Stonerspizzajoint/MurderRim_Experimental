@@ -4,7 +4,7 @@
         <scenPartClass>WorkerDronesMod.ScenPart_StartAtNight</scenPartClass>
         <category>StartingImportant</category>
         <label>Start at night</label>
-        <description>Sets the game start time to night</description>
+        <description>Sets the game start time to night, or earlier in the day.</description>
         <summaryPriority>100</summaryPriority>
         <maxUses>1</maxUses>
     </ScenPartDef>

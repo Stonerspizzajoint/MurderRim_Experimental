@@ -39,5 +39,13 @@
 	<MD.AlertDroneOilCravingSevereSolution>Solution: Replenish their oil supply or treat their craving to prevent further harm.</MD.AlertDroneOilCravingSevereSolution>
 
 	<MD.ForceRoofArea>Automatic sheltering</MD.ForceRoofArea>
+	<MD.DesignateShadeArea_NotRoofed>Designate a roofed area to shelter androids from sunlight.</MD.DesignateShadeArea_NotRoofed>
+	<MD.DesignateShadeArea_Label>Designate Shade Area</MD.DesignateShadeArea_Label>
+	<MD.DesignateShadeArea_Desc>Designate an area as shade (this area will be used to restrict pawn movement indoors).</MD.DesignateShadeArea_Desc>
 
+	<MD.NightRaid_LetterLabel>Unsettling Prelude</MD.NightRaid_LetterLabel>
+	<MD.NightRaid_WitnessFallback>Someone</MD.NightRaid_WitnessFallback>
+	<MD.NightRaid_LetterText>{0} senses something is lurking, waiting for the cover of darkness...</MD.NightRaid_LetterText>
+
+	<MD.AIStatusTab>AI Status</MD.AIStatusTab>
 </LanguageData>

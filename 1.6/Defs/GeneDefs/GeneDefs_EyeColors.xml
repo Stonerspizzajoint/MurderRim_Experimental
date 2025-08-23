@@ -13,7 +13,7 @@
     	</exclusionTags>
 		<biostatCpx>1</biostatCpx>
     	<randomChosen>true</randomChosen>
-    	<randomBrightnessFactor>1</randomBrightnessFactor>
+    	<randomBrightnessFactor>0</randomBrightnessFactor>
   	</VREAndroids.AndroidGeneDef>
 	
 	<VREAndroids.AndroidGeneDef ParentName="MD_DroneEyeColors">
@@ -37,7 +37,7 @@
     	<label>pink display</label>
     	<labelShortAdj>pale</labelShortAdj>
     	<description>Carriers of this gene have pink eyes and lights.</description>
-    	<skinColorOverride>(255, 0, 222)</skinColorOverride>
+		<skinColorOverride>(255, 0, 222)</skinColorOverride>
 	    <iconPath>Pawn/Display/DisplayEyesBase/DisplayEyes1</iconPath>
     	<exclusionTags>
       		<li>EyeColor</li>

@@ -4,13 +4,18 @@
 	<VREAndroids.AndroidGeneDef ParentName="MD_SolverSubroutineBase">
 		<defName>MD_InterchangeableHands_BasicRanged</defName>
 		<label>interchangeable hands (Ranged)</label>
-		<prerequisite>MD_BasicSolver</prerequisite>
 		<description>An upgrade to interchangeable hands, that adds ranged and melee weaponry.</description>
 		<iconPath>UI/Icons/Genes/Gene_interchangeable_BasicUpgrade</iconPath>
 		<displayOrderInCategory>999999</displayOrderInCategory>
 		<biostatCpx>3</biostatCpx>
 		<biostatMet>-3</biostatMet>
 		<modExtensions>
+			<li Class="WorkerDronesMod.GenePrerequisitesExtension">
+				<prerequisiteGeneDefNames>
+					<li>MD_BasicSolver</li>
+					<li>MD_AbsoluteSolver</li>
+				</prerequisiteGeneDefNames>
+			</li>
 			<li Class="VEF.Genes.GeneExtension">
 				<backgroundPathXenogenes>UI/Icons/Genes/GeneBackGround/GeneBackground_DisassemblyHardware</backgroundPathXenogenes>
 				<backgroundPathEndogenes>UI/Icons/Genes/GeneBackGround/GeneBackground_DisassemblyHardware</backgroundPathEndogenes>
@@ -41,6 +46,11 @@
 			<li Class="WorkerDronesMod.GeneResearchExtension">
       			<requiredResearch>MD_DisassemblyAdeptUpgrade</requiredResearch>
     		</li>
+			<li Class="WorkerDronesMod.GenePrerequisitesExtension">
+				<prerequisiteGeneDefNames>
+					<li>MD_InterchangeableHands_BasicRanged</li>
+				</prerequisiteGeneDefNames>
+			</li>
 		</modExtensions>
 	</VREAndroids.AndroidGeneDef>
 
@@ -63,6 +73,12 @@
 			<li Class="WorkerDronesMod.GeneResearchExtension">
       			<requiredResearch>MD_DisassemblyHighTechUpgrade</requiredResearch>
     		</li>
+			<li Class="WorkerDronesMod.GenePrerequisitesExtension">
+				<prerequisiteGeneDefNames>
+					<li>MD_InterchangeableHands_BasicRanged</li>
+					<li>MD_interchangeable_AdeptUpgrade</li>
+				</prerequisiteGeneDefNames>
+			</li>
 		</modExtensions>
 	</VREAndroids.AndroidGeneDef> 
 </Defs>

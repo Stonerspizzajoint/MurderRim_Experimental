@@ -83,4 +83,42 @@
       </children>
     </root>
   </PawnRenderTreeDef>
+
+  <PawnRenderTreeDef>
+    <defName>MD_DroneBabyRender</defName>
+    <root Class="PawnRenderNodeProperties_Parent">
+      <debugLabel>Root</debugLabel>
+      <tagDef>Root</tagDef>
+      <children>
+        <li>
+          <debugLabel>Body</debugLabel>
+          <tagDef>Body</tagDef>
+          <nodeClass>PawnRenderNode_AnimalPart_Body</nodeClass>
+          <workerClass>PawnRenderNodeWorker_Body</workerClass>
+          <shaderTypeDef>CutoutComplex</shaderTypeDef>
+          <texPath>Pawn/BabyDrone/DroneBaby</texPath>
+          <useRottenColor>true</useRottenColor>
+          <useSkinShader>true</useSkinShader>
+          <children>
+            <li>
+              <debugLabel>Eyes</debugLabel>
+              <nodeClass>PawnRenderNode_AnimalPart</nodeClass>
+              <shaderTypeDef>TransparentPostLight</shaderTypeDef>
+              <texPath>Pawn/Display/BabyDisplay/BabyEyes</texPath>
+              <overlayLayer>Body</overlayLayer>
+              <useGraphic>true</useGraphic>
+              <colorType>Skin</colorType>
+              <useRottenColor>true</useRottenColor>
+              <useSkinShader>true</useSkinShader>
+              <baseLayer>10</baseLayer>
+            </li>
+          </children>
+        </li>
+        <li Class="PawnRenderNodeProperties_Carried">
+          <debugLabel>Weapon/carried thing</debugLabel>
+          <workerClass>PawnRenderNodeWorker_Carried</workerClass>
+        </li>
+      </children>
+    </root>
+  </PawnRenderTreeDef>
 </Defs>

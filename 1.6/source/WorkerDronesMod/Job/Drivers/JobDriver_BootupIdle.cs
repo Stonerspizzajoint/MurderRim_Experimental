@@ -10,8 +10,17 @@ namespace WorkerDronesMod
 
         protected override IEnumerable<Toil> MakeNewToils()
         {
-            // Stand in place indefinitely while the mental state is active
-            yield return Toils_General.Wait(-1, TargetIndex.None);
+            int waitTicks = job.count > 0 ? job.count : 999999; // fallback if not set
+
+            var waitToil = Toils_General.Wait(waitTicks, TargetIndex.None);
+            waitToil.AddEndCondition(() =>
+            {
+                // End the job if the mental state is no longer active
+                if (pawn.MentalStateDef != MD_DefOf.MD_RecoverAndBootUp)
+                    return JobCondition.Succeeded;
+                return JobCondition.Ongoing;
+            });
+            yield return waitToil;
         }
     }
 }

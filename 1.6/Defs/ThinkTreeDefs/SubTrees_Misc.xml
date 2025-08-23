@@ -1,0 +1,29 @@
+<Defs>
+
+<!--
+  ============= AISolverUser ============
+    This ThinkTreeDef is used to control the behavior of pawns 
+    that are designated as AI Solvers.
+        
+    Still Needs Work.
+
+  <ThinkTreeDef>
+    <defName>AISolverUser</defName>
+    <thinkRoot Class="ThinkNode_ConditionalPlayerControlledColonist">
+      <invert>true</invert>
+      <subNodes>
+        <li Class="WorkerDronesMod.ThinkNode_ConditionalSolver">
+          <subNodes>
+            <li Class="WorkerDronesMod.ThinkNode_ConditionalMapSafeForSolvers">
+              <subNodes>
+                <li Class="WorkerDronesMod.JobGiver_WanderRoofedIfUnsafe" />
+              </subNodes>
+            </li>
+          </subNodes>
+        </li>
+      </subNodes>
+    </thinkRoot>
+  </ThinkTreeDef>
+-->
+
+</Defs>

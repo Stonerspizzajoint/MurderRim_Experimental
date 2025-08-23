@@ -18,8 +18,10 @@ namespace WorkerDronesMod
         private float lastHeat = -1f;
         private static readonly Texture2D BurningIcon = ContentFinder<Texture2D>.Get("UI/Icons/ColonistBar/Burning");
         private float smoothedHeatDelta = 0f;
-        private int lastGameTick = -1;
         private float lastFluct = 0f;
+
+        private MatrixCodeRainUtil testMatrixRain;
+        private Rect testMatrixRect = new Rect(0, 0, 140f, 99f); // Example: same size as mainRect, adjust as needed
 
         // Add this property to implement the abstract member
         private bool draggingBar;
@@ -37,9 +39,48 @@ namespace WorkerDronesMod
 
         public override GizmoResult GizmoOnGUI(Vector2 topLeft, float maxWidth, GizmoRenderParms parms)
         {
-            const float labelBoxHeight = 24f; // Should match the value used for startY
-            const float verticalOffset = -20f; // Raise the gizmo up by 8 pixels (adjust as needed)
+            const float labelBoxHeight = 24f;
+            const float verticalOffset = -20f;
             Rect mainRect = new Rect(topLeft.x, topLeft.y + verticalOffset, 140f, 75f + labelBoxHeight);
+
+            // --- Corruption Bar (vertical, right side, outside main group) ---
+            float corruptionBarWidth = 10f;
+            float corruptionBarHeight = mainRect.height;
+            float corruptionBarX = mainRect.xMax + 6f;
+            float corruptionBarY = mainRect.yMin;
+
+            // Prevent traits and corruption display for MD_BasicSolver
+            if (basicSolver.def != MD_DefOf.MD_BasicSolver)
+            {
+                if (testMatrixRain == null)
+                {
+                    testMatrixRain = new MatrixCodeRainUtil();
+                }
+
+                // Set corruption and nerfed state before drawing
+                testMatrixRain.SetIsNerfedSolver(basicSolver.isNerfedSolver);
+                testMatrixRain.SetCorruptionLevel(basicSolver.Corruption);
+
+                // Set trait window action
+                Pawn pawn = basicSolver?.pawn;
+                SolverTraitProgress progress = basicSolver?.solverTraitProgress;
+                testMatrixRain.SetOpenTraitWindowAction(() =>
+                {
+                    if (pawn != null && progress != null)
+                    {
+                        var traitWindow = new SolverTraitWindowUtil(pawn, progress);
+                        traitWindow.OpenWindow();
+                    }
+                });
+
+                // Draw the matrix box BEFORE the main gizmo group
+                testMatrixRain.Draw("//:Solver_Console");
+            }
+
+
+
+
+
             GUI.BeginGroup(mainRect);
 
             // Base resource bar (from GeneGizmo_Resource)  
@@ -117,7 +158,6 @@ namespace WorkerDronesMod
             }
             float displayRatio = heatRatio + fluct;
 
-
             // Determine bar color based on fluctuated ratio  
             Color heatColor = Color.Lerp(Color.blue, Color.red, Mathf.Clamp01(displayRatio));
             if (displayRatio > 1.0f)
@@ -185,7 +225,6 @@ namespace WorkerDronesMod
                 Widgets.Label(labelBox, thresholdLabel);
                 Text.Anchor = TextAnchor.UpperLeft;
 
-
                 // Make the drag area exactly the oil bar (with a little extra vertical padding)
                 Rect dragRect = new Rect(oilBarRect.x, oilBarRect.y - 10f, oilBarRect.width, oilBarRect.height + 18f);
 
@@ -207,19 +246,17 @@ namespace WorkerDronesMod
                 TooltipHandler.TipRegion(dragRect, "Set the oil level at which this pawn will refuel.");
             }
 
-            // Only update smoothing once per game tick
             int currentTick = Find.TickManager.TicksGame;
-            float heatDelta = 0f;
-            if (lastHeat >= 0f)
-                heatDelta = basicSolver.Heat - lastHeat;
 
-            if (currentTick != lastGameTick)
+            // Calculate smoothed heat delta (change per tick)
+            float currentHeat = basicSolver.Heat;
+            if (lastHeat >= 0f)
             {
-                // Smooth the delta (exponential moving average)
-                smoothedHeatDelta = Mathf.Lerp(smoothedHeatDelta, heatDelta, 0.5f); // 0.5f = smoothing factor, tweak as needed
-                lastHeat = basicSolver.Heat;
-                lastGameTick = currentTick;
+                float heatDelta = currentHeat - lastHeat;
+                // Smooth the delta for visual effect
+                smoothedHeatDelta = Mathf.Lerp(smoothedHeatDelta, heatDelta, 0.2f);
             }
+            lastHeat = currentHeat;
 
             // --- Burning icon for rising heat ---
             bool isOverheating = heatRatio >= 1.1f;
@@ -255,8 +292,6 @@ namespace WorkerDronesMod
                 GUI.color = Color.white;
                 TooltipHandler.TipRegion(iconRect, "MD.HeatRisingTooltip".Translate());
             }
-
-
             GUI.EndGroup();
             return new GizmoResult(GizmoState.Clear);
         }
@@ -287,7 +322,10 @@ namespace WorkerDronesMod
         }
 
         private static readonly Material SolidWhiteMaterial = new Material(ShaderDatabase.MetaOverlay);
-
+        public static readonly float DefaultX = 1f;
+        public static readonly float DefaultY = 708f;
+        public static readonly float DefaultWidth = 431f;
+        public static readonly float DefaultHeight = 116f;
     }
 }
 

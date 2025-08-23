@@ -7,10 +7,6 @@
         <canGenerateInGeneSet>false</canGenerateInGeneSet>
         <displayOrderInCategory>10000</displayOrderInCategory>
         <isCoreComponent>false</isCoreComponent>
-        <modExtensions>
-            <li Class="VEF.Genes.GeneExtension">
-            </li>
-        </modExtensions>
     </VREAndroids.AndroidGeneDef>
 
     <!-- ===== Worker Drone Subroutines ===== -->
@@ -29,10 +25,6 @@
     <VREAndroids.AndroidGeneDef Name="MD_SolverSubroutineBase" Abstract="True">
         <displayCategory>SolverSubroutines</displayCategory>
         <canGenerateInGeneSet>false</canGenerateInGeneSet>
-        <modExtensions>
-            <li Class="VEF.Genes.GeneExtension">
-            </li>
-        </modExtensions>
     </VREAndroids.AndroidGeneDef>
 
     <!-- ===== Solver Hardware ===== -->
@@ -41,10 +33,6 @@
         <canGenerateInGeneSet>false</canGenerateInGeneSet>
         <displayOrderInCategory>10004</displayOrderInCategory>
         <isCoreComponent>false</isCoreComponent>
-        <modExtensions>
-            <li Class="VEF.Genes.GeneExtension">
-            </li>
-        </modExtensions>
     </VREAndroids.AndroidGeneDef>
 
     <!-- ===== Disassembly Subroutines ===== -->
@@ -91,7 +79,6 @@
 
     <!-- ===== Display Color Hardware ===== -->
     <VREAndroids.AndroidGeneDef Name="MD_DisplayColorBase" Abstract="True">
-        <displayCategory>VREA_Hardware</displayCategory>
         <canGenerateInGeneSet>false</canGenerateInGeneSet>
         <displayOrderInCategory>10006</displayOrderInCategory>
         <isCoreComponent>false</isCoreComponent>
@@ -103,6 +90,7 @@
             <li Class="WorkerDronesMod.GenePrerequisitesExtension">
                 <prerequisiteGeneDefNames>
                     <li>MD_DisplayEyes</li>
+                    <li>MD_SolverDisplayEyes</li>
                     <li>MD_DisplayEye</li>
                     <li>MD_DisplayEyes_DD</li>
                     <li>MD_DisplayEyes_XX</li>
@@ -114,6 +102,9 @@
     <!-- ===== Drone Eye Colors ===== -->
     <VREAndroids.AndroidGeneDef Name="MD_DroneEyeColors" ParentName="MD_DisplayColorBase" Abstract="True">
         <displayCategory>DroneCosmetics</displayCategory>
+        <exclusionTags>
+            <li>MD_DisplayEyeColor</li>
+        </exclusionTags>
     </VREAndroids.AndroidGeneDef>
 
     <!-- ===== Core Eye Cosmetics ===== -->
@@ -129,7 +120,7 @@
     </VREAndroids.AndroidGeneDef>
 
     <!-- ===== Drone Eyes Cosmetics ===== -->
-    <VREAndroids.AndroidGeneDef ParentName="MD_WorkerDroneBase" Name="MD_DroneEyesBase" Abstract="True">
+    <VREAndroids.AndroidGeneDef ParentName="MD_WorkerDroneHardware" Name="MD_DroneEyesBase" Abstract="True">
         <displayCategory>DroneCosmetics</displayCategory>
         <exclusionTags>
             <li>MD_DisplayEye</li>

@@ -17,8 +17,8 @@ namespace WorkerDronesMod
             if (pawn == null)
                 return false;
 
-            // If sufficiently covered, do not apply the stat effect
-            if (SolarUtil.IsSufficientlyCovered(pawn))
+            // If sufficiently covered or head is covered, do not apply the stat effect
+            if (SolarUtil.IsSufficientlyCovered(pawn) || SolarUtil.IsHeadCovered(pawn))
                 return false;
 
             // Try to get the gene (assumes only one per pawn)

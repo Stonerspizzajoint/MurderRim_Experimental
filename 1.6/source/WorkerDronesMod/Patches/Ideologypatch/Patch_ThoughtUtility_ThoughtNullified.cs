@@ -37,11 +37,11 @@ namespace WorkerDronesMod.Patches
         static void Postfix(Pawn pawn, ThoughtDef def, ref bool __result)
         {
             // If the pawn already would have the thought nullified, do nothing.
-            // Otherwise, if the pawn has our hats-only component
+            // Otherwise, if the pawn is a core heart
             // and the thought in question is one of the disapproved clothing ones,
             // force the nullification.
             if (pawn != null && def != null
-                && pawn.TryGetComp<Comp_HatsOnly>() != null
+                && CoreHeartUtils.IsCoreHeart(pawn)
                 && disapprovedClothingThoughtDefs.Contains(def.defName))
             {
                 __result = true;
