@@ -1,0 +1,11 @@
+<Defs>
+    <JobDef>
+        <defName>MD_BlowBubbles</defName>
+        <driverClass>WorkerDronesMod.JobDriver_BlowBubbles</driverClass>
+        <joyKind>MD_BubbleBlowing</joyKind>
+        <reportString>blowing bubbles</reportString>
+        <joyDuration>2000</joyDuration>
+        <joyGainRate>0.5</joyGainRate>
+        <alwaysShowWeapon>true</alwaysShowWeapon>
+    </JobDef>
+</Defs>

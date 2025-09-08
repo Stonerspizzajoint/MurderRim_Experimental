@@ -1,12 +1,19 @@
 <Defs>
   <FacialAnimation.LidTypeDef Name="WorkerDroneLid" Abstract="True">
-    <raceName>MD_WorkerDroneBase</raceName>
     <enableUnisexTexPath>true</enableUnisexTexPath>
+    <targetGeneDefs>
+      <li>MD_DisplayEyes</li>
+      <li>MD_DisplayEyes_XX</li>
+      <li>MD_SolverDisplayEyes</li>
+      <li>MD_DisplayEyes_DD</li>
+    </targetGeneDefs>
   </FacialAnimation.LidTypeDef>
 
   <FacialAnimation.LidTypeDef Name="DisassemblyDroneLid" Abstract="True">
-    <raceName>MD_MurderDroneBase</raceName>
     <enableUnisexTexPath>true</enableUnisexTexPath>
+    <targetGeneDefs>
+      <li>MD_DisplayEyes_DD</li>
+    </targetGeneDefs>
   </FacialAnimation.LidTypeDef>
 
   <FacialAnimation.LidTypeDef ParentName="WorkerDroneLid">

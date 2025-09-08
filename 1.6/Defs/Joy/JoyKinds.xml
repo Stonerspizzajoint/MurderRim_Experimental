@@ -1,0 +1,7 @@
+<Defs>
+  <!-- Bubbles! -->
+  <JoyKindDef>
+    <defName>MD_BubbleBlowing</defName>
+    <label>bubble blowing</label>
+  </JoyKindDef>
+</Defs>

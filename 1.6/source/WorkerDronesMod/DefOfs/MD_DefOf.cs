@@ -16,6 +16,7 @@ namespace WorkerDronesMod
 
         public static ThingDef MD_Headgear_Hardhat;
 
+        public static ThingDef BubbleWand_Hand;
         //==================RaceDefs==================
         public static ThingDef MD_CoreHeartRace;
 
@@ -46,6 +47,8 @@ namespace WorkerDronesMod
         public static EffecterDef MD_UVOverHeating;
 
         public static EffecterDef MD_CoreExit;
+
+        public static EffecterDef MD_BlowingBubbles;
 
         //------------------PawnKindDefs------------------
         public static PawnKindDef MD_DisassemblyDrone;
@@ -87,6 +90,8 @@ namespace WorkerDronesMod
         public static SoundDef MD_CoreExitSound;
 
         public static SoundDef Longjump_Land;
+
+        public static SoundDef MD_BlowingBubblesSound;
         //------------------------------------
 
         //------------------HediffDefs------------------
@@ -155,7 +160,13 @@ namespace WorkerDronesMod
         public static JobDef WatchTelevision;
 
         public static JobDef ExitMapFlyingInFormation;
+
+        public static JobDef MD_BlowBubbles;
         //------------------------------------
+
+        //------------------JoyKindDefs------------------
+        public static JoyKindDef MD_BubbleBlowing;
+        //-----------------------------------------------
 
         //------------------DutyDefs------------------
         public static DutyDef MD_ExitMapPanicFly;
@@ -195,6 +206,8 @@ namespace WorkerDronesMod
         public static GeneDef MD_MurderDroneBody;
 
         public static GeneDef MD_DisplayColor_Random;
+
+        public static GeneDef MD_InterchangeableHands;
 
         public static GeneDef MD_DisplayEyes;
         public static GeneDef MD_SolverDisplayEyes;

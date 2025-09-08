@@ -1,5 +1,21 @@
 <Defs>
   <ThingDef ParentName="MoteBase">
+    <defName>MD_Mote_Bubble</defName>
+    <graphicData>
+      <texPath>Things/Mote/Bubble</texPath>
+    </graphicData>
+    <thingClass>MoteThrownAttached</thingClass>
+    <altitudeLayer>MetaOverlays</altitudeLayer>
+    <mote>
+      <fadeInTime>0.50</fadeInTime>
+      <solidTime>1.5</solidTime>
+      <fadeOutTime>2</fadeOutTime>
+      <attachedDrawOffset>(0.2, 0, 0.2)</attachedDrawOffset>
+      <speedPerTime>-0.2</speedPerTime>
+    </mote>
+  </ThingDef>
+
+  <ThingDef ParentName="MoteBase">
     <defName>MD_Mote_DroneOverHeating</defName>
     <thingClass>MoteAttached</thingClass>
     <altitudeLayer>MoteOverhead</altitudeLayer>

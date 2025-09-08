@@ -1,18 +1,35 @@
 <Defs>
 <!--Bases-->
-  <FacialAnimation.EyeballTypeDef Name="WorkerDroneEye" Abstract="True">
-    <raceName>MD_WorkerDroneBase</raceName>
-    <enableUnisexTexPath>true</enableUnisexTexPath>
+  <FacialAnimation.EyeballTypeDef Name="SkinEyeColor" Abstract="True">
+    <colorMode>skinColor</colorMode>
   </FacialAnimation.EyeballTypeDef>
 
-  <FacialAnimation.EyeballTypeDef Name="DisassemblyDroneEye" Abstract="True">
-    <raceName>MD_MurderDroneBase</raceName>
+  <FacialAnimation.EyeballTypeDef ParentName="SkinEyeColor" Name="WorkerDroneEye" Abstract="True">
     <enableUnisexTexPath>true</enableUnisexTexPath>
+    <targetGeneDefs>
+      <li>MD_DisplayEyes</li>
+    </targetGeneDefs>
   </FacialAnimation.EyeballTypeDef>
 
-  <FacialAnimation.EyeballTypeDef Name="SolverDroneEye" Abstract="True">
-    <raceName>MD_SolverDroneBase</raceName>
+  <FacialAnimation.EyeballTypeDef ParentName="SkinEyeColor" Name="DisassemblyDroneEye" Abstract="True">
     <enableUnisexTexPath>true</enableUnisexTexPath>
+    <targetGeneDefs>
+      <li>MD_DisplayEyes_DD</li>
+    </targetGeneDefs>
+  </FacialAnimation.EyeballTypeDef>
+
+  <FacialAnimation.EyeballTypeDef ParentName="SkinEyeColor" Name="SolverDroneEye" Abstract="True">
+    <enableUnisexTexPath>true</enableUnisexTexPath>
+    <targetGeneDefs>
+      <li>MD_SolverDisplayEyes</li>
+    </targetGeneDefs>
+  </FacialAnimation.EyeballTypeDef>
+
+  <FacialAnimation.EyeballTypeDef ParentName="SkinEyeColor" Name="XDroneEyes" Abstract="True">
+    <enableUnisexTexPath>true</enableUnisexTexPath>
+    <targetGeneDefs>
+      <li>MD_DisplayEyes_XX</li>
+    </targetGeneDefs>
   </FacialAnimation.EyeballTypeDef>
 
  <!--Normal Worker Eyes-->
@@ -37,11 +54,11 @@
     <probability>0.3</probability>
   </FacialAnimation.EyeballTypeDef>
 
-  <FacialAnimation.EyeballTypeDef>
+  <!--X Eyes-->
+  <FacialAnimation.EyeballTypeDef ParentName="XDroneEyes">
 	  <defName>XEyes_DisplayEyes</defName>
 	  <texPath>OtherMods/FacialAnimations/WorkerDrone/Eyes/XEyes</texPath>
 	  <shader>Map/TransparentPostLight</shader>
-    <raceName>MD_XEyesBase</raceName>
     <enableUnisexTexPath>true</enableUnisexTexPath>
     <probability>1</probability>
   </FacialAnimation.EyeballTypeDef>

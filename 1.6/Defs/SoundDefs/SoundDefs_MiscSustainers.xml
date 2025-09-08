@@ -1,5 +1,25 @@
 <Defs>
   <SoundDef>
+    <defName>MD_BlowingBubblesSound</defName>
+    <sustain>true</sustain>
+    <context>MapOnly</context>
+    <maxSimultaneous>2</maxSimultaneous>
+    <priorityMode>PrioritizeNearest</priorityMode>
+    <subSounds>
+      <li>
+        <tempoAffectedByGameSpeed>true</tempoAffectedByGameSpeed>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>DisassemblyDronesMod/MD_BlowingBubbles/MD_BlowingBubbles</clipPath>
+          </li>
+        </grains>
+        <pitchRange>0.99~1.01</pitchRange>
+        <volumeRange>20</volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
     <defName>MD_HighHeat_Alert</defName>
     <sustain>true</sustain>
     <context>MapOnly</context>

@@ -230,4 +230,30 @@ The Body houses an improved reactor, leading to better power efficiency. Also a 
             </li>
         </modExtensions>
     </VREAndroids.AndroidGeneDef>
+
+    <VREAndroids.AndroidGeneDef ParentName="MD_WorkerDroneSubroutine">
+		<defName>MD_KnifeTail</defName>
+		<label>knife tail</label>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>-1</biostatMet>
+		<geneClass>WorkerDronesMod.Gene_HediffApplier</geneClass>
+		<description>Carriers of this hardware possess a long, whip-like tail ending in a sharp blade. This tail can be used for powerful melee attacks, allowing the user to stab or slash targets with precision and force.</description>
+		<iconPath>UI/Icons/Genes/Gene_KnifeTail</iconPath>
+		<selectionWeight>0</selectionWeight>
+		<exclusionTags>
+			<li>MD_NaniteAcidTail</li>
+			<li>Tail</li>
+		</exclusionTags>
+		<modExtensions>
+			<li Class="WorkerDronesMod.GeneResearchExtension">
+      			<requiredResearch>MD_SolverPrograming</requiredResearch>
+    		</li>
+        	<li Class="WorkerDronesMod.AndroidBodypartHediffExtension">
+            	<hediffDef>MD_Knife_Tail</hediffDef>
+            	<bodyParts>
+                	<li>Torso</li>
+            	</bodyParts>
+        	</li>
+		</modExtensions>
+	</VREAndroids.AndroidGeneDef>
 </Defs>

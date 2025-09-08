@@ -253,7 +253,7 @@ The Body houses an improved reactor, leading to better power efficiency.
 			<li>Due to its slightly flawed design, there is a small chance at stabbing themselves.</li>
 			<li>Not considred and acid, so acid immune or resistant creatures will still take normal damage.</li>
 		</customEffectDescriptions>
-		<iconPath>Pawn/DisassemblyDrone/Natural_Weapons/Nanite_Tail/NaniteTail_east</iconPath>
+		<iconPath>UI/Icons/Genes/Gene_NaniteTail</iconPath>
 		<selectionWeight>0</selectionWeight>
 		<exclusionTags>
 			<li>MD_NaniteAcidTail</li>

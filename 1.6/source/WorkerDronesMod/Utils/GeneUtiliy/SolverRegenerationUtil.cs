@@ -190,10 +190,12 @@ namespace WorkerDronesMod
             return pawn != null && pawn.health.hediffSet.HasHediff(MD_DefOf.MD_SolverDeathPrevention);
         }
 
-        public static bool CanDeathBePrevented(Pawn pawn, SolverGeneExtension ext)
+        public static bool CanDeathBePrevented(Pawn pawn, SolverGeneExtension ext, Gene_BasicSolver gene = null)
         {
-            if (SolarUtil.InTrueSunlight(pawn))
+
+            if (SolarUtil.InTrueSunlight(pawn) || IsOilDepleted(gene))
                 return false;
+
             return true;
         }
 
@@ -204,10 +206,10 @@ namespace WorkerDronesMod
                 && pawn.MentalStateDef == MD_DefOf.MD_RecoverAndBootUp;
         }
 
-        public static bool CanPreventDeathPrevention(Pawn pawn)
+        public static bool CanPreventDeathPrevention(Pawn pawn, Gene_BasicSolver gene = null)
         {
             return pawn != null
-                && (IsRebooting(pawn) || IsReactorMissing(pawn) || SolarUtil.InTrueSunlight(pawn));
+                && (IsRebooting(pawn) || IsReactorMissing(pawn) || SolarUtil.InTrueSunlight(pawn) || IsOilDepleted(gene));
         }
 
         public static bool IsBrainSafe(Pawn pawn)
@@ -265,6 +267,10 @@ namespace WorkerDronesMod
                     );
                 }
             }
+        }
+        public static bool IsOilDepleted(Gene_BasicSolver gene)
+        {
+            return gene != null && gene.Oil <= 0f;
         }
     }
 }

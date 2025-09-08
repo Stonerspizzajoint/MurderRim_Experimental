@@ -26,7 +26,7 @@ namespace WorkerDronesMod.Patches
             var deathPreventionDef = MD_DefOf.MD_SolverDeathPrevention;
 
             // If death should NOT be prevented, remove the hediff now
-            if (!SolverRegenerationUtil.CanDeathBePrevented(pawn, ext))
+            if (!SolverRegenerationUtil.CanDeathBePrevented(pawn, ext, gene))
             {
                 var hediffToRemove = pawn.health.hediffSet.GetFirstHediffOfDef(deathPreventionDef);
                 if (hediffToRemove != null)

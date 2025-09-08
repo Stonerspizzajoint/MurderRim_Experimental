@@ -1,6 +1,9 @@
 <Defs>
     <FacialAnimation.HeadTypeDef Name="WorkerDroneHead" Abstract="True">
-        <raceName>MD_WorkerDroneBase</raceName>
+        <targetGeneDefs>
+            <li>MD_DroneBody</li>
+            <li>MD_MurderDroneBody</li>
+        </targetGeneDefs>
     </FacialAnimation.HeadTypeDef>
 
     <FacialAnimation.HeadTypeDef ParentName="WorkerDroneHead">

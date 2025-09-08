@@ -341,4 +341,42 @@
       </li>
     </comps>
   </ThingDef>
+
+<!--Bubble Wand Hand (Not a weapon)-->
+  <ThingDef ParentName="BaseGun">
+    <defName>BubbleWand_Hand</defName>
+    <label>Bubble Wand Hand</label>
+    <description>A whimsical wand that shoots bubbles. It's not designed for combat, but it can be quite entertaining.</description>
+    <thingClass>ThingWithComps</thingClass>
+    <graphicData>
+      <texPath>Things/RangedWeapon/Interchangeable/BubbleWand/BubbleWand</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>1.2</drawSize>
+    </graphicData>
+    <soundInteract>Interact_SMG</soundInteract>
+    <statBases>
+      <Mass>0</Mass>
+    </statBases>
+    <techLevel>Spacer</techLevel>
+    <tradeability>None</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <relicChance>0</relicChance>
+    <tools>
+      <li>
+        <label>wand</label>
+        <capacities>
+          <li>Blunt</li>
+          <li>Poke</li>
+        </capacities>
+        <power>2</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <comps>
+      <li>
+        <compClass>WorkerDronesMod.Comp_WeaponColorUpdaterMarker</compClass>
+      </li>
+    </comps>
+  </ThingDef>
 </Defs>

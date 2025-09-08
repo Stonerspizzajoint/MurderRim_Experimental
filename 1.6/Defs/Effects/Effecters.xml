@@ -1,5 +1,27 @@
 <Defs>
 	<EffecterDef>
+		<defName>MD_BlowingBubbles</defName>
+		<children>
+			<li>
+			<subEffecterClass>WorkerDronesMod.SubEffecter_BubbleDirectional</subEffecterClass>
+			<burstCount>4~7</burstCount>
+			<ticksBetweenMotes>120</ticksBetweenMotes>
+			<chancePerTick>0.01</chancePerTick>
+			<spawnLocType>OnSource</spawnLocType>
+			<positionRadius>0</positionRadius>
+			<moteDef>MD_Mote_Bubble</moteDef>
+			<color>(255,255,255,200)</color>
+			<scale>0.45~0.8</scale>
+			<speed>0.55~1</speed>
+			<angle>70~110</angle>
+			<rotation>0~360</rotation>
+			<airTime>60~90</airTime>
+			</li>
+		</children>
+	</EffecterDef>
+
+
+	<EffecterDef>
 		<defName>MD_Damage_HitDrone</defName>
 		<children>
 			<li>

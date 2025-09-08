@@ -806,4 +806,81 @@
 		</addedPartProps>
 	</HediffDef>
 <!--### ###-->
+
+<!--### OTHER ###-->
+ <!--Knife Tail-->
+    <HediffDef>
+		<defName>MD_Knife_Tail</defName>
+		<label>knife tail</label>
+		<hediffClass>HediffWithComps</hediffClass>
+		<description>A long, whip-thin tail ending in a razor-sharp blade and pointed tip. This tail can slice and stab with deadly precision, making it a formidable weapon in close combat.</description>
+		<defaultLabelColor>(200, 255, 0)</defaultLabelColor>
+		<isBad>false</isBad>
+		<allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+		<countsAsAddedPartOrImplant>false</countsAsAddedPartOrImplant>
+		<defaultInstallPart>Torso</defaultInstallPart>
+		<addedPartProps>
+			<solid>true</solid>
+			<betterThanNatural>true</betterThanNatural>
+		</addedPartProps>
+		<comps>
+			<li Class="HediffCompProperties_VerbGiver">
+				<tools>
+					<li>
+						<label>blade</label>
+						<capacities>
+						<li>Cut</li>
+						</capacities>
+						<power>12</power>
+						<cooldownTime>1.5</cooldownTime>
+						<soundMeleeHit>Pawn_Melee_MechanoidSlash_HitPawn</soundMeleeHit>
+			            <soundMeleeMiss>Pawn_Melee_MechanoidSlash_Miss</soundMeleeMiss>
+					</li>
+					<li>
+						<label>point</label>
+						<capacities>
+						<li>Stab</li>
+						</capacities>
+						<power>13</power>
+						<cooldownTime>2</cooldownTime>
+						<soundMeleeHit>Pawn_Melee_MechanoidSlash_HitPawn</soundMeleeHit>
+			            <soundMeleeMiss>Pawn_Melee_MechanoidSlash_Miss</soundMeleeMiss>
+					</li>
+				</tools>
+			</li>
+		</comps>
+		<renderNodeProperties>
+	        <li>
+		        <workerClass>PawnRenderNodeWorker_AttachmentBody</workerClass>
+		        <texPaths>
+		            <li>Pawn/WorkerDrone/Natural_Weapons/Tails/Knife/KnifeTail</li>
+		        </texPaths>
+		        <colorType>Skin</colorType>
+		        <overrideMeshSize>(1, 1)</overrideMeshSize>
+		        <drawSize>2</drawSize>
+		        <parentTagDef>Body</parentTagDef>
+                <shaderTypeDef>CutoutComplex</shaderTypeDef>
+		        <rotDrawMode>Fresh, Rotting</rotDrawMode>
+		        <drawData>
+		          <scaleOffsetByBodySize>true</scaleOffsetByBodySize>
+		          <defaultData>
+		        	<layer>-2</layer>
+		          </defaultData>
+		          <dataNorth>
+		        	<offset>(-0.01, 0, -0.2)</offset>
+		        	<layer>90</layer>
+		          </dataNorth>
+		          <dataSouth>
+		        	<offset>(0.01, -0.1, -0.2)</offset>
+		          </dataSouth>
+		          <dataEast>
+		        	<offset>(-0.1, -0.1, -0.2)</offset>
+		          </dataEast>
+		          <dataWest>
+		        	<offset>(0.1, -0.1, -0.2)</offset>
+		          </dataWest>
+		        </drawData>
+	        </li>
+	    </renderNodeProperties>
+	</HediffDef>
 </Defs>

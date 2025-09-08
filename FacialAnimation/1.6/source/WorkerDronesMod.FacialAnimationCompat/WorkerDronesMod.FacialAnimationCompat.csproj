@@ -77,15 +77,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FacialAnimationGeneUtil.cs" />
     <Compile Include="FacialAnimationCompatInit.cs" />
+    <Compile Include="FacialAnimationGeneUtil.cs" />
     <Compile Include="FacialAnimationsPatches\AnimationPatches\Patch_FAHelper_CreateAnimationDict_AddGeneTags.cs" />
     <Compile Include="FacialAnimationsPatches\Facetypepatches\Patch_TickManager_DoSingleTick_FacialAnimationBatch.cs" />
     <Compile Include="FacialAnimationsPatches\Facetypepatches\FacialAnimationBatcher.cs" />
     <Compile Include="FacialAnimationsPatches\Facetypepatches\MouthControllerComp_ForceWhitePatch.cs" />
-    <Compile Include="FacialAnimationsPatches\Facetypepatches\Patch_Pawn_GeneTracker_RemoveGene_ClearForcedTypes.cs" />
+    <Compile Include="FacialAnimationsPatches\Facetypepatches\Patch_PawnGeneTracker_RemoveGene_AnimationRebuild.cs" />
     <Compile Include="FacialAnimationsPatches\Facetypepatches\EyeballControllerComp_LoadTextures_Patch.cs" />
-    <Compile Include="FacialAnimationsPatches\Facetypepatches\Patch_Pawn_GeneTracker_AddGene_ForceTypes.cs" />
+    <Compile Include="FacialAnimationsPatches\Facetypepatches\Patch_PawnGeneTracker_AddGene_AnimationRebuild.cs" />
     <Compile Include="GeneForcedFacetypesExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

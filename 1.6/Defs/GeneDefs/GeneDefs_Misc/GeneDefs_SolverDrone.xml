@@ -295,13 +295,6 @@ But with each use, corruption builds — threatening to overwrite the host with 
 				<raceTags>
 					<li>MD_MurderDroneBase</li>
 				</raceTags>
-				<raceTagOptions>
-					<li>
-						<raceTag>MD_MurderDroneBase</raceTag>
-						<facePart>Mouth</facePart>
-						<overrideOthers>true</overrideOthers>
-					</li>
-				</raceTagOptions>
 			</li>
 		</modExtensions>
 	</VREAndroids.AndroidGeneDef>

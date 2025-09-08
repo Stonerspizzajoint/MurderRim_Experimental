@@ -1,8 +1,13 @@
 <Defs>
   <FacialAnimation.BrowTypeDef Name="WorkerDroneBrow" Abstract="True">
-    <raceName>MD_WorkerDroneBase</raceName>
     <enableUnisexTexPath>true</enableUnisexTexPath>
     <colorMode>skinColor</colorMode>
+    <targetGeneDefs>
+      <li>MD_DisplayEyes</li>
+      <li>MD_DisplayEyes_DD</li>
+      <li>MD_DisplayEyes_XX</li>
+      <li>MD_SolverDisplayEyes</li>
+    </targetGeneDefs>
   </FacialAnimation.BrowTypeDef>
 
   <FacialAnimation.BrowTypeDef ParentName="WorkerDroneBrow">

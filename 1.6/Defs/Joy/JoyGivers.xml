@@ -1,0 +1,14 @@
+<Defs>
+  <JoyGiverDef>
+    <defName>MD_BlowBubblesGiver</defName>
+    <giverClass>WorkerDronesMod.JobGiver_BlowBubbles</giverClass>
+    <baseChance>1</baseChance>
+    <jobDef>MD_BlowBubbles</jobDef>
+    <desireSit>true</desireSit>
+    <requireChair>false</requireChair>
+    <joyKind>MD_BubbleBlowing</joyKind>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </JoyGiverDef>
+</Defs>
