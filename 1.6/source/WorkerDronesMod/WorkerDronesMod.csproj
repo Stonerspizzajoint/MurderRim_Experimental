@@ -97,11 +97,12 @@
     <Compile Include="Alerts\Alert_DroneLowOil.cs" />
     <Compile Include="Alerts\Alert_DroneOilCravingSevere.cs" />
     <Compile Include="BabyAndroidDebugGizmo.cs" />
+    <Compile Include="AndroidGeneCategoryDebugUtil.cs" />
     <Compile Include="Dialog\Letters\ChoiceLetter_BabyAndroidBirth.cs" />
     <Compile Include="Effector\SubEffecter_BubbleDirectional.cs" />
     <Compile Include="Job\Drivers\JobDriver_BlowBubbles.cs" />
     <Compile Include="Job\Givers\JobGiver_BlowBubbles.cs" />
-    <Compile Include="Patches\GenePatches\GeneGeneration\Patch_GeneDefGenerator.cs" />
+    <Compile Include="Patches\VREAndroids\CustomGenes\Patch_Utils_StaticConstructor.cs" />
     <Compile Include="Patch_Pawn_GetGizmos.cs" />
     <Compile Include="Dialog\Dialog_NameAndroidPawn.cs" />
     <Compile Include="Gene\ModExtentions\GeneInheritExtension.cs" />
@@ -346,9 +347,11 @@
     <Folder Include="Patches\CEPatch\Comps\" />
     <Folder Include="Patches\CEPatch\JobGivers\" />
     <Folder Include="Patches\CEPatch\Utilitypatches\" />
+    <Folder Include="Patches\GenePatches\GeneGeneration\" />
     <Folder Include="Patches\Jobs\Jobgiverpatches\" />
     <Folder Include="Patches\Jobs\Jobtracker\" />
     <Folder Include="Patches\Utils\Childcare\" />
+    <Folder Include="Patches\VREAndroids\AndroidBehavioristStation\" />
     <Folder Include="Patches\VREAndroids\CreationStation\" />
     <Folder Include="Patches\VREAndroids\Things\" />
     <Folder Include="Pawn\Tags\" />

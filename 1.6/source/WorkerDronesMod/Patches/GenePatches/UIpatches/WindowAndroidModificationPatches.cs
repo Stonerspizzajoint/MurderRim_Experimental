@@ -72,7 +72,7 @@ namespace WorkerDronesMod.Patches
     public static class Patch_Window_AndroidCreation_AcceptInner
     {
         [HarmonyPrefix]
-        public static bool Prefix(Window_AndroidCreation __instance)
+        public static bool Prefix(Window_AndroidModification __instance)
         {
             bool xenotypeLoaded = Traverse.Create(__instance).Field("xenotypeNameLocked").GetValue<bool>();
             if (!xenotypeLoaded) return true;
@@ -80,18 +80,39 @@ namespace WorkerDronesMod.Patches
             List<GeneDef> selectedGenes = Traverse.Create(__instance).Field("selectedGenes").GetValue<List<GeneDef>>();
             if (selectedGenes == null) return true;
 
-            var invalidGeneInfos = selectedGenes
-                .Where(g => !GeneDisplayingUtils.IsGeneAllowed(g))
-                .Select(g => (Gene: g, Reason: GeneDisplayingUtils.GetBlockReason(g)))
-                .ToList();
-
-            if (invalidGeneInfos.Any())
+            List<GeneDef> activeGenes = __instance.android.genes.GenesListForReading.Select(g => g.def).ToList();
+            var invalidGenes = selectedGenes.Where(g =>
             {
-                TaggedString message = "This xenotype contains genes that cannot be used:\n\n";
-                message += GenText.ToLineList(
-                    invalidGeneInfos.Select(x => $"{x.Gene.LabelCap}: {x.Reason}"),
-                    "  - "
-                );
+                if (!GeneDisplayingUtils.IsGeneAllowed(g))
+                    return true;
+                var researchExt = g.GetModExtension<GeneResearchExtension>();
+                if (researchExt != null && researchExt.requiredResearch != null && !researchExt.requiredResearch.IsFinished)
+                    return !activeGenes.Contains(g);
+                return false;
+            }).ToList();
+
+            // Remove blocked genes from the pawn if they are not in selectedGenes
+            foreach (var geneDef in activeGenes)
+            {
+                if (!selectedGenes.Contains(geneDef) && !GeneDisplayingUtils.IsGeneAllowed(geneDef))
+                {
+                    var gene = __instance.android.genes.GenesListForReading.FirstOrDefault(g => g.def == geneDef);
+                    if (gene != null)
+                    {
+                        __instance.android.genes.RemoveGene(gene);
+                    }
+                }
+            }
+
+            if (invalidGenes.Any())
+            {
+                List<string> invalidLabels = invalidGenes
+                    .Select(g => GeneDisplayingUtils.GetBlockReason(g))
+                    .Distinct()
+                    .ToList();
+
+                TaggedString message = "This xenotype contains components that require unfinished research or are blocked:\n\n";
+                message += GenText.ToLineList(invalidLabels, "  - ");
                 Find.WindowStack.Add(new Dialog_MessageBox(
                     text: message,
                     buttonAText: "OK".Translate(),

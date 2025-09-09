@@ -210,7 +210,7 @@ The Body houses an improved reactor, leading to better power efficiency. Also a 
     <VREAndroids.AndroidGeneDef ParentName="MD_WorkerDroneSubroutine">
         <defName>MD_LearningByObservation</defName>
         <label>observational learning</label>
-		<description>Androids with this subroutine can learn by observing others perform tasks, as well as by watching television broadcasts.</description>
+		<description>Androids with this subroutine can learn by observing others perform tasks, as well as by watching television broadcasts. (Even Unawoken Androids can still learn with this)</description>
         <geneClass>WorkerDronesMod.Gene_LearningByObservation</geneClass>
 		<iconPath>UI/Icons/Genes/Gene_LearningByObservation</iconPath>
 		<displayOrderInCategory>1000002</displayOrderInCategory>
